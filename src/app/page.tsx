@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { Star } from "lucide-react";
+import Link from "next/link";
 import { Phone,
   Mail,
   MapPin,} from "lucide-react";
@@ -2462,46 +2463,52 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
 
 </section>
 
-     {/* FOOTER */}
+  {/* =========================================================
+    FOOTER
+========================================================= */}
+
 <footer
   className="
-  border-t
-  border-white/10
-  py-24
-  overflow-hidden
+    border-t
+    border-white/10
+    py-24
+    overflow-hidden
   "
 >
 
-  <div className="w-full px-20 lg:px-32">
+  <div className="w-full px-6 sm:px-8 lg:px-32">
 
     <div
       className="
-      grid
-      lg:grid-cols-[1.8fr_1fr_1fr_1fr_0.8fr]
-      gap-20
+        grid
+        lg:grid-cols-[1.8fr_1fr_1fr_1fr_0.8fr]
+        gap-20
       "
     >
 
-      {/* BRAND */}
+      {/* =====================================================
+          BRAND
+      ===================================================== */}
+
       <div className="flex flex-col items-center">
 
         <img
           src="/logo/logo-white.png"
           alt="Apiyo Design Studio"
           className="
-          w-80
-          object-contain
-          mb-8
+            w-80
+            object-contain
+            mb-8
           "
         />
 
         <p
           className="
-          uppercase
-          tracking-[5px]
-          text-[#D4A85A]
-          text-sm
-          text-center
+            uppercase
+            tracking-[5px]
+            text-[#D4A85A]
+            text-sm
+            text-center
           "
         >
           Architecture • Interiors • Visualization
@@ -2509,15 +2516,19 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
 
       </div>
 
-      {/* QUICK LINKS */}
+
+      {/* =====================================================
+          QUICK LINKS
+      ===================================================== */}
+
       <div>
 
         <p
           className="
-          uppercase
-          tracking-[4px]
-          text-[#D4A85A]
-          mb-8
+            uppercase
+            tracking-[4px]
+            text-[#D4A85A]
+            mb-8
           "
         >
           Quick Links
@@ -2525,53 +2536,108 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
 
         <div className="flex flex-col gap-4">
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
+          <Link
+            href="/"
+            className="
+              text-gray-300
+              hover:text-[#D4A85A]
+              transition-all
+              duration-300
+            "
+          >
             Home
-          </a>
+          </Link>
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
+          <Link
+            href="/house-plans"
+            className="
+              text-gray-300
+              hover:text-[#D4A85A]
+              transition-all
+              duration-300
+            "
+          >
             House Plans
-          </a>
+          </Link>
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
-            Custom Design
-          </a>
-
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
+          <Link
+            href="/interiors"
+            className="
+              text-gray-300
+              hover:text-[#D4A85A]
+              transition-all
+              duration-300
+            "
+          >
             Interior Design
-          </a>
+          </Link>
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
+          <Link
+            href="/3d-visualization"
+            className="
+              text-gray-300
+              hover:text-[#D4A85A]
+              transition-all
+              duration-300
+            "
+          >
             3D Visualization
-          </a>
+          </Link>
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
+          <Link
+            href="/students"
+            className="
+              text-gray-300
+              hover:text-[#D4A85A]
+              transition-all
+              duration-300
+            "
+          >
             Student Services
-          </a>
+          </Link>
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
+          <Link
+            href="/consultation"
+            className="
+              text-gray-300
+              hover:text-[#D4A85A]
+              transition-all
+              duration-300
+            "
+          >
             Contact
-          </a>
+          </Link>
 
         </div>
 
       </div>
 
-      {/* SERVICES */}
+
+      {/* =====================================================
+          SERVICES
+      ===================================================== */}
+
       <div>
 
         <p
           className="
-          uppercase
-          tracking-[4px]
-          text-[#D4A85A]
-          mb-8
+            uppercase
+            tracking-[4px]
+            text-[#D4A85A]
+            mb-8
           "
         >
           Services
         </p>
 
-        <div className="flex flex-col gap-4 text-gray-300">
+        <div
+          className="
+            flex
+            flex-col
+            gap-4
+            text-gray-300
+          "
+        >
 
           <p>Architectural Design</p>
 
@@ -2589,15 +2655,19 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
 
       </div>
 
-      {/* CONTACT */}
+
+      {/* =====================================================
+          CONTACT
+      ===================================================== */}
+
       <div>
 
         <p
           className="
-          uppercase
-          tracking-[4px]
-          text-[#D4A85A]
-          mb-8
+            uppercase
+            tracking-[4px]
+            text-[#D4A85A]
+            mb-8
           "
         >
           Contact
@@ -2618,6 +2688,7 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
 
           </div>
 
+
           <div className="flex items-center gap-4">
 
             <Phone
@@ -2626,10 +2697,11 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
             />
 
             <span className="text-gray-300">
-              0720 468 033
+              0754 525407
             </span>
 
           </div>
+
 
           <div className="flex items-center gap-4">
 
@@ -2648,15 +2720,19 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
 
       </div>
 
-      {/* FOLLOW US */}
+
+      {/* =====================================================
+          FOLLOW US
+      ===================================================== */}
+
       <div>
 
         <p
           className="
-          uppercase
-          tracking-[4px]
-          text-[#D4A85A]
-          mb-8
+            uppercase
+            tracking-[4px]
+            text-[#D4A85A]
+            mb-8
           "
         >
           Follow Us
@@ -2666,61 +2742,61 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
 
           <FaInstagram
             className="
-            text-[#D4A85A]
-            text-xl
-            cursor-pointer
-            hover:text-white
-            hover:scale-125
-            transition-all
-            duration-300
+              text-[#D4A85A]
+              text-xl
+              cursor-pointer
+              hover:text-white
+              hover:scale-125
+              transition-all
+              duration-300
             "
           />
 
           <FaFacebookF
             className="
-            text-[#D4A85A]
-            text-xl
-            cursor-pointer
-            hover:text-white
-            hover:scale-125
-            transition-all
-            duration-300
+              text-[#D4A85A]
+              text-xl
+              cursor-pointer
+              hover:text-white
+              hover:scale-125
+              transition-all
+              duration-300
             "
           />
 
           <FaLinkedinIn
             className="
-            text-[#D4A85A]
-            text-xl
-            cursor-pointer
-            hover:text-white
-            hover:scale-125
-            transition-all
-            duration-300
+              text-[#D4A85A]
+              text-xl
+              cursor-pointer
+              hover:text-white
+              hover:scale-125
+              transition-all
+              duration-300
             "
           />
 
           <FaXTwitter
             className="
-            text-[#D4A85A]
-            text-xl
-            cursor-pointer
-            hover:text-white
-            hover:scale-125
-            transition-all
-            duration-300
+              text-[#D4A85A]
+              text-xl
+              cursor-pointer
+              hover:text-white
+              hover:scale-125
+              transition-all
+              duration-300
             "
           />
 
           <FaWhatsapp
             className="
-            text-[#D4A85A]
-            text-xl
-            cursor-pointer
-            hover:text-white
-            hover:scale-125
-            transition-all
-            duration-300
+              text-[#D4A85A]
+              text-xl
+              cursor-pointer
+              hover:text-white
+              hover:scale-125
+              transition-all
+              duration-300
             "
           />
 
@@ -2730,24 +2806,32 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
 
     </div>
 
-    {/* DIVIDER */}
+
+    {/* =====================================================
+        DIVIDER
+    ===================================================== */}
+
     <div
       className="
-      h-px
-      bg-gradient-to-r
-      from-transparent
-      via-[#D4A85A]/40
-      to-transparent
-      my-16
+        h-px
+        bg-gradient-to-r
+        from-transparent
+        via-[#D4A85A]/40
+        to-transparent
+        my-16
       "
     />
 
-    {/* COPYRIGHT */}
+
+    {/* =====================================================
+        COPYRIGHT
+    ===================================================== */}
+
     <div
       className="
-      text-center
-      text-gray-500
-      text-sm
+        text-center
+        text-gray-500
+        text-sm
       "
     >
       © 2026 Apiyo Design Studio. All Rights Reserved.
@@ -2757,37 +2841,48 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
 
 </footer>
 
-{/* FLOATING WHATSAPP */}
+
+{/* =========================================================
+    FLOATING WHATSAPP
+========================================================= */}
+
 <a
-  href="https://wa.me/254720468033"
+  href="https://wa.me/254754525407"
   target="_blank"
   rel="noopener noreferrer"
   className="
-  fixed
-  bottom-8
-  right-8
-  z-50
-  w-25
-  h-25
-  rounded-full
-  backdrop-blur-xl
-  bg-white/10
-  border
-  border-white/20
-  flex
-  items-center
-  justify-center
-  transition-all
-  duration-300
-  hover:bg-[#D4A85A]
-  hover:scale-110
-  hover:shadow-[0_0_30px_rgba(212,168,90,0.35)]
+    fixed
+    bottom-4
+right-4
+sm:bottom-6
+sm:right-6
+lg:bottom-8
+lg:right-8
+w-14
+h-14
+sm:w-16
+sm:h-16
+lg:w-20
+lg:h-20
+    rounded-full
+    backdrop-blur-xl
+    bg-white/10
+    border
+    border-white/20
+    flex
+    items-center
+    justify-center
+    transition-all
+    duration-300
+    hover:bg-[#D4A85A]
+    hover:scale-110
+    hover:shadow-[0_0_30px_rgba(212,168,90,0.35)]
   "
 >
   <FaWhatsapp
     className="
-    text-white
-    text-2xl
+      text-white
+      text-2xl
     "
   />
 </a>

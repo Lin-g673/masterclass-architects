@@ -89,15 +89,19 @@ return (
   />
 
   <div
-    className="
+  className="
     relative
     z-10
     min-h-screen
     flex
     items-center
-    px-20
-    "
-  >
+    px-5
+    sm:px-6
+    md:px-8
+    lg:px-10
+    xl:px-12
+  "
+>
 
     <div className="max-w-4xl">
 
@@ -114,9 +118,11 @@ return (
 
       <h1
         className="
-        text-6xl
-        lg:text-8xl
-        font-serif
+        text-5xl
+sm:text-6xl
+md:text-7xl
+lg:text-8xl
+        font-heading
         leading-[0.95]
         mb-10
         "
@@ -137,7 +143,9 @@ return (
 
       <p
         className="
-        text-xl
+        text-base
+sm:text-lg
+md:text-xl
         text-gray-300
         max-w-3xl
         leading-relaxed
@@ -152,7 +160,7 @@ return (
       <div className="flex flex-wrap gap-5">
 
         <a
-  href="https://wa.me/254720468033"
+  href="https://wa.me/254754525407"
   target="_blank"
   rel="noopener noreferrer"
   className="
@@ -186,7 +194,7 @@ return (
   hover:text-black
   "
 >
-  Call Us
+  Call  0754 525 407
 </a>
 
       </div>
@@ -201,10 +209,20 @@ return (
 
 <section
   id="service-selector"
-  className="py-32"
+  className="py-20 md:py-24 lg:py-32"
 >
 
-  <div className="max-w-[1800px] mx-auto px-16">
+  <div
+  className="
+    max-w-[1500px]
+    mx-auto
+    px-5
+    sm:px-6
+    md:px-8
+    lg:px-10
+    xl:px-12
+  "
+>
 
     <p
       className="
@@ -221,9 +239,12 @@ return (
     <h2
       className="
       text-center
-      text-5xl
-      font-serif
-      mb-20
+      text-4xl
+md:text-5xl
+      font-heading
+      mb-12
+md:mb-16
+lg:mb-20
       "
     >
       What Do You Need Help With?
@@ -252,7 +273,9 @@ return (
           className={`
           rounded-[32px]
           border
-          p-10
+          p-6
+md:p-8
+lg:p-10
           text-center
           transition-all
           duration-300
@@ -268,7 +291,7 @@ return (
           <h3
             className="
             text-2xl
-            font-serif
+            font-heading
             mb-4
             "
           >
@@ -289,16 +312,21 @@ return (
 
 </section>
 
-<section className="py-32">
+<section className="py-20 md:py-24 lg:py-32">
 
   <div
     className="
-    max-w-[1800px]
-    mx-auto
-    px-16
-    grid
-    lg:grid-cols-2
-    gap-24
+    max-w-[1500px]
+mx-auto
+px-5
+sm:px-6
+md:px-8
+lg:px-10
+xl:px-12
+grid
+lg:grid-cols-2
+gap-12
+lg:gap-20
     items-start
     "
   >
@@ -311,7 +339,9 @@ return (
     uppercase
     tracking-[5px]
     text-[#D4A85A]
-    text-lg
+    text-[10px]
+md:text-xs
+tracking-[8px]
     mb-6
     "
   >
@@ -320,9 +350,10 @@ return (
 
   <h2
     className="
-    text-5xl
-    lg:text-7xl
-    font-serif
+    text-4xl
+md:text-5xl
+lg:text-6xl
+    font-heading
     leading-tight
     mb-8
     "
@@ -410,8 +441,11 @@ return (
   backdrop-blur-xl
   border
   border-white/10
-  rounded-[40px]
-  p-10
+  rounded-[28px]
+md:rounded-[40px]
+p-6
+md:p-8
+lg:p-10
   grid
   gap-6
   "
@@ -669,9 +703,19 @@ return (
 
 {/* CONTACT OPTIONS */}
 
-<section className="py-32">
+<section className="py-20 md:py-24 lg:py-32">
 
-  <div className="max-w-[1600px] mx-auto px-16">
+  <div
+  className="
+    max-w-[1500px]
+    mx-auto
+    px-5
+    sm:px-6
+    md:px-8
+    lg:px-10
+    xl:px-12
+  "
+>
 
     <p
       className="
@@ -689,7 +733,7 @@ return (
       className="
       text-center
       text-5xl
-      font-serif
+      font-heading
       mb-20
       "
     >
@@ -708,7 +752,7 @@ return (
       {/* WHATSAPP */}
 
       <a
-        href="https://wa.me/254720468033"
+        href="https://wa.me/254754525407"
         target="_blank"
         className="
         bg-white/[0.03]
@@ -726,7 +770,7 @@ return (
           <FaWhatsapp />
         </div>
 
-        <h3 className="text-2xl font-serif mb-3">
+        <h3 className="text-2xl font-heading mb-3">
           WhatsApp
         </h3>
 
@@ -735,7 +779,7 @@ return (
         </p>
 
         <p className="mt-4 text-[#D4A85A]">
-          0720 468 033
+          0754 525 407
         </p>
       </a>
 
@@ -755,7 +799,7 @@ return (
           <Phone size={40} />
         </div>
 
-        <h3 className="text-2xl font-serif mb-3">
+        <h3 className="text-2xl font-heading mb-3">
           Call Us
         </h3>
 
@@ -764,7 +808,7 @@ return (
         </p>
 
         <p className="mt-4 text-[#D4A85A]">
-          0720 468 033
+          0754 525 407
         </p>
       </div>
 
@@ -784,7 +828,7 @@ return (
           <Mail size={40} />
         </div>
 
-        <h3 className="text-2xl font-serif mb-3">
+        <h3 className="text-2xl font-heading mb-3">
           Email
         </h3>
 
@@ -813,7 +857,7 @@ return (
           <MapPin size={40} />
         </div>
 
-        <h3 className="text-2xl font-serif mb-3">
+        <h3 className="text-2xl font-heading mb-3">
           Location
         </h3>
 
@@ -876,10 +920,9 @@ return (
 </section>
 
 
-<section className="pb-32">
+<section className="py-20 md:py-24 lg:py-32">
 
-  <div className="max-w-[1200px] mx-auto px-10">
-
+  <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10">
     <p
       className="
       uppercase
@@ -895,8 +938,9 @@ return (
     <h2
       className="
       text-center
-      text-5xl
-      font-serif
+      text-4xl
+md:text-5xl
+      font-heading
       mb-20
       "
     >
@@ -984,9 +1028,13 @@ return (
 
   <div
     className="
-    max-w-[1600px]
-    mx-auto
-    px-16
+    max-w-[1500px]
+mx-auto
+px-5
+sm:px-6
+md:px-8
+lg:px-10
+xl:px-12
     "
   >
 
@@ -994,13 +1042,19 @@ return (
       className="
       border
       border-[#D4A85A]/20
-      rounded-[50px]
+      rounded-[28px]
+      md:rounded-[40px]
+lg:rounded-[50px]
       bg-gradient-to-br
       from-white/[0.03]
       to-white/[0.01]
       backdrop-blur-xl
-      py-24
-      px-12
+      py-16
+md:py-20
+lg:py-24
+px-6
+md:px-10
+lg:px-12
       text-center
       "
     >
@@ -1018,9 +1072,10 @@ return (
 
       <h2
         className="
-        text-5xl
-        lg:text-7xl
-        font-serif
+        text-4xl
+md:text-5xl
+lg:text-7xl
+        font-heading
         mb-8
         "
       >
@@ -1053,7 +1108,7 @@ return (
       >
 
         <a
-          href="https://wa.me/254720468033"
+          href="https://wa.me/254754525407"
           target="_blank"
           className="
           px-10
@@ -1071,7 +1126,7 @@ return (
         </a>
 
         <a
-  href="tel:+254712345678"
+  href="tel:+254754525407"
   className="
   px-8
   py-4

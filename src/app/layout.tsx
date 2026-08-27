@@ -1,26 +1,49 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Bodoni_Moda } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const garamond = localFont({
+  src: "./fonts/GaramondPremierPro-LightDisplay.otf",
+  variable: "--font-garamond",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const bodoni = Bodoni_Moda({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-bodoni",
+const avenir = localFont({
+  src: [
+    {
+      path: "./fonts/AvenirNext-UltraLight.otf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "./fonts/AvenirNext-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/AvenirNext-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/AvenirNext-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/AvenirNext-Demi.otf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-avenir",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Apiyo Design Studio",
-  description: "Architecture • Interior Design • 3D Visualization • Construction",
+  description:
+    "Architecture • Interior Design • 3D Visualization • Construction",
 };
 
 export default function RootLayout({
@@ -31,29 +54,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`
-        ${geistSans.variable}
-        ${geistMono.variable}
-        ${bodoni.variable}
-        h-full
-        antialiased
-      `}
+      className={`${garamond.variable} ${avenir.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#071321]">
-        {children}
-      </body>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }
-import { Cormorant_Garamond, Inter } from "next/font/google";
-
-export const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-});
-
-export const inter = Inter({
-  subsets: ["latin"],
-});
-<body className={inter.className}>
-</body>
