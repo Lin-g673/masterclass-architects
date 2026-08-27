@@ -4,6 +4,7 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
 import { useSearchParams } from "next/navigation";
+import { Suspense, useState } from "react";
 
 import {
   CheckCircle2,
@@ -15,14 +16,23 @@ import {
 import {
   housePlans,
 } from "../house-plans/plansData";
-import { useState } from "react";
 
-const [paymentMethod, setPaymentMethod] =
-  useState<
-    "mpesa" | "airtel" | "card" | "paypal"
-  >("mpesa");
 
 export default function CheckoutPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#071321]" />}>
+      <CheckoutContent />
+    </Suspense>
+  );
+}
+
+
+function CheckoutContent() {
+
+  const [paymentMethod, setPaymentMethod] =
+    useState<
+      "mpesa" | "airtel" | "card" | "paypal"
+    >("mpesa");
 
   const searchParams =
     useSearchParams();
@@ -35,7 +45,6 @@ export default function CheckoutPage() {
       (item) =>
         item.slug === planSlug
     );
-
 
   if (!plan) {
 
