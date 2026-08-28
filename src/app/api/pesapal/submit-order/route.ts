@@ -86,8 +86,10 @@ export async function POST(request: Request) {
 
       // IMPORTANT:
       // Price comes from plansData, not the customer's browser
-      amount: Number(plan.price),
-
+      amount:
+  baseUrl.includes("cybqa.pesapal.com")
+    ? 1
+    : Number(plan.price),
       description: `${plan.title} House Plan`,
 
       callback_url: callbackUrl,
