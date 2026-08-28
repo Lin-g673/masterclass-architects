@@ -20,6 +20,8 @@ function PaymentStatusContent() {
   const [message, setMessage] = useState(
     "Confirming your transaction with Pesapal..."
   );
+  const [downloadToken, setDownloadToken] =
+  useState<string | null>(null);
 
   useEffect(() => {
     if (!orderTrackingId) {
@@ -51,14 +53,14 @@ function PaymentStatusContent() {
 
         const paymentStatus =
           data.result?.payment_status_description?.toLowerCase();
-
-        if (paymentStatus === "completed") {
-          setStatus("completed");
-          setMessage(
-            "Payment confirmed successfully. Thank you for your purchase."
-          );
-          return;
-        }
+if (paymentStatus === "completed") {
+  setStatus("completed");
+  setDownloadToken(data.downloadToken || null);
+  setMessage(
+    "Payment confirmed successfully. Your house plan is ready to download."
+  );
+  return;
+}
 
         if (
           paymentStatus === "failed" ||
@@ -131,6 +133,14 @@ function PaymentStatusContent() {
         )}
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          {status === "completed" && downloadToken && (
+  <a
+    href={`/api/download/${downloadToken}`}
+    className="px-7 py-3 rounded-full bg-[#D4A85A] text-[#071321] text-sm font-medium hover:bg-white transition"
+  >
+    Download Your House Plan
+  </a>
+)}
           {status === "pending" && (
             <button
               type="button"

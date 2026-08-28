@@ -167,10 +167,25 @@ export async function GET(request: Request) {
       }
     }
 
-    return NextResponse.json({
-      success: true,
-      result,
-    });
+    let downloadToken: string | null = null;
+
+if (paymentStatus === "COMPLETED") {
+  const { data: completedOrder } =
+    await supabaseAdmin
+      .from("orders")
+      .select("download_token")
+      .eq("pesapal_tracking_id", orderTrackingId)
+      .single();
+
+  downloadToken =
+    completedOrder?.download_token || null;
+}
+
+return NextResponse.json({
+  success: true,
+  result,
+  downloadToken,
+});
   } catch (error) {
     console.error(
       "Pesapal status error:",
