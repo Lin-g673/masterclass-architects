@@ -73,9 +73,10 @@ export async function GET(request: NextRequest) {
       const { error } = await supabaseAdmin
         .from("orders")
         .update({
-          payment_status: "COMPLETED",
-          paid_at: new Date().toISOString(),
-        })
+  payment_status: "COMPLETED",
+  paid_at: new Date().toISOString(),
+  download_token: crypto.randomUUID(),
+})
         .eq(
           "pesapal_tracking_id",
           orderTrackingId
@@ -99,15 +100,42 @@ export async function GET(request: NextRequest) {
       paymentStatus === "INVALID" ||
       paymentStatus === "REVERSED"
     ) {
-      const { error } = await supabaseAdmin
-        .from("orders")
-        .update({
-          payment_status: paymentStatus,
-        })
-        .eq(
-          "pesapal_tracking_id",
-          orderTrackingId
-        );
+      const { data: existingOrder, error: orderLookupError } =
+  await supabaseAdmin
+    .from("orders")
+    .select("download_token, paid_at")
+    .eq("pesapal_tracking_id", orderTrackingId)
+    .single();
+
+if (orderLookupError || !existingOrder) {
+  console.error(
+    "IPN order lookup error:",
+    orderLookupError
+  );
+
+  return NextResponse.json({
+    orderNotificationType,
+    orderTrackingId,
+    orderMerchantReference,
+    status: 500,
+  });
+}
+
+const { error } = await supabaseAdmin
+  .from("orders")
+  .update({
+    payment_status: "COMPLETED",
+    paid_at:
+      existingOrder.paid_at ||
+      new Date().toISOString(),
+    download_token:
+      existingOrder.download_token ||
+      crypto.randomUUID(),
+  })
+  .eq(
+    "pesapal_tracking_id",
+    orderTrackingId
+  );
 
       if (error) {
         console.error(

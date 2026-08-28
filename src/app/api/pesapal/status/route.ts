@@ -18,8 +18,7 @@ export async function GET(request: Request) {
       return NextResponse.json(
         {
           success: false,
-          message:
-            "Missing Pesapal order tracking ID.",
+          message: "Missing Pesapal order tracking ID.",
         },
         { status: 400 }
       );
@@ -62,66 +61,108 @@ export async function GET(request: Request) {
         ?.toString()
         .toUpperCase();
 
-    /*
-      Update the matching order in Supabase
-      using Pesapal's tracking ID.
-    */
     if (paymentStatus === "COMPLETED") {
+      const {
+        data: existingOrder,
+        error: orderLookupError,
+      } = await supabaseAdmin
+        .from("orders")
+        .select("download_token, paid_at")
+        .eq("pesapal_tracking_id", orderTrackingId)
+        .single();
+
+      if (orderLookupError || !existingOrder) {
+        console.error(
+          "Supabase completed-order lookup error:",
+          orderLookupError
+        );
+
+        return NextResponse.json(
+          {
+            success: false,
+            message:
+              "Payment was verified, but the order record could not be updated.",
+          },
+          { status: 500 }
+        );
+      }
+
       const { error } = await supabaseAdmin
         .from("orders")
         .update({
           payment_status: "COMPLETED",
-          paid_at: new Date().toISOString(),
+          paid_at:
+            existingOrder.paid_at ||
+            new Date().toISOString(),
+          download_token:
+            existingOrder.download_token ||
+            crypto.randomUUID(),
         })
-        .eq(
-          "pesapal_tracking_id",
-          orderTrackingId
-        );
+        .eq("pesapal_tracking_id", orderTrackingId);
 
       if (error) {
         console.error(
           "Supabase completed-order update error:",
           error
         );
+
+        return NextResponse.json(
+          {
+            success: false,
+            message:
+              "Payment was verified, but the order record could not be updated.",
+          },
+          { status: 500 }
+        );
       }
     } else if (
       paymentStatus === "FAILED" ||
-      paymentStatus === "INVALID"
+      paymentStatus === "INVALID" ||
+      paymentStatus === "REVERSED"
     ) {
       const { error } = await supabaseAdmin
         .from("orders")
         .update({
-          payment_status: "FAILED",
+          payment_status: paymentStatus,
         })
-        .eq(
-          "pesapal_tracking_id",
-          orderTrackingId
-        );
+        .eq("pesapal_tracking_id", orderTrackingId);
 
       if (error) {
         console.error(
           "Supabase failed-order update error:",
           error
         );
+
+        return NextResponse.json(
+          {
+            success: false,
+            message:
+              "Unable to update the order status.",
+          },
+          { status: 500 }
+        );
       }
     } else {
-      /*
-        Keep incomplete transactions as PENDING.
-      */
       const { error } = await supabaseAdmin
         .from("orders")
         .update({
           payment_status: "PENDING",
         })
-        .eq(
-          "pesapal_tracking_id",
-          orderTrackingId
-        );
+        .eq("pesapal_tracking_id", orderTrackingId);
 
       if (error) {
         console.error(
           "Supabase pending-order update error:",
           error
+        );
+
+        return NextResponse.json(
+          {
+            success: false,
+            message:
+              "Unable to update the order status.",
+          },
+          { status: 500 }
         );
       }
     }
@@ -139,8 +180,7 @@ export async function GET(request: Request) {
     return NextResponse.json(
       {
         success: false,
-        message:
-          "Unable to verify payment status.",
+        message: "Unable to verify payment status.",
       },
       { status: 500 }
     );
