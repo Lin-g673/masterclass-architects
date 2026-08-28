@@ -6,6 +6,7 @@ import {
 } from "@/lib/pesapal";
 
 import { housePlans } from "@/app/house-plans/plansData";
+import { supabaseAdmin } from "@/lib/supabaseAdmin";
 
 export async function POST(request: Request) {
   try {
@@ -34,7 +35,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Get the official plan and price from the server
     const plan = housePlans.find(
       (item) => item.slug === planSlug
     );
@@ -67,6 +67,47 @@ export async function POST(request: Request) {
 
     const orderId = `ADS-${Date.now()}`;
 
+    // Sandbox orders are temporarily KES 1.
+    // Live orders use the real plan price.
+    const orderAmount =
+      baseUrl.includes("cybqa.pesapal.com")
+        ? 1
+        : Number(plan.price);
+
+    /*
+      First save the order in Supabase.
+      At this point payment has NOT been completed.
+    */
+    const { error: orderInsertError } =
+      await supabaseAdmin
+        .from("orders")
+        .insert({
+          order_id: orderId,
+          plan_slug: plan.slug,
+          buyer_name: fullName.trim(),
+          buyer_email: email.trim().toLowerCase(),
+          buyer_phone: phone.trim(),
+          amount: orderAmount,
+          currency: "KES",
+          payment_status: "PENDING",
+        });
+
+    if (orderInsertError) {
+      console.error(
+        "Supabase order insert error:",
+        orderInsertError
+      );
+
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Unable to create your order. Please try again.",
+        },
+        { status: 500 }
+      );
+    }
+
     const callbackUrl =
       "https://www.apiyodesignstudio.co.ke/checkout/payment-status";
 
@@ -83,14 +124,10 @@ export async function POST(request: Request) {
     const pesapalOrder = {
       id: orderId,
       currency: "KES",
+      amount: orderAmount,
 
-      // IMPORTANT:
-      // Price comes from plansData, not the customer's browser
-      amount:
-  baseUrl.includes("cybqa.pesapal.com")
-    ? 1
-    : Number(plan.price),
-      description: `${plan.title} House Plan`,
+      description:
+        `${plan.title} House Plan`,
 
       callback_url: callbackUrl,
 
@@ -122,6 +159,13 @@ export async function POST(request: Request) {
       await pesapalResponse.json();
 
     if (!pesapalResponse.ok) {
+      await supabaseAdmin
+        .from("orders")
+        .update({
+          payment_status: "FAILED_TO_CREATE",
+        })
+        .eq("order_id", orderId);
+
       return NextResponse.json(
         {
           success: false,
@@ -134,6 +178,30 @@ export async function POST(request: Request) {
           status: pesapalResponse.status,
         }
       );
+    }
+
+    /*
+      Pesapal has now created the transaction.
+      Save its tracking ID against our order.
+    */
+    const trackingId =
+      result?.order_tracking_id;
+
+    if (trackingId) {
+      const { error: trackingUpdateError } =
+        await supabaseAdmin
+          .from("orders")
+          .update({
+            pesapal_tracking_id: trackingId,
+          })
+          .eq("order_id", orderId);
+
+      if (trackingUpdateError) {
+        console.error(
+          "Supabase tracking update error:",
+          trackingUpdateError
+        );
+      }
     }
 
     return NextResponse.json({
