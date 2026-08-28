@@ -33,7 +33,72 @@ function CheckoutContent() {
     useState<
       "mpesa" | "airtel" | "card" | "paypal"
     >("mpesa");
+const [fullName, setFullName] = useState("");
+const [email, setEmail] = useState("");
+const [phone, setPhone] = useState("");
+const [isPaying, setIsPaying] = useState(false);
+const [paymentError, setPaymentError] = useState("");
+const handlePayment = async () => {
+  if (!fullName.trim() || !email.trim() || !phone.trim()) {
+    setPaymentError(
+      "Please enter your full name, email address and phone number."
+    );
+    return;
+  }
 
+  if (!plan) {
+    setPaymentError("House plan could not be found.");
+    return;
+  }
+
+  try {
+    setIsPaying(true);
+    setPaymentError("");
+
+    const response = await fetch("/api/pesapal/submit-order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        planSlug: plan.slug,
+        planName: plan.title,
+        amount: plan.price,
+        fullName,
+        email,
+        phone,
+        paymentMethod,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || !data.success) {
+      throw new Error(
+        data.message || "Unable to start payment."
+      );
+    }
+
+    const redirectUrl =
+      data.result?.redirect_url;
+
+    if (!redirectUrl) {
+      throw new Error(
+        "Pesapal did not return a payment link."
+      );
+    }
+
+    window.location.href = redirectUrl;
+  } catch (error) {
+    setPaymentError(
+      error instanceof Error
+        ? error.message
+        : "Unable to start payment. Please try again."
+    );
+  } finally {
+    setIsPaying(false);
+  }
+};
   const searchParams =
     useSearchParams();
 
@@ -187,50 +252,57 @@ function CheckoutContent() {
                 "
               >
 
+               <input
+  type="text"
+  placeholder="Full Name"
+  value={fullName}
+  onChange={(e) => setFullName(e.target.value)}
+  required
+  className="
+    bg-transparent
+    border
+    border-white/10
+    rounded-xl
+    px-5
+    py-4
+    outline-none
+    focus:border-[#D4A85A]
+  "
+/>
                 <input
-                  type="text"
-                  placeholder="Full Name"
-                  className="
-                    bg-transparent
-                    border
-                    border-white/10
-                    rounded-xl
-                    px-5
-                    py-4
-                    outline-none
-                    focus:border-[#D4A85A]
-                  "
-                />
-
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="
-                    bg-transparent
-                    border
-                    border-white/10
-                    rounded-xl
-                    px-5
-                    py-4
-                    outline-none
-                    focus:border-[#D4A85A]
-                  "
-                />
-
-                <input
-                  type="tel"
-                  placeholder="Phone / M-Pesa Number"
-                  className="
-                    bg-transparent
-                    border
-                    border-white/10
-                    rounded-xl
-                    px-5
-                    py-4
-                    outline-none
-                    focus:border-[#D4A85A]
-                  "
-                />
+  type="email"
+  placeholder="Email Address"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  required
+  className="
+    bg-transparent
+    border
+    border-white/10
+    rounded-xl
+    px-5
+    py-4
+    outline-none
+    focus:border-[#D4A85A]
+  "
+/>
+<input
+  type="tel"
+  placeholder="Phone / M-Pesa Number"
+  value={phone}
+  onChange={(e) => setPhone(e.target.value)}
+  required
+  className="
+    bg-transparent
+    border
+    border-white/10
+    rounded-xl
+    px-5
+    py-4
+    outline-none
+    focus:border-[#D4A85A]
+  "
+/>
 
 {/* =====================================================
     PAYMENT METHOD
@@ -480,9 +552,10 @@ function CheckoutContent() {
   </div>
 
 </div>
-
-                <button
+<button
   type="button"
+  onClick={handlePayment}
+  disabled={isPaying}
   className="
     mt-5
     w-full
@@ -496,20 +569,34 @@ function CheckoutContent() {
     transition-all
     duration-300
     hover:bg-white
+    disabled:opacity-50
+    disabled:cursor-not-allowed
   "
 >
-  {paymentMethod === "mpesa" &&
-    "Continue With M-Pesa"}
+  {isPaying ? (
+    "Connecting to Pesapal..."
+  ) : (
+    <>
+      {paymentMethod === "mpesa" &&
+        "Continue With M-Pesa"}
 
-  {paymentMethod === "airtel" &&
-    "Continue With Airtel Money"}
+      {paymentMethod === "airtel" &&
+        "Continue With Airtel Money"}
 
-  {paymentMethod === "card" &&
-    "Continue With Card"}
+      {paymentMethod === "card" &&
+        "Continue With Card"}
 
-  {paymentMethod === "paypal" &&
-    "Continue With PayPal"}
+      {paymentMethod === "paypal" &&
+        "Continue With PayPal"}
+    </>
+  )}
 </button>
+
+{paymentError && (
+  <p className="text-red-400 text-xs text-center mt-3">
+    {paymentError}
+  </p>
+)}
 
               </form>
 
