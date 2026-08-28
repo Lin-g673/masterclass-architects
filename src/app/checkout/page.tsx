@@ -60,15 +60,13 @@ const handlePayment = async () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        planSlug: plan.slug,
-        planName: plan.title,
-        amount: plan.price,
-        fullName,
-        email,
-        phone,
-        paymentMethod,
-      }),
+     body: JSON.stringify({
+  planSlug: plan.slug,
+  fullName,
+  email,
+  phone,
+  paymentMethod,
+}),
     });
 
     const data = await response.json();

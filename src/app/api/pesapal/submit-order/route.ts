@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
+
 import {
   getPesapalToken,
   getPesapalBaseUrl,
 } from "@/lib/pesapal";
+
+import { housePlans } from "@/app/house-plans/plansData";
 
 export async function POST(request: Request) {
   try {
@@ -10,8 +13,6 @@ export async function POST(request: Request) {
 
     const {
       planSlug,
-      planName,
-      amount,
       fullName,
       email,
       phone,
@@ -19,8 +20,6 @@ export async function POST(request: Request) {
 
     if (
       !planSlug ||
-      !planName ||
-      !amount ||
       !fullName ||
       !email ||
       !phone
@@ -28,9 +27,25 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           success: false,
-          message: "Missing required checkout information.",
+          message:
+            "Please provide all required customer details.",
         },
         { status: 400 }
+      );
+    }
+
+    // Get the official plan and price from the server
+    const plan = housePlans.find(
+      (item) => item.slug === planSlug
+    );
+
+    if (!plan) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "House plan could not be found.",
+        },
+        { status: 404 }
       );
     }
 
@@ -40,7 +55,8 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           success: false,
-          message: "PESAPAL_IPN_ID is missing.",
+          message:
+            "Pesapal IPN configuration is missing.",
         },
         { status: 500 }
       );
@@ -54,20 +70,25 @@ export async function POST(request: Request) {
     const callbackUrl =
       "https://www.apiyodesignstudio.co.ke/checkout/payment-status";
 
-    const nameParts = fullName.trim().split(/\s+/);
+    const nameParts = fullName
+      .trim()
+      .split(/\s+/);
 
-    const firstName = nameParts[0] || fullName;
+    const firstName =
+      nameParts[0] || "";
+
     const lastName =
-      nameParts.length > 1
-        ? nameParts.slice(1).join(" ")
-        : "";
+      nameParts.slice(1).join(" ") || "";
 
     const pesapalOrder = {
       id: orderId,
       currency: "KES",
-      amount: Number(amount),
 
-      description: `${planName} House Plan`,
+      // IMPORTANT:
+      // Price comes from plansData, not the customer's browser
+      amount: Number(plan.price),
+
+      description: `${plan.title} House Plan`,
 
       callback_url: callbackUrl,
 
@@ -78,60 +99,58 @@ export async function POST(request: Request) {
         phone_number: phone,
         country_code: "KE",
         first_name: firstName,
-        middle_name: "",
         last_name: lastName,
-        line_1: "",
-        line_2: "",
-        city: "",
-        state: "",
-        postal_code: "",
-        zip_code: "",
       },
     };
 
-    const response = await fetch(
+    const pesapalResponse = await fetch(
       `${baseUrl}/api/Transactions/SubmitOrderRequest`,
       {
         method: "POST",
-
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-
         body: JSON.stringify(pesapalOrder),
       }
     );
 
-    const result = await response.json();
+    const result =
+      await pesapalResponse.json();
 
-    if (!response.ok) {
-      console.error("Pesapal submit order error:", result);
-
+    if (!pesapalResponse.ok) {
       return NextResponse.json(
         {
           success: false,
-          message: "Pesapal could not create the payment order.",
-          details: result,
+          message:
+            result?.message ||
+            "Pesapal could not create the payment order.",
+          result,
         },
-        { status: response.status }
+        {
+          status: pesapalResponse.status,
+        }
       );
     }
 
     return NextResponse.json({
       success: true,
       orderId,
-      planSlug,
+      planSlug: plan.slug,
       result,
     });
   } catch (error) {
-    console.error("Submit order error:", error);
+    console.error(
+      "Pesapal submit-order error:",
+      error
+    );
 
     return NextResponse.json(
       {
         success: false,
-        message: "Unable to start payment.",
+        message:
+          "Unable to start payment. Please try again.",
       },
       { status: 500 }
     );
