@@ -70,13 +70,45 @@ export async function GET(request: NextRequest) {
         .toUpperCase();
 
     if (paymentStatus === "COMPLETED") {
+      const {
+        data: existingOrder,
+        error: orderLookupError,
+      } = await supabaseAdmin
+        .from("orders")
+        .select("download_token, paid_at")
+        .eq(
+          "pesapal_tracking_id",
+          orderTrackingId
+        )
+        .single();
+
+      if (orderLookupError || !existingOrder) {
+        console.error(
+          "IPN completed-order lookup error:",
+          orderLookupError
+        );
+
+        return NextResponse.json({
+          orderNotificationType,
+          orderTrackingId,
+          orderMerchantReference,
+          status: 500,
+        });
+      }
+
       const { error } = await supabaseAdmin
         .from("orders")
         .update({
-  payment_status: "COMPLETED",
-  paid_at: new Date().toISOString(),
-  download_token: crypto.randomUUID(),
-})
+          payment_status: "COMPLETED",
+
+          paid_at:
+            existingOrder.paid_at ||
+            new Date().toISOString(),
+
+          download_token:
+            existingOrder.download_token ||
+            crypto.randomUUID(),
+        })
         .eq(
           "pesapal_tracking_id",
           orderTrackingId
@@ -100,46 +132,19 @@ export async function GET(request: NextRequest) {
       paymentStatus === "INVALID" ||
       paymentStatus === "REVERSED"
     ) {
-      const { data: existingOrder, error: orderLookupError } =
-  await supabaseAdmin
-    .from("orders")
-    .select("download_token, paid_at")
-    .eq("pesapal_tracking_id", orderTrackingId)
-    .single();
-
-if (orderLookupError || !existingOrder) {
-  console.error(
-    "IPN order lookup error:",
-    orderLookupError
-  );
-
-  return NextResponse.json({
-    orderNotificationType,
-    orderTrackingId,
-    orderMerchantReference,
-    status: 500,
-  });
-}
-
-const { error } = await supabaseAdmin
-  .from("orders")
-  .update({
-    payment_status: "COMPLETED",
-    paid_at:
-      existingOrder.paid_at ||
-      new Date().toISOString(),
-    download_token:
-      existingOrder.download_token ||
-      crypto.randomUUID(),
-  })
-  .eq(
-    "pesapal_tracking_id",
-    orderTrackingId
-  );
+      const { error } = await supabaseAdmin
+        .from("orders")
+        .update({
+          payment_status: paymentStatus,
+        })
+        .eq(
+          "pesapal_tracking_id",
+          orderTrackingId
+        );
 
       if (error) {
         console.error(
-          "IPN Supabase payment update error:",
+          "IPN Supabase failed-payment update error:",
           error
         );
 
@@ -183,7 +188,10 @@ const { error } = await supabaseAdmin
       status: 200,
     });
   } catch (error) {
-    console.error("Pesapal IPN error:", error);
+    console.error(
+      "Pesapal IPN error:",
+      error
+    );
 
     return NextResponse.json({
       orderNotificationType,
