@@ -318,31 +318,41 @@ export default function Footer() {
   target="_blank"
   rel="noopener noreferrer"
   className="
-  fixed
-  bottom-8
-  right-8
-  z-50
-  w-25
-  h-25
-  rounded-full
-  backdrop-blur-xl
-  bg-white/10
-  border
-  border-white/20
-  flex
-  items-center
-  justify-center
-  transition-all
-  duration-300
-  hover:bg-[#D4A85A]
-  hover:scale-110
-  hover:shadow-[0_0_30px_rgba(212,168,90,0.35)]
+    fixed
+    bottom-5
+    right-5
+    md:bottom-8
+    md:right-8
+    z-50
+
+    w-14
+    h-14
+    md:w-16
+    md:h-16
+
+    rounded-full
+    backdrop-blur-xl
+    bg-white/10
+    border
+    border-white/20
+
+    flex
+    items-center
+    justify-center
+
+    transition-all
+    duration-300
+
+    hover:bg-[#D4A85A]
+    hover:scale-110
+    hover:shadow-[0_0_30px_rgba(212,168,90,0.35)]
   "
 >
   <FaWhatsapp
     className="
-    text-white
-    text-2xl
+      text-white
+      text-xl
+      md:text-2xl
     "
   />
 </a>

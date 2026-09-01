@@ -413,26 +413,27 @@ export default function VisualizationPage() {
         {/* VIDEO */}
 
         <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="
-            absolute
-            inset-0
-            w-full
-            h-full
-            object-cover
-            select-none
-            pointer-events-none
-          "
-        >
-          <source
-            src="/3d/3dvideo.mp4"
-            type="video/mp4"
-          />
-        </video>
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
+  poster="/3d/3d1.png"
+  className="
+    absolute
+    inset-0
+    w-full
+    h-full
+    object-cover
+    select-none
+    pointer-events-none
+  "
+>
+  <source
+    src="/3d/3dvideo.mp4"
+    type="video/mp4"
+  />
+</video>
 
         {/* DARK OVERLAY */}
 
@@ -664,9 +665,9 @@ export default function VisualizationPage() {
 
       <section
         className="
-          py-16
-          md:py-20
-          lg:py-24
+          py-10
+md:py-12
+lg:py-14
         "
       >
 
@@ -842,9 +843,9 @@ export default function VisualizationPage() {
 
       <section
         className="
-          py-16
-          md:py-20
-          lg:py-24
+          py-10
+md:py-12
+lg:py-14
         "
       >
 
@@ -968,9 +969,9 @@ export default function VisualizationPage() {
 
       <section
         className="
-          py-16
-          md:py-20
-          lg:py-24
+          py-10
+md:py-12
+lg:py-14
         "
       >
 
@@ -1275,9 +1276,9 @@ export default function VisualizationPage() {
 
       <section
         className="
-          py-16
-          md:py-20
-          lg:py-24
+          py-10
+md:py-12
+lg:py-14
         "
       >
 
@@ -1405,9 +1406,9 @@ export default function VisualizationPage() {
 
       <section
         className="
-          py-16
-          md:py-20
-          lg:py-24
+          py-10
+md:py-12
+lg:py-14
         "
       >
 
@@ -1518,8 +1519,8 @@ export default function VisualizationPage() {
   <div
     className="
       grid
-      grid-cols-1
-      lg:grid-cols-[2.25fr_1fr]
+      grid-cols-[1.55fr_1fr]
+lg:grid-cols-[2.25fr_1fr]
       gap-4
       md:gap-5
       items-stretch
@@ -1600,8 +1601,8 @@ export default function VisualizationPage() {
   <div
     className="
       grid
-      grid-cols-1
-      lg:grid-cols-[1fr_2.25fr]
+      grid-cols-[1fr_1.55fr]
+lg:grid-cols-[1fr_2.25fr]
       gap-4
       md:gap-5
       items-stretch
@@ -1682,8 +1683,8 @@ export default function VisualizationPage() {
   <div
     className="
       grid
-      grid-cols-1
-      lg:grid-cols-[2.25fr_1fr]
+      grid-cols-[1.55fr_1fr]
+lg:grid-cols-[2.25fr_1fr]
       gap-4
       md:gap-5
       items-stretch
@@ -1764,8 +1765,8 @@ export default function VisualizationPage() {
   <div
     className="
       grid
-      grid-cols-1
-      lg:grid-cols-[1fr_2.25fr]
+      grid-cols-[1fr_1.55fr]
+lg:grid-cols-[1fr_2.25fr]
       gap-4
       md:gap-5
       items-stretch
@@ -1931,9 +1932,9 @@ export default function VisualizationPage() {
 
       <section
         className="
-          py-16
-          md:py-20
-          lg:py-24
+          py-10
+md:py-12
+lg:py-14
         "
       >
 
@@ -2091,11 +2092,11 @@ export default function VisualizationPage() {
 
       <section
         className="
-          pt-16
-          md:pt-20
-          lg:pt-24
-          pb-12
-          md:pb-16
+          pt-10
+md:pt-12
+lg:pt-14
+pb-10
+md:pb-12
         "
       >
 

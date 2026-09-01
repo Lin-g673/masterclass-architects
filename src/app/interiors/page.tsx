@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Navbar from "@/app/components/Navbar";
 import {
   Trophy,
   Users,
@@ -940,20 +941,6 @@ const styles = {
   },
 };
 export default function Interiors() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  
 const [commercialCategory, setCommercialCategory] =
   useState("corporate");
 
@@ -1071,84 +1058,7 @@ useEffect(() => {
   return (
     <main className="bg-[#071321] text-white min-h-screen">
 
-      {/* NAVBAR */}
-      <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-white shadow-lg py-2"
-            : "bg-transparent py-4"
-        }`}
-      >
-        <div className="max-w-[1800px] mx-auto flex items-center px-4 sm:px-6 lg:px-16 py-3 sm:py-4 lg:py-6">
-
-          {/* LOGO */}
-          <div className="flex items-center flex-shrink-0">
-            <img
-              src={
-                scrolled
-                  ? "/logo/logo-black.png"
-                  : "/logo/logo-white.png"
-              }
-              alt="Apiyo Design Studio"
-              className="h-16 transition-all duration-300"
-            />
-          </div>
-
-          {/* NAVIGATION */}
-          <nav
-            className={`hidden xl:flex mx-auto items-center gap-10 text-sm uppercase tracking-[1.5px] ${
-              scrolled ? "text-[#1c3a60]" : "text-white"
-            }`}
-          >
-            {[
-  { label: "Home", href: "/" },
-  { label: "House Plans", href: "/house-plans" },
-  { label: "Interior Design", href: "/interiors" },
-  { label: "3D Visualization", href: "/3d-visualization" },
-  { label: "Projects", href: "/projects" },
-  { label: "Students", href: "/students" },
-  { label: "About Us", href: "/about-us" },
-].map((item) => (
-  <Link
-    key={item.label}
-    href={item.href}
-    className="
-      relative
-      transition-all
-      duration-300
-      hover:text-[#D4A85A]
-      hover:tracking-[3px]
-      hover:scale-105
-      after:absolute
-      after:left-0
-      after:-bottom-2
-      after:h-[2px]
-      after:w-0
-      after:bg-[#1c3a60]
-      after:transition-all
-      after:duration-300
-      hover:after:w-full
-    "
-  >
-    {item.label}
-  </Link>
-))}
-          </nav>
-
-          {/* CTA BUTTON */}
-<Link
-  href="/consultation"
-  className={`px-7 py-3 rounded-full transition-all duration-300 border font-medium ${
-    scrolled
-      ? "bg-[#1c3a60] text-white border-[#1c3a60] hover:bg-[#D4A85A] hover:text-black hover:border-[#D4A85A]"
-      : "border-[#D4A85A] text-[#D4A85A] hover:bg-[#D4A85A] hover:text-black hover:shadow-[0_0_25px_rgba(212,168,90,0.45)]"
-  }`}
->
-  Book Consultation
-</Link>
-
-        </div>
-      </header>
+      <Navbar />
 
      {/* HERO SECTION */}
 <section className="relative h-screen overflow-hidden">
@@ -1195,22 +1105,35 @@ useEffect(() => {
 
     <div className="max-w-4xl">
 
-      <p
-        className="
-        uppercase
-        tracking-[10px]
-        text-[#D4A85A]
-        mb-10
-        "
-      >
-        Interior Design
-      </p>
+      <div className="flex items-center gap-4 mb-6">
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Interior Design
+  </p>
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+</div>
 
       <h1
         className="
-        text-4xl sm:text-5xl md:text-7xl lg:text-8xl
-        leading-[0.95]
-        mb-10
+        text-4xl
+sm:text-5xl
+md:text-6xl
+lg:text-7xl
+leading-[1.05]
+mb-7
         font-heading
         "
       >
@@ -1232,12 +1155,13 @@ useEffect(() => {
 
       <p
         className="
-        text-xl
-        lg:text-2xl
+        text-sm
+sm:text-base
+md:text-lg
         text-gray-300
         leading-relaxed
         max-w-2xl
-        mb-12
+        mb-8
         "
       >
         Thoughtfully designed residential and commercial interiors crafted for comfort, functionality and
@@ -1274,19 +1198,23 @@ useEffect(() => {
 
   {/* SCROLL INDICATOR */}
   <div
-    className="
+  className="
     absolute
-    bottom-12
+    bottom-6
+    md:bottom-10
     left-1/2
     -translate-x-1/2
     text-[#D4A85A]
-    tracking-[12px]
+    tracking-[4px]
+    md:tracking-[6px]
     uppercase
-    text-lg
-    "
-  >
-    Scroll to Explore
-  </div>
+    text-[9px]
+    md:text-[10px]
+    whitespace-nowrap
+  "
+>
+  Scroll to Explore
+</div>
 </section>
 
 {/* TRUST STRIP */}
@@ -1462,8 +1390,7 @@ useEffect(() => {
 
 
 
-<section className="py-24 bg-[#071321]">
-
+<section className="py-10 md:py-12 lg:py-14 bg-[#071321]">
   <div className="w-full px-16 xl:px-24">
 
     <div className="grid lg:grid-cols-[340px_1fr] gap-12">
@@ -1479,8 +1406,8 @@ useEffect(() => {
         <h2
           className="
           text-5xl
-          lg:text-6x1
-          leading-[[0.95]
+          lg:text-6xl
+          leading-[0.95]
           mb-8
           font-heading
           "
@@ -1507,281 +1434,420 @@ useEffect(() => {
 
       </div>
 
-      {/* STYLE CARDS */}
+     {/* STYLE CARDS */}
+<div className="min-w-0">
 
-      <div>
-
-        <div
-  className="
-    grid
-    grid-cols-1
-    sm:grid-cols-2
-    lg:grid-cols-3
-    xl:grid-cols-6
-    gap-5
-  "
->
-
-          {Object.entries(styles).map(([key, style]) => (
-
-            <Link
-  href={`/interiors/${key}`}
-  key={key}
-  onMouseEnter={() =>
-    setActiveStyle(key as keyof typeof styles)
-  }
-  className="
-  group
-  relative
-  cursor-pointer
-  w-full
-  h-[420px]
-  rounded-3xl
-  overflow-hidden
-  transition-all
-  duration-500
-  hover:-translate-y-3
-  "
->
-
-              <img
-                src={style.hero}
-                alt={style.title}
-                className="
-                w-full
-                h-full
-                object-cover
-                "
-              />
-
-              <div
-                className="
-                absolute
-                inset-0
-                bg-gradient-to-t
-                from-black/90
-                via-black/20
-                to-transparent
-                "
-              />
-
-              <div
-                className="
-                absolute
-                bottom-5
-                left-5
-                "
-              >
-
-                <h3
-                  className={`
-                  text-lg
-                  font-medium
-                  transition-all
-                  duration-300
-                  ${
-                    activeStyle === key
-                      ? "text-[#D4A85A]"
-                      : "text-white"
-                  }
-                  `}
-                >
-                  {style.title}
-                </h3>
-
-              </div>
-
-              <div
-  className="
-  absolute
-  bottom-5
-  right-5
-  w-14
-  h-14
-  rounded-full
-  bg-[#071321]/90
-  backdrop-blur-xl
-  flex
-  items-center
-  justify-center
-  transition-all
-  duration-300
-  group-hover:bg-[#D4A85A]
-  group-hover:scale-110
-  "
->
-  <ArrowRight
-    size={24}
+  {/* MOBILE + TABLET: HORIZONTAL STYLE SELECTOR */}
+  <div
     className="
-    text-white
-    group-hover:text-black
+      flex
+      xl:grid
+      xl:grid-cols-6
+      gap-4
+      overflow-x-auto
+      xl:overflow-visible
+      snap-x
+      snap-mandatory
+      pb-3
     "
-  />
-</div>
+  >
+    {Object.entries(styles).map(([key, style]) => {
+      const isActive = activeStyle === key;
 
-            </Link>
-
-          ))}
-
-        </div>
-
-      </div>
-
-    </div>
-
-    {/* SECTION 3 */}
-
-    <div className="mt-20">
-
-      <h2
-        className="
-        text-center
-        text-5xl
-        font-heading
-        mb-12
-        "
-      >
-        {currentStyle.title} Across Every Space
-      </h2>
-
-      <div
-  className="
-  grid
-  grid-cols-6
-  gap-4
-  w-full
-  "
->
-
-        {currentStyle.spaces.map((space) => (
-
-          <div
-            key={space.name}
-            className="
+      return (
+        <button
+          type="button"
+          key={key}
+          onClick={() =>
+            setActiveStyle(key as keyof typeof styles)
+          }
+          onMouseEnter={() =>
+            setActiveStyle(key as keyof typeof styles)
+          }
+          className={`
             group
             relative
-            w-full
-h-[420px]
-            overflow-hidden
+            flex-none
+            w-[44vw]
+            sm:w-[30vw]
+            md:w-[24vw]
+            xl:w-full
+            h-[220px]
+            sm:h-[240px]
+            xl:h-[260px]
             rounded-2xl
+            overflow-hidden
+            snap-start
             cursor-pointer
-            "
-          >
-
-            <img
-              src={space.image}
-              alt={space.name}
-              className="
+            border
+            transition-all
+            duration-500
+            ${
+              isActive
+                ? "border-[#D4A85A]"
+                : "border-white/10 hover:border-[#D4A85A]/50"
+            }
+            xl:hover:-translate-y-2
+          `}
+        >
+          <img
+            src={style.hero}
+            alt={style.title}
+            className="
               w-full
               h-full
               object-cover
-              transition-all
+              transition-transform
               duration-700
-              group-hover:scale-110
-              "
-            />
+              group-hover:scale-105
+            "
+          />
 
-            <div
-              className="
+          <div
+            className="
               absolute
               inset-0
               bg-gradient-to-t
               from-black/90
+              via-black/20
               to-transparent
-              "
-            />
+            "
+          />
 
-            <div
-              className="
+          <div
+            className="
               absolute
               bottom-4
               left-4
-              flex
-              items-center
-              gap-3
-              "
+              right-4
+              text-left
+            "
+          >
+            <h3
+              className={`
+                font-[var(--font-avenir)]
+                text-sm
+                md:text-base
+                font-medium
+                transition-colors
+                duration-300
+                ${
+                  isActive
+                    ? "text-[#D4A85A]"
+                    : "text-white"
+                }
+              `}
             >
-
-              <span
-                className="
-                text-white
-                group-hover:text-[#D4A85A]
-                transition-all
-                "
-              >
-                ✦
-              </span>
-
-              <span
-                className="
-                text-white
-                group-hover:text-[#D4A85A]
-                transition-all
-                "
-              >
-                {space.name}
-              </span>
-
-            </div>
-
+              {style.title}
+            </h3>
           </div>
 
-        ))}
+          {isActive && (
+            <div
+              className="
+                absolute
+                top-4
+                right-4
+                w-2
+                h-2
+                rounded-full
+                bg-[#D4A85A]
+                shadow-[0_0_12px_rgba(212,168,90,0.8)]
+              "
+            />
+          )}
+        </button>
+      );
+    })}
+  </div>
+
+    {/* MOBILE SWIPE CUE */}
+  <div
+    className="
+      xl:hidden
+      flex
+      items-center
+      justify-end
+      gap-3
+      mt-1
+    "
+  >
+    <span
+      className="
+        font-[var(--font-avenir)]
+        text-[9px]
+        uppercase
+        tracking-[3px]
+        text-[#D4A85A]
+      "
+    >
+      Swipe Styles
+    </span>
+
+    <span className="text-[#D4A85A] text-sm">
+      →
+    </span>
+  </div>
+
+</div>
+
+{/* CLOSE INTRO + STYLE CARDS GRID */}
+</div>
+
+{/* DYNAMIC SPACES */}
+<div
+  id="residential-spaces"
+  className="
+    mt-10
+    md:mt-12
+    scroll-mt-24
+  "
+>
+
+  <div
+    className="
+      flex
+      items-center
+      justify-center
+      gap-3
+      mb-4
+    "
+  >
+    <div className="w-8 md:w-10 h-px bg-[#D4A85A]" />
+
+    <p
+      className="
+        font-[var(--font-avenir)]
+        uppercase
+        tracking-[4px]
+        md:tracking-[6px]
+        text-[#D4A85A]
+        text-[9px]
+        md:text-[10px]
+        whitespace-nowrap
+      "
+    >
+      Selected Style
+    </p>
+
+    <div className="w-8 md:w-10 h-px bg-[#D4A85A]" />
+  </div>
+
+
+  <h2
+    className="
+      text-center
+      text-3xl
+      md:text-4xl
+      font-heading
+      leading-[1.1]
+      mb-7
+      md:mb-8
+    "
+  >
+    {currentStyle.title} Across Every Space
+  </h2>
+
+
+  {/* ROOM CAROUSEL ON MOBILE / GRID ON DESKTOP */}
+  <div
+    className="
+      flex
+      lg:grid
+      lg:grid-cols-6
+      gap-4
+      w-full
+      overflow-x-auto
+      lg:overflow-visible
+      snap-x
+      snap-mandatory
+      pb-3
+    "
+  >
+    {currentStyle.spaces.map((space) => (
+
+      <div
+        key={`${activeStyle}-${space.name}`}
+        className="
+          group
+          relative
+          flex-none
+          w-[78vw]
+          sm:w-[44vw]
+          lg:w-full
+          h-[230px]
+          sm:h-[250px]
+          lg:h-[260px]
+          overflow-hidden
+          rounded-2xl
+          snap-start
+        "
+      >
+
+        <img
+          src={space.image}
+          alt={space.name}
+          className="
+            w-full
+            h-full
+            object-cover
+            transition-all
+            duration-700
+            group-hover:scale-105
+          "
+        />
+
+        <div
+          className="
+            absolute
+            inset-0
+            bg-gradient-to-t
+            from-black/90
+            via-black/10
+            to-transparent
+          "
+        />
+
+        <div
+          className="
+            absolute
+            bottom-4
+            left-4
+            flex
+            items-center
+            gap-3
+          "
+        >
+          <span className="text-[#D4A85A]">
+            ✦
+          </span>
+
+          <span
+            className="
+              font-[var(--font-avenir)]
+              text-sm
+              text-white
+              group-hover:text-[#D4A85A]
+              transition-colors
+              duration-300
+            "
+          >
+            {space.name}
+          </span>
+        </div>
 
       </div>
 
-    </div>
-
+    ))}
   </div>
-<div className="flex justify-center mt-14">
 
-  <button
+
+  {/* MOBILE ROOM SWIPE CUE */}
+  <div
     className="
-    px-10
-    py-4
-    border
-    border-[#D4A85A]
-    rounded-full
-    text-[#D4A85A]
-    uppercase
-    tracking-[3px]
-    text-sm
-    transition-all
-    duration-300
-    hover:bg-[#D4A85A]
-    hover:text-black
-    hover:shadow-[0_0_25px_rgba(212,168,90,0.25)]
+      lg:hidden
+      flex
+      items-center
+      justify-end
+      gap-3
+      mt-1
+    "
+  >
+    <span
+      className="
+        font-[var(--font-avenir)]
+        text-[9px]
+        uppercase
+        tracking-[3px]
+        text-[#D4A85A]
+      "
+    >
+      Swipe To Explore
+    </span>
+
+    <span className="text-[#D4A85A] text-sm">
+      →
+    </span>
+  </div>
+
+</div>
+
+
+{/* EXPLORE SELECTED STYLE */}
+<div className="flex justify-center mt-8 md:mt-10">
+
+  <Link
+    href={`/interiors/${activeStyle}`}
+    className="
+      inline-flex
+      items-center
+      justify-center
+      px-6
+      sm:px-8
+      py-3
+      md:py-4
+      border
+      border-[#D4A85A]
+      rounded-full
+      text-[#D4A85A]
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[2px]
+      md:tracking-[3px]
+      text-[9px]
+      sm:text-[10px]
+      md:text-xs
+      text-center
+      transition-all
+      duration-300
+      hover:bg-[#D4A85A]
+      hover:text-black
+      hover:shadow-[0_0_25px_rgba(212,168,90,0.25)]
     "
   >
     Explore All Spaces In {currentStyle.title} →
-  </button>
+  </Link>
 
 </div>
+
+{/* CLOSE RESIDENTIAL CONTAINER */}
+</div>
+
 </section>
 
-<section className="py-32 bg-[#071321]">
+<section className="pt-10 md:pt-12 lg:pt-14 pb-4 md:pb-6 lg:pb-8 bg-[#071321]">
 
-  <div className="w-full px-16 xl:px-24">
+  <div className="max-w-[1500px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12">
 
-    <p
-  className="
-  uppercase
-  tracking-[8px]
-  text-[#D4A85A]
-  text-lg
-  mb-6
-  "
->
-  Commercial Interiors
-</p>
+    <div className="flex items-center gap-4 mb-6 md:mb-8">
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Commercial Interiors
+  </p>
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+</div>
 
     <h2
   className="
   text-4xl
-  lg:text-5xl
-  leading-[0.95]
-  font-heading
-  mb-8
+md:text-5xl
+lg:text-6xl
+leading-[1.08]
+md:leading-[1.02]
+mb-6
   "
 >
       Spaces Designed
@@ -1792,9 +1858,11 @@ h-[420px]
   className="
   text-gray-300
   max-w-3xl
-  text-xl
+  text-sm
+md:text-base
   leading-relaxed
-  mb-16
+  mb-8
+md:mb-10
   "
 >
       Corporate offices, retail environments,
@@ -1807,11 +1875,16 @@ h-[420px]
 
 <div
   className="
-  relative
-  h-[550px]
-  rounded-[40px]
-  overflow-hidden
-  mb-16
+    relative
+    h-[360px]
+    sm:h-[400px]
+    md:h-[440px]
+    lg:h-[500px]
+    rounded-2xl
+    md:rounded-[30px]
+    overflow-hidden
+    mb-8
+    md:mb-10
   "
 >
 
@@ -1839,23 +1912,30 @@ h-[420px]
   />
 
   <div
-    className="
+  className="
     relative
     h-full
     flex
     items-center
-    px-20
-    "
-  >
+    px-5
+    sm:px-6
+    md:px-8
+    lg:px-12
+  "
+>
 
     <div className="max-w-3xl">
 
       <p
         className="
-        uppercase
-        tracking-[6px]
-        text-[#D4A85A]
-        mb-6
+        font-[var(--font-avenir)]
+uppercase
+tracking-[4px]
+md:tracking-[6px]
+text-[#D4A85A]
+text-[9px]
+md:text-[10px]
+mb-4
         "
       >
         Commercial Interior Design
@@ -1863,11 +1943,12 @@ h-[420px]
 
       <h3
         className="
-        text-5xl
-        lg:text-5xl
-        font-heading
-        leading-[0.95]
-        mb-6
+        text-3xl
+sm:text-4xl
+md:text-5xl
+leading-[1.05]
+mb-4
+md:mb-5
         "
       >
         {activeCommercial.title}
@@ -1875,16 +1956,17 @@ h-[420px]
 
       <div
         className="
-        h-[2px]
-        w-24
+        h-px
+        w-16
         bg-[#D4A85A]
-        mb-8
+        mb-5
         "
       />
 
       <p
         className="
-        text-xl
+        text-sm
+md:text-base
         text-gray-300
         leading-relaxed
         max-w-2xl
@@ -1903,13 +1985,15 @@ h-[420px]
     {/* CATEGORY NAV */}
 
     <div
-      className="
-      flex
-      flex-wrap
-      gap-6
-      mb-12
-      "
-    >
+  className="
+    flex
+    flex-wrap
+    gap-3
+    md:gap-4
+    mb-5
+    md:mb-6
+  "
+>
       {commercialTabs.map((tab) => (
 
         <button
@@ -1919,12 +2003,18 @@ h-[420px]
             setCommercialSpace(0);
           }}
           className={`
-            px-10
-            py-4
-            rounded-full
-            border
-            transition-all
-            duration-300
+  px-4
+  sm:px-5
+  md:px-6
+  py-2.5
+  md:py-3
+  rounded-full
+  border
+  font-[var(--font-avenir)]
+  text-xs
+  md:text-sm
+  transition-all
+  duration-300
 
             ${
               commercialCategory === tab.key
@@ -1943,9 +2033,9 @@ h-[420px]
 
 </section>
 
-  <section className="pb-24 bg-[#071321]">
+<section className="pb-10 md:pb-12 lg:pb-14 bg-[#071321]">
 
-  <div className="w-full px-16 xl:px-24">
+  <div className="max-w-[1500px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12">
 
     {/* SPACE NAV */}
 
@@ -1954,7 +2044,7 @@ h-[420px]
       flex
       flex-wrap
       gap-4
-      mb-14
+      mb-6 md:mb-8
       "
     >
       {activeCommercial.spaces.map(
@@ -1966,9 +2056,14 @@ h-[420px]
               setCommercialSpace(index)
             }
             className={`
-              px-6
-              py-3
-              rounded-full
+              px-4
+sm:px-5
+md:px-6
+py-2.5
+md:py-3
+rounded-full
+text-xs
+md:text-sm
               transition-all
               duration-300
 
@@ -1993,7 +2088,9 @@ h-[420px]
       grid
       md:grid-cols-2
       xl:grid-cols-4
-      gap-8
+      gap-4
+md:gap-6
+lg:gap-8
       "
     >
       {activeCommercial.spaces[
@@ -2087,10 +2184,13 @@ h-[420px]
 <section
   id="hospitality"
   className="
-    relative
-    bg-[#071321]
-    text-white
-    py-32
+  relative
+  bg-[#071321]
+  text-white
+  py-10
+  md:py-12
+  lg:py-14
+
   "
 >
 
@@ -2098,35 +2198,44 @@ h-[420px]
       SECTION INTRODUCTION
   ======================================================= */}
 
-  <div className="w-full px-16 xl:px-24">
+  <div className="max-w-[1500px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12">
 
     <div className="max-w-3xl">
 
       {/* SECTION LABEL */}
 
-      <p
-        className="
-          font-[var(--font-avenir)]
-          text-lg
-          uppercase
-          tracking-[8px]
-          text-[#D4A85A]
-          mb-6
-        "
-      >
-        Hospitality & Lifestyle
-      </p>
+      <div className="flex items-center gap-4 mb-6 md:mb-8">
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
 
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Hospitality & Lifestyle
+  </p>
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+</div>
 
       {/* MAIN HEADING */}
 
       <h2
         className="
           text-4xl
-          lg:text-5xl
-          font-heading
-          leading-[0.95]
-          mb-8
+md:text-5xl
+lg:text-6xl
+font-heading
+leading-[1.08]
+md:leading-[1.02]
+mb-6
         "
       >
         Spaces Designed For Memorable Experiences
@@ -2148,21 +2257,22 @@ h-[420px]
       {/* DESCRIPTION */}
 
       <p
-        className="
-          font-[var(--font-avenir)]
-          text-xl
-          font-light
-          leading-relaxed
-          tracking-[0]
-          text-gray-300
-          max-w-3x1
-          mb-16
-        "
-      >
-        Restaurants, wellness facilities, fitness centers and
-        hospitality environments designed to elevate guest
-        experience, atmosphere and brand identity.
-      </p>
+  className="
+    font-[var(--font-avenir)]
+    text-sm
+    md:text-base
+    font-light
+    leading-relaxed
+    text-gray-300
+    max-w-3xl
+    mb-8
+    md:mb-10
+  "
+>
+  Restaurants, wellness facilities, fitness centers and
+  hospitality environments designed to elevate guest
+  experience, atmosphere and brand identity.
+</p>
 
     </div>
 
@@ -2174,15 +2284,17 @@ h-[420px]
 
     <div
       className="
-        mt-16
+        mt-4
+md:mt-6
         flex
         flex-wrap
         items-center
-        gap-x-8
-        gap-y-4
+        gap-x-5
+md:gap-x-8
+gap-y-2
         border-b
         border-white/10
-        pb-5
+        pb-4
       "
     >
 
@@ -2204,11 +2316,14 @@ h-[420px]
             className={`
               relative
               font-[var(--font-avenir)]
-              text-[14px]
-              uppercase
-              tracking-[3px]
-              font-light
-              py-3
+              text-[10px]
+sm:text-[11px]
+md:text-[12px]
+uppercase
+tracking-[2px]
+md:tracking-[3px]
+font-light
+py-2.5
               transition-all
               duration-500
 
@@ -2220,7 +2335,7 @@ h-[420px]
 
               after:absolute
               after:left-0
-              after:-bottom-[21px]
+              after:-bottom-[17px]
               after:h-px
               after:bg-[#D4A85A]
               after:transition-all
@@ -2248,23 +2363,25 @@ h-[420px]
     ===================================================== */}
 
     <div
-      className="
-        mt-14
-        relative
-        grid
-        lg:grid-cols-[1.35fr_0.65fr]
-        min-h-[460px]
-        overflow-hidden
-        rounded-[32px]
-        border
-        border-white/10
-        bg-[#0a1828]
-      "
-    >
+  className="
+    mt-7
+    md:mt-9
+    relative
+    grid
+    lg:grid-cols-[1.35fr_0.65fr]
+    lg:min-h-[440px]
+    overflow-hidden
+    rounded-2xl
+    md:rounded-[28px]
+    border
+    border-white/10
+    bg-[#0a1828]
+  "
+>
 
       {/* HERO IMAGE */}
 
-      <div className="relative min-h-[360px] lg:min-h-[460px]">
+      <div className="relative min-h-[260px] sm:min-h-[320px] lg:min-h-[440px]">
 
         <img
           key={activeHospitality.hero}
@@ -2302,41 +2419,47 @@ h-[420px]
           relative
           flex
           items-center
-          px-8
-          py-12
-          lg:px-12
-          lg:py-16
+          px-5
+sm:px-6
+md:px-8
+py-7
+md:py-9
+lg:px-10
+lg:py-10
           bg-[#071321]
         "
       >
 
-        <div className="max-w-3x1">
+        <div className="max-w-3xl">
 
           <p
             className="
               font-[var(--font-avenir)]
-              text-[15px]
-              uppercase
-              tracking-[6px]
-              text-[#D4A85A]
-              mb-6
+             text-[9px]
+md:text-[10px]
+uppercase
+tracking-[4px]
+md:tracking-[6px]
+text-[#D4A85A]
+mb-4
             "
           >
             Hospitality Interior Design
           </p>
 
           <h3
-            className="
-              font-heading
-              text-5xl
-              lg:text-5xl
-              font-light
-              leading-[0.95]
-              tracking-[-0.015em]
-              text-white
-              mb-6
-            "
-          >
+  className="
+    font-heading
+    text-3xl
+    sm:text-4xl
+    md:text-5xl
+    font-light
+    leading-[1.05]
+    tracking-[-0.015em]
+    text-white
+    mb-4
+  "
+>
             {activeHospitality.title}
           </h3>
 
@@ -2345,14 +2468,15 @@ h-[420px]
               w-12
               h-px
               bg-[#D4A85A]
-              mb-6
+              mb-4
             "
           />
 
           <p
             className="
               font-[var(--font-avenir)]
-              text-xl
+              text-sm
+md:text-base
               font-light
               leading-relaxed
               text-gray-300
@@ -2374,7 +2498,7 @@ h-[420px]
         SPACE NAVIGATION
     ===================================================== */}
 
-    <div className="mt-16">
+    <div className="mt-8 md:mt-10">
 
       <div
         className="
@@ -2391,11 +2515,13 @@ h-[420px]
           <p
             className="
               font-[var(--font-avenir)]
-              text-[17px]
-              uppercase
-              tracking-[6px]
-              text-[#D4A85A]
-              mb-1
+              text-[9px]
+md:text-[10px]
+uppercase
+tracking-[4px]
+md:tracking-[6px]
+text-[#D4A85A]
+mb-1
             "
           >
             Explore Spaces
@@ -2426,11 +2552,12 @@ h-[420px]
         className="
           flex
           flex-wrap
-          gap-x-7
-          gap-y-3
+          gap-x-5
+          md:gap-x-7
+          gap-y-2
           border-b
           border-white/10
-          pb-5
+          pb-4
         "
       >
 
@@ -2449,11 +2576,14 @@ h-[420px]
                 }
                 className={`
                   font-[var(--font-avenir)]
-                  text-[14px]
-                  uppercase
-                  tracking-[3px]
-                  font-light
-                  py-2
+                  text-[10px]
+sm:text-[11px]
+md:text-[12px]
+uppercase
+tracking-[2px]
+md:tracking-[3px]
+font-light
+py-2
                   transition-all
                   duration-400
 
@@ -2483,11 +2613,15 @@ h-[420px]
 
 <div
   className="
-    mt-10
+    mt-6
+    md:mt-8
     grid
-    md:grid-cols-2
+    grid-cols-2
     xl:grid-cols-4
-    gap-8
+    gap-3
+    sm:gap-4
+    md:gap-6
+    lg:gap-8
   "
 >
 
@@ -2515,7 +2649,8 @@ h-[420px]
         group
         relative
         overflow-hidden
-        rounded-[30px]
+        rounded-2xl
+md:rounded-[24px]
         cursor-pointer
         bg-[#0a1828]
         text-left
@@ -2527,13 +2662,17 @@ h-[420px]
         src={image}
         alt={`${activeHospitality.spaces[hospitalitySpace].name} ${index + 1}`}
         className="
-          w-full
-          h-[420px]
-          object-cover
-          transition-all
-          duration-700
-          group-hover:scale-105
-        "
+  w-full
+  h-[220px]
+  sm:h-[260px]
+  md:h-[320px]
+  lg:h-[380px]
+  xl:h-[400px]
+  object-cover
+  transition-all
+  duration-700
+  group-hover:scale-105
+"
       />
 
       {/* subtle image overlay */}
@@ -2879,11 +3018,13 @@ h-[420px]
     relative
     bg-[#071321]
     text-white
-    py-32
+    py-10
+    md:py-12
+    lg:py-14
   "
 >
 
-  <div className="w-full px-16 xl:px-24">
+  <div className="max-w-[1500px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12">
 
     {/* =====================================================
         SECTION INTRO
@@ -2891,28 +3032,38 @@ h-[420px]
 
     <div className="max-w-4xl">
 
-      <p
-        className="
-          font-[var(--font-avenir)]
-          text-[13px]
-          uppercase
-          tracking-[5px]
-          text-[#D4A85A]
-          mb-6
-        "
-      >
-        Fit-Out & Interior Finishes
-      </p>
+      <div className="flex items-center gap-4 mb-6 md:mb-8">
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Fit-Out & Interior Finishes
+  </p>
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+</div>
 
       <h2
         className="
           font-heading
-          text-5xl
-          lg:text-6xl
-          font-light
-          leading-[0.95]
+          text-4xl
+md:text-5xl
+lg:text-6xl
+font-light
+leading-[1.08]
+md:leading-[1.02]
           tracking-[-0.015em]
-          mb-8
+          mb-6
         "
       >
         The Details That
@@ -2932,7 +3083,8 @@ h-[420px]
       <p
         className="
           font-[var(--font-avenir)]
-          text-lg
+          text-sm
+md:text-base
           font-light
           leading-relaxed
           text-gray-300
@@ -2954,15 +3106,17 @@ h-[420px]
 
     <div
       className="
-        mt-16
+        mt-8
+md:mt-10
         flex
         flex-wrap
         items-center
-        gap-x-8
-        gap-y-4
+        gap-x-5
+md:gap-x-8
+gap-y-2
         border-b
         border-white/10
-        pb-5
+        pb-4
       "
     >
 
@@ -2981,11 +3135,14 @@ h-[420px]
             className={`
               relative
               font-[var(--font-avenir)]
-              text-[12px]
-              uppercase
-              tracking-[3px]
-              font-light
-              py-3
+              text-[10px]
+sm:text-[11px]
+md:text-[12px]
+uppercase
+tracking-[2px]
+md:tracking-[3px]
+font-light
+py-2.5
               transition-all
               duration-500
 
@@ -2997,7 +3154,7 @@ h-[420px]
 
               after:absolute
               after:left-0
-              after:-bottom-[21px]
+              after:-bottom-[17px]
               after:h-px
               after:bg-[#D4A85A]
               after:transition-all
@@ -3024,23 +3181,25 @@ h-[420px]
     ===================================================== */}
 
     <div
-      className="
-        mt-14
-        relative
-        grid
-        lg:grid-cols-[1.35fr_0.65fr]
-        min-h-[460px]
-        overflow-hidden
-        rounded-[2px]
-        border
-        border-white/10
-        bg-[#0a1828]
-      "
-    >
+  className="
+    mt-7
+    md:mt-9
+    relative
+    grid
+    lg:grid-cols-[1.35fr_0.65fr]
+    lg:min-h-[440px]
+    overflow-hidden
+    rounded-2xl
+    md:rounded-[28px]
+    border
+    border-white/10
+    bg-[#0a1828]
+  "
+>
 
       {/* HERO IMAGE */}
 
-      <div className="relative min-h-[360px] lg:min-h-[460px]">
+      <div className="relative min-h-[260px] sm:min-h-[320px] lg:min-h-[440px]">
 
         <img
           key={activeFitout.hero}
@@ -3078,10 +3237,13 @@ h-[420px]
           relative
           flex
           items-center
-          px-8
-          py-12
-          lg:px-12
-          lg:py-16
+          px-5
+sm:px-6
+md:px-8
+py-7
+md:py-9
+lg:px-10
+lg:py-10
           bg-[#071321]
         "
       >
@@ -3091,11 +3253,13 @@ h-[420px]
           <p
             className="
               font-[var(--font-avenir)]
-              text-[12px]
-              uppercase
-              tracking-[5px]
-              text-[#D4A85A]
-              mb-6
+              text-[9px]
+md:text-[10px]
+uppercase
+tracking-[4px]
+md:tracking-[5px]
+text-[#D4A85A]
+mb-4
             "
           >
             Interior Fit-Out
@@ -3104,12 +3268,13 @@ h-[420px]
           <h3
             className="
               font-heading
-              text-4xl
-              lg:text-5xl
-              font-light
-              leading-[0.95]
-              text-white
-              mb-6
+              text-3xl
+sm:text-4xl
+md:text-5xl
+font-light
+leading-[1.05]
+text-white
+mb-4
             "
           >
             {activeFitout.label}
@@ -3120,14 +3285,15 @@ h-[420px]
               w-12
               h-px
               bg-[#D4A85A]
-              mb-6
+              mb-4
             "
           />
 
           <p
             className="
               font-[var(--font-avenir)]
-              text-base
+              text-sm
+md:text-base
               font-light
               leading-relaxed
               text-gray-300
@@ -3149,7 +3315,7 @@ h-[420px]
         SPACE / FINISH NAVIGATION
     ===================================================== */}
 
-    <div className="mt-16">
+    <div className="mt-8 md:mt-10">
 
       <div
         className="
@@ -3166,9 +3332,11 @@ h-[420px]
           <p
             className="
               font-[var(--font-avenir)]
-              text-[12px]
-              uppercase
-              tracking-[5px]
+              text-[9px]
+md:text-[10px]
+uppercase
+tracking-[4px]
+md:tracking-[5px]
               text-[#D4A85A]
               mb-1
             "
@@ -3257,12 +3425,15 @@ h-[420px]
 
     <div
       className="
-        mt-10
-        grid
-        grid-cols-1
-        md:grid-cols-2
-        lg:grid-cols-4
-        gap-5
+       mt-6
+md:mt-8
+grid
+grid-cols-2
+lg:grid-cols-4
+gap-3
+sm:gap-4
+md:gap-5
+lg:gap-6
       "
     >
 
@@ -3290,7 +3461,8 @@ h-[420px]
             group
             relative
             overflow-hidden
-            rounded-[24px]
+            rounded-xl
+md:rounded-2xl
             bg-[#0a1828]
             text-left
             focus:outline-none
@@ -3393,40 +3565,52 @@ h-[420px]
     relative
     bg-[#071321]
     text-white
-    py-32
+    py-10
+    md:py-12
+    lg:py-14
   "
 >
 
-  <div className="w-full px-16 xl:px-24">
+  <div className="max-w-[1500px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12">
 
     {/* =====================================================
         SECTION INTRODUCTION
     ===================================================== */}
 
-    <div className="max-w-4xl mb-20">
+    <div className="max-w-4xl mb-10 md:mb-12">
 
-      <p
-        className="
-          font-[var(--font-avenir)]
-          text-lg
-          uppercase
-          tracking-[8px]
-          text-[#D4A85A]
-          mb-6
-        "
-      >
-        Turnkey Interior Solutions
-      </p>
+      <div className="flex items-center gap-4 mb-6 md:mb-8">
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Turnkey Interior Solutions
+  </p>
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+</div>
 
       <h2
         className="
           font-heading
-          text-5xl
-          lg:text-7xl
-          font-light
-          leading-[0.95]
-          tracking-[-0.015em]
-          mb-8
+          text-4xl
+md:text-5xl
+lg:text-6xl
+font-light
+leading-[1.08]
+md:leading-[1.02]
+tracking-[-0.015em]
+mb-6
         "
       >
         Complete Interiors.
@@ -3439,14 +3623,15 @@ h-[420px]
           w-16
           h-px
           bg-[#D4A85A]
-          mb-8
+          mb-6
         "
       />
 
       <p
         className="
           font-[var(--font-avenir)]
-          text-xl
+          text-sm
+md:text-base
           font-light
           leading-relaxed
           text-gray-300
@@ -3486,12 +3671,18 @@ h-[420px]
           relative
           flex
           flex-col
-          min-h-[620px]
-          rounded-[30px]
+         min-h-0
+md:min-h-[580px]
+xl:min-h-[620px]
+rounded-2xl
+md:rounded-[26px]
           border
           border-white/10
           bg-[#0a1828]
-          p-8
+          p-5
+sm:p-6
+md:p-7
+xl:p-8
           overflow-hidden
           transition-all
           duration-500
@@ -3519,11 +3710,12 @@ h-[420px]
         <p
           className="
             font-[var(--font-avenir)]
-            text-[12px]
-            uppercase
-            tracking-[4px]
+            text-[10px]
+md:text-[11px]
+tracking-[3px]
+md:tracking-[4px]
             text-[#D4A85A]
-            mb-5
+            mb-4
           "
         >
           Package 01
@@ -3532,7 +3724,8 @@ h-[420px]
         <h3
           className="
             font-heading
-            text-4xl
+            text-3xl
+md:text-4xl
             font-light
             mb-4
           "
@@ -3559,8 +3752,8 @@ h-[420px]
           className="
             border-t
             border-white/10
-            pt-6
-            mb-8
+            pt-5
+            mb-6
           "
         >
 
@@ -3577,26 +3770,32 @@ h-[420px]
             Starting from
           </p>
 
-          <p
-            className="
-              font-heading
-              text-3xl
-              font-light
-              text-white
-            "
-          >
-            KES XXX,XXX
-            <span
-              className="
-                font-[var(--font-avenir)]
-                text-sm
-                text-gray-500
-                ml-2
-              "
-            >
-              / m²
-            </span>
-          </p>
+          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+  <p
+    className="
+      font-heading
+      text-2xl
+      sm:text-3xl
+      font-light
+      text-white
+      whitespace-nowrap
+    "
+  >
+    KES XXX,XXX
+  </p>
+
+  <span
+    className="
+      font-[var(--font-avenir)]
+      text-xs
+      md:text-sm
+      text-gray-500
+      whitespace-nowrap
+    "
+  >
+    / m²
+  </span>
+</div>
 
         </div>
 
@@ -3671,12 +3870,18 @@ h-[420px]
           relative
           flex
           flex-col
-          min-h-[620px]
-          rounded-[30px]
+          min-h-0
+md:min-h-[580px]
+xl:min-h-[620px]
+rounded-2xl
+md:rounded-[26px]
           border
           border-white/10
           bg-[#0a1828]
-          p-8
+          p-5
+sm:p-6
+md:p-7
+xl:p-8
           overflow-hidden
           transition-all
           duration-500
@@ -3704,11 +3909,13 @@ h-[420px]
         <p
           className="
             font-[var(--font-avenir)]
-            text-[12px]
+            text-[10px]
             uppercase
-            tracking-[4px]
+md:text-[11px]
+tracking-[3px]
+md:tracking-[4px]
             text-[#D4A85A]
-            mb-5
+            mb-4
           "
         >
           Package 02
@@ -3717,7 +3924,8 @@ h-[420px]
         <h3
           className="
             font-heading
-            text-4xl
+            text-3xl
+md:text-4xl
             font-light
             mb-4
           "
@@ -3744,8 +3952,8 @@ h-[420px]
           className="
             border-t
             border-white/10
-            pt-6
-            mb-8
+            pt-5
+            mb-6
           "
         >
 
@@ -3762,25 +3970,32 @@ h-[420px]
             Starting from
           </p>
 
-          <p
-            className="
-              font-heading
-              text-3xl
-              font-light
-            "
-          >
-            KES XXX,XXX
-            <span
-              className="
-                font-[var(--font-avenir)]
-                text-sm
-                text-gray-500
-                ml-2
-              "
-            >
-              / m²
-            </span>
-          </p>
+          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+  <p
+    className="
+      font-heading
+      text-2xl
+      sm:text-3xl
+      font-light
+      text-white
+      whitespace-nowrap
+    "
+  >
+    KES XXX,XXX
+  </p>
+
+  <span
+    className="
+      font-[var(--font-avenir)]
+      text-xs
+      md:text-sm
+      text-gray-500
+      whitespace-nowrap
+    "
+  >
+    / m²
+  </span>
+</div>
 
         </div>
 
@@ -3855,12 +4070,18 @@ h-[420px]
           relative
           flex
           flex-col
-          min-h-[620px]
-          rounded-[30px]
+          min-h-0
+md:min-h-[580px]
+xl:min-h-[620px]
+rounded-2xl
+md:rounded-[26px]
           border
           border-[#D4A85A]/40
           bg-[#0a1828]
-          p-8
+         p-5
+sm:p-6
+md:p-7
+xl:p-8
           overflow-hidden
           transition-all
           duration-500
@@ -3884,8 +4105,10 @@ h-[420px]
         <div
           className="
             absolute
-            top-7
-            right-7
+            top-5
+right-5
+md:top-7
+md:right-7
             px-3
             py-1
             rounded-full
@@ -3903,11 +4126,13 @@ h-[420px]
         <p
           className="
             font-[var(--font-avenir)]
-            text-[12px]
+            text-[10px]
             uppercase
-            tracking-[4px]
+            md:text-[11px]
+tracking-[3px]
+md:tracking-[4px]
             text-[#D4A85A]
-            mb-5
+            mb-4
           "
         >
           Package 03
@@ -3916,7 +4141,8 @@ h-[420px]
         <h3
           className="
             font-heading
-            text-4xl
+            text-3xl
+md:text-4xl
             font-light
             mb-4
           "
@@ -3943,8 +4169,8 @@ h-[420px]
           className="
             border-t
             border-white/10
-            pt-6
-            mb-8
+            pt-5
+            mb-6
           "
         >
 
@@ -3961,25 +4187,32 @@ h-[420px]
             Starting from
           </p>
 
-          <p
-            className="
-              font-heading
-              text-3xl
-              font-light
-            "
-          >
-            KES XXX,XXX
-            <span
-              className="
-                font-[var(--font-avenir)]
-                text-sm
-                text-gray-500
-                ml-2
-              "
-            >
-              / m²
-            </span>
-          </p>
+          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+  <p
+    className="
+      font-heading
+      text-2xl
+      sm:text-3xl
+      font-light
+      text-white
+      whitespace-nowrap
+    "
+  >
+    KES XXX,XXX
+  </p>
+
+  <span
+    className="
+      font-[var(--font-avenir)]
+      text-xs
+      md:text-sm
+      text-gray-500
+      whitespace-nowrap
+    "
+  >
+    / m²
+  </span>
+</div>
 
         </div>
 
@@ -4001,7 +4234,7 @@ h-[420px]
 
           <ul
             className="
-              space-y-4
+              space-y-3
               font-[var(--font-avenir)]
               text-sm
               font-light
@@ -4023,15 +4256,21 @@ h-[420px]
         <button
   onClick={() => setSelectedPackage("luxury")}
   className="
-    px-7
-    py-3
+    w-full
+md:w-auto
+mt-6
+px-5
+md:px-7
+py-3
     rounded-full
     border
     border-[#D4A85A]
     text-[#D4A85A]
     uppercase
-    tracking-[2px]
-    text-sm
+    tracking-[1.5px]
+md:tracking-[2px]
+text-xs
+md:text-sm
     transition-all
     duration-300
     hover:bg-[#D4A85A]
@@ -4054,12 +4293,18 @@ h-[420px]
           relative
           flex
           flex-col
-          min-h-[620px]
-          rounded-[30px]
+         min-h-0
+md:min-h-[580px]
+xl:min-h-[620px]
+rounded-2xl
+md:rounded-[26px]
           border
           border-white/10
           bg-[#0a1828]
-          p-8
+          p-5
+sm:p-6
+md:p-7
+xl:p-8
           overflow-hidden
           transition-all
           duration-500
@@ -4087,11 +4332,13 @@ h-[420px]
         <p
           className="
             font-[var(--font-avenir)]
-            text-[12px]
+            text-[10px]
             uppercase
-            tracking-[4px]
+            md:text-[11px]
+tracking-[3px]
+md:tracking-[4px]
             text-[#D4A85A]
-            mb-5
+            mb-4
           "
         >
           Package 04
@@ -4100,7 +4347,8 @@ h-[420px]
         <h3
           className="
             font-heading
-            text-4xl
+            text-3xl
+md:text-4xl
             font-light
             mb-4
           "
@@ -4127,8 +4375,8 @@ h-[420px]
           className="
             border-t
             border-white/10
-            pt-6
-            mb-8
+            pt-5
+            mb-6
           "
         >
 
@@ -4145,26 +4393,32 @@ h-[420px]
             Starting from
           </p>
 
-          <p
-            className="
-              font-heading
-              text-3xl
-              font-light
-            "
-          >
-            KES XXX,XXX
-            <span
-              className="
-                font-[var(--font-avenir)]
-                text-sm
-                text-gray-500
-                ml-2
-              "
-            >
-              / m²
-            </span>
-          </p>
+         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+  <p
+    className="
+      font-heading
+      text-2xl
+      sm:text-3xl
+      font-light
+      text-white
+      whitespace-nowrap
+    "
+  >
+    KES XXX,XXX
+  </p>
 
+  <span
+    className="
+      font-[var(--font-avenir)]
+      text-xs
+      md:text-sm
+      text-gray-500
+      whitespace-nowrap
+    "
+  >
+    / m²
+  </span>
+</div>
         </div>
 
 
@@ -4237,15 +4491,20 @@ h-[420px]
 
     <div
       className="
-        mt-20
-        rounded-[32px]
+       mt-10
+md:mt-12
+rounded-2xl
+md:rounded-[28px]
         border
         border-white/10
         bg-[#0a1828]
-        px-8
-        py-10
-        lg:px-14
-        lg:py-12
+        px-5
+sm:px-6
+md:px-8
+py-7
+md:py-9
+lg:px-10
+lg:py-10
         flex
         flex-col
         lg:flex-row
@@ -4274,8 +4533,10 @@ h-[420px]
         <h3
           className="
             font-heading
-            text-3xl
-            lg:text-4xl
+            text-2xl
+md:text-3xl
+lg:text-4xl
+leading-[1.1]
             font-light
             mb-3
           "
@@ -4299,17 +4560,37 @@ h-[420px]
       </div>
 
 
-      <Link
+     <Link
   href="/consultation"
-  className={`px-7 py-3 rounded-full transition-all duration-300 border font-medium ${
-    scrolled
-      ? "bg-[#1c3a60] text-white border-[#1c3a60] hover:bg-[#D4A85A] hover:text-black hover:border-[#D4A85A]"
-      : "border-[#D4A85A] text-[#D4A85A] hover:bg-[#D4A85A] hover:text-black hover:shadow-[0_0_25px_rgba(212,168,90,0.45)]"
-  }`}
+  className="
+    inline-flex
+    items-center
+    justify-center
+    w-full
+    sm:w-auto
+    px-6
+    md:px-7
+    py-3
+    rounded-full
+    border
+    border-[#D4A85A]
+    text-[#D4A85A]
+    font-[var(--font-avenir)]
+    text-xs
+    md:text-sm
+    font-medium
+    uppercase
+    tracking-[1.5px]
+    md:tracking-[2px]
+    transition-all
+    duration-300
+    hover:bg-[#D4A85A]
+    hover:text-black
+    hover:shadow-[0_0_25px_rgba(212,168,90,0.30)]
+  "
 >
   Book Consultation
 </Link>
-
     </div>
 
   </div>
@@ -4327,8 +4608,10 @@ h-[420px]
       justify-center
       bg-black/80
       backdrop-blur-md
-      px-6
-      py-10
+      px-4
+sm:px-6
+py-6
+md:py-10
     "
     onClick={() => setSelectedPackage(null)}
   >
@@ -4338,14 +4621,17 @@ h-[420px]
         relative
         w-full
         max-w-3xl
-        max-h-[90vh]
+max-h-[92vh]
         overflow-y-auto
-        rounded-[32px]
+        rounded-2xl
+md:rounded-[28px]
         border
         border-white/10
         bg-[#071321]
-        p-8
-        lg:p-12
+        p-5
+sm:p-6
+md:p-8
+lg:p-10
         shadow-[0_0_80px_rgba(0,0,0,0.5)]
       "
       onClick={(e) => e.stopPropagation()}
@@ -4671,7 +4957,7 @@ h-[420px]
           </Link>
 
           <Link
-            href="/3d-visualization"
+            href="/3d"
             className="
               text-gray-300
               hover:text-[#D4A85A]

@@ -435,9 +435,9 @@ export default function StudentsPage() {
       <section
         id="student-services"
         className="
-          py-20
-          md:py-24
-          lg:py-28
+          py-10
+  md:py-12
+  lg:py-14
         "
       >
 
@@ -641,9 +641,9 @@ export default function StudentsPage() {
 
       <section
         className="
-          py-20
-          md:py-24
-          lg:py-28
+          py-10
+  md:py-12
+  lg:py-14
         "
       >
 
@@ -859,9 +859,9 @@ export default function StudentsPage() {
 
       <section
         className="
-          py-20
-          md:py-24
-          lg:py-28
+          py-10
+  md:py-12
+  lg:py-14
         "
       >
 
@@ -1046,9 +1046,9 @@ export default function StudentsPage() {
 
       <section
         className="
-          py-20
-          md:py-24
-          lg:py-28
+          py-10
+  md:py-12
+  lg:py-14
         "
       >
 

@@ -2,14 +2,18 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
+      setScrolled(window.scrollY > 60);
     };
+
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 
@@ -17,6 +21,22 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  /*
+    Prevent the page behind the mobile menu
+    from scrolling while the menu is open.
+  */
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   const navItems = [
     {
@@ -49,164 +69,531 @@ export default function Navbar() {
     },
   ];
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
-    <header
-      className={`
-        fixed
-        top-0
-        left-0
-        w-full
-        z-50
-        transition-all
-        duration-500
-        ${
-          scrolled
-            ? "bg-white shadow-lg py-2"
-            : "bg-transparent py-4"
-        }
-      `}
-    >
-      <div
-        className="
-          max-w-[1800px]
-          mx-auto
-          flex
-          items-center
-          px-6
-          md:px-10
-          lg:px-16
-          py-4
-          md:py-6
-        "
+    <>
+      {/* =====================================================
+          MAIN NAVBAR
+      ===================================================== */}
+
+      <header
+        className={`
+          fixed
+          top-0
+          left-0
+          z-50
+          w-full
+          transition-all
+          duration-300
+          ${
+            scrolled || menuOpen
+              ? "bg-white shadow-[0_4px_30px_rgba(0,0,0,0.06)]"
+              : "bg-transparent"
+          }
+        `}
       >
+        <div
+  className={`
+    max-w-[1800px]
+    mx-auto
+    px-5
+    md:px-8
+    lg:px-12
+    xl:px-14
+    flex
+    items-center
+    transition-all
+    duration-300
 
-        {/* =====================================================
-            LOGO
-        ===================================================== */}
+    ${
+  scrolled || menuOpen
+    ? `
+      h-[54px]
+      md:h-[54px]
+      lg:h-[54px]
+    `
+    : `
+      h-[64px]
+      md:h-[70px]
+      lg:h-[76px]
+    `
+}
+  `}
+>
+          {/* =====================================================
+              LOGO
+          ===================================================== */}
 
-        <Link
-          href="/"
-          className="
-            flex
-            items-center
-            flex-shrink-0
-          "
-        >
-          <img
-            src={
-              scrolled
-                ? "/logo/logo-black.png"
-                : "/logo/logo-white.png"
-            }
-            alt="Apiyo Design Studio"
-            draggable={false}
+          <Link
+            href="/"
+            onClick={closeMenu}
+            aria-label="Apiyo Design Studio Home"
             className="
-              h-12
-              md:h-14
-              lg:h-16
-              w-auto
-              select-none
+              flex
+              items-center
+              flex-shrink-0
+            "
+          >
+            <img
+              src={
+                scrolled || menuOpen
+                  ? "/logo/logo-black.png"
+                  : "/logo/logo-white.png"
+              }
+              alt="Apiyo Design Studio"
+              draggable={false}
+              className={`
+  w-auto
+  select-none
+  transition-all
+  duration-300
+
+  ${
+    scrolled || menuOpen
+      ? "h-7 md:h-7 lg:h-8"
+      : "h-9 md:h-10 lg:h-11"
+  }
+`}
+            />
+          </Link>
+
+          {/* =====================================================
+              DESKTOP NAVIGATION
+          ===================================================== */}
+
+          <nav
+            className={`
+              hidden
+              xl:flex
+              flex-1
+              items-center
+              justify-center
+              gap-7
+              2xl:gap-9
+
+              font-[var(--font-avenir)]
+              text-[11px]
+              2xl:text-[12px]
+             font-medium
+              uppercase
+              tracking-[0.14em]
+
+              ${
+                scrolled
+                  ? "text-[#1c3a60]"
+                  : "text-white"
+              }
+            `}
+          >
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="
+                  relative
+                  whitespace-nowrap
+
+                  transition-colors
+                  duration-300
+
+                  hover:text-[#D4A85A]
+
+                  after:absolute
+                  after:left-0
+                  after:-bottom-2
+                  after:h-px
+                  after:w-0
+                  after:bg-[#D4A85A]
+                  after:transition-all
+                  after:duration-300
+
+                  hover:after:w-full
+                "
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* =====================================================
+              DESKTOP CONSULTATION
+          ===================================================== */}
+
+          <Link
+            href="/consultation"
+            className={`
+              hidden
+              xl:inline-flex
+              items-center
+              justify-center
+
+              px-5
+              h-[34px]
+
+              rounded-full
+              border
+
+              font-[var(--font-avenir)]
+              text-[12px]
+              font-medium
+              tracking-[0.02em]
+              whitespace-nowrap
+
               transition-all
               duration-300
-            "
-          />
-        </Link>
 
-        {/* =====================================================
-            DESKTOP NAVIGATION
-        ===================================================== */}
+              ${
+                scrolled
+                  ? `
+                    border-[#1c3a60]
+                    text-[#1c3a60]
+                    hover:bg-[#1c3a60]
+                    hover:text-white
+                  `
+                  : `
+                    border-[#D4A85A]
+                    text-[#D4A85A]
+                    hover:bg-[#D4A85A]
+                    hover:text-[#071321]
+                  `
+              }
+            `}
+          >
+            Book Consultation
+          </Link>
+
+          {/* =====================================================
+              MOBILE / TABLET CONTROLS
+          ===================================================== */}
+
+          <div
+            className="
+              xl:hidden
+              ml-auto
+              flex
+              items-center
+              gap-3
+            "
+          >
+            {/* SMALL CONSULTATION BUTTON */}
+
+            <Link
+              href="/consultation"
+              onClick={closeMenu}
+              className={`
+                inline-flex
+                items-center
+                justify-center
+
+                h-[36px]
+                px-4
+
+                rounded-full
+                border
+
+                font-[var(--font-avenir)]
+                text-[10px]
+                sm:text-[11px]
+                font-medium
+                tracking-[0.02em]
+                whitespace-nowrap
+
+                transition-colors
+                duration-300
+
+                ${
+                  scrolled || menuOpen
+                    ? `
+                      border-[#1c3a60]
+                      text-[#1c3a60]
+                    `
+                    : `
+                      border-[#D4A85A]
+                      text-[#D4A85A]
+                    `
+                }
+              `}
+            >
+              Book Consultation
+            </Link>
+
+            {/* HAMBURGER */}
+
+            <button
+              type="button"
+              onClick={() =>
+                setMenuOpen((current) => !current)
+              }
+              aria-label={
+                menuOpen
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
+              }
+              aria-expanded={menuOpen}
+              className={`
+                w-10
+                h-10
+
+                flex
+                items-center
+                justify-center
+
+                rounded-full
+                border
+
+                transition-all
+                duration-300
+
+                ${
+                  scrolled || menuOpen
+                    ? `
+                      border-[#1c3a60]/20
+                      text-[#1c3a60]
+                    `
+                    : `
+                      border-white/30
+                      text-white
+                    `
+                }
+              `}
+            >
+              {menuOpen ? (
+                <X size={20} strokeWidth={1.5} />
+              ) : (
+                <Menu size={21} strokeWidth={1.5} />
+              )}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* =====================================================
+          MOBILE BACKDROP
+      ===================================================== */}
+
+      <button
+        type="button"
+        aria-label="Close navigation menu"
+        onClick={closeMenu}
+        className={`
+          fixed
+          inset-0
+          z-[55]
+          xl:hidden
+
+          bg-black/50
+          backdrop-blur-[2px]
+
+          transition-opacity
+          duration-300
+
+          ${
+            menuOpen
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          }
+        `}
+      />
+
+      {/* =====================================================
+          MOBILE SLIDE MENU
+      ===================================================== */}
+
+      <aside
+        className={`
+          fixed
+          top-0
+          right-0
+          z-[60]
+
+          xl:hidden
+
+          h-[100dvh]
+          w-[88%]
+          max-w-[390px]
+
+          bg-[#071321]
+          text-white
+
+          shadow-[-20px_0_60px_rgba(0,0,0,0.25)]
+
+          transition-transform
+          duration-500
+          ease-out
+
+          ${
+            menuOpen
+              ? "translate-x-0"
+              : "translate-x-full"
+          }
+        `}
+      >
+        {/* MENU HEADER */}
+
+        <div
+          className="
+            h-[68px]
+            px-6
+
+            flex
+            items-center
+            justify-between
+
+            border-b
+            border-white/10
+          "
+        >
+          <Link
+            href="/"
+            onClick={closeMenu}
+            aria-label="Apiyo Design Studio Home"
+          >
+            <img
+              src="/logo/logo-white.png"
+              alt="Apiyo Design Studio"
+              draggable={false}
+              className="
+                h-9
+                w-auto
+                select-none
+              "
+            />
+          </Link>
+
+          <button
+            type="button"
+            onClick={closeMenu}
+            aria-label="Close navigation menu"
+            className="
+              w-10
+              h-10
+
+              rounded-full
+
+              border
+              border-white/15
+
+              flex
+              items-center
+              justify-center
+
+              text-white
+
+              hover:border-[#D4A85A]
+              hover:text-[#D4A85A]
+
+              transition-colors
+              duration-300
+            "
+          >
+            <X size={21} strokeWidth={1.5} />
+          </button>
+        </div>
+
+        {/* MENU LINKS */}
 
         <nav
-          className={`
-            hidden
-            xl:flex
-            mx-auto
-            items-center
-            gap-8
-            2xl:gap-10
-            text-sm
-            uppercase
-            tracking-[1.5px]
-            ${
-              scrolled
-                ? "text-[#1c3a60]"
-                : "text-white"
-            }
-          `}
+          className="
+            px-7
+            pt-7
+          "
         >
-          {navItems.map((item) => (
+          {navItems.map((item, index) => (
             <Link
               key={item.name}
               href={item.href}
+              onClick={closeMenu}
               className="
-                relative
-                whitespace-nowrap
-                transition-all
+                group
+
+                flex
+                items-center
+                justify-between
+
+                py-[18px]
+
+                border-b
+                border-white/10
+
+                font-[var(--font-garamond)]
+                text-[25px]
+                font-light
+
+                transition-colors
                 duration-300
+
                 hover:text-[#D4A85A]
-                hover:tracking-[3px]
-                hover:scale-105
-                after:absolute
-                after:left-0
-                after:-bottom-2
-                after:h-[2px]
-                after:w-0
-                after:bg-[#D4A85A]
-                after:transition-all
-                after:duration-300
-                hover:after:w-full
               "
             >
-              {item.name}
+              <span>{item.name}</span>
+
+              <span
+                className="
+                  font-[var(--font-avenir)]
+                  text-[9px]
+                  tracking-[0.15em]
+                  text-white/25
+
+                  group-hover:text-[#D4A85A]
+                "
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
             </Link>
           ))}
         </nav>
 
-        {/* =====================================================
-            CONSULTATION BUTTON
-        ===================================================== */}
+        {/* MENU BOTTOM */}
 
-        <Link
-          href="/consultation"
-          className={`
-            hidden
-            md:inline-flex
-            items-center
-            justify-center
-            px-5
-            lg:px-7
-            py-3
-            rounded-full
-            transition-all
-            duration-300
-            border
-            font-[var(--font-avenir)]
-            text-sm
-            whitespace-nowrap
-            ${
-              scrolled
-                ? `
-                  bg-[#1c3a60]
-                  text-white
-                  border-[#1c3a60]
-                  hover:bg-[#D4A85A]
-                  hover:text-black
-                  hover:border-[#D4A85A]
-                `
-                : `
-                  border-[#D4A85A]
-                  text-[#D4A85A]
-                  hover:bg-[#D4A85A]
-                  hover:text-black
-                  hover:shadow-[0_0_25px_rgba(212,168,90,0.45)]
-                `
-            }
-          `}
-        >
-          Book Consultation
-        </Link>
+        <div className="px-7 pt-8">
+          <Link
+            href="/consultation"
+            onClick={closeMenu}
+            className="
+              w-full
+              h-[48px]
 
-      </div>
-    </header>
+              inline-flex
+              items-center
+              justify-center
+
+              rounded-full
+
+              bg-[#D4A85A]
+              text-[#071321]
+
+              font-[var(--font-avenir)]
+              text-[12px]
+              font-medium
+
+              transition-colors
+              duration-300
+
+              hover:bg-white
+            "
+          >
+            Book Consultation
+          </Link>
+
+          <p
+            className="
+              mt-6
+
+              font-[var(--font-avenir)]
+              text-[9px]
+              uppercase
+              tracking-[0.22em]
+
+              text-white/30
+            "
+          >
+            Architecture · Interiors · Visualization
+          </p>
+        </div>
+      </aside>
+    </>
   );
 }

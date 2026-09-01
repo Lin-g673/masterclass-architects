@@ -105,16 +105,33 @@ return (
 
     <div className="max-w-4xl">
 
-      <p
-        className="
-        uppercase
-        tracking-[6px]
-        text-[#D4A85A]
-        mb-6
-        "
-      >
-        Design Consultation
-      </p>
+      <div
+  className="
+    flex
+    items-center
+    gap-4
+    mb-8
+  "
+>
+  <div className="w-10 h-px bg-[#D4A85A]" />
+
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Design Consultation
+  </p>
+
+  <div className="w-10 h-px bg-[#D4A85A]" />
+</div>
 
       <h1
         className="
@@ -209,7 +226,7 @@ md:text-xl
 
 <section
   id="service-selector"
-  className="py-20 md:py-24 lg:py-32"
+  className="py-14 md:py-16 lg:py-20"
 >
 
   <div
@@ -269,7 +286,18 @@ lg:mb-20
 
         <button
           key={item}
-          onClick={() => setService(item)}
+          onClick={() => {
+  setService(item);
+
+  setTimeout(() => {
+    document
+      .getElementById("consultation-form")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+  }, 100);
+}}
           className={`
           rounded-[32px]
           border
@@ -312,7 +340,14 @@ lg:p-10
 
 </section>
 
-<section className="py-20 md:py-24 lg:py-32">
+<section
+  id="consultation-form"
+   className="
+    scroll-mt-24
+    py-14
+    md:py-16
+    lg:py-20"
+>
 
   <div
     className="
@@ -703,7 +738,7 @@ lg:p-10
 
 {/* CONTACT OPTIONS */}
 
-<section className="py-20 md:py-24 lg:py-32">
+<section className="py-14 md:py-16 lg:py-20">
 
   <div
   className="
@@ -920,7 +955,7 @@ lg:p-10
 </section>
 
 
-<section className="py-20 md:py-24 lg:py-32">
+<section className="py-14 md:py-16 lg:py-20">
 
   <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10">
     <p
@@ -1024,7 +1059,7 @@ md:text-5xl
 </section>
 
 
-<section className="pb-40">
+<section className="pb-24 md:pb-28 lg:pb-32">
 
   <div
     className="

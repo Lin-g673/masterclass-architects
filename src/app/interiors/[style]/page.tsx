@@ -349,7 +349,7 @@ export default function StylePage() {
   const currentStyle =
     styleData[style as keyof typeof styleData];
 
-  const [scrolled, setScrolled] = useState(false);
+
 
   const [activeSpace, setActiveSpace] =
     useState("Living Room");
@@ -365,15 +365,11 @@ export default function StylePage() {
   ===================================================== */
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-
+    
     const disableContextMenu = (e: MouseEvent) => {
       e.preventDefault();
     };
 
-    window.addEventListener("scroll", handleScroll);
 
     document.addEventListener(
       "contextmenu",
@@ -381,11 +377,7 @@ export default function StylePage() {
     );
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
-
+      
       document.removeEventListener(
         "contextmenu",
         disableContextMenu
@@ -561,37 +553,49 @@ export default function StylePage() {
             h-full
             flex
             items-center
-            px-8
-            md:px-16
-            lg:px-20
+            px-5
+sm:px-6
+md:px-8
+lg:px-10
+xl:px-12
           "
         >
 
           <div className="max-w-4xl">
 
-            <p
-              className="
-                font-[var(--font-avenir)]
-                uppercase
-                tracking-[5px]
-                text-[#D4A85A]
-                text-sm
-                md:text-base
-                mb-6
-              "
-            >
-              Interior Design Style
-            </p>
+            <div className="flex items-center gap-4 mb-6 md:mb-8">
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Interior Design Style
+  </p>
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+</div>
 
             <h1
               className="
                 font-heading
-                text-6xl
-                md:text-7xl
-                lg:text-8xl
-                font-light
-                leading-[0.95]
-                mb-10
+                text-5xl
+sm:text-6xl
+md:text-7xl
+lg:text-8xl
+font-light
+leading-[1.02]
+md:leading-[0.98]
+mb-7
+md:mb-10
               "
             >
               {currentStyle.title}
@@ -610,9 +614,10 @@ export default function StylePage() {
             <p
               className="
                 font-[var(--font-avenir)]
-                text-lg
-                md:text-xl
-                lg:text-2xl
+                text-sm
+sm:text-base
+md:text-lg
+lg:text-xl
                 font-light
                 text-gray-300
                 max-w-2xl
@@ -674,40 +679,52 @@ export default function StylePage() {
           SPACE EXPLORER
       ===================================================== */}
 
-      <section className="pt-20 pb-16">
+      <section className="pt-10 md:pt-12 lg:pt-14 pb-8 md:pb-10">
 
         <div
           className="
-            max-w-[1900px]
-            mx-auto
-            px-6
-            md:px-10
-            lg:px-16
+            max-w-[1500px]
+mx-auto
+px-5
+sm:px-6
+md:px-8
+lg:px-10
+xl:px-12
           "
         >
 
-          <p
-            className="
-              font-[var(--font-avenir)]
-              uppercase
-              tracking-[12px]
-              text-[#D4A85A]
-              text-center
-              text-medium
-              mb-4
-            "
-          >
-            Explore The Style
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-5 md:mb-6">
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Explore The Style
+  </p>
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+</div>
 
           <h2
             className="
               font-heading
               text-center
-              text-4xl
-              md:text-5xl
-              font-light
-              mb-12
+              text-3xl
+sm:text-4xl
+md:text-5xl
+font-light
+leading-[1.08]
+mb-8
+md:mb-10
             "
           >
             Explore Every Space
@@ -737,10 +754,10 @@ md:gap-4
                     handleSpaceChange(space.name)
                   }
                   className={`
-                   min-h-[70px]
-sm:min-h-[80px]
-md:h-[100px]
-                    rounded-3xl
+                   min-h-[72px]
+sm:min-h-[78px]
+md:h-[90px]
+rounded-2xl
                     border
                     cursor-pointer
                     transition-all
@@ -768,7 +785,7 @@ md:h-[100px]
                     className="text-[#D4A85A]"
                   />
 
-                  <span className="text-sm md:text-base font-medium">
+                  <span className="text-xs sm:text-sm md:text-base font-medium">
                     {space.name}
                   </span>
 
@@ -786,51 +803,64 @@ md:h-[100px]
           GALLERY
       ===================================================== */}
 
-      <section className="pb-16 md:pb-20">
+      <section className="pb-10 md:pb-12 lg:pb-14">
 
         <div
           className="
-            w-full
-            px-6
-            md:px-10
-            lg:px-16
-            xl:px-24
+            max-w-[1500px]
+mx-auto
+px-5
+sm:px-6
+md:px-8
+lg:px-10
+xl:px-12
           "
         >
 
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 md:mb-10">
 
-            <p
-              className="
-                font-[var(--font-avenir)]
-                uppercase
-                tracking-[10px]
-                text-[#D4A85A]
-                text-medium
-                mb-4
-              "
-            >
-              {currentStyle.title}
-            </p>
+  <div className="flex items-center justify-center gap-4 mb-5">
 
-            <h2
-              className="
-                font-heading
-                text-4xl
-                md:text-5xl
-                font-light
-              "
-            >
-              {activeSpace}
-            </h2>
+    <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
 
-          </div>
+    <p
+      className="
+        font-[var(--font-avenir)]
+        uppercase
+        tracking-[5px]
+        md:tracking-[8px]
+        text-[#D4A85A]
+        text-[10px]
+        md:text-xs
+        whitespace-nowrap
+      "
+    >
+      {currentStyle.title}
+    </p>
+
+    <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  </div>
+
+  <h2
+    className="
+      font-heading
+      text-3xl
+      sm:text-4xl
+      md:text-5xl
+      font-light
+      leading-[1.08]
+    "
+  >
+    {activeSpace}
+  </h2>
+
+</div>
 
           {currentGallery.length > 0 ? (
 <div
   className="
-    mt-12
-    md:mt-16
+    mt-0
     mb-1
     grid
     grid-cols-1
@@ -839,8 +869,7 @@ md:h-[100px]
     w-full
     max-w-[1800px]
     mx-auto
-    px-0
-    md:px-4
+   
   "
 >
               {currentGallery.map(
@@ -857,7 +886,7 @@ md:h-[100px]
     relative
     w-full
     overflow-hidden
-    rounded-[16px]
+    rounded-2xl
     bg-[#0a1828]
     text-left
     focus:outline-none
@@ -1175,16 +1204,17 @@ md:h-[100px]
           CONSULTATION CTA
       ===================================================== */}
 
-      <section className="py-16 md:py-20 lg:py-24">
+      <section className="py-10 md:py-12 lg:py-14">
 
         <div
           className="
-            max-w-[1900px]
-            mx-auto
-            px-6
-            md:px-10
-            lg:px-16
-            xl:px-24
+            max-w-[1500px]
+mx-auto
+px-5
+sm:px-6
+md:px-8
+lg:px-10
+xl:px-12
             grid
             lg:grid-cols-2
             gap-10
@@ -1198,30 +1228,38 @@ lg:gap-20
 
           <div className="max-w-[800px]">
 
-            <p
-              className="
-                font-[var(--font-avenir)]
-                uppercase
-                tracking-[5px]
-                text-[#D4A85A]
-                text-xs
-                md:text-sm
-                mb-6
-              "
-            >
-              Start Your Project
-            </p>
+            <div className="flex items-center gap-4 mb-6 md:mb-8">
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Start Your Project
+  </p>
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+</div>
 
             <h2
               className="
                 font-heading
                 text-4xl
-sm:text-5xl
-md:text-6xl
-lg:text-7xl
+md:text-5xl
+lg:text-6xl
+font-light
+leading-[1.05]
                 font-light
                 leading-[1.05]
-                mb-8
+                mb-6
               "
             >
               Let's Design
@@ -1232,14 +1270,14 @@ lg:text-7xl
             <p
               className="
                 font-[var(--font-avenir)]
-                text-base
-sm:text-lg
-md:text-xl
+                text-sm
+md:text-base
                 font-light
                 text-gray-300
                 leading-relaxed
                 max-w-2xl
-                mb-14
+                mb-8
+md:mb-10
               "
             >
               Every interior project begins with a design
@@ -1251,23 +1289,24 @@ md:text-xl
 
             <div
               className="
-                grid
-                sm:grid-cols-2
-                gap-10
+               grid
+sm:grid-cols-2
+gap-6
+md:gap-8
               "
             >
 
               <div>
 
-                <div className="text-[#D4A85A] text-3xl mb-4">
+                <div className="text-[#D4A85A] text-2xl mb-3">
                   ✦
                 </div>
 
-                <h3 className="text-lg md:text-xl font-medium mb-3">
+                <h3 className="text-base md:text-lg font-medium mb-2">
                   Personalized Design Direction
                 </h3>
 
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-sm text-gray-400 leading-relaxed">
                   Recommendations tailored specifically to
                   your project, style preferences and lifestyle.
                 </p>
@@ -1276,15 +1315,15 @@ md:text-xl
 
               <div>
 
-                <div className="text-[#D4A85A] text-3xl mb-4">
+                <div className="text-[#D4A85A] text-2xl mb-3">
                   ✦
                 </div>
 
-                <h3 className="text-lg md:text-xl font-medium mb-3">
+                <h3 className="text-base md:text-lg font-medium mb-2">
                   Residential & Commercial
                 </h3>
 
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-sm text-gray-400 leading-relaxed">
                   Luxury residences, apartments, offices,
                   hospitality and mixed-use environments.
                 </p>
@@ -1293,15 +1332,15 @@ md:text-xl
 
               <div>
 
-                <div className="text-[#D4A85A] text-3xl mb-4">
+                <div className="text-[#D4A85A] text-2xl mb-3">
                   ✦
                 </div>
 
-                <h3 className="text-lg md:text-xl font-medium mb-3">
+                <h3 className="text-base md:text-lg font-medium mb-2">
                   End-To-End Service
                 </h3>
 
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-sm text-gray-400 leading-relaxed">
                   Concept development, visualization,
                   specifications and project guidance.
                 </p>
@@ -1310,15 +1349,15 @@ md:text-xl
 
               <div>
 
-                <div className="text-[#D4A85A] text-3xl mb-4">
+                <div className="text-[#D4A85A] text-2xl mb-3">
                   ✦
                 </div>
 
-                <h3 className="text-lg md:text-xl font-medium mb-3">
+                <h3 className="text-base md:text-lg font-medium mb-2">
                   Fast Response
                 </h3>
 
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-sm text-gray-400 leading-relaxed">
                   Most consultation requests receive a
                   response within 24 hours.
                 </p>
@@ -1339,11 +1378,12 @@ md:text-xl
                 backdrop-blur-xl
                 border
                 border-white/10
-                rounded-3xl
-lg:rounded-[40px]
-p-6
-sm:p-8
-md:p-12
+                rounded-2xl
+md:rounded-[28px]
+p-5
+sm:p-6
+md:p-8
+lg:p-10
               "
             >
 
@@ -1351,10 +1391,12 @@ md:p-12
                 className="
                   font-[var(--font-avenir)]
                   uppercase
-                  tracking-[4px]
                   text-[#D4A85A]
-                  text-xs
-                  mb-6
+                  text-[10px]
+md:text-xs
+tracking-[4px]
+md:tracking-[6px]
+mb-4
                 "
               >
                 Design Consultation
@@ -1363,10 +1405,13 @@ md:p-12
               <h3
                 className="
                   font-heading
-                  text-4xl
-                  md:text-5xl
+                  text-3xl
+md:text-4xl
+lg:text-5xl
+leading-[1.08]
+
                   font-light
-                  mb-8
+                  mb-5
                 "
               >
                 Book Your Consultation
@@ -1377,7 +1422,8 @@ md:p-12
                   font-[var(--font-avenir)]
                   text-gray-300
                   leading-relaxed
-                  mb-10
+                  mb-7
+md:mb-8
                 "
               >
                 Tell us about your project, preferred style,
@@ -1387,7 +1433,7 @@ md:p-12
                 and visualization projects.
               </p>
 
-              <div className="space-y-5 mb-12">
+              <div className="space-y-4 mb-8">
 
                 {[
                   "Residential Interiors",
@@ -1429,7 +1475,8 @@ md:p-12
                 className="
                   block
                   text-center
-                  py-5
+                  py-3.5
+md:py-4
                   rounded-full
                   bg-[#D4A85A]
                   text-black
@@ -1456,42 +1503,53 @@ md:p-12
           WHY CHOOSE US
       ===================================================== */}
 
-      <section className="pt-16 pb-20 md:pt-20 md:pb-24 lg:pb-32">
-
+      <section className="py-10 md:py-12 lg:py-14">
         <div
           className="
-            max-w-[1600px]
-            mx-auto
-            px-6
-            md:px-10
-            lg:px-16
+            max-w-[1500px]
+mx-auto
+px-5
+sm:px-6
+md:px-8
+lg:px-10
+xl:px-12
           "
         >
 
-          <p
-            className="
-              font-[var(--font-avenir)]
-              uppercase
-              tracking-[5px]
-              text-[#D4A85A]
-              text-center
-              text-xs
-              mb-4
-            "
-          >
-            Why Choose Us
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-5 md:mb-6">
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Why Choose Us
+  </p>
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+</div>
 
           <h2
             className="
               font-heading
               text-center
-              text-4xl
-              md:text-5xl
-              font-light
-              mb-10
-md:mb-14
-lg:mb-20
+              text-3xl
+sm:text-4xl
+md:text-5xl
+font-light
+leading-[1.08]
+mb-8
+md:mb-10
             "
           >
             Designed Around Your Lifestyle
@@ -1502,19 +1560,29 @@ lg:mb-20
               grid
               md:grid-cols-2
               xl:grid-cols-4
-              gap-6
-              md:gap-8
+              gap-4
+              md:gap-6
             "
           >
 
-            <div className="border border-white/10 rounded-3xl p-8 md:p-10">
+            <div className="border
+border-white/10
+rounded-2xl
+p-6
+md:p-7
+lg:p-8
+transition-all
+duration-300
+hover:border-[#D4A85A]/40
+hover:bg-white/[0.02]">
 
               <Sparkles
-                size={34}
-                className="text-[#D4A85A] mb-6"
+                size={28}
+strokeWidth={1.5}
+className="text-[#D4A85A] mb-5"
               />
 
-              <h3 className="font-heading text-2xl font-light mb-4">
+              <h3 className="font-heading text-2xl font-light mb-3">
                 Tailored Design
               </h3>
 
@@ -1525,14 +1593,24 @@ lg:mb-20
 
             </div>
 
-            <div className="border border-white/10 rounded-3xl p-8 md:p-10">
+            <div className="border
+border-white/10
+rounded-2xl
+p-6
+md:p-7
+lg:p-8
+transition-all
+duration-300
+hover:border-[#D4A85A]/40
+hover:bg-white/[0.02]">
 
               <Gem
-                size={34}
-                className="text-[#D4A85A] mb-6"
+                size={28}
+strokeWidth={1.5}
+className="text-[#D4A85A] mb-5"
               />
 
-              <h3 className="font-heading text-2xl font-light mb-4">
+              <h3 className="font-heading text-2xl font-light mb-3">
                 Premium Materials
               </h3>
 
@@ -1543,14 +1621,24 @@ lg:mb-20
 
             </div>
 
-            <div className="border border-white/10 rounded-3xl p-8 md:p-10">
+            <div className="border
+border-white/10
+rounded-2xl
+p-6
+md:p-7
+lg:p-8
+transition-all
+duration-300
+hover:border-[#D4A85A]/40
+hover:bg-white/[0.02]">
 
               <ClipboardCheck
-                size={34}
-                className="text-[#D4A85A] mb-6"
+                size={28}
+strokeWidth={1.5}
+className="text-[#D4A85A] mb-5"
               />
 
-              <h3 className="font-heading text-2xl font-light mb-4">
+              <h3 className="font-heading text-2xl font-light mb-3">
                 End-To-End Service
               </h3>
 
@@ -1561,14 +1649,24 @@ lg:mb-20
 
             </div>
 
-            <div className="border border-white/10 rounded-3xl p-8 md:p-10">
+            <div className="border
+border-white/10
+rounded-2xl
+p-6
+md:p-7
+lg:p-8
+transition-all
+duration-300
+hover:border-[#D4A85A]/40
+hover:bg-white/[0.02]">
 
               <Building2
-                size={34}
-                className="text-[#D4A85A] mb-6"
+                size={28}
+strokeWidth={1.5}
+className="text-[#D4A85A] mb-5"
               />
 
-              <h3 className="font-heading text-2xl font-light mb-4">
+              <h3 className="font-heading text-2xl font-light mb-3">
                 Timeless Aesthetics
               </h3>
 
@@ -1601,43 +1699,62 @@ lg:mb-20
           "
         >
 
-          <p
-            className="
-              font-[var(--font-avenir)]
-              uppercase
-              tracking-[5px]
-              text-[#D4A85A]
-              text-center
-              text-xs
-              mb-4
-            "
-          >
-            Explore More
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-5 md:mb-6">
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Explore More
+  </p>
+
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+</div>
 
           <h2
             className="
               font-heading
               text-center
-              text-4xl
-              md:text-5xl
-              font-light
-              mb-12
-              md:mb-16
+              text-3xl
+sm:text-4xl
+md:text-5xl
+font-light
+leading-[1.08]
+mb-8
+md:mb-10
             "
           >
             You May Also Like
           </h2>
 
           <div
-            className="
-              grid
-              grid-cols-1
-              sm:grid-cols-2
-              lg:grid-cols-5
-              gap-5
-            "
-          >
+  className="
+    flex
+    overflow-x-auto
+    gap-4
+    pb-3
+    snap-x
+    snap-mandatory
+    scrollbar-hide
+
+    lg:grid
+    lg:grid-cols-5
+    lg:overflow-visible
+    lg:pb-0
+    lg:gap-5
+  "
+>
 
             {Object.entries(styleData)
               .filter(([key]) => key !== style)
@@ -1648,13 +1765,35 @@ lg:mb-20
                   key={key}
                   href={`/interiors/${key}`}
                   className="
-                    group
-                    relative
-                    h-[260px]
-                    overflow-hidden
-                    rounded-3xl
+  group
+  relative
+  flex-none
+  w-[78vw]
+  sm:w-[46vw]
+  lg:w-auto
+  h-[240px]
+  md:h-[250px]
+  lg:h-[260px]
+  overflow-hidden
+  rounded-2xl
+  snap-start
                   "
                 >
+
+<p
+  className="
+    lg:hidden
+    mt-4
+    text-center
+    font-[var(--font-avenir)]
+    uppercase
+    tracking-[3px]
+    text-[9px]
+    text-[#D4A85A]
+  "
+>
+  Swipe To Explore →
+</p>
 
                   <img
                     src={item.hero}
@@ -1685,9 +1824,12 @@ lg:mb-20
                   <div
                     className="
                       absolute
-                      bottom-6
-                      left-6
-                      right-6
+                      bottom-5
+left-5
+right-5
+md:bottom-6
+md:left-6
+md:right-6
                     "
                   >
 
@@ -1695,7 +1837,7 @@ lg:mb-20
                       className="
                         font-heading
                         text-2xl
-                        md:text-3xl
+lg:text-3xl
                         font-light
                         text-white
                         mb-2

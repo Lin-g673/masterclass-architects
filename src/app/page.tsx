@@ -5,6 +5,8 @@ import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { Star } from "lucide-react";
 import Link from "next/link";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
 import { Phone,
   Mail,
   MapPin,} from "lucide-react";
@@ -22,21 +24,12 @@ import {
   Building2,
 } from "lucide-react";
 export default function Home() {
- const [scrolled, setScrolled] = useState(false);
+
 const [currentHero, setCurrentHero] = useState(0);
 const [currentVisualization, setCurrentVisualization] = useState(0);
 const [currentProject, setCurrentProject] = useState(0);
 const [currentInterior, setCurrentInterior] = useState(0);
 
-useEffect(() => {
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 80);
-  };
-
-  window.addEventListener("scroll", handleScroll);
-
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
 useEffect(() => {
   const interval = setInterval(() => {
     setCurrentProject((prev) =>
@@ -133,13 +126,13 @@ const heroMessages = [
 
   "Transforming concepts into reality through expert execution.",
 
-  "From concept to completion, we craft exceptional architectural and interior experiences through integrated design and expert construction, transforming visionary ideas into timeless spaces that inspire, elevate lifestyles, and leave a lasting impression.",
+  "From concept to completion, we create thoughtful architecture and interiors through integrated design, visualization and execution.",
 ];
 
 const visualizations = [
   {
     nav: "Exterior",
-    title: "ARCHITECTURAL VISUALIZATION",
+    title: "Architectural Visualization",
     description:
       "High-end exterior renderings showcasing architecture, materials, lighting and environmental context.",
     media: "/visualization/exterior.png",
@@ -148,7 +141,7 @@ const visualizations = [
 
   {
     nav: "Interior",
-    title: "INTERIOR VISUALIZATION",
+    title: "Interior Visualization",
     description:
       "Photorealistic interiors showcasing textures, furniture, finishes and atmosphere with exceptional realism.",
     media: "/visualization/interior.png",
@@ -157,7 +150,7 @@ const visualizations = [
 
   {
     nav: "Animation",
-    title: "WALKTHROUGH ANIMATION",
+    title: "Walkthrough Animation",
     description:
       "Cinematic fly-through videos that immerse viewers in the project and communicate scale, space and design intent.",
     media: "/visualization/walkthrough.mp4",
@@ -166,7 +159,7 @@ const visualizations = [
 
   {
     nav: "Marketing",
-    title: "REAL ESTATE MARKETING VISUALS",
+    title: "Real Estate Marketing Visuals",
     description:
       "Premium imagery, animations and presentation materials designed to attract buyers, investors and development partners.",
     media: "/visualization/marketing.mp4",
@@ -207,7 +200,7 @@ const interiorServices = [
 {
   title: "Residential",
   category: "Luxury Homes • Villas • Apartments",
-  image: "/interiors/homeinterior.png",
+  image: "/minimalist/minimalistbed1.png",
   description:
     "Luxury residential interiors ranging from Modern Luxury, Japandi, Scandinavian, Minimalist, Classical and Coastal design styles.",
   button: "Explore Interior Styles",
@@ -218,7 +211,7 @@ const interiorServices = [
 {
   title: "Commercial",
   category: "Offices • Corporate Spaces • Law Firms",
-  image: "/interiors/law.png",
+  image: "/interiors/commercial/corporate/board4.png",
   description:
     "Professional workspaces designed to communicate prestige and productivity.",
   button: "Explore Commercial Design",
@@ -229,7 +222,7 @@ const interiorServices = [
 {
   title: "Hospitality",
   category: "Restaurants • Cafés • Hotels",
-  image: "/interiors/restaurant.png",
+  image: "/interiors/hospitality/restaurant/restaurant4.png",
   description:
     "Experiential hospitality interiors crafted to create memorable guest experiences.",
   button: "Explore Hospitality Design",
@@ -240,7 +233,7 @@ const interiorServices = [
 {
   title: "Interior Fit-Out & Finishes",
   category: "Execution & Installation",
-  image: "/interiors/interiorfitout.png",
+  image: "/fitout/hero/interiorfitout.png",
   description:
     "Complete interior execution including cabinetry, gypsum ceilings, lighting, wall paneling and flooring.",
   button: "Explore Fit-Out Services",
@@ -319,106 +312,50 @@ const interiorServices = [
 return (
   <main className="bg-[#071321] text-white">
     
-      {/* NAVBAR */}
-      <header
-  className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-    scrolled
-      ? "bg-white shadow-lg py-2"
-      : "bg-transparent py-4"
-  }`}
->
-        <div className="max-w-[1800px] mx-auto flex items-center px-16 py-6">
-
-          <div className="flex items-center flex-shrink-0">
- <img
-  src={
-    scrolled
-      ? "/logo/logo-black.png"
-      : "/logo/logo-white.png"
-  }
-  alt="Apiyo Design Studio"
-  className="
-  h-16
-  transition-all
-  duration-300
-  "
-/>
-</div>
-
-         <nav
-  className={`hidden xl:flex mx-auto items-center gap-10 text-sm uppercase tracking-[1.5px] ${
-    scrolled ? "text-[#1c3a60]" : "text-white"
-  }`}
->
-  {[
-    "Home",
-    "House Plans",
-    "Interior Design",
-    "3D Visualization",
-    "Projects",
-    "Students",
-    "About Us",
-  
-  ].map((item) => (
-    <a
-      key={item}
-      href="#"
-      className="
-      relative
-      transition-all
-      duration-300
-      hover:text-[#D4A85A]
-      hover:tracking-[3px]
-      hover:scale-105
-      after:absolute
-      after:left-0
-      after:-bottom-2
-      after:h-[2px]
-      after:w-0
-      after:bg-[#1c3a60]
-      after:transition-all
-      after:duration-300
-      hover:after:w-full
-      "
-    >
-      {item}
-    </a>
-  ))}
-</nav>
-
-          <button
- className={`px-7 py-3 rounded-full transition-all duration-300 border font-medium ${
-  scrolled
-    ? "bg-[#1c3a60] text-white border-[#1c3a60] hover:bg-[#D4A85A] hover:text-black hover:border-[#D4A85A]"
-    : "border-[#D4A85A] text-[#D4A85A] hover:bg-[#D4A85A] hover:text-black hover:shadow-[0_0_25px_rgba(212,168,90,0.45)]"
-}`}
->
-
-
-            Book Consultation
-          </button>
-        </div>
-      </header>
+     {/* GLOBAL NAVBAR */}
+<Navbar />
 
       {/* HERO */}
     <section
-  className="relative min-h-screen flex items-center overflow-hidden"
->
-
-  <div
   className="
-  absolute
-  inset-0
-  scale-105
-  transition-all
-  duration-[2500ms]
+    relative
+    min-h-[760px]
+    h-[100svh]
+    flex
+    items-center
+    overflow-hidden
   "
-  style={{
-    backgroundImage: `url(${heroImages[currentHero]})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
-></div>
+>
+{heroImages.map((image, index) => (
+  <div
+    key={image}
+    className={`
+      absolute
+      inset-0
+      transition-opacity
+      duration-[1800ms]
+      ease-in-out
+      ${
+        currentHero === index
+          ? "opacity-100"
+          : "opacity-0"
+      }
+    `}
+  >
+    <img
+      src={image}
+      alt=""
+      draggable={false}
+      className="
+        w-full
+        h-full
+        object-cover
+        object-center
+        select-none
+      "
+    />
+  </div>
+))}
 
  <div
   className="
@@ -431,22 +368,55 @@ return (
   to-transparent
   "
 ></div>
-        <div className="relative max-w-[1800px] mx-auto px-10 w-full">
+        <div className="relative max-w-[1500px]
+mx-auto
+w-full
+px-5
+sm:px-6
+md:px-8
+lg:px-10
+xl:px-12
+pt-20
+md:pt-16">
           <div className="max-w-4xl">
 
-            <p className="uppercase tracking-[4px] text-[#D4A85A] mb-5">
-              Welcome To Apiyo Design Studio
-            </p>
+            <div className="flex items-center gap-4 mb-5 md:mb-6">
+
+  <div className="w-8 md:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[4px]
+      md:tracking-[7px]
+      text-[#D4A85A]
+      text-[9px]
+      md:text-[11px]
+      whitespace-nowrap
+    "
+  >
+    Welcome To Apiyo Design Studio
+  </p>
+
+  <div className="w-8 md:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+</div>
 
            <h1
-  style={{ fontFamily: "var(--font-bodoni)" }}
   className="
-  text-5xl
+  font-heading
+  text-[44px]
+  sm:text-5xl
   md:text-6xl
-  lg:text-[82px]
-  leading-[1.25]
-  mb-8
-  max-w-[900px]
+  lg:text-7xl
+  xl:text-[78px]
+  font-light
+  leading-[0.95]
+  tracking-[-0.02em]
+  mb-6
+  md:mb-7
+  max-w-[850px]
   "
 >
   VISUALIZE
@@ -466,93 +436,287 @@ return (
             <p
   key={currentHero}
   className="
+  font-[var(--font-avenir)]
   text-gray-200
-  text-xl
+  text-[12px]
+  sm:text-[13px]
+  md:text-sm
   leading-relaxed
-  mb-10
-  max-w-2xl
+  mb-6
+  md:mb-7
+  max-w-xl
+  md:max-w-2xl
   animate-fadeUp
-  "
+"
 >
   {heroMessages[currentHero]}
 </p>
 
             <div className="flex flex-wrap gap-4">
-              <button className="
-bg-[#D4A85A]
-text-black
-px-10
-py-4
-rounded-full
-font-semibold
-hover:scale-105
-transition-all
-duration-300
-hover:shadow-[0_0_30px_rgba(212,168,90,0.45)]
-">
-                Book Free Consultation
-              </button>
-
-              <button
+              <Link
+  href="/consultation"
   className="
-  border
-  border-[#D4A85A]
-  text-[#D4A85A]
-  px-10
-  py-4
-  rounded-full
-  transition-all
-  duration-300
-  hover:bg-[#D4A85A]
-  hover:text-black
-  hover:shadow-[0_0_25px_rgba(212,168,90,0.45)]
+    inline-flex
+    items-center
+    justify-center
+    bg-[#D4A85A]
+    text-black
+    px-6
+    md:px-8
+    py-3
+    md:py-3.5
+    rounded-full
+    font-[var(--font-avenir)]
+    text-xs
+    md:text-sm
+    font-medium
+    transition-all
+    duration-300
+    hover:scale-[1.03]
+    hover:shadow-[0_0_30px_rgba(212,168,90,0.35)]
+  "
+>
+  Book Free Consultation
+</Link>
+
+              <Link
+  href="#services"
+  className="
+    inline-flex
+    items-center
+    justify-center
+    border
+    border-[#D4A85A]
+    text-[#D4A85A]
+    px-6
+    md:px-8
+    py-3
+    md:py-3.5
+    rounded-full
+    font-[var(--font-avenir)]
+    text-xs
+    md:text-sm
+    transition-all
+    duration-300
+    hover:bg-[#D4A85A]
+    hover:text-black
   "
 >
   Our Services
-</button>
+</Link>
             </div>
           </div>
         </div>
       </section>
 
 {/* FLOATING STATS */}
-<section className="relative z-20 -mt-25 px-8">
-  <div className="max-w-[1800px] mx-auto px-10">
 
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-[620px]">
+<section className="relative z-20 -mt-20 md:-mt-16">
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+    "
+  >
+    <div
+  className="
+    grid
+    grid-cols-2
+    md:grid-cols-4
+    gap-2
+    md:gap-3
+    max-w-[760px]
+  "
+>
 
-      <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-3 shadow-[0_0_15px_rgba(212,168,90,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(212,168,90,0.18)]">
-        <h3 className="text-2xl font-bold text-[#D4A85A]">
+      {/* STAT 1 */}
+      <div
+        className="
+          backdrop-blur-xl
+          bg-white/5
+          border
+          border-white/10
+          rounded-xl
+          px-4
+py-1.5
+md:px-5
+md:py-2
+          shadow-[0_0_15px_rgba(212,168,90,0.08)]
+          transition-all
+          duration-500
+          hover:-translate-y-1
+          hover:shadow-[0_0_25px_rgba(212,168,90,0.18)]
+        "
+      >
+        <h3
+          className="
+            font-heading
+            text-lg
+md:text-xl
+            font-light
+            text-[#D4A85A]
+          "
+        >
           5+
         </h3>
-        <p className="mt-1 text-white text-sm">
+
+        <p
+          className="
+            mt-0.5
+            font-[var(--font-avenir)]
+            text-white/80
+            text-[10px]
+            sm:text-[11px]
+            md:text-xs
+            leading-tight
+          "
+        >
           Years Experience
         </p>
       </div>
 
-      <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-3 shadow-[0_0_15px_rgba(212,168,90,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(212,168,90,0.18)]">
-        <h3 className="text-2xl font-bold text-[#D4A85A]">
+
+      {/* STAT 2 */}
+      <div
+        className="
+          backdrop-blur-xl
+          bg-white/5
+          border
+          border-white/10
+          rounded-xl
+          px-4
+py-1.5
+md:px-5
+md:py-2
+          shadow-[0_0_15px_rgba(212,168,90,0.08)]
+          transition-all
+          duration-500
+          hover:-translate-y-1
+          hover:shadow-[0_0_25px_rgba(212,168,90,0.18)]
+        "
+      >
+        <h3
+          className="
+            font-heading
+            text-lg
+md:text-xl
+            font-light
+            text-[#D4A85A]
+          "
+        >
           100+
         </h3>
-        <p className="mt-1 text-white text-sm">
+
+        <p
+          className="
+            mt-0.5
+            font-[var(--font-avenir)]
+            text-white/80
+            text-[10px]
+            sm:text-[11px]
+            md:text-xs
+            leading-tight
+          "
+        >
           Projects Designed
         </p>
       </div>
 
-      <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-3 shadow-[0_0_15px_rgba(212,168,90,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(212,168,90,0.18)]">
-        <h3 className="text-2xl font-bold text-[#D4A85A]">
+
+      {/* STAT 3 */}
+      <div
+        className="
+          backdrop-blur-xl
+          bg-white/5
+          border
+          border-white/10
+          rounded-xl
+          px-4
+py-1.5
+md:px-5
+md:py-2
+          shadow-[0_0_15px_rgba(212,168,90,0.08)]
+          transition-all
+          duration-500
+          hover:-translate-y-1
+          hover:shadow-[0_0_25px_rgba(212,168,90,0.18)]
+        "
+      >
+        <h3
+          className="
+            font-heading
+            text-lg
+md:text-xl
+            font-light
+            text-[#D4A85A]
+          "
+        >
           47
         </h3>
-        <p className="mt-1 text-white text-sm">
+
+        <p
+          className="
+            mt-0.5
+            font-[var(--font-avenir)]
+            text-white/80
+            text-[10px]
+            sm:text-[11px]
+            md:text-xs
+            leading-tight
+          "
+        >
           Counties Covered
         </p>
       </div>
 
-      <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-3 shadow-[0_0_15px_rgba(212,168,90,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(212,168,90,0.18)]">
-        <h3 className="text-2xl font-bold text-[#D4A85A]">
+
+      {/* STAT 4 */}
+      <div
+        className="
+          backdrop-blur-xl
+          bg-white/5
+          border
+          border-white/10
+          rounded-xl
+          px-4
+py-1.5
+md:px-5
+md:py-2
+          shadow-[0_0_15px_rgba(212,168,90,0.08)]
+          transition-all
+          duration-500
+          hover:-translate-y-1
+          hover:shadow-[0_0_25px_rgba(212,168,90,0.18)]
+        "
+      >
+        <h3
+          className="
+            font-heading
+            text-lg
+md:text-xl
+            font-light
+            text-[#D4A85A]
+          "
+        >
           100%
         </h3>
-        <p className="mt-1 text-white text-sm">
+
+        <p
+          className="
+            mt-0.5
+            font-[var(--font-avenir)]
+            text-white/80
+            text-[10px]
+            sm:text-[11px]
+            md:text-xs
+            leading-tight
+          "
+        >
           Tailored Solutions
         </p>
       </div>
@@ -562,25 +726,67 @@ hover:shadow-[0_0_30px_rgba(212,168,90,0.45)]
 </section>
 
 
+{/* PROJECTS */}
       {/* PROJECTS */}
-      <section className="py-24">
-        <div className="w-full px-8 xl:px-16">
+      <section className="py-10 md:py-12 lg:py-14">
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+    "
+  >
 
-          <p className="uppercase tracking-[4px] text-[#D4A85A]">
-            Popular House Designs
-          </p>
+         <div className="flex items-center gap-4 mb-5 md:mb-6">
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
 
-          <h2 className="text-5xl ${cormorant.className} mt-4 mb-14">
-            Explore Our Most Requested Designs
-          </h2>
+  <p
+    className="
+      font-[var(--font-avenir)]
+      uppercase
+      tracking-[5px]
+      md:tracking-[8px]
+      text-[#D4A85A]
+      text-[10px]
+      md:text-xs
+      whitespace-nowrap
+    "
+  >
+    Popular House Designs
+  </p>
 
-          <div
+  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+</div>
+
+          <h2
   className="
-  grid
-  md:grid-cols-2
-  xl:grid-cols-3
-  gap-10
-  w-full
+    font-heading
+    text-3xl
+    sm:text-4xl
+    md:text-5xl
+    lg:text-6xl
+    font-light
+    leading-[1.05]
+    mb-8
+    md:mb-10
+  "
+>
+  Explore Our Most Requested Designs
+</h2>
+<div
+  className="
+    grid
+    grid-cols-1
+    md:grid-cols-2
+    xl:grid-cols-3
+    gap-5
+    md:gap-6
+    lg:gap-8
+    w-full
   "
 >
 
@@ -624,7 +830,10 @@ hover:shadow-[0_20px_50px_rgba(212,168,90,0.28)]
       alt={project.title}
       className="
       w-full
-      h-[520px]
+      h-[300px]
+sm:h-[340px]
+md:h-[360px]
+lg:h-[390px]
       object-cover
       transition-all
       duration-700
@@ -635,7 +844,8 @@ hover:shadow-[0_20px_50px_rgba(212,168,90,0.28)]
   {/* CONTENT BELOW IMAGE */}
 <div
   className="
-  p-8
+p-5
+md:p-6
   backdrop-blur-xl
   bg-[#071321]/85
   border-t
@@ -646,7 +856,13 @@ hover:shadow-[0_20px_50px_rgba(212,168,90,0.28)]
   "
 >
     {/* ICON ROW */}
-    <div className="grid grid-cols-2 gap-4 text-sm text-gray-700 mb-6">
+    <div className="grid
+grid-cols-2
+gap-3
+text-xs
+md:text-sm
+text-gray-700
+mb-5">
 
       <div className="flex items-center gap-2">
         <BedDouble size={18} />
@@ -670,16 +886,21 @@ hover:shadow-[0_20px_50px_rgba(212,168,90,0.28)]
 
     </div>
 
-    <button
-      className="
-      text-[#1c3a60]
-      font-semibold
-      hover:text-[#D4A85A]
-      transition-all
-      "
-    >
-      Explore Design →
-    </button>
+    <Link
+  href="/house-plans"
+  className="
+    inline-flex
+    font-[var(--font-avenir)]
+    text-xs
+    md:text-sm
+    font-medium
+    text-[#1c3a60]
+    hover:text-[#D4A85A]
+    transition-all
+  "
+>
+  Explore Design →
+</Link>
 
   </div>
 
@@ -688,153 +909,345 @@ hover:shadow-[0_20px_50px_rgba(212,168,90,0.28)]
           </div>
         </div>
       </section>
-{/* CUSTOMIZE YOUR PLAN */}
-<section className="py-32 overflow-hidden bg-[#071321]">
 
-  <div className="w-full px-12 lg:px-50">
+{/* =====================================================
+    CUSTOMIZE YOUR PLAN
+===================================================== */}
 
-    <div className="grid lg:grid-cols-[1.2fr_1.2fr_0.9fr] gap-12 items-center">
+<section className="py-10 md:py-12 lg:py-14 overflow-hidden bg-[#071321]">
 
-      {/* LEFT CONTENT */}
-      <div>
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+    "
+  >
 
-        <p className="uppercase tracking-[4px] text-[#D4A85A] mb-5 -mt-25">
-          DESIGNED AROUND YOU
-        </p>
+    <div
+      className="
+        grid
+        lg:grid-cols-[0.78fr_1.22fr]
+        gap-10
+        md:gap-12
+        lg:gap-10
+        xl:gap-12
+        items-center
+      "
+    >
 
-        <h2 className="text-5xl lg:text-6xl ${cormorant.className} leading-tight mb-8">
+      {/* =================================================
+          LEFT CONTENT
+      ================================================= */}
+      <div className="max-w-[520px]">
+
+        {/* EYEBROW */}
+        <div className="flex items-center gap-3 sm:gap-4 mb-5 md:mb-6">
+
+          <div className="w-8 sm:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+          <p
+            className="
+              font-[var(--font-avenir)]
+              uppercase
+              tracking-[4px]
+              md:tracking-[7px]
+              text-[#D4A85A]
+              text-[9px]
+              md:text-[10px]
+              whitespace-nowrap
+            "
+          >
+            Designed Around You
+          </p>
+
+          <div className="w-8 sm:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+        </div>
+
+
+        {/* HEADING */}
+        <h2
+          className="
+            font-heading
+            text-4xl
+            sm:text-5xl
+            md:text-6xl
+            font-light
+            leading-[1.05]
+            mb-5
+            md:mb-6
+          "
+        >
           Customize Your
           <br />
           Dream Home
         </h2>
 
-        <p className="text-gray-300 text-lg leading-relaxed max-w-xl mb-10">
-          Choose your dream design and customize it based on your
-          location, lifestyle and unique requirements. We can make
-          small adjustments or complete redesigns to create a home
-          that feels truly yours.
+
+        {/* DESCRIPTION */}
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-[12px]
+            sm:text-[13px]
+            md:text-sm
+            text-gray-300
+            leading-relaxed
+            max-w-[470px]
+            mb-6
+            md:mb-7
+          "
+        >
+          Start with a design you love, then tailor it to your
+          lifestyle, plot and location. We refine the layout and
+          details so the home feels truly yours.
         </p>
 
-        <div className="space-y-5 mb-12">
 
-          <div className="flex items-center gap-4">
-            <div className="w-2 h-2 rounded-full bg-[#D4A85A]" />
-            <span>Choose a house design you love</span>
+        {/* FEATURES */}
+        <div
+          className="
+            space-y-2.5
+            md:space-y-3
+            mb-7
+          "
+        >
+
+          <div className="flex items-center gap-3">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#D4A85A] flex-shrink-0" />
+
+            <span className="font-[var(--font-avenir)] text-[11px] md:text-xs text-white/80">
+              Choose a house design you love
+            </span>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="w-2 h-2 rounded-full bg-[#D4A85A]" />
-            <span>Adjust room layouts and dimensions</span>
+
+          <div className="flex items-center gap-3">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#D4A85A] flex-shrink-0" />
+
+            <span className="font-[var(--font-avenir)] text-[11px] md:text-xs text-white/80">
+              Adjust layouts and room dimensions
+            </span>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="w-2 h-2 rounded-full bg-[#D4A85A]" />
-            <span>Adapt the design to your plot and location</span>
+
+          <div className="flex items-center gap-3">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#D4A85A] flex-shrink-0" />
+
+            <span className="font-[var(--font-avenir)] text-[11px] md:text-xs text-white/80">
+              Adapt the design to your plot
+            </span>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="w-2 h-2 rounded-full bg-[#D4A85A]" />
-            <span>Receive professional drawings ready for approval</span>
+
+          <div className="flex items-center gap-3">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#D4A85A] flex-shrink-0" />
+
+            <span className="font-[var(--font-avenir)] text-[11px] md:text-xs text-white/80">
+              Receive professional approval drawings
+            </span>
           </div>
 
         </div>
 
-        <button
+
+        {/* BUTTON */}
+        <Link
+          href="/house-plans"
           className="
-          bg-[#D4A85A]
-          text-black
-          px-10
-          py-4
-          rounded-full
-          font-semibold
-          transition-all
-          duration-300
-          hover:scale-105
-          hover:shadow-[0_0_30px_rgba(212,168,90,0.45)]
+            inline-flex
+            items-center
+            justify-center
+            bg-[#D4A85A]
+            text-black
+            px-6
+            md:px-7
+            py-3
+            rounded-full
+            font-[var(--font-avenir)]
+            text-[11px]
+            md:text-xs
+            font-medium
+            transition-all
+            duration-300
+            hover:scale-[1.03]
+            hover:shadow-[0_0_30px_rgba(212,168,90,0.35)]
           "
         >
           Customize Your Plan
-        </button>
+        </Link>
 
       </div>
 
-      {/* BLUEPRINT */}
-      <div className="relative flex justify-center items-center -ml-12 -mt-30">
 
-        <img
-          src="/blueprint/blueprint.png"
-          alt="Custom House Plan"
-          className="
+      {/* =================================================
+          RIGHT VISUAL
+      ================================================= */}
+      <div
+        className="
+          relative
           w-full
-          max-w-[900px]
-          opacity-75
-          animate-blueprint
-          drop-shadow-[0_0_25px_rgba(255,255,255,0.18)]
-          "
-        />
+          min-h-[420px]
+          sm:min-h-[470px]
+          lg:min-h-[440px]
+          xl:min-h-[470px]
+          flex
+          flex-col
+          items-center
+          lg:block
+        "
+      >
 
-        {/* SCAN GLOW */}
+        {/* BLUEPRINT */}
         <div
           className="
-          absolute
-          inset-0
-          overflow-hidden
-          pointer-events-none
+            relative
+            w-full
+            max-w-[560px]
+            sm:max-w-[620px]
+
+            lg:absolute
+            lg:left-[-40px]
+            lg:top-1/2
+            lg:-translate-y-1/2
+            lg:max-w-[500px]
+
+            xl:left-[-70px]
+            xl:max-w-[560px]
           "
         >
-          <div className="blueprint-scan"></div>
+          <img
+            src="/blueprint/blueprint.png"
+            alt="Architectural floor plan"
+            className="
+              w-full
+              h-auto
+              object-contain
+              opacity-50
+            "
+          />
         </div>
 
-      </div>
 
-      {/* SEND MESSAGE */}
-      <div className="w-full max-w-[420px] ml-40
-  -mt-60">
-
-        <p className="uppercase tracking-[4px] text-[#D4A85A] mb-4">
-          Need Assistance?
-        </p>
-
-        <h3
-  className="
-  text-5xl
-  lg:text-6xl
-  ${cormorant.className}
-  text-[#D4A85A]
-  leading-tight
-  mb-8
-  "
->
-          Personalized help
-          is just a click away.
-        </h3>
-
-        <p
-          className="text-gray-300 text-lg leading-relaxed max-w-xl mb-10
-          "
-        >
-          New to the process and looking for guidance?
-          Tell us about your project and we will help you
-          choose, customize and plan the perfect design solution.
-        </p>
-
-        <button
+        {/* =================================================
+            HELP CARD
+        ================================================= */}
+        <div
           className="
-          border
-          border-[#D4A85A]
-          text-[#D4A85A]
-          px-8
-          py-4
-          rounded-full
-          transition-all
-          duration-300
-          hover:bg-[#D4A85A]
-          hover:text-black
-          hover:shadow-[0_0_25px_rgba(212,168,90,0.45)]
+            relative
+            z-20
+            w-full
+            max-w-[300px]
+            mt-5
+
+            sm:max-w-[310px]
+
+            lg:absolute
+            lg:right-0
+            lg:top-1/2
+            lg:-translate-y-1/2
+            lg:mt-0
+
+            xl:max-w-[320px]
+
+            bg-[#071321]/95
+            backdrop-blur-xl
+            border
+            border-white/15
+            rounded-2xl
+            p-5
+            md:p-5
+            xl:p-6
           "
         >
-          Send Us A Message
-        </button>
+
+          {/* EYEBROW */}
+          <div className="flex items-center gap-2.5 mb-3">
+
+            <div className="w-5 h-px bg-[#D4A85A] flex-shrink-0" />
+
+            <p
+              className="
+                font-[var(--font-avenir)]
+                uppercase
+                tracking-[3px]
+                text-[#D4A85A]
+                text-[7px]
+                whitespace-nowrap
+              "
+            >
+              Need Assistance?
+            </p>
+
+            <div className="w-5 h-px bg-[#D4A85A] flex-shrink-0" />
+
+          </div>
+
+
+          {/* CARD HEADING */}
+          <h3
+            className="
+              font-heading
+              text-2xl
+              lg:text-[26px]
+              font-light
+              leading-[1.05]
+              mb-3
+            "
+          >
+            Personalized help
+            <br />
+            is just a click away.
+          </h3>
+
+
+          {/* CARD TEXT */}
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-[10px]
+              md:text-[11px]
+              text-gray-300
+              leading-relaxed
+              mb-4
+            "
+          >
+            Need guidance? Tell us about your project and we’ll help
+            you choose, customize and plan the right design solution.
+          </p>
+
+
+          {/* CARD BUTTON */}
+          <Link
+            href="/consultation"
+            className="
+              inline-flex
+              items-center
+              justify-center
+              border
+              border-[#D4A85A]
+              text-[#D4A85A]
+              rounded-full
+              px-4
+              py-2
+              font-[var(--font-avenir)]
+              text-[9px]
+              md:text-[10px]
+              transition-all
+              duration-300
+              hover:bg-[#D4A85A]
+              hover:text-black
+            "
+          >
+            Send Us A Message →
+          </Link>
+
+        </div>
 
       </div>
 
@@ -844,451 +1257,927 @@ hover:shadow-[0_20px_50px_rgba(212,168,90,0.28)]
 
 </section>
 
+{/* =====================================================
+    INTERIOR DESIGN
+===================================================== */}
+
 {/* INTERIOR DESIGN INTRO */}
+<section className="pt-10 md:pt-12 lg:pt-14 pb-8 md:pb-10 bg-[#071321]">
 
-<section className="pt-28 pb-16 bg-[#071321]">
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+      text-center
+    "
+  >
 
-  <div className="w-full px-20 text-center">
+    {/* EYEBROW */}
+    <div className="flex items-center justify-center gap-4 mb-5 md:mb-6">
+
+      <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+      <p
+        className="
+          font-[var(--font-avenir)]
+          uppercase
+          tracking-[5px]
+          md:tracking-[8px]
+          text-[#D4A85A]
+          text-[10px]
+          md:text-xs
+          whitespace-nowrap
+        "
+      >
+        Interior Design
+      </p>
+
+      <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+    </div>
 
 
-<p className="uppercase tracking-[4px] text-[#D4A85A] mb-5">
-  Interior Design
-</p>
+    {/* HEADING */}
+    <h2
+      className="
+        font-heading
+        text-3xl
+        sm:text-4xl
+        md:text-5xl
+        lg:text-6xl
+        font-light
+        leading-[1.05]
+        mb-6
+      "
+    >
+      Luxury interiors
+      <br className="hidden sm:block" />
+      {" "}crafted for every lifestyle
+    </h2>
 
-<h2
-  className="
-  text-5xl
-  lg:text-6xl
-  leading-tight
-  mb-8
-  "
->
-  Luxury interiors
-  crafted for every lifestyle
-</h2>
 
-<p
-  className="
-  max-w-3xl
-  mx-auto
-  text-gray-300
-  text-lg
-  leading-relaxed
-  "
->
-  From private residences and executive offices
-  to restaurants and complete fit-out solutions,
-  we design interiors that balance elegance,
-  functionality and timeless appeal.
-</p>
-
+    {/* DESCRIPTION */}
+    <p
+      className="
+        max-w-3xl
+        mx-auto
+        font-[var(--font-avenir)]
+        text-sm
+        md:text-base
+        text-gray-300
+        leading-relaxed
+      "
+    >
+      From private residences and executive offices
+      to restaurants and complete fit-out solutions,
+      we design interiors that balance elegance,
+      functionality and timeless appeal.
+    </p>
 
   </div>
 
 </section>
 
+
 {/* INTERIOR DESIGN SHOWCASE */}
+<section
+  className="
+    relative
+    min-h-[620px]
+    md:min-h-[680px]
+    lg:min-h-[720px]
+    overflow-hidden
+  "
+>
 
-<section className="relative h-[900px] overflow-hidden">
-
+  {/* BACKGROUND IMAGE */}
   <div
     key={currentInterior}
     className="
-    absolute
-    inset-0
-    animate-fadeVisual
+      absolute
+      inset-0
+      animate-fadeVisual
     "
   >
     <img
       src={interiorServices[currentInterior].image}
       alt={interiorServices[currentInterior].title}
       className="
-      w-full
-      h-full
-      object-cover
+        w-full
+        h-full
+        object-cover
+        object-center
       "
     />
   </div>
 
+
+  {/* DARK OVERLAY */}
   <div
     className="
-    absolute
-    inset-0
-    bg-gradient-to-r
-    from-[#071321]/95
-    via-[#071321]/70
-    to-transparent
+      absolute
+      inset-0
+      bg-gradient-to-r
+      from-[#071321]/95
+      via-[#071321]/75
+      md:via-[#071321]/65
+      to-[#071321]/20
     "
   />
 
+
+  {/* MAIN CONTENT */}
   <div
     className="
-    relative
-    h-full
-    flex
-    items-center
-    px-20
-    pb-24
+      relative
+      z-10
+      min-h-[620px]
+      md:min-h-[680px]
+      lg:min-h-[720px]
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+      pt-16
+      pb-32
+      md:pb-28
+      flex
+      items-center
     "
   >
 
+    <div
+      key={currentInterior}
+      className="
+        max-w-xl
+        md:max-w-2xl
+        animate-fadeUp
+      "
+    >
 
-<div
-  key={currentInterior}
-  className="
-  max-w-3xl
-  animate-fadeUp
-  "
->
+      {/* CURRENT CATEGORY */}
+      <div className="flex items-center gap-4 mb-5 md:mb-6">
 
-  <h2
-    className="
-    text-6xl
-    lg:text-7xl
-    leading-tight
-    mb-6
-    "
-  >
-    {interiorServices[currentInterior].title}
-  </h2>
+        <div className="w-10 h-px bg-[#D4A85A]" />
 
-  <div
-    className="
-    h-[2px]
-    w-32
-    bg-[#D4A85A]
-    mb-8
-    "
-  />
+        <p
+          className="
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[4px]
+            md:tracking-[6px]
+            text-[#D4A85A]
+            text-[9px]
+            md:text-[10px]
+          "
+        >
+          {interiorServices[currentInterior].category}
+        </p>
 
-  <p className="text-[#D4A85A] mb-6 tracking-[2px] uppercase">
-  {interiorServices[currentInterior].category}
-</p>
+      </div>
 
-  <p
-    className="
-    text-xl
-    text-gray-200
-    leading-relaxed
-    max-w-2xl
-    mb-10
-    "
-  >
-    {interiorServices[currentInterior].description}
-  </p>
 
-  <a
-  href={interiorServices[currentInterior].link}
-  className="
-  border
-  border-[#D4A85A]
-  text-[#D4A85A]
-  px-10
-  py-4
-  rounded-full
-  inline-block
-  transition-all
-  duration-300
-  hover:bg-[#D4A85A]
-  hover:text-black
-  hover:shadow-[0_0_25px_rgba(212,168,90,0.45)]
-  "
->
-  {interiorServices[currentInterior].button}
-</a>
+      {/* TITLE */}
+      <h2
+        className="
+          font-heading
+          text-4xl
+          sm:text-5xl
+          md:text-6xl
+          lg:text-7xl
+          font-light
+          leading-[1.02]
+          mb-5
+          md:mb-6
+        "
+      >
+        {interiorServices[currentInterior].title}
+      </h2>
 
-</div>
 
+      {/* GOLD DIVIDER */}
+      <div
+        className="
+          h-px
+          w-16
+          md:w-20
+          bg-[#D4A85A]
+          mb-5
+          md:mb-6
+        "
+      />
+
+
+      {/* DESCRIPTION */}
+      <p
+        className="
+          font-[var(--font-avenir)]
+          text-sm
+          md:text-base
+          text-gray-200
+          leading-relaxed
+          max-w-xl
+          mb-7
+          md:mb-8
+        "
+      >
+        {interiorServices[currentInterior].description}
+      </p>
+
+
+      {/* LINK */}
+      <Link
+        href={interiorServices[currentInterior].link}
+        className="
+          inline-flex
+          items-center
+          justify-center
+          border
+          border-[#D4A85A]
+          text-[#D4A85A]
+          px-6
+          md:px-8
+          py-3
+          md:py-3.5
+          rounded-full
+          font-[var(--font-avenir)]
+          text-xs
+          md:text-sm
+          font-medium
+          transition-all
+          duration-300
+          hover:bg-[#D4A85A]
+          hover:text-black
+          hover:shadow-[0_0_25px_rgba(212,168,90,0.30)]
+        "
+      >
+        {interiorServices[currentInterior].button}
+      </Link>
+
+    </div>
 
   </div>
 
+
+  {/* =====================================================
+      CATEGORY NAVIGATION
+  ===================================================== */}
   <div
     className="
-    absolute
-    bottom-14
-    left-20
-    flex
-    gap-10
-    uppercase
-    tracking-[3px]
-    text-sm
+      absolute
+      z-20
+      bottom-5
+      md:bottom-8
+      left-0
+      right-0
     "
   >
 
+    <div
+      className="
+        max-w-[1500px]
+        mx-auto
+        px-5
+        sm:px-6
+        md:px-8
+        lg:px-10
+        xl:px-12
+      "
+    >
 
-{interiorServices.map((service, index) => (
-  <button
-    key={service.title}
-    onClick={() => setCurrentInterior(index)}
-    className={`
-      relative
-      transition-all
-      duration-300
-      ${
-        currentInterior === index
-          ? "text-[#D4A85A]"
-          : "text-white/60 hover:text-white"
-      }
-    `}
-  >
-
-    {service.title}
-
-    {currentInterior === index && (
-      <span
+      {/* MOBILE SWIPE HINT */}
+      <p
         className="
-        absolute
-        left-0
-        -bottom-3
-        h-[2px]
-        w-full
-        bg-[#D4A85A]
+          md:hidden
+          font-[var(--font-avenir)]
+          uppercase
+          tracking-[3px]
+          text-[8px]
+          text-white/50
+          mb-3
         "
-      />
-    )}
+      >
+        Swipe To Explore →
+      </p>
 
-  </button>
-))}
 
+      {/* NAVIGATION */}
+      <div
+        className="
+          flex
+          items-center
+          gap-6
+          md:gap-8
+          lg:gap-10
+          overflow-x-auto
+          pb-4
+          md:pb-3
+          scrollbar-hide
+        "
+      >
+
+        {interiorServices.map((service, index) => (
+
+          <button
+            key={service.title}
+            type="button"
+            onClick={() => setCurrentInterior(index)}
+            className={`
+              relative
+              flex-none
+              pb-2
+              font-[var(--font-avenir)]
+              uppercase
+              tracking-[2px]
+              md:tracking-[3px]
+              text-[10px]
+              md:text-xs
+              whitespace-nowrap
+              transition-all
+              duration-300
+              ${
+                currentInterior === index
+                  ? "text-[#D4A85A]"
+                  : "text-white/60 hover:text-white"
+              }
+            `}
+          >
+
+            {service.nav}
+
+            {currentInterior === index && (
+              <span
+                className="
+                  absolute
+                  left-0
+                  bottom-0
+                  h-px
+                  w-full
+                  bg-[#D4A85A]
+                "
+              />
+            )}
+
+          </button>
+
+        ))}
+
+      </div>
+
+    </div>
 
   </div>
 
 </section>
-<div className="h-32 bg-[#071321]" />
 
-{/* 3D VISUALIZATION */}
-<section className="relative h-[1100px] overflow-hidden">
+{/* =====================================================
+    3D VISUALIZATION INTRO
+===================================================== */}
 
-  {/* MEDIA */}
-  <div
-  key={currentVisualization}
+<section
   className="
-  absolute
-  inset-0
-  animate-fadeVisual
+    bg-[#071321]
+    pt-10
+    md:pt-12
+    lg:pt-14
+    pb-8
+    md:pb-10
   "
 >
 
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+      text-center
+    "
+  >
+
+    {/* EYEBROW */}
+    <div
+      className="
+        flex
+        items-center
+        justify-center
+        gap-3
+        sm:gap-4
+        mb-5
+        md:mb-6
+      "
+    >
+
+      <div className="w-8 sm:w-10 h-px bg-[#D4A85A]" />
+
+      <p
+        className="
+          font-[var(--font-avenir)]
+          uppercase
+          tracking-[4px]
+          md:tracking-[7px]
+          text-[#D4A85A]
+          text-[9px]
+          md:text-[10px]
+          whitespace-nowrap
+        "
+      >
+        3D Visualization
+      </p>
+
+      <div className="w-8 sm:w-10 h-px bg-[#D4A85A]" />
+
+    </div>
+
+
+    {/* HEADING */}
+    <h2
+      className="
+        font-heading
+        text-3xl
+        sm:text-4xl
+        md:text-5xl
+        lg:text-6xl
+        font-light
+        leading-[1.05]
+        max-w-4xl
+        mx-auto
+        mb-5
+      "
+    >
+      See the design
+      <br className="hidden sm:block" />
+      {" "}before it is built.
+    </h2>
+
+
+    {/* DESCRIPTION */}
+    <p
+      className="
+        font-[var(--font-avenir)]
+        text-sm
+        md:text-base
+        text-gray-400
+        leading-relaxed
+        max-w-2xl
+        mx-auto
+      "
+    >
+      Explore architectural spaces through detailed visualizations
+      that communicate form, materials, lighting and atmosphere
+      before construction begins.
+    </p>
+
+  </div>
+
+</section>
+
+{/* =====================================================
+    3D VISUALIZATION
+===================================================== */}
+
+<section
+  className="
+    relative
+    min-h-[620px]
+    md:min-h-[680px]
+    lg:min-h-[720px]
+    overflow-hidden
+  "
+>
+
+  {/* MEDIA */}
+  <div
+    key={currentVisualization}
+    className="
+      absolute
+      inset-0
+      animate-fadeVisual
+    "
+  >
+
     {visualizations[currentVisualization].type === "video" ? (
+
       <video
         key={visualizations[currentVisualization].media}
         autoPlay
         muted
         loop
         playsInline
-        className="w-full h-full object-cover"
+        preload="auto"
+        poster="/3d/3d1.png"
+        className="
+          w-full
+          h-full
+          object-cover
+          object-center
+        "
       >
         <source
           src={visualizations[currentVisualization].media}
           type="video/mp4"
         />
       </video>
+
     ) : (
+
       <img
         src={visualizations[currentVisualization].media}
         alt={visualizations[currentVisualization].title}
         className="
-w-full
-h-full
-object-cover
-animate-cinematicZoom
-"
+          w-full
+          h-full
+          object-cover
+          object-center
+          animate-cinematicZoom
+        "
       />
+
     )}
 
   </div>
 
+
   {/* DARK OVERLAY */}
   <div
     className="
-    absolute
-    inset-0
-    bg-gradient-to-r
-from-[#071321]/92
-via-[#071321]/55
-to-transparent
+      absolute
+      inset-0
+      bg-gradient-to-r
+      from-[#071321]/95
+      via-[#071321]/70
+      md:via-[#071321]/55
+      to-[#071321]/15
     "
   />
 
-  {/* CONTENT */}
+
+  {/* MAIN CONTENT */}
   <div
-  className="
-  relative
-  h-full
-  flex
-  items-center
-  px-20
-  pb-24
-  "
->
+    className="
+      relative
+      z-10
+      min-h-[620px]
+      md:min-h-[680px]
+      lg:min-h-[720px]
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+      pt-16
+      pb-32
+      md:pb-28
+      flex
+      items-center
+    "
+  >
 
     <div
       key={currentVisualization}
       className="
-      max-w-3xl
-      animate-fadeUp
+        max-w-xl
+        md:max-w-2xl
+        animate-fadeUp
       "
     >
 
-      <p className="uppercase tracking-[4px] text-[#D4A85A] mb-5">
-        3D VISUALIZATION
-      </p>
+      {/* EYEBROW */}
+      <div className="flex items-center gap-4 mb-5 md:mb-6">
 
+        <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[5px]
+            md:tracking-[8px]
+            text-[#D4A85A]
+            text-[10px]
+            md:text-xs
+            whitespace-nowrap
+          "
+        >
+          3D Visualization
+        </p>
+
+        <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+      </div>
+
+
+      {/* TITLE */}
       <h2
         className="
-        text-6xl
-        lg:text-7xl
-        ${cormorant.className}
-        leading-tight
-        mb-8
+          font-heading
+          text-4xl
+          sm:text-5xl
+          md:text-6xl
+          lg:text-7xl
+          font-light
+          leading-[1.02]
+          mb-5
+          md:mb-6
         "
       >
         {visualizations[currentVisualization].title}
       </h2>
-<div
-  className="
-  h-[2px]
-  w-32
-  bg-[#D4A85A]
-  mb-8
-  animate-goldLine
-  "
-></div>
+
+
+      {/* GOLD LINE */}
+      <div
+        className="
+          h-px
+          w-16
+          md:w-20
+          bg-[#D4A85A]
+          mb-5
+          md:mb-6
+          animate-goldLine
+        "
+      />
+
+
+      {/* DESCRIPTION */}
       <p
         className="
-        text-xl
-        text-gray-200
-        leading-relaxed
-        max-w-2xl
-        mb-10
+          font-[var(--font-avenir)]
+          text-sm
+          md:text-base
+          text-gray-200
+          leading-relaxed
+          max-w-xl
+          mb-7
+          md:mb-8
         "
       >
         {visualizations[currentVisualization].description}
       </p>
 
-      <button
+
+      {/* BUTTON */}
+      <Link
+        href="/3d"
         className="
-        border
-        border-[#D4A85A]
-        text-[#D4A85A]
-        px-10
-        py-4
-        rounded-full
-        transition-all
-        duration-300
-        hover:bg-[#D4A85A]
-        hover:text-black
-        hover:shadow-[0_0_25px_rgba(212,168,90,0.45)]
+          inline-flex
+          items-center
+          justify-center
+          border
+          border-[#D4A85A]
+          text-[#D4A85A]
+          px-6
+          md:px-8
+          py-3
+          md:py-3.5
+          rounded-full
+          font-[var(--font-avenir)]
+          text-xs
+          md:text-sm
+          font-medium
+          transition-all
+          duration-300
+          hover:bg-[#D4A85A]
+          hover:text-black
+          hover:shadow-[0_0_25px_rgba(212,168,90,0.30)]
         "
       >
         Explore Visualization →
-      </button>
+      </Link>
 
     </div>
 
   </div>
 
-  {/* VISUALIZATION NAVIGATION */}
-<div
-  className="
-  absolute
-  bottom-12
-  left-20
-  flex
-  gap-10
-  uppercase
-  tracking-[3px]
-  text-sm
-  "
->
 
-  {visualizations.map((item, index) => (
-    <button
-      key={index}
-      onClick={() => setCurrentVisualization(index)}
-      className={`
-        relative
-        transition-all
-        duration-300
-        ${
-          currentVisualization === index
-            ? "text-[#D4A85A]"
-            : "text-white/60 hover:text-white"
-        }
-      `}
-    >
-
-      {item.nav}
-
-      {currentVisualization === index && (
-        <span
-          className="
-          absolute
-          left-0
-          -bottom-3
-          h-[2px]
-          w-full
-          bg-[#D4A85A]
-          "
-        />
-      )}
-
-    </button>
-  ))}
-
-</div>
-
-</section>
-{/* SECTION DIVIDER */}
-
-<section className="py-10 bg-[#071321]">
-
-  <div className="w-full px-20">
+  {/* =====================================================
+      VISUALIZATION NAVIGATION
+  ===================================================== */}
+  <div
+    className="
+      absolute
+      z-20
+      bottom-5
+      md:bottom-8
+      left-0
+      right-0
+    "
+  >
 
     <div
       className="
-      h-[1px]
-      bg-gradient-to-r
-      from-transparent
-      via-[#D4A85A]/60
-      to-transparent
+        max-w-[1500px]
+        mx-auto
+        px-5
+        sm:px-6
+        md:px-8
+        lg:px-10
+        xl:px-12
       "
-    ></div>
+    >
+
+      {/* MOBILE SWIPE HINT */}
+      <p
+        className="
+          md:hidden
+          font-[var(--font-avenir)]
+          uppercase
+          tracking-[3px]
+          text-[8px]
+          text-white/50
+          mb-3
+        "
+      >
+        Swipe To Explore →
+      </p>
+
+
+      {/* NAVIGATION */}
+      <div
+        className="
+          flex
+          items-center
+          gap-6
+          md:gap-8
+          lg:gap-10
+          overflow-x-auto
+          pb-4
+          md:pb-3
+          scrollbar-hide
+        "
+      >
+
+        {visualizations.map((item, index) => (
+
+          <button
+            key={index}
+            type="button"
+            onClick={() => setCurrentVisualization(index)}
+            className={`
+              relative
+              flex-none
+              pb-2
+              font-[var(--font-avenir)]
+              uppercase
+              tracking-[2px]
+              md:tracking-[3px]
+              text-[10px]
+              md:text-xs
+              whitespace-nowrap
+              transition-all
+              duration-300
+              ${
+                currentVisualization === index
+                  ? "text-[#D4A85A]"
+                  : "text-white/60 hover:text-white"
+              }
+            `}
+          >
+
+            {item.nav}
+
+            {currentVisualization === index && (
+              <span
+                className="
+                  absolute
+                  left-0
+                  bottom-0
+                  h-px
+                  w-full
+                  bg-[#D4A85A]
+                "
+              />
+            )}
+
+          </button>
+
+        ))}
+
+      </div>
+
+    </div>
 
   </div>
 
 </section>
 
+
+{/* SECTION DIVIDER */}
+<section className="py-8 md:py-10 bg-[#071321]">
+
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+    "
+  >
+
+    <div
+      className="
+        h-px
+        bg-gradient-to-r
+        from-transparent
+        via-[#D4A85A]/40
+        to-transparent
+      "
+    />
+
+  </div>
+
+</section>
+
+{/* =====================================================
+    FEATURED PROJECTS
+===================================================== */}
+
 {/* FEATURED PROJECTS INTRO */}
+<section className="pt-10 md:pt-12 lg:pt-14 pb-8 md:pb-10 bg-[#071321]">
 
-<section className="pt-20 pb-12 bg-[#071321]">
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+      text-center
+    "
+  >
 
-  <div className="w-full px-20 text-center">
+    {/* EYEBROW */}
+    <div className="flex items-center justify-center gap-4 mb-5 md:mb-6">
 
-    <p className="uppercase tracking-[4px] text-[#D4A85A] mb-5">
-      Featured Projects
-    </p>
+      <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
 
+      <p
+        className="
+          font-[var(--font-avenir)]
+          uppercase
+          tracking-[5px]
+          md:tracking-[8px]
+          text-[#D4A85A]
+          text-[10px]
+          md:text-xs
+          whitespace-nowrap
+        "
+      >
+        Featured Projects
+      </p>
+
+      <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+    </div>
+
+
+    {/* HEADING */}
     <h2
       className="
-      text-5xl
-      lg:text-6xl
-      ${cormorant.className}
-      leading-tight
-      mb-8
+        font-heading
+        text-3xl
+        sm:text-4xl
+        md:text-5xl
+        lg:text-6xl
+        font-light
+        leading-[1.05]
+        mb-6
       "
     >
       Architecture designed
-      to leave a lasting impression
+      <br className="hidden sm:block" />
+      {" "}to leave a lasting impression
     </h2>
 
+
+    {/* DESCRIPTION */}
     <p
       className="
-      max-w-3xl
-      mx-auto
-      text-gray-300
-      text-lg
-      leading-relaxed
+        max-w-3xl
+        mx-auto
+        font-[var(--font-avenir)]
+        text-sm
+        md:text-base
+        text-gray-300
+        leading-relaxed
       "
     >
       A selection of residential, religious and commercial projects
@@ -1299,651 +2188,862 @@ to-transparent
   </div>
 
 </section>
-{/* FEATURED PROJECTS */}
-<section className="relative h-[900px] overflow-hidden">
 
+
+{/* FEATURED PROJECTS SHOWCASE */}
+<section
+  className="
+    relative
+    min-h-[620px]
+    md:min-h-[680px]
+    lg:min-h-[720px]
+    overflow-hidden
+  "
+>
 
   {/* IMAGE */}
   <div
     key={currentProject}
     className="
-    absolute
-    inset-0
-    animate-fadeVisual
+      absolute
+      inset-0
+      animate-fadeVisual
     "
   >
+
     <img
       src={featuredProjects[currentProject].image}
       alt={featuredProjects[currentProject].title}
       className="
-      w-full
-      h-full
-      object-cover
-  
+        w-full
+        h-full
+        object-cover
+        object-center
       "
     />
+
   </div>
 
-  {/* OVERLAY */}
+
+  {/* DARK OVERLAY */}
   <div
     className="
-    absolute
-    inset-0
-    bg-gradient-to-r
-    from-[#071321]/95
-    via-[#071321]/65
-    to-transparent
+      absolute
+      inset-0
+      bg-gradient-to-r
+      from-[#071321]/95
+      via-[#071321]/75
+      md:via-[#071321]/60
+      to-[#071321]/15
     "
   />
 
-  {/* CONTENT */}
+
+  {/* MAIN CONTENT */}
   <div
-  className="
-  relative
-  h-full
-  flex
-  items-center
-  px-20
-  pb-24
-  "
->
+    className="
+      relative
+      z-10
+      min-h-[620px]
+      md:min-h-[680px]
+      lg:min-h-[720px]
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+      pt-16
+      pb-32
+      md:pb-28
+      flex
+      items-center
+    "
+  >
 
     <div
       key={currentProject}
       className="
-      max-w-3xl
-      animate-fadeUp
+        max-w-xl
+        md:max-w-2xl
+        animate-fadeUp
       "
     >
 
-      
+      {/* CATEGORY */}
+      <div className="flex items-center gap-4 mb-5 md:mb-6">
 
+        <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[3px]
+            md:tracking-[5px]
+            text-[#D4A85A]
+            text-[9px]
+            md:text-[10px]
+            leading-relaxed
+          "
+        >
+          {featuredProjects[currentProject].category}
+          {" • "}
+          {featuredProjects[currentProject].location}
+        </p>
+
+      </div>
+
+
+      {/* PROJECT TITLE */}
       <h2
         className="
-        text-6xl
-        lg:text-7xl
-        ${cormorant.className}
-        leading-tight
-        mb-6
+          font-heading
+          text-4xl
+          sm:text-5xl
+          md:text-6xl
+          lg:text-7xl
+          font-light
+          leading-[1.02]
+          mb-5
+          md:mb-6
         "
       >
         {featuredProjects[currentProject].title}
       </h2>
 
+
+      {/* GOLD DIVIDER */}
       <div
         className="
-        h-[2px]
-        w-32
-        bg-[#D4A85A]
-        mb-8
+          h-px
+          w-16
+          md:w-20
+          bg-[#D4A85A]
+          mb-5
+          md:mb-6
         "
       />
 
-      <p className="text-[#D4A85A] mb-6 tracking-[2px] uppercase">
-        {featuredProjects[currentProject].category}
-        {" • "}
-        {featuredProjects[currentProject].location}
-      </p>
 
+      {/* DESCRIPTION */}
       <p
         className="
-        text-xl
-        text-gray-200
-        leading-relaxed
-        max-w-2xl
-        mb-10
+          font-[var(--font-avenir)]
+          text-sm
+          md:text-base
+          text-gray-200
+          leading-relaxed
+          max-w-xl
+          mb-7
+          md:mb-8
         "
       >
         {featuredProjects[currentProject].description}
       </p>
 
-      <button
+
+      {/* PROJECT LINK */}
+      <Link
+        href="/projects"
         className="
-        border
-        border-[#D4A85A]
-        text-[#D4A85A]
-        px-10
-        py-4
-        rounded-full
-        transition-all
-        duration-300
-        hover:bg-[#D4A85A]
-        hover:text-black
-        hover:shadow-[0_0_25px_rgba(212,168,90,0.45)]
+          inline-flex
+          items-center
+          justify-center
+          border
+          border-[#D4A85A]
+          text-[#D4A85A]
+          px-6
+          md:px-8
+          py-3
+          md:py-3.5
+          rounded-full
+          font-[var(--font-avenir)]
+          text-xs
+          md:text-sm
+          font-medium
+          transition-all
+          duration-300
+          hover:bg-[#D4A85A]
+          hover:text-black
+          hover:shadow-[0_0_25px_rgba(212,168,90,0.30)]
         "
       >
         View Project →
-      </button>
+      </Link>
 
     </div>
 
   </div>
 
-  {/* NAVIGATION */}
+
+  {/* =====================================================
+      PROJECT NAVIGATION
+  ===================================================== */}
   <div
     className="
-    absolute
-    bottom-14
-    left-20
-    flex
-    gap-10
-    uppercase
-    tracking-[3px]
-    text-sm
+      absolute
+      z-20
+      bottom-5
+      md:bottom-8
+      left-0
+      right-0
     "
   >
 
-    {featuredProjects.map((project, index) => (
-      <button
-        key={project.title}
-        onClick={() => setCurrentProject(index)}
-        className={`
-          relative
-          transition-all
-          duration-300
-          ${
-            currentProject === index
-              ? "text-[#D4A85A]"
-              : "text-white/60 hover:text-white"
-          }
-        `}
+    <div
+      className="
+        max-w-[1500px]
+        mx-auto
+        px-5
+        sm:px-6
+        md:px-8
+        lg:px-10
+        xl:px-12
+      "
+    >
+
+      {/* MOBILE SWIPE HINT */}
+      <p
+        className="
+          md:hidden
+          font-[var(--font-avenir)]
+          uppercase
+          tracking-[3px]
+          text-[8px]
+          text-white/50
+          mb-3
+        "
+      >
+        Swipe To Explore →
+      </p>
+
+
+      {/* PROJECT NAVIGATION */}
+      <div
+        className="
+          flex
+          items-center
+          gap-6
+          md:gap-8
+          lg:gap-10
+          overflow-x-auto
+          pb-4
+          md:pb-3
+          scrollbar-hide
+        "
       >
 
-        {project.location}
+        {featuredProjects.map((project, index) => (
 
-        {currentProject === index && (
-          <span
-            className="
-            absolute
-            left-0
-            -bottom-3
-            h-[2px]
-            w-full
-            bg-[#D4A85A]
-            "
-          />
-        )}
+          <button
+            key={project.title}
+            type="button"
+            onClick={() => setCurrentProject(index)}
+            className={`
+              relative
+              flex-none
+              pb-2
+              font-[var(--font-avenir)]
+              uppercase
+              tracking-[2px]
+              md:tracking-[3px]
+              text-[10px]
+              md:text-xs
+              whitespace-nowrap
+              transition-all
+              duration-300
+              ${
+                currentProject === index
+                  ? "text-[#D4A85A]"
+                  : "text-white/60 hover:text-white"
+              }
+            `}
+          >
 
-      </button>
-    ))}
+            {project.location}
+
+            {currentProject === index && (
+              <span
+                className="
+                  absolute
+                  left-0
+                  bottom-0
+                  h-px
+                  w-full
+                  bg-[#D4A85A]
+                "
+              />
+            )}
+
+          </button>
+
+        ))}
+
+      </div>
+
+    </div>
 
   </div>
 
 </section>
 
-      {/* WHY CHOOSE APIYO DESIGN STUDIO */}
-<section className="py-32 bg-[#071321]">
+{/* =====================================================
+    WHY CHOOSE APIYO DESIGN STUDIO
+===================================================== */}
 
-  <div className="w-full px-20">
+<section className="py-10 md:py-12 lg:py-14 bg-[#071321]">
 
-    {/* HEADING */}
-    <div className="max-w-5xl mb-24">
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+    "
+  >
 
-      <p className="uppercase tracking-[4px] text-[#D4A85A] mb-5">
-        WHY CLIENTS CHOOSE APIYO DESIGN STUDIO
-      </p>
-
-      <h2
-        className="
-        text-5xl
-        lg:text-7xl
-        ${cormorant.className}
-        leading-tight
+    {/* =================================================
+        INTRO
+    ================================================= */}
+    <div
+      className="
+        grid
+        lg:grid-cols-[1.1fr_0.9fr]
+        gap-8
+        lg:gap-14
+        items-end
         mb-8
-        "
-      >
-        Where visionary design
-        meets technical precision.
-      </h2>
+        md:mb-10
+      "
+    >
 
-      <p
-        className="
-        text-xl
-        text-gray-300
-        max-w-3xl
-        leading-relaxed
-        "
-      >
-        From architectural design and interior spaces to
-        photorealistic visualization and construction
-        documentation, we deliver an integrated design
-        experience that transforms ideas into exceptional spaces.
-      </p>
+      {/* LEFT */}
+      <div>
+
+        {/* EYEBROW */}
+        <div className="flex items-center gap-4 mb-5 md:mb-6">
+
+          <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+          <p
+            className="
+              font-[var(--font-avenir)]
+              uppercase
+              tracking-[4px]
+              md:tracking-[7px]
+              text-[#D4A85A]
+              text-[9px]
+              md:text-xs
+              leading-relaxed
+            "
+          >
+            Why Apiyo Design Studio
+          </p>
+
+          <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+        </div>
+
+
+        {/* HEADING */}
+        <h2
+          className="
+            font-heading
+            text-4xl
+            sm:text-5xl
+            md:text-6xl
+            font-light
+            leading-[1.05]
+            max-w-3xl
+          "
+        >
+          Where visionary design
+          meets technical precision.
+        </h2>
+
+      </div>
+
+
+      {/* RIGHT */}
+      <div className="lg:pb-1">
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-sm
+            md:text-base
+            text-gray-300
+            leading-relaxed
+            max-w-xl
+            mb-5
+          "
+        >
+          From architecture and interiors to visualization and
+          technical documentation, we bring every discipline together
+          to create thoughtful, functional and enduring spaces.
+        </p>
+
+
+        <Link
+          href="/about"
+          className="
+            inline-flex
+            items-center
+            gap-3
+            font-[var(--font-avenir)]
+            text-[10px]
+            md:text-xs
+            uppercase
+            tracking-[3px]
+            text-[#D4A85A]
+            transition-all
+            duration-300
+            hover:gap-5
+          "
+        >
+          Discover Our Studio
+          <span>→</span>
+        </Link>
+
+      </div>
 
     </div>
 
-    {/* VALUE CARDS */}
-    <div className="grid lg:grid-cols-2 gap-8 mb-24">
 
-      {/* CARD 1 */}
+    {/* =================================================
+        VALUE CARDS
+    ================================================= */}
+    <div
+      className="
+        grid
+        sm:grid-cols-2
+        xl:grid-cols-4
+        gap-4
+        md:gap-5
+      "
+    >
+
+      {/* CARD 01 */}
       <div
         className="
-group
-border
-border-[#1c3a60]
-rounded-3xl
-p-10
-bg-[#071321]
-transition-all
-duration-500
-hover:bg-white
-hover:-translate-y-3
-hover:border-[#D4A85A]
-hover:shadow-[15px_15px_40px_rgba(212,168,90,0.20)]
-"
+          group
+          border
+          border-white/10
+          rounded-2xl
+          p-5
+          md:p-6
+          lg:p-7
+          bg-white/[0.02]
+          transition-all
+          duration-500
+          hover:bg-white
+          hover:-translate-y-1
+          hover:border-[#D4A85A]
+          hover:shadow-[0_15px_35px_rgba(212,168,90,0.12)]
+        "
       >
 
         <span
-  className="
-  text-[#D4A85A]
-  text-5xl
-  font-light
-  "
->
+          className="
+            font-heading
+            text-3xl
+            md:text-4xl
+            font-light
+            text-[#D4A85A]
+          "
+        >
           01
         </span>
 
+
         <h3
-  className="
-  text-3xl
-  ${cormorant.className}
-  mt-6
-  mb-5
-  text-white
-  transition-all
-  duration-500
-  group-hover:text-[#071321]
-  "
->
-          End-to-End Design
+          className="
+            font-heading
+            text-2xl
+            md:text-3xl
+            font-light
+            leading-tight
+            mt-5
+            mb-3
+            text-white
+            transition-colors
+            duration-500
+            group-hover:text-[#071321]
+          "
+        >
+          End-to-End
+          <br />
+          Design
         </h3>
 
+
         <p
-  className="
-  text-gray-300
-  leading-relaxed
-  transition-all
-  duration-500
-  group-hover:text-gray-700
-  "
->
+          className="
+            font-[var(--font-avenir)]
+            text-xs
+            md:text-sm
+            text-gray-400
+            leading-relaxed
+            transition-colors
+            duration-500
+            group-hover:text-gray-700
+          "
+        >
           From concept development and planning to visualization
-          and implementation support, everything is handled
+          and implementation support, everything is coordinated
           under one roof.
         </p>
 
       </div>
 
-      {/* CARD 2 */}
+
+      {/* CARD 02 */}
       <div
-       className="
-group
-border
-border-[#1c3a60]
-rounded-3xl
-p-10
-bg-[#071321]
-transition-all
-duration-500
-hover:bg-white
-hover:-translate-y-3
-hover:border-[#D4A85A]
-hover:shadow-[15px_15px_40px_rgba(212,168,90,0.20)]
-"
+        className="
+          group
+          border
+          border-white/10
+          rounded-2xl
+          p-5
+          md:p-6
+          lg:p-7
+          bg-white/[0.02]
+          transition-all
+          duration-500
+          hover:bg-white
+          hover:-translate-y-1
+          hover:border-[#D4A85A]
+          hover:shadow-[0_15px_35px_rgba(212,168,90,0.12)]
+        "
       >
 
         <span
-  className="
-  text-[#D4A85A]
-  text-5xl
-  font-light
-  "
->
+          className="
+            font-heading
+            text-3xl
+            md:text-4xl
+            font-light
+            text-[#D4A85A]
+          "
+        >
           02
         </span>
 
+
         <h3
-  className="
-  text-3xl
-  ${cormorant.className}
-  mt-6
-  mb-5
-  text-white
-  transition-all
-  duration-500
-  group-hover:text-[#071321]
-  "
->
-          Visualization Before Construction
+          className="
+            font-heading
+            text-2xl
+            md:text-3xl
+            font-light
+            leading-tight
+            mt-5
+            mb-3
+            text-white
+            transition-colors
+            duration-500
+            group-hover:text-[#071321]
+          "
+        >
+          Visualize Before
+          <br />
+          You Build
         </h3>
 
+
         <p
-  className="
-  text-gray-300
-  leading-relaxed
-  transition-all
-  duration-500
-  group-hover:text-gray-700
-  "
->
-          Experience your project through photorealistic renders,
-          walkthroughs and immersive presentations before
-          construction begins.
+          className="
+            font-[var(--font-avenir)]
+            text-xs
+            md:text-sm
+            text-gray-400
+            leading-relaxed
+            transition-colors
+            duration-500
+            group-hover:text-gray-700
+          "
+        >
+          Experience your project through photorealistic
+          visualization and walkthroughs before construction
+          begins.
         </p>
 
       </div>
 
-      {/* CARD 3 */}
+
+      {/* CARD 03 */}
       <div
         className="
-group
-border
-border-[#1c3a60]
-rounded-3xl
-p-10
-bg-[#071321]
-transition-all
-duration-500
-hover:bg-white
-hover:-translate-y-3
-hover:border-[#D4A85A]
-hover:shadow-[15px_15px_40px_rgba(212,168,90,0.20)]
-"
+          group
+          border
+          border-white/10
+          rounded-2xl
+          p-5
+          md:p-6
+          lg:p-7
+          bg-white/[0.02]
+          transition-all
+          duration-500
+          hover:bg-white
+          hover:-translate-y-1
+          hover:border-[#D4A85A]
+          hover:shadow-[0_15px_35px_rgba(212,168,90,0.12)]
+        "
       >
 
         <span
-  className="
-  text-[#D4A85A]
-  text-5xl
-  font-light
-  "
->
+          className="
+            font-heading
+            text-3xl
+            md:text-4xl
+            font-light
+            text-[#D4A85A]
+          "
+        >
           03
         </span>
 
+
         <h3
-  className="
-  text-3xl
-  ${cormorant.className}
-  mt-6
-  mb-5
-  text-white
-  transition-all
-  duration-500
-  group-hover:text-[#071321]
-  "
->
-          Tailored For Every Client
+          className="
+            font-heading
+            text-2xl
+            md:text-3xl
+            font-light
+            leading-tight
+            mt-5
+            mb-3
+            text-white
+            transition-colors
+            duration-500
+            group-hover:text-[#071321]
+          "
+        >
+          Designed Around
+          <br />
+          You
         </h3>
 
+
         <p
-  className="
-  text-gray-300
-  leading-relaxed
-  transition-all
-  duration-500
-  group-hover:text-gray-700
-  "
->
-          Every project is customized to your site conditions,
-          budget, lifestyle requirements and long-term vision.
+          className="
+            font-[var(--font-avenir)]
+            text-xs
+            md:text-sm
+            text-gray-400
+            leading-relaxed
+            transition-colors
+            duration-500
+            group-hover:text-gray-700
+          "
+        >
+          Every project responds to your site, budget,
+          lifestyle, requirements and long-term vision.
         </p>
 
       </div>
 
-      {/* CARD 4 */}
+
+      {/* CARD 04 */}
       <div
         className="
-group
-border
-border-[#1c3a60]
-rounded-3xl
-p-10
-bg-[#071321]
-transition-all
-duration-500
-hover:bg-white
-hover:-translate-y-3
-hover:border-[#D4A85A]
-hover:shadow-[15px_15px_40px_rgba(212,168,90,0.20)]
-"
+          group
+          border
+          border-white/10
+          rounded-2xl
+          p-5
+          md:p-6
+          lg:p-7
+          bg-white/[0.02]
+          transition-all
+          duration-500
+          hover:bg-white
+          hover:-translate-y-1
+          hover:border-[#D4A85A]
+          hover:shadow-[0_15px_35px_rgba(212,168,90,0.12)]
+        "
       >
 
         <span
-  className="
-  text-[#D4A85A]
-  text-5xl
-  font-light
-  "
->
+          className="
+            font-heading
+            text-3xl
+            md:text-4xl
+            font-light
+            text-[#D4A85A]
+          "
+        >
           04
         </span>
 
+
         <h3
-  className="
-  text-3xl
-  ${cormorant.className}
-  mt-6
-  mb-5
-  text-white
-  transition-all
-  duration-500
-  group-hover:text-[#071321]
-  "
->
-          Professional Documentation
+          className="
+            font-heading
+            text-2xl
+            md:text-3xl
+            font-light
+            leading-tight
+            mt-5
+            mb-3
+            text-white
+            transition-colors
+            duration-500
+            group-hover:text-[#071321]
+          "
+        >
+          Technical
+          <br />
+          Precision
         </h3>
 
+
         <p
-  className="
-  text-gray-300
-  leading-relaxed
-  transition-all
-  duration-500
-  group-hover:text-gray-700
-  "
->
+          className="
+            font-[var(--font-avenir)]
+            text-xs
+            md:text-sm
+            text-gray-400
+            leading-relaxed
+            transition-colors
+            duration-500
+            group-hover:text-gray-700
+          "
+        >
           Detailed construction drawings, approvals and
-          technical documentation prepared to professional
-          industry standards.
+          technical documentation are developed to professional
+          standards.
         </p>
 
       </div>
 
     </div>
 
-   {/* METRICS */}
-<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-  {/* CARD 1 */}
-  <div
-    className="
-    relative
-    overflow-hidden
-    backdrop-blur-xl
-    bg-white/5
-    border
-    border-white/10
-    rounded-3xl
-    p-8
-    transition-all
-    duration-500
-    hover:-translate-y-2
-hover:border-[#D4A85A]
-hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
-    group
-    "
-  >
-    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
-
-    <h3 className="text-6xl font-light text-[#D4A85A] mb-3">
-      5+
-    </h3>
-
-    <p className="text-[#D4A85A] tracking-wide">
-      Years Experience
-    </p>
-  </div>
-
-  {/* CARD 2 */}
-  <div
-    className="
-    relative
-    overflow-hidden
-    backdrop-blur-xl
-    bg-white/5
-    border
-    border-white/10
-    rounded-3xl
-    p-8
-    transition-all
-    duration-500
-    hover:-translate-y-2
-hover:border-[#D4A85A]
-hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
-    "
-  >
-    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
-
-    <h3 className="text-6xl font-light text-[#D4A85A] mb-3">
-      100+
-    </h3>
-
-    <p className="text-[#D4A85A] tracking-wide">
-      Projects Designed
-    </p>
-  </div>
-
-  {/* CARD 3 */}
-  <div
-    className="
-    relative
-    overflow-hidden
-    backdrop-blur-xl
-    bg-white/5
-    border
-    border-white/10
-    rounded-3xl
-    p-8
-    transition-all
-    duration-500
-    hover:-translate-y-2
-hover:border-[#D4A85A]
-hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
-    "
-  >
-    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
-
-    <h3 className="text-6xl font-light text-[#D4A85A] mb-3">
-      47
-    </h3>
-
-    <p className="text-[#D4A85A] tracking-wide">
-      Counties Reached
-    </p>
-  </div>
-
-  {/* CARD 4 */}
-  <div
-    className="
-    relative
-    overflow-hidden
-    backdrop-blur-xl
-    bg-white/5
-    border
-    border-white/10
-    rounded-3xl
-    p-8
-    transition-all
-    duration-500
-    hover:-translate-y-2
-hover:border-[#D4A85A]
-hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
-    "
-  >
-    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
-
-    <h3 className="text-6xl font-light text-[#D4A85A] mb-3">
-      100%
-    </h3>
-
-    <p className="text-[#D4A85A] tracking-wide">
-      Tailored Solutions
-    </p>
-  </div>
-
-</div>
-
-    {/* CTA */}
+    {/* =================================================
+        CTA
+    ================================================= */}
     <div
       className="
-      mt-24
-      flex
-      flex-col
-      lg:flex-row
-      justify-between
-      items-center
-      gap-10
+        mt-10
+        md:mt-12
+        pt-8
+        md:pt-10
+        border-t
+        border-white/10
+        flex
+        flex-col
+        lg:flex-row
+        lg:items-end
+        lg:justify-between
+        gap-7
+        lg:gap-10
       "
     >
 
-      <div className="max-w-3xl">
+      <div className="max-w-2xl">
 
         <h3
           className="
-          text-4xl
-          lg:text-5xl
-          ${cormorant.className}
-          mb-6
+            font-heading
+            text-3xl
+            sm:text-4xl
+            md:text-5xl
+            font-light
+            leading-[1.08]
+            mb-4
           "
         >
           Ready to transform your vision
           into a remarkable space?
         </h3>
 
-        <p className="text-gray-300 text-lg leading-relaxed">
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-sm
+            md:text-base
+            text-gray-300
+            leading-relaxed
+            max-w-xl
+          "
+        >
           Whether you're planning a home, commercial development,
-          interior renovation or visualization project,
-          our team is ready to help you move from concept to reality.
+          interior renovation or visualization project, we're ready
+          to help move your idea from concept to reality.
         </p>
 
       </div>
 
-      <div className="flex gap-5 flex-wrap">
 
-        <button
+      {/* BUTTONS */}
+      <div
+        className="
+          flex
+          flex-col
+          sm:flex-row
+          gap-3
+          w-full
+          sm:w-auto
+          flex-shrink-0
+        "
+      >
+
+        <Link
+          href="/consultation"
           className="
-          bg-[#D4A85A]
-          text-black
-          px-10
-          py-4
-          rounded-full
-          font-semibold
-          transition-all
-          duration-300
-          hover:scale-105
-          hover:shadow-[0_0_30px_rgba(212,168,90,0.45)]
+            inline-flex
+            items-center
+            justify-center
+            bg-[#D4A85A]
+            text-black
+            px-7
+            py-3
+            rounded-full
+            font-[var(--font-avenir)]
+            text-xs
+            md:text-sm
+            font-medium
+            transition-all
+            duration-300
+            hover:scale-[1.03]
+            hover:shadow-[0_0_25px_rgba(212,168,90,0.30)]
           "
         >
           Book Consultation
-        </button>
+        </Link>
 
-        <button
+
+        <Link
+          href="/projects"
           className="
-          border
-          border-[#D4A85A]
-          text-[#D4A85A]
-          px-10
-          py-4
-          rounded-full
-          transition-all
-          duration-300
-          hover:bg-[#D4A85A]
-          hover:text-black
+            inline-flex
+            items-center
+            justify-center
+            border
+            border-[#D4A85A]
+            text-[#D4A85A]
+            px-7
+            py-3
+            rounded-full
+            font-[var(--font-avenir)]
+            text-xs
+            md:text-sm
+            font-medium
+            transition-all
+            duration-300
+            hover:bg-[#D4A85A]
+            hover:text-black
           "
         >
           View Projects
-        </button>
+        </Link>
 
       </div>
 
@@ -1952,27 +3052,67 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
   </div>
 
 </section>
-
       
 {/* TESTIMONIALS */}
-<section className="py-32">
+<section className="py-10 md:py-12 lg:py-14">
 
-  <div className="w-full px-20">
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+    "
+  >
 
     {/* SECTION HEADER */}
-    <div className="mb-20">
+<div className="mb-8 md:mb-10">
 
-      <p className="uppercase tracking-[4px] text-[#D4A85A] mb-5">
-        CLIENT TESTIMONIALS
-      </p>
+  {/* EYEBROW */}
+  <div className="flex items-center gap-4 mb-5 md:mb-6">
 
-      <h2 className="text-5xl lg:text-6xl ${cormorant.className} leading-tight">
-        Spaces designed.
-        <br />
-        Relationships built.
-      </h2>
+    <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
 
-    </div>
+    <p
+      className="
+        font-[var(--font-avenir)]
+        uppercase
+        tracking-[5px]
+        md:tracking-[8px]
+        text-[#D4A85A]
+        text-[10px]
+        md:text-xs
+        whitespace-nowrap
+      "
+    >
+      Client Testimonials
+    </p>
+
+    <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+  </div>
+
+
+  {/* HEADING */}
+  <h2
+    className="
+      font-heading
+      text-4xl
+      sm:text-5xl
+      md:text-6xl
+      font-light
+      leading-[1.05]
+    "
+  >
+    Spaces designed.
+    <br />
+    Relationships built.
+  </h2>
+
+</div>
 
     {/* TESTIMONIAL CARDS */}
     <div className="grid lg:grid-cols-3 gap-8">
@@ -2141,751 +3281,641 @@ hover:shadow-[0_0_35px_rgba(212,168,90,0.18)]
   </div>
 
 </section>
-{/* STUDENT SERVICES */}
-<section className="py-36 overflow-hidden">
 
-  <div className="w-full px-20">
+{/* =====================================================
+    STUDENT SERVICES
+===================================================== */}
 
-    <div className="grid lg:grid-cols-[1fr_1.3fr] gap-24 items-center">
+<section className="py-10 md:py-12 lg:py-14 overflow-hidden">
 
-      {/* LEFT CONTENT */}
-      <div>
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+    "
+  >
 
-        <p className="uppercase tracking-[4px] text-[#D4A85A] mb-5">
-          FOR ARCHITECTURE & DESIGN STUDENTS
-        </p>
+    <div
+      className="
+        grid
+        lg:grid-cols-[0.9fr_1.1fr]
+        gap-10
+        lg:gap-14
+        xl:gap-20
+        items-center
+      "
+    >
 
-        <h2 className="text-5xl lg:text-6xl ${cormorant.className} leading-tight mb-8">
+      {/* =================================================
+          LEFT CONTENT
+      ================================================= */}
+      <div className="min-w-0">
+
+        {/* EYEBROW */}
+        <div
+          className="
+            flex
+            items-center
+            gap-3
+            sm:gap-4
+            mb-5
+            md:mb-6
+          "
+        >
+
+          <div
+            className="
+              w-7
+              sm:w-10
+              h-px
+              bg-[#D4A85A]
+              flex-shrink-0
+            "
+          />
+
+          <p
+            className="
+              font-[var(--font-avenir)]
+              uppercase
+              tracking-[3px]
+              sm:tracking-[4px]
+              md:tracking-[6px]
+              text-[#D4A85A]
+              text-[8px]
+              sm:text-[9px]
+              md:text-[10px]
+              leading-relaxed
+            "
+          >
+            For Architecture &amp; Design Students
+          </p>
+
+          <div
+            className="
+              w-7
+              sm:w-10
+              h-px
+              bg-[#D4A85A]
+              flex-shrink-0
+            "
+          />
+
+        </div>
+
+
+        {/* HEADING */}
+        <h2
+          className="
+            font-heading
+            text-4xl
+            sm:text-5xl
+            md:text-6xl
+            font-light
+            leading-[1.08]
+            mb-5
+            md:mb-6
+          "
+        >
           Academic support
           <br />
           for future designers.
         </h2>
 
-        <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mb-10">
+
+        {/* DESCRIPTION */}
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-sm
+            md:text-base
+            text-gray-300
+            leading-relaxed
+            max-w-xl
+            mb-7
+            md:mb-8
+          "
+        >
           From presentation boards and photorealistic renders to
           architectural models and portfolio development, we help
           students transform ideas into professional-quality
           submissions that stand out.
         </p>
 
-        <button
+
+        {/* BUTTON */}
+        <Link
+          href="/students"
           className="
-          border
-          border-[#D4A85A]
-          text-[#D4A85A]
-          px-10
-          py-4
-          rounded-full
-          transition-all
-          duration-300
-          hover:bg-[#D4A85A]
-          hover:text-black
+            inline-flex
+            items-center
+            justify-center
+            border
+            border-[#D4A85A]
+            text-[#D4A85A]
+            px-6
+            md:px-8
+            py-3
+            md:py-3.5
+            rounded-full
+            font-[var(--font-avenir)]
+            text-xs
+            md:text-sm
+            font-medium
+            transition-all
+            duration-300
+            hover:bg-[#D4A85A]
+            hover:text-black
+            hover:shadow-[0_0_25px_rgba(212,168,90,0.25)]
           "
         >
-          Explore Student Services
-        </button>
+          Explore Student Services →
+        </Link>
 
       </div>
 
-      {/* RIGHT BOARD */}
-<div
-  className="
-  relative
-  flex
-  justify-center
-  items-start
-  -mt-10
-  "
->
 
-  <div
-    className="
-    grid
-    grid-cols-2
-    w-[760px]
-    "
-  >
+      {/* =================================================
+          PIN BOARD
+      ================================================= */}
+      <div
+        className="
+          relative
+          w-full
+          flex
+          justify-center
+          items-start
+        "
+      >
 
-    {/* SHEET 1 */}
-    <div
-      className="
-      group
-      relative
-      h-[280px]
-      bg-white/5
-      backdrop-blur-xl
-      border
-      border-white/10
-      p-8
-      transition-all
-      duration-500
-      hover:bg-white
-      hover:-translate-y-2
-      "
-    >
+        <div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            w-full
+            max-w-[760px]
+          "
+        >
 
-      {/* FOUR PINS */}
-      <div className="absolute top-[-8px] left-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+          {/* =================================================
+              SHEET 01
+          ================================================= */}
+          <div
+            className="
+              group
+              relative
+              min-h-[230px]
+              md:min-h-[260px]
+              lg:h-[280px]
+              bg-white/5
+              backdrop-blur-xl
+              border
+              border-white/10
+              p-5
+              sm:p-6
+              lg:p-8
+              transition-all
+              duration-500
+              hover:bg-white
+              hover:-translate-y-1
+              lg:hover:-translate-y-2
+            "
+          >
 
-      <div className="absolute top-[-8px] right-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+            {/* PINS */}
+            <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
 
-      <div className="absolute bottom-[-8px] left-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+            <div className="w-full h-16 sm:h-20 lg:h-24 bg-black/10 mb-5 lg:mb-6" />
 
-      <div className="absolute bottom-[-8px] right-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+            <h3
+              className="
+                font-heading
+                text-[#D4A85A]
+                text-2xl
+                lg:text-3xl
+                font-light
+                mb-2
+                lg:mb-3
+              "
+            >
+              3D Rendering
+            </h3>
 
-      <div className="w-full h-24 bg-black/10 mb-6"></div>
+            <p
+              className="
+                font-[var(--font-avenir)]
+                text-xs
+                md:text-sm
+                text-gray-300
+                leading-relaxed
+                group-hover:text-gray-700
+                transition-all
+                duration-500
+              "
+            >
+              Photorealistic visualizations for studio projects and presentations.
+            </p>
 
-      <h3 className="text-[#D4A85A] text-xl mb-3">
-        3D Rendering
-      </h3>
+          </div>
 
-      <p className="text-gray-300 group-hover:text-gray-700 transition-all duration-500">
-        Photorealistic visualizations for studio projects and presentations.
-      </p>
 
-    </div>
+          {/* =================================================
+              SHEET 02
+          ================================================= */}
+          <div
+            className="
+              group
+              relative
+              min-h-[230px]
+              md:min-h-[260px]
+              lg:h-[280px]
+              bg-white/5
+              backdrop-blur-xl
+              border
+              border-white/10
+              p-5
+              sm:p-6
+              lg:p-8
+              transition-all
+              duration-500
+              hover:bg-white
+              hover:-translate-y-1
+              lg:hover:-translate-y-2
+            "
+          >
 
-    {/* SHEET 2 */}
-    <div
-      className="
-      group
-      relative
-      h-[280px]
-      bg-white/5
-      backdrop-blur-xl
-      border
-      border-white/10
-      p-8
-      transition-all
-      duration-500
-      hover:bg-white
-      hover:-translate-y-2
-      "
-    >
+            {/* PINS */}
+            <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
 
-      <div className="absolute top-[-8px] left-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+            <div className="w-full h-16 sm:h-20 lg:h-24 bg-black/10 mb-5 lg:mb-6" />
 
-      <div className="absolute top-[-8px] right-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+            <h3
+              className="
+                font-heading
+                text-[#D4A85A]
+                text-2xl
+                lg:text-3xl
+                font-light
+                mb-2
+                lg:mb-3
+              "
+            >
+              Drawing Enhancement
+            </h3>
 
-      <div className="absolute bottom-[-8px] left-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+            <p
+              className="
+                font-[var(--font-avenir)]
+                text-xs
+                md:text-sm
+                text-gray-300
+                leading-relaxed
+                group-hover:text-gray-700
+                transition-all
+                duration-500
+              "
+            >
+              Refining drawings, layouts and visual documentation to
+              communicate design intent with greater clarity and precision.
+            </p>
 
-      <div className="absolute bottom-[-8px] right-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+          </div>
 
-      <div className="w-full h-24 bg-black/10 mb-6"></div>
 
-      <h3 className="text-[#D4A85A] text-xl mb-3">
-        Drawing Enhancement
-      </h3>
+          {/* =================================================
+              SHEET 03
+          ================================================= */}
+          <div
+            className="
+              group
+              relative
+              min-h-[230px]
+              md:min-h-[260px]
+              lg:h-[280px]
+              bg-white/5
+              backdrop-blur-xl
+              border
+              border-white/10
+              p-5
+              sm:p-6
+              lg:p-8
+              transition-all
+              duration-500
+              hover:bg-white
+              hover:-translate-y-1
+              lg:hover:-translate-y-2
+            "
+          >
 
-      <p className="text-gray-300 group-hover:text-gray-700 transition-all duration-500">
-        Refining drawings, layouts and visual documentation to communicate design intent with greater clarity and precision.
-      </p>
+            {/* PINS */}
+            <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
 
-    </div>
+            <div className="w-full h-16 sm:h-20 lg:h-24 bg-black/10 mb-5 lg:mb-6" />
 
-    {/* SHEET 3 */}
-    <div
-      className="
-      group
-      relative
-      h-[280px]
-      bg-white/5
-      backdrop-blur-xl
-      border
-      border-white/10
-      p-8
-      transition-all
-      duration-500
-      hover:bg-white
-      hover:-translate-y-2
-      "
-    >
+            <h3
+              className="
+                font-heading
+                text-[#D4A85A]
+                text-2xl
+                lg:text-3xl
+                font-light
+                mb-2
+                lg:mb-3
+              "
+            >
+              Architectural Models
+            </h3>
 
-      <div className="absolute top-[-8px] left-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+            <p
+              className="
+                font-[var(--font-avenir)]
+                text-xs
+                md:text-sm
+                text-gray-300
+                leading-relaxed
+                group-hover:text-gray-700
+                transition-all
+                duration-500
+              "
+            >
+              Physical and digital model development for design exploration
+              and project presentation.
+            </p>
 
-      <div className="absolute top-[-8px] right-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+          </div>
 
-      <div className="absolute bottom-[-8px] left-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
 
-      <div className="absolute bottom-[-8px] right-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+          {/* =================================================
+              SHEET 04
+          ================================================= */}
+          <div
+            className="
+              group
+              relative
+              min-h-[230px]
+              md:min-h-[260px]
+              lg:h-[280px]
+              bg-white/5
+              backdrop-blur-xl
+              border
+              border-white/10
+              p-5
+              sm:p-6
+              lg:p-8
+              transition-all
+              duration-500
+              hover:bg-white
+              hover:-translate-y-1
+              lg:hover:-translate-y-2
+            "
+          >
 
-      <div className="w-full h-24 bg-black/10 mb-6"></div>
+            {/* PINS */}
+            <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+            <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
 
-      <h3 className="text-[#D4A85A] text-xl mb-3">
-        Architectural Models
-      </h3>
+            <div className="w-full h-16 sm:h-20 lg:h-24 bg-black/10 mb-5 lg:mb-6" />
 
-      <p className="text-gray-300 group-hover:text-gray-700 transition-all duration-500">
-        Physical and digital model development for design exploration and project presentation.
-      </p>
+            <h3
+              className="
+                font-heading
+                text-[#D4A85A]
+                text-2xl
+                lg:text-3xl
+                font-light
+                mb-2
+                lg:mb-3
+              "
+            >
+              Portfolio Development
+            </h3>
 
-    </div>
+            <p
+              className="
+                font-[var(--font-avenir)]
+                text-xs
+                md:text-sm
+                text-gray-300
+                leading-relaxed
+                group-hover:text-gray-700
+                transition-all
+                duration-500
+              "
+            >
+              Curated project presentations that showcase skills, process
+              and design thinking.
+            </p>
 
-    {/* SHEET 4 */}
-    <div
-      className="
-      group
-      relative
-      h-[280px]
-      bg-white/5
-      backdrop-blur-xl
-      border
-      border-white/10
-      p-8
-      transition-all
-      duration-500
-      hover:bg-white
-      hover:-translate-y-2
-      "
-    >
+          </div>
 
-      <div className="absolute top-[-8px] left-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+        </div>
 
-      <div className="absolute top-[-8px] right-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
+      </div>
 
-      <div className="absolute bottom-[-8px] left-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
-
-      <div className="absolute bottom-[-8px] right-[-8px] w-5 h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]"></div>
-
-      <div className="w-full h-24 bg-black/10 mb-6"></div>
-
-      <h3 className="text-[#D4A85A] text-xl mb-3">
-        Portfolio Development
-      </h3>
-
-      <p className="text-gray-300 group-hover:text-gray-700 transition-all duration-500">
-        Curated project presentations that showcase skills, process and design thinking.
-      </p>
-
-    </div>
-
-  </div>
-
-</div>
     </div>
 
   </div>
 
 </section>
-{/* ARCHITECTURAL QUOTE */}
-<section className="relative py-56 overflow-hidden">
-{/* BACKGROUND IMAGE */}
-<div className="absolute inset-0">
 
-  <img
-    src="/vision/vision.png"
-    alt=""
-    className="
-    w-full
-    h-full
-    object-cover
-    "
-  />
+{/* =====================================================
+    ARCHITECTURAL QUOTE
+===================================================== */}
 
-</div>
-{/* CINEMATIC BLUE OVERLAY */}
-<div
+<section
   className="
-  absolute
-  inset-0
-  bg-gradient-to-r
-  from-[#071321]/85
-  via-[#071321]/70
-  to-[#071321]/55
-  "
-/>
-  <div
-  className="
-  relative
-  z-10
-  max-w-6xl
-  mx-auto
-  px-10
-  text-center
-  animate-quoteFade
-  "
->
-
-   <h2
-  className="
-  ${cormorant.className}
-  text-5xl
-  md:text-6xl
-  lg:text-7xl
-  leading-tight
-  text-white
-  "
->
-  Architecture is not simply
-  <br />
-  about buildings.
-</h2>
-
-{/* GOLD LINE */}
-<div
-  className="
-  w-56
-  h-[2px]
-  bg-[#D4A85A]
-  mx-auto
-  my-14
-  "
-/>
-
-<p
-  className="
-  italic
-  text-2xl
-  md:text-3xl
-  text-gray-300
-  leading-relaxed
-  max-w-4xl
-  mx-auto
-  "
->
-  It is about creating spaces
-  that improve how people live.
-</p>
-
-<div
-  className="
-  mt-14
-  uppercase
-  tracking-[8px]
-  text-[#D4A85A]
-  text-sm
-  "
->
-  APIYO DESIGN STUDIO
-</div>
-
-  </div>
-
-</section>
-
-  {/* =========================================================
-    FOOTER
-========================================================= */}
-
-<footer
-  className="
-    border-t
-    border-white/10
-    py-24
+    relative
+    py-28
+    sm:py-32
+    md:py-40
+    lg:py-48
+    xl:py-56
     overflow-hidden
   "
 >
 
-  <div className="w-full px-6 sm:px-8 lg:px-32">
+  {/* BACKGROUND IMAGE */}
+  <div className="absolute inset-0">
 
-    <div
+    <img
+      src="/vision/vision.png"
+      alt=""
       className="
-        grid
-        lg:grid-cols-[1.8fr_1fr_1fr_1fr_0.8fr]
-        gap-20
+        w-full
+        h-full
+        object-cover
+        object-center
+      "
+    />
+
+  </div>
+
+
+  {/* CINEMATIC BLUE OVERLAY */}
+  <div
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-r
+      from-[#071321]/85
+      via-[#071321]/70
+      to-[#071321]/55
+    "
+  />
+
+
+  {/* CONTENT */}
+  <div
+    className="
+      relative
+      z-10
+      max-w-6xl
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      text-center
+      animate-quoteFade
+    "
+  >
+
+    {/* MAIN STATEMENT */}
+    <h2
+      className="
+        font-heading
+        text-4xl
+        sm:text-5xl
+        md:text-6xl
+        lg:text-7xl
+        font-light
+        leading-[1.05]
+        text-white
       "
     >
+      Architecture is not simply
+      <br />
+      about buildings.
+    </h2>
 
-      {/* =====================================================
-          BRAND
-      ===================================================== */}
 
-      <div className="flex flex-col items-center">
-
-        <img
-          src="/logo/logo-white.png"
-          alt="Apiyo Design Studio"
-          className="
-            w-80
-            object-contain
-            mb-8
-          "
-        />
-
-        <p
-          className="
-            uppercase
-            tracking-[5px]
-            text-[#D4A85A]
-            text-sm
-            text-center
-          "
-        >
-          Architecture • Interiors • Visualization
-        </p>
-
-      </div>
-
-
-      {/* =====================================================
-          QUICK LINKS
-      ===================================================== */}
-
-      <div>
-
-        <p
-          className="
-            uppercase
-            tracking-[4px]
-            text-[#D4A85A]
-            mb-8
-          "
-        >
-          Quick Links
-        </p>
-
-        <div className="flex flex-col gap-4">
-
-          <Link
-            href="/"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            Home
-          </Link>
-
-          <Link
-            href="/house-plans"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            House Plans
-          </Link>
-
-          <Link
-            href="/interiors"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            Interior Design
-          </Link>
-
-          <Link
-            href="/3d-visualization"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            3D Visualization
-          </Link>
-
-          <Link
-            href="/students"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            Student Services
-          </Link>
-
-          <Link
-            href="/consultation"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            Contact
-          </Link>
-
-        </div>
-
-      </div>
-
-
-      {/* =====================================================
-          SERVICES
-      ===================================================== */}
-
-      <div>
-
-        <p
-          className="
-            uppercase
-            tracking-[4px]
-            text-[#D4A85A]
-            mb-8
-          "
-        >
-          Services
-        </p>
-
-        <div
-          className="
-            flex
-            flex-col
-            gap-4
-            text-gray-300
-          "
-        >
-
-          <p>Architectural Design</p>
-
-          <p>Interior Design</p>
-
-          <p>3D Visualization</p>
-
-          <p>Custom Home Design</p>
-
-          <p>House Plans</p>
-
-          <p>Student Services</p>
-
-        </div>
-
-      </div>
-
-
-      {/* =====================================================
-          CONTACT
-      ===================================================== */}
-
-      <div>
-
-        <p
-          className="
-            uppercase
-            tracking-[4px]
-            text-[#D4A85A]
-            mb-8
-          "
-        >
-          Contact
-        </p>
-
-        <div className="space-y-5">
-
-          <div className="flex items-center gap-4">
-
-            <Mail
-              size={18}
-              className="text-[#D4A85A]"
-            />
-
-            <span className="text-gray-300">
-              info@apiyodesignstudio.co.ke
-            </span>
-
-          </div>
-
-
-          <div className="flex items-center gap-4">
-
-            <Phone
-              size={18}
-              className="text-[#D4A85A]"
-            />
-
-            <span className="text-gray-300">
-              0754 525407
-            </span>
-
-          </div>
-
-
-          <div className="flex items-center gap-4">
-
-            <MapPin
-              size={18}
-              className="text-[#D4A85A]"
-            />
-
-            <span className="text-gray-300">
-              Nairobi, Kenya
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* =====================================================
-          FOLLOW US
-      ===================================================== */}
-
-      <div>
-
-        <p
-          className="
-            uppercase
-            tracking-[4px]
-            text-[#D4A85A]
-            mb-8
-          "
-        >
-          Follow Us
-        </p>
-
-        <div className="flex gap-5 flex-wrap">
-
-          <FaInstagram
-            className="
-              text-[#D4A85A]
-              text-xl
-              cursor-pointer
-              hover:text-white
-              hover:scale-125
-              transition-all
-              duration-300
-            "
-          />
-
-          <FaFacebookF
-            className="
-              text-[#D4A85A]
-              text-xl
-              cursor-pointer
-              hover:text-white
-              hover:scale-125
-              transition-all
-              duration-300
-            "
-          />
-
-          <FaLinkedinIn
-            className="
-              text-[#D4A85A]
-              text-xl
-              cursor-pointer
-              hover:text-white
-              hover:scale-125
-              transition-all
-              duration-300
-            "
-          />
-
-          <FaXTwitter
-            className="
-              text-[#D4A85A]
-              text-xl
-              cursor-pointer
-              hover:text-white
-              hover:scale-125
-              transition-all
-              duration-300
-            "
-          />
-
-          <FaWhatsapp
-            className="
-              text-[#D4A85A]
-              text-xl
-              cursor-pointer
-              hover:text-white
-              hover:scale-125
-              transition-all
-              duration-300
-            "
-          />
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    {/* =====================================================
-        DIVIDER
-    ===================================================== */}
-
+    {/* GOLD LINE */}
     <div
       className="
+        w-20
+        sm:w-28
+        md:w-36
         h-px
-        bg-gradient-to-r
-        from-transparent
-        via-[#D4A85A]/40
-        to-transparent
-        my-16
+        bg-[#D4A85A]
+        mx-auto
+        my-8
+        md:my-10
       "
     />
 
 
-    {/* =====================================================
-        COPYRIGHT
-    ===================================================== */}
-
-    <div
+    {/* SECOND STATEMENT */}
+    <p
       className="
-        text-center
-        text-gray-500
-        text-sm
+        font-heading
+        italic
+        font-light
+        text-2xl
+        sm:text-3xl
+        md:text-4xl
+        text-gray-300
+        leading-[1.25]
+        max-w-4xl
+        mx-auto
       "
     >
-      © 2026 Apiyo Design Studio. All Rights Reserved.
+      It is about creating spaces
+      <br className="hidden sm:block" />
+      {" "}that improve how people live.
+    </p>
+
+
+    {/* STUDIO SIGNATURE */}
+    <div
+      className="
+        mt-8
+        md:mt-10
+        flex
+        items-center
+        justify-center
+        gap-3
+        sm:gap-4
+      "
+    >
+
+      {/* LEFT GOLD DASH */}
+      <div
+        className="
+          w-7
+          sm:w-10
+          md:w-12
+          h-px
+          bg-[#D4A85A]
+          flex-shrink-0
+        "
+      />
+
+
+      <p
+        className="
+          font-[var(--font-avenir)]
+          uppercase
+          tracking-[4px]
+          sm:tracking-[6px]
+          md:tracking-[8px]
+          text-[#D4A85A]
+          text-[8px]
+          sm:text-[9px]
+          md:text-[10px]
+          whitespace-nowrap
+        "
+      >
+        Apiyo Design Studio
+      </p>
+
+
+      {/* RIGHT GOLD DASH */}
+      <div
+        className="
+          w-7
+          sm:w-10
+          md:w-12
+          h-px
+          bg-[#D4A85A]
+          flex-shrink-0
+        "
+      />
+
     </div>
 
   </div>
 
-</footer>
+</section>
 
+  {/* FOOTER */}
+<Footer />
 
-{/* =========================================================
-    FLOATING WHATSAPP
-========================================================= */}
-
-<a
-  href="https://wa.me/254754525407"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="
-    fixed
-    bottom-4
-right-4
-sm:bottom-6
-sm:right-6
-lg:bottom-8
-lg:right-8
-w-14
-h-14
-sm:w-16
-sm:h-16
-lg:w-20
-lg:h-20
-    rounded-full
-    backdrop-blur-xl
-    bg-white/10
-    border
-    border-white/20
-    flex
-    items-center
-    justify-center
-    transition-all
-    duration-300
-    hover:bg-[#D4A85A]
-    hover:scale-110
-    hover:shadow-[0_0_30px_rgba(212,168,90,0.35)]
-  "
->
-  <FaWhatsapp
-    className="
-      text-white
-      text-2xl
-    "
-  />
-</a>
     </main>
   );
 }

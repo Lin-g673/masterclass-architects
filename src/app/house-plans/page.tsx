@@ -149,7 +149,7 @@ export default function HousePlansPage() {
                   md:text-xs
                 "
               >
-                Architectural Plans · Kenya
+                Architectural Plans
               </p>
 
               <div className="w-10 h-px bg-[#D4A85A]" />
@@ -191,7 +191,7 @@ export default function HousePlansPage() {
                   md:mt-3
                 "
               >
-                Built For Kenya.
+                Made For Real Living.
               </span>
             </h1>
 
@@ -207,10 +207,9 @@ export default function HousePlansPage() {
                 leading-relaxed
               "
             >
-              Professionally designed residential plans
-              created around real family needs, practical
-              Kenyan plots and thoughtful architectural
-              planning.
+              Professionally designed architectural plans shaped 
+              around real needs, practical functionality and 
+              thoughtful architectural planning.
             </p>
 
 
@@ -313,7 +312,7 @@ export default function HousePlansPage() {
 
           {[
             ["12", "Ready Plans"],
-            ["Kenya", "Plot Conscious"],
+            ["Context", "Plot Conscious"],
             ["Digital", "PDF Delivery"],
             ["Professional", "Drawing Packages"],
           ].map(([value, label], index) => (

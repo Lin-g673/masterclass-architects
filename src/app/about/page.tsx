@@ -258,7 +258,7 @@ export default function AboutPage() {
               <h1
                 className="
                   font-heading
-                  text-5xl
+                  text-4xl
                   sm:text-6xl
                   md:text-7xl
                   lg:text-8xl
@@ -268,11 +268,13 @@ export default function AboutPage() {
                   mb-8
                 "
               >
-                Architecture Should
-                <br />
-                Leave Life Better
-                <br />
-                Than It Found It.
+                <span className="block">
+  Designing What Matters.
+</span>
+
+<span className="block mt-2">
+  Building What Lasts.
+</span>
               </h1>
 
 
@@ -350,7 +352,7 @@ export default function AboutPage() {
         className="
           py-20
           md:py-24
-          lg:py-28
+          lg:py-20
         "
       >
 
@@ -473,7 +475,7 @@ export default function AboutPage() {
         className="
           py-20
           md:py-24
-          lg:py-28
+          lg:py-20
         "
       >
 
@@ -633,9 +635,9 @@ export default function AboutPage() {
 
       <section
         className="
-          py-20
-          md:py-24
-          lg:py-32
+    py-14
+    md:py-16
+    lg:py-20
         "
       >
 
@@ -807,9 +809,9 @@ export default function AboutPage() {
 
       <section
         className="
-          py-20
-          md:py-24
-          lg:py-32
+    py-14
+    md:py-16
+    lg:py-20
         "
       >
 
@@ -997,9 +999,9 @@ export default function AboutPage() {
 
       <section
         className="
-          py-20
-          md:py-24
-          lg:py-32
+    py-14
+    md:py-16
+    lg:py-20
         "
       >
 
@@ -1222,9 +1224,9 @@ export default function AboutPage() {
 
       <section
         className="
-          py-20
-          md:py-24
-          lg:py-32
+    py-14
+    md:py-16
+    lg:py-20
         "
       >
 
@@ -1423,9 +1425,9 @@ export default function AboutPage() {
 
 <section
   className="
-    py-20
-    md:py-24
-    lg:py-32
+    py-14
+    md:py-16
+    lg:py-20
   "
 >
 
@@ -1457,19 +1459,22 @@ export default function AboutPage() {
       <div className="w-10 h-px bg-[#D4A85A]" />
 
       <p
-        className="
-          font-[var(--font-avenir)]
-          uppercase
-          tracking-[8px]
-          text-[#D4A85A]
-          text-[10px]
-          md:text-xs
-          whitespace-nowrap
-        "
-      >
-        Architecture In Service Of Humanity
-      </p>
-
+  className="
+    font-[var(--font-avenir)]
+    uppercase
+    tracking-[4px]
+    sm:tracking-[6px]
+    md:tracking-[8px]
+    text-[#D4A85A]
+    text-[9px]
+    md:text-xs
+    leading-relaxed
+    text-center
+    sm:text-left
+  "
+>
+  Architecture In Service Of Humanity
+</p>
       <div className="w-10 h-px bg-[#D4A85A]" />
 
     </div>
@@ -1575,16 +1580,18 @@ export default function AboutPage() {
           {/* HEADING */}
 
           <h2
-            className="
-              font-heading
-              text-4xl
-              md:text-5xl
-              lg:text-6xl
-              font-light
-              leading-[1.05]
-              mb-7
-            "
-          >
+  className="
+    font-heading
+    text-4xl
+    md:text-5xl
+    lg:text-6xl
+    font-light
+    leading-[1.18]
+    md:leading-[1.1]
+    lg:leading-[1.05]
+    mb-7
+  "
+>
             Dignity Should Not
             <br className="hidden sm:block" />
             Disappear When
@@ -1650,9 +1657,9 @@ export default function AboutPage() {
 
       <section
         className="
-          py-20
-          md:py-24
-          lg:py-32
+    py-14
+    md:py-16
+    lg:py-20
         "
       >
 
