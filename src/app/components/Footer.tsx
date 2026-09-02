@@ -3,6 +3,7 @@
 import {
   FaInstagram,
   FaFacebookF,
+  FaTiktok,
   FaLinkedinIn,
   FaXTwitter,
   FaWhatsapp,
@@ -181,7 +182,7 @@ export default function Footer() {
             />
 
             <span className="text-gray-300">
-              0720 468 033
+              0754 525 407
             </span>
 
           </div>
@@ -202,8 +203,7 @@ export default function Footer() {
         </div>
 
       </div>
-
-      {/* FOLLOW US */}
+            {/* FOLLOW US */}
       <div>
 
         <p
@@ -219,65 +219,125 @@ export default function Footer() {
 
         <div className="flex gap-5 flex-wrap">
 
-          <FaInstagram
-            className="
-            text-[#D4A85A]
-            text-xl
-            cursor-pointer
-            hover:text-white
-            hover:scale-125
-            transition-all
-            duration-300
-            "
-          />
+          {/* INSTAGRAM */}
+          <a
+            href="https://www.instagram.com/apiyo_designstudio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Apiyo Design Studio on Instagram"
+          >
+            <FaInstagram
+              className="
+              text-[#D4A85A]
+              text-xl
+              cursor-pointer
+              hover:text-white
+              hover:scale-125
+              transition-all
+              duration-300
+              "
+            />
+          </a>
 
-          <FaFacebookF
-            className="
-            text-[#D4A85A]
-            text-xl
-            cursor-pointer
-            hover:text-white
-            hover:scale-125
-            transition-all
-            duration-300
-            "
-          />
+          {/* FACEBOOK */}
+          <a
+            href="https://www.facebook.com/apiyodesignstudio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Apiyo Design Studio on Facebook"
+          >
+            <FaFacebookF
+              className="
+              text-[#D4A85A]
+              text-xl
+              cursor-pointer
+              hover:text-white
+              hover:scale-125
+              transition-all
+              duration-300
+              "
+            />
+          </a>
 
-          <FaLinkedinIn
-            className="
-            text-[#D4A85A]
-            text-xl
-            cursor-pointer
-            hover:text-white
-            hover:scale-125
-            transition-all
-            duration-300
-            "
-          />
+          {/* TIKTOK */}
+          <a
+            href="https://www.tiktok.com/@apiyodesignstudio"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Apiyo Design Studio on TikTok"
+          >
+            <FaTiktok
+              className="
+              text-[#D4A85A]
+              text-xl
+              cursor-pointer
+              hover:text-white
+              hover:scale-125
+              transition-all
+              duration-300
+              "
+            />
+          </a>
 
-          <FaXTwitter
-            className="
-            text-[#D4A85A]
-            text-xl
-            cursor-pointer
-            hover:text-white
-            hover:scale-125
-            transition-all
-            duration-300
-            "
-          />
+          {/* LINKEDIN */}
+          <a
+            href="https://www.linkedin.com/company/apiyo-design-studio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Apiyo Design Studio on LinkedIn"
+          >
+            <FaLinkedinIn
+              className="
+              text-[#D4A85A]
+              text-xl
+              cursor-pointer
+              hover:text-white
+              hover:scale-125
+              transition-all
+              duration-300
+              "
+            />
+          </a>
 
-          <FaWhatsapp
-            className="
-            text-[#D4A85A]
-            text-xl
-            cursor-pointer
-            hover:text-white
-            hover:scale-125
-            transition-all
-            duration-300
-            "
-          />
+          {/* X */}
+          <a
+            href="https://x.com/jojovil2"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Apiyo Design Studio on X"
+          >
+            <FaXTwitter
+              className="
+              text-[#D4A85A]
+              text-xl
+              cursor-pointer
+              hover:text-white
+              hover:scale-125
+              transition-all
+              duration-300
+              "
+            />
+          </a>
+
+          {/* WHATSAPP */}
+          <a
+            href="https://wa.me/254754525407"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contact Apiyo Design Studio on WhatsApp"
+          >
+            <FaWhatsapp
+              className="
+              text-[#D4A85A]
+              text-xl
+              cursor-pointer
+              hover:text-white
+              hover:scale-125
+              transition-all
+              duration-300
+              "
+            />
+          </a>
 
         </div>
 
@@ -314,7 +374,7 @@ export default function Footer() {
 
 {/* FLOATING WHATSAPP */}
 <a
-  href="https://wa.me/254720468033"
+  href="https://wa.me/254754525407"
   target="_blank"
   rel="noopener noreferrer"
   className="

@@ -110,11 +110,11 @@ useEffect(() => {
   },
 ];
 const heroImages = [
-  "/hero/concept.png.png",
-  "/hero/interior.png.png",
-  "/hero/exterior.png.png",
-  "/hero/construction.png.png",
-  "/hero/completed.png.png",
+  "/hero/concept.png",
+  "/hero/interior.png",
+  "/hero/exterior.png",
+  "/hero/construction.png",
+  "/hero/completed.png",
 ];
 
 const heroMessages = [

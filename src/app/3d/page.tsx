@@ -1499,9 +1499,9 @@ lg:py-14
   </div>
 
 </div>
-{/* =================================================
-    SELECTED WORKS — BALANCED ALTERNATING COLLAGE
-================================================= */}
+{/* =====================================================
+    SELECTED WORKS — RESPONSIVE ARCHITECTURAL COLLAGE
+===================================================== */}
 
 <div
   className="
@@ -1512,18 +1512,18 @@ lg:py-14
   "
 >
 
-  {/* =================================================
+  {/* =====================================================
       ROW 1 — LANDSCAPE | PORTRAIT
-  ================================================= */}
+  ===================================================== */}
 
   <div
     className="
       grid
-      grid-cols-[1.55fr_1fr]
-lg:grid-cols-[2.25fr_1fr]
+      grid-cols-1
+      sm:grid-cols-[1.55fr_1fr]
+      lg:grid-cols-[2.25fr_1fr]
       gap-4
       md:gap-5
-      items-stretch
     "
   >
 
@@ -1533,7 +1533,10 @@ lg:grid-cols-[2.25fr_1fr]
       className="
         group
         relative
-        aspect-[3/2]
+        w-full
+        h-[240px]
+        sm:h-auto
+        sm:aspect-[3/2]
         overflow-hidden
         rounded-2xl
         bg-[#0a1828]
@@ -1559,13 +1562,17 @@ lg:grid-cols-[2.25fr_1fr]
       />
     </div>
 
+
     {/* 3D7 PORTRAIT */}
 
     <div
       className="
         group
         relative
-        aspect-[2/3]
+        w-full
+        h-[320px]
+        sm:h-auto
+        sm:aspect-[2/3]
         overflow-hidden
         rounded-2xl
         bg-[#0a1828]
@@ -1594,18 +1601,18 @@ lg:grid-cols-[2.25fr_1fr]
   </div>
 
 
-  {/* =================================================
+  {/* =====================================================
       ROW 2 — PORTRAIT | LANDSCAPE
-  ================================================= */}
+  ===================================================== */}
 
   <div
     className="
       grid
-      grid-cols-[1fr_1.55fr]
-lg:grid-cols-[1fr_2.25fr]
+      grid-cols-1
+      sm:grid-cols-[1fr_1.55fr]
+      lg:grid-cols-[1fr_2.25fr]
       gap-4
       md:gap-5
-      items-stretch
     "
   >
 
@@ -1615,7 +1622,10 @@ lg:grid-cols-[1fr_2.25fr]
       className="
         group
         relative
-        aspect-[2/3]
+        w-full
+        h-[320px]
+        sm:h-auto
+        sm:aspect-[2/3]
         overflow-hidden
         rounded-2xl
         bg-[#0a1828]
@@ -1641,13 +1651,17 @@ lg:grid-cols-[1fr_2.25fr]
       />
     </div>
 
+
     {/* 3D2 LANDSCAPE */}
 
     <div
       className="
         group
         relative
-        aspect-[3/2]
+        w-full
+        h-[240px]
+        sm:h-auto
+        sm:aspect-[3/2]
         overflow-hidden
         rounded-2xl
         bg-[#0a1828]
@@ -1676,18 +1690,18 @@ lg:grid-cols-[1fr_2.25fr]
   </div>
 
 
-  {/* =================================================
+  {/* =====================================================
       ROW 3 — LANDSCAPE | PORTRAIT
-  ================================================= */}
+  ===================================================== */}
 
   <div
     className="
       grid
-      grid-cols-[1.55fr_1fr]
-lg:grid-cols-[2.25fr_1fr]
+      grid-cols-1
+      sm:grid-cols-[1.55fr_1fr]
+      lg:grid-cols-[2.25fr_1fr]
       gap-4
       md:gap-5
-      items-stretch
     "
   >
 
@@ -1697,7 +1711,10 @@ lg:grid-cols-[2.25fr_1fr]
       className="
         group
         relative
-        aspect-[3/2]
+        w-full
+        h-[240px]
+        sm:h-auto
+        sm:aspect-[3/2]
         overflow-hidden
         rounded-2xl
         bg-[#0a1828]
@@ -1723,13 +1740,17 @@ lg:grid-cols-[2.25fr_1fr]
       />
     </div>
 
+
     {/* 3D9 PORTRAIT */}
 
     <div
       className="
         group
         relative
-        aspect-[2/3]
+        w-full
+        h-[320px]
+        sm:h-auto
+        sm:aspect-[2/3]
         overflow-hidden
         rounded-2xl
         bg-[#0a1828]
@@ -1758,18 +1779,18 @@ lg:grid-cols-[2.25fr_1fr]
   </div>
 
 
-  {/* =================================================
+  {/* =====================================================
       ROW 4 — PORTRAIT | LANDSCAPE
-  ================================================= */}
+  ===================================================== */}
 
   <div
     className="
       grid
-      grid-cols-[1fr_1.55fr]
-lg:grid-cols-[1fr_2.25fr]
+      grid-cols-1
+      sm:grid-cols-[1fr_1.55fr]
+      lg:grid-cols-[1fr_2.25fr]
       gap-4
       md:gap-5
-      items-stretch
     "
   >
 
@@ -1779,7 +1800,10 @@ lg:grid-cols-[1fr_2.25fr]
       className="
         group
         relative
-        aspect-[2/3]
+        w-full
+        h-[320px]
+        sm:h-auto
+        sm:aspect-[2/3]
         overflow-hidden
         rounded-2xl
         bg-[#0a1828]
@@ -1805,13 +1829,17 @@ lg:grid-cols-[1fr_2.25fr]
       />
     </div>
 
+
     {/* 3D4 LANDSCAPE */}
 
     <div
       className="
         group
         relative
-        aspect-[3/2]
+        w-full
+        h-[240px]
+        sm:h-auto
+        sm:aspect-[3/2]
         overflow-hidden
         rounded-2xl
         bg-[#0a1828]
@@ -1840,9 +1868,9 @@ lg:grid-cols-[1fr_2.25fr]
   </div>
 
 
-  {/* =================================================
+  {/* =====================================================
       ROW 5 — LANDSCAPE | LANDSCAPE
-  ================================================= */}
+  ===================================================== */}
 
   <div
     className="
@@ -1860,7 +1888,10 @@ lg:grid-cols-[1fr_2.25fr]
       className="
         group
         relative
-        aspect-[3/2]
+        w-full
+        h-[240px]
+        sm:h-auto
+        sm:aspect-[3/2]
         overflow-hidden
         rounded-2xl
         bg-[#0a1828]
@@ -1886,13 +1917,17 @@ lg:grid-cols-[1fr_2.25fr]
       />
     </div>
 
+
     {/* 3D6 LANDSCAPE */}
 
     <div
       className="
         group
         relative
-        aspect-[3/2]
+        w-full
+        h-[240px]
+        sm:h-auto
+        sm:aspect-[3/2]
         overflow-hidden
         rounded-2xl
         bg-[#0a1828]
@@ -1922,10 +1957,9 @@ lg:grid-cols-[1fr_2.25fr]
 
 </div>
 
-        </div>
+</div>
 
-      </section>
-
+</section>
       {/* =================================================
           PARTNERSHIP
       ================================================= */}

@@ -7,14 +7,15 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-
 import {
   FaInstagram,
   FaFacebookF,
+  FaTiktok,
   FaLinkedinIn,
   FaXTwitter,
   FaWhatsapp,
 } from "react-icons/fa6";
+
 import { useState } from "react";
 
 export default function ConsultationPage() {
@@ -910,8 +911,6 @@ lg:p-10
   </div>
 
 </section>
-
-
 {/* SOCIAL MEDIA */}
 
 <section className="pb-28">
@@ -933,20 +932,73 @@ lg:p-10
       className="
       flex
       justify-center
-      gap-10
+      items-center
+      gap-8
+      sm:gap-10
       text-3xl
+      flex-wrap
       "
     >
 
-      <FaInstagram className="text-[#D4A85A] hover:text-white transition-all duration-300 cursor-pointer" />
+      {/* INSTAGRAM */}
+      <a
+        href="https://www.instagram.com/apiyo_designstudio/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apiyo Design Studio on Instagram"
+      >
+        <FaInstagram className="text-[#D4A85A] hover:text-white hover:scale-110 transition-all duration-300" />
+      </a>
 
-      <FaFacebookF className="text-[#D4A85A] hover:text-white transition-all duration-300 cursor-pointer" />
+      {/* FACEBOOK */}
+      <a
+        href="https://www.facebook.com/apiyodesignstudio/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apiyo Design Studio on Facebook"
+      >
+        <FaFacebookF className="text-[#D4A85A] hover:text-white hover:scale-110 transition-all duration-300" />
+      </a>
 
-      <FaLinkedinIn className="text-[#D4A85A] hover:text-white transition-all duration-300 cursor-pointer" />
+      {/* TIKTOK */}
+      <a
+        href="https://www.tiktok.com/@apiyodesignstudio"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apiyo Design Studio on TikTok"
+      >
+        <FaTiktok className="text-[#D4A85A] hover:text-white hover:scale-110 transition-all duration-300" />
+      </a>
 
-      <FaXTwitter className="text-[#D4A85A] hover:text-white transition-all duration-300 cursor-pointer" />
+      {/* LINKEDIN */}
+      <a
+        href="https://www.linkedin.com/company/apiyo-design-studio/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apiyo Design Studio on LinkedIn"
+      >
+        <FaLinkedinIn className="text-[#D4A85A] hover:text-white hover:scale-110 transition-all duration-300" />
+      </a>
 
-      <FaWhatsapp className="text-[#D4A85A] hover:text-white transition-all duration-300 cursor-pointer" />
+      {/* X */}
+      <a
+        href="https://x.com/jojovil2"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apiyo Design Studio on X"
+      >
+        <FaXTwitter className="text-[#D4A85A] hover:text-white hover:scale-110 transition-all duration-300" />
+      </a>
+
+      {/* WHATSAPP */}
+      <a
+        href="https://wa.me/254754525407"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact Apiyo Design Studio on WhatsApp"
+      >
+        <FaWhatsapp className="text-[#D4A85A] hover:text-white hover:scale-110 transition-all duration-300" />
+      </a>
 
     </div>
 

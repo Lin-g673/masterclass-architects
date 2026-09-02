@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/Navbar";
 import {
   Trophy,
@@ -1388,28 +1389,91 @@ md:text-lg
 
 
 
+<section
+  className="
+    py-10
+    md:py-12
+    lg:py-14
+    bg-[#071321]
+  "
+>
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+    "
+  >
 
+    {/* =====================================================
+        INTRO + STYLE SELECTOR
+    ===================================================== */}
 
-<section className="py-10 md:py-12 lg:py-14 bg-[#071321]">
-  <div className="w-full px-16 xl:px-24">
-
-    <div className="grid lg:grid-cols-[340px_1fr] gap-12">
+    <div
+      className="
+        grid
+        lg:grid-cols-[320px_1fr]
+        gap-8
+        md:gap-10
+        lg:gap-12
+        items-start
+      "
+    >
 
       {/* LEFT INTRO */}
 
-      <div>
+      <div className="max-w-md">
 
-        <p className="uppercase tracking-[8px] text-lg text-[#D4A85A] mb-6">
-          Residential Interiors
-        </p>
+        {/* GOLD DASH EYEBROW */}
+
+        <div
+          className="
+            flex
+            items-center
+            gap-3
+            sm:gap-4
+            mb-5
+            md:mb-6
+          "
+        >
+          <div className="w-8 sm:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+          <p
+            className="
+              font-[var(--font-avenir)]
+              uppercase
+              tracking-[4px]
+              md:tracking-[7px]
+              text-[#D4A85A]
+              text-[9px]
+              md:text-[10px]
+              whitespace-nowrap
+            "
+          >
+            Residential Interiors
+          </p>
+
+          <div className="w-8 sm:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+        </div>
+
+
+        {/* TITLE */}
 
         <h2
           className="
-          text-5xl
-          lg:text-6xl
-          leading-[0.95]
-          mb-8
-          font-heading
+            font-heading
+            text-4xl
+            sm:text-5xl
+            md:text-5xl
+            lg:text-6xl
+            font-light
+            leading-[1.08]
+            sm:leading-[1.05]
+            mb-6
           "
         >
           Explore Interior
@@ -1417,585 +1481,664 @@ md:text-lg
           Design Styles
         </h2>
 
-        <div
-          className="
-          w-20
-          h-[2px]
-          bg-[#D4A85A]
-          mb-8
-          "
-        />
 
-        <p className="text-lg text-gray-300 leading-relaxed mb-10">
+        {/* DESCRIPTION */}
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-sm
+            md:text-base
+            text-gray-400
+            leading-relaxed
+            max-w-sm
+          "
+        >
           Discover the style that reflects your personality
           and inspires your space.
         </p>
 
-
       </div>
 
-     {/* STYLE CARDS */}
-<div className="min-w-0">
 
-  {/* MOBILE + TABLET: HORIZONTAL STYLE SELECTOR */}
-  <div
-    className="
-      flex
-      xl:grid
-      xl:grid-cols-6
-      gap-4
-      overflow-x-auto
-      xl:overflow-visible
-      snap-x
-      snap-mandatory
-      pb-3
-    "
-  >
-    {Object.entries(styles).map(([key, style]) => {
-      const isActive = activeStyle === key;
+      {/* =====================================================
+          STYLE CARDS
+      ===================================================== */}
 
-      return (
-        <button
-          type="button"
-          key={key}
-          onClick={() =>
-            setActiveStyle(key as keyof typeof styles)
-          }
-          onMouseEnter={() =>
-            setActiveStyle(key as keyof typeof styles)
-          }
-          className={`
-            group
-            relative
-            flex-none
-            w-[44vw]
-            sm:w-[30vw]
-            md:w-[24vw]
-            xl:w-full
-            h-[220px]
-            sm:h-[240px]
-            xl:h-[260px]
-            rounded-2xl
-            overflow-hidden
-            snap-start
-            cursor-pointer
-            border
-            transition-all
-            duration-500
-            ${
-              isActive
-                ? "border-[#D4A85A]"
-                : "border-white/10 hover:border-[#D4A85A]/50"
-            }
-            xl:hover:-translate-y-2
-          `}
+      <div className="min-w-0">
+
+        <div
+          className="
+            flex
+            xl:grid
+            xl:grid-cols-6
+            gap-4
+            overflow-x-auto
+            xl:overflow-visible
+            snap-x
+            snap-mandatory
+            pb-3
+          "
         >
-          <img
-            src={style.hero}
-            alt={style.title}
-            className="
-              w-full
-              h-full
-              object-cover
-              transition-transform
-              duration-700
-              group-hover:scale-105
-            "
-          />
+          {Object.entries(styles).map(([key, style]) => {
+            const isActive = activeStyle === key;
 
-          <div
-            className="
-              absolute
-              inset-0
-              bg-gradient-to-t
-              from-black/90
-              via-black/20
-              to-transparent
-            "
-          />
-
-          <div
-            className="
-              absolute
-              bottom-4
-              left-4
-              right-4
-              text-left
-            "
-          >
-            <h3
-              className={`
-                font-[var(--font-avenir)]
-                text-sm
-                md:text-base
-                font-medium
-                transition-colors
-                duration-300
-                ${
-                  isActive
-                    ? "text-[#D4A85A]"
-                    : "text-white"
+            return (
+              <button
+                type="button"
+                key={key}
+                onClick={() =>
+                  setActiveStyle(key as keyof typeof styles)
                 }
-              `}
-            >
-              {style.title}
-            </h3>
-          </div>
+                onMouseEnter={() =>
+                  setActiveStyle(key as keyof typeof styles)
+                }
+                className={`
+                  group
+                  relative
+                  flex-none
+                  w-[44vw]
+                  sm:w-[30vw]
+                  md:w-[24vw]
+                  xl:w-full
+                  h-[220px]
+                  sm:h-[240px]
+                  xl:h-[260px]
+                  rounded-2xl
+                  overflow-hidden
+                  snap-start
+                  cursor-pointer
+                  border
+                  transition-all
+                  duration-500
+                  ${
+                    isActive
+                      ? "border-[#D4A85A]"
+                      : "border-white/10 hover:border-[#D4A85A]/50"
+                  }
+                  xl:hover:-translate-y-2
+                `}
+              >
+                <img
+                  src={style.hero}
+                  alt={style.title}
+                  className="
+                    w-full
+                    h-full
+                    object-cover
+                    transition-transform
+                    duration-700
+                    group-hover:scale-105
+                  "
+                />
 
-          {isActive && (
-            <div
-              className="
-                absolute
-                top-4
-                right-4
-                w-2
-                h-2
-                rounded-full
-                bg-[#D4A85A]
-                shadow-[0_0_12px_rgba(212,168,90,0.8)]
-              "
-            />
-          )}
-        </button>
-      );
-    })}
-  </div>
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-t
+                    from-black/90
+                    via-black/20
+                    to-transparent
+                  "
+                />
 
-    {/* MOBILE SWIPE CUE */}
-  <div
-    className="
-      xl:hidden
-      flex
-      items-center
-      justify-end
-      gap-3
-      mt-1
-    "
-  >
-    <span
-      className="
-        font-[var(--font-avenir)]
-        text-[9px]
-        uppercase
-        tracking-[3px]
-        text-[#D4A85A]
-      "
-    >
-      Swipe Styles
-    </span>
+                <div
+                  className="
+                    absolute
+                    bottom-4
+                    left-4
+                    right-4
+                    text-left
+                  "
+                >
+                  <h3
+                    className={`
+                      font-[var(--font-avenir)]
+                      text-sm
+                      md:text-base
+                      font-medium
+                      transition-colors
+                      duration-300
+                      ${
+                        isActive
+                          ? "text-[#D4A85A]"
+                          : "text-white"
+                      }
+                    `}
+                  >
+                    {style.title}
+                  </h3>
+                </div>
 
-    <span className="text-[#D4A85A] text-sm">
-      →
-    </span>
-  </div>
-
-</div>
-
-{/* CLOSE INTRO + STYLE CARDS GRID */}
-</div>
-
-{/* DYNAMIC SPACES */}
-<div
-  id="residential-spaces"
-  className="
-    mt-10
-    md:mt-12
-    scroll-mt-24
-  "
->
-
-  <div
-    className="
-      flex
-      items-center
-      justify-center
-      gap-3
-      mb-4
-    "
-  >
-    <div className="w-8 md:w-10 h-px bg-[#D4A85A]" />
-
-    <p
-      className="
-        font-[var(--font-avenir)]
-        uppercase
-        tracking-[4px]
-        md:tracking-[6px]
-        text-[#D4A85A]
-        text-[9px]
-        md:text-[10px]
-        whitespace-nowrap
-      "
-    >
-      Selected Style
-    </p>
-
-    <div className="w-8 md:w-10 h-px bg-[#D4A85A]" />
-  </div>
-
-
-  <h2
-    className="
-      text-center
-      text-3xl
-      md:text-4xl
-      font-heading
-      leading-[1.1]
-      mb-7
-      md:mb-8
-    "
-  >
-    {currentStyle.title} Across Every Space
-  </h2>
+                {isActive && (
+                  <div
+                    className="
+                      absolute
+                      top-4
+                      right-4
+                      w-2
+                      h-2
+                      rounded-full
+                      bg-[#D4A85A]
+                      shadow-[0_0_12px_rgba(212,168,90,0.8)]
+                    "
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
 
 
-  {/* ROOM CAROUSEL ON MOBILE / GRID ON DESKTOP */}
-  <div
-    className="
-      flex
-      lg:grid
-      lg:grid-cols-6
-      gap-4
-      w-full
-      overflow-x-auto
-      lg:overflow-visible
-      snap-x
-      snap-mandatory
-      pb-3
-    "
-  >
-    {currentStyle.spaces.map((space) => (
-
-      <div
-        key={`${activeStyle}-${space.name}`}
-        className="
-          group
-          relative
-          flex-none
-          w-[78vw]
-          sm:w-[44vw]
-          lg:w-full
-          h-[230px]
-          sm:h-[250px]
-          lg:h-[260px]
-          overflow-hidden
-          rounded-2xl
-          snap-start
-        "
-      >
-
-        <img
-          src={space.image}
-          alt={space.name}
-          className="
-            w-full
-            h-full
-            object-cover
-            transition-all
-            duration-700
-            group-hover:scale-105
-          "
-        />
+        {/* MOBILE SWIPE CUE */}
 
         <div
           className="
-            absolute
-            inset-0
-            bg-gradient-to-t
-            from-black/90
-            via-black/10
-            to-transparent
-          "
-        />
-
-        <div
-          className="
-            absolute
-            bottom-4
-            left-4
+            xl:hidden
             flex
             items-center
+            justify-end
             gap-3
+            mt-1
           "
         >
-          <span className="text-[#D4A85A]">
-            ✦
-          </span>
-
           <span
             className="
               font-[var(--font-avenir)]
-              text-sm
-              text-white
-              group-hover:text-[#D4A85A]
-              transition-colors
-              duration-300
+              text-[9px]
+              uppercase
+              tracking-[3px]
+              text-[#D4A85A]
             "
           >
-            {space.name}
+            Swipe Styles
+          </span>
+
+          <span className="text-[#D4A85A] text-sm">
+            →
           </span>
         </div>
 
       </div>
 
-    ))}
-  </div>
+    </div>
 
 
-  {/* MOBILE ROOM SWIPE CUE */}
-  <div
-    className="
-      lg:hidden
-      flex
-      items-center
-      justify-end
-      gap-3
-      mt-1
-    "
-  >
-    <span
+    {/* =====================================================
+        DYNAMIC SPACES
+    ===================================================== */}
+
+    <div
+      id="residential-spaces"
       className="
-        font-[var(--font-avenir)]
-        text-[9px]
-        uppercase
-        tracking-[3px]
-        text-[#D4A85A]
+        mt-10
+        md:mt-12
+        scroll-mt-24
       "
     >
-      Swipe To Explore
-    </span>
 
-    <span className="text-[#D4A85A] text-sm">
-      →
-    </span>
+      <div
+        className="
+          flex
+          items-center
+          justify-center
+          gap-3
+          sm:gap-4
+          mb-4
+        "
+      >
+        <div className="w-8 sm:w-10 h-px bg-[#D4A85A]" />
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[4px]
+            md:tracking-[6px]
+            text-[#D4A85A]
+            text-[9px]
+            md:text-[10px]
+            whitespace-nowrap
+          "
+        >
+          Selected Style
+        </p>
+
+        <div className="w-8 sm:w-10 h-px bg-[#D4A85A]" />
+      </div>
+
+
+      <h2
+        className="
+          font-heading
+          text-center
+          text-3xl
+          sm:text-4xl
+          md:text-5xl
+          font-light
+          leading-[1.1]
+          mb-7
+          md:mb-8
+        "
+      >
+        {currentStyle.title} Across Every Space
+      </h2>
+
+
+      {/* ROOM CAROUSEL ON MOBILE / GRID ON DESKTOP */}
+
+      <div
+        className="
+          flex
+          lg:grid
+          lg:grid-cols-6
+          gap-4
+          w-full
+          overflow-x-auto
+          lg:overflow-visible
+          snap-x
+          snap-mandatory
+          pb-3
+        "
+      >
+        {currentStyle.spaces.map((space) => (
+          <div
+            key={`${activeStyle}-${space.name}`}
+            className="
+              group
+              relative
+              flex-none
+              w-[78vw]
+              sm:w-[44vw]
+              lg:w-full
+              h-[230px]
+              sm:h-[250px]
+              lg:h-[260px]
+              overflow-hidden
+              rounded-2xl
+              snap-start
+            "
+          >
+            <img
+              src={space.image}
+              alt={space.name}
+              className="
+                w-full
+                h-full
+                object-cover
+                transition-all
+                duration-700
+                group-hover:scale-105
+              "
+            />
+
+            <div
+              className="
+                absolute
+                inset-0
+                bg-gradient-to-t
+                from-black/90
+                via-black/10
+                to-transparent
+              "
+            />
+
+            <div
+              className="
+                absolute
+                bottom-4
+                left-4
+                flex
+                items-center
+                gap-3
+              "
+            >
+              <span className="text-[#D4A85A]">
+                ✦
+              </span>
+
+              <span
+                className="
+                  font-[var(--font-avenir)]
+                  text-sm
+                  text-white
+                  group-hover:text-[#D4A85A]
+                  transition-colors
+                  duration-300
+                "
+              >
+                {space.name}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+
+      {/* MOBILE ROOM SWIPE CUE */}
+
+      <div
+        className="
+          lg:hidden
+          flex
+          items-center
+          justify-end
+          gap-3
+          mt-1
+        "
+      >
+        <span
+          className="
+            font-[var(--font-avenir)]
+            text-[9px]
+            uppercase
+            tracking-[3px]
+            text-[#D4A85A]
+          "
+        >
+          Swipe To Explore
+        </span>
+
+        <span className="text-[#D4A85A] text-sm">
+          →
+        </span>
+      </div>
+
+    </div>
+
+
+    {/* =====================================================
+        EXPLORE SELECTED STYLE
+    ===================================================== */}
+
+    <div className="flex justify-center mt-8 md:mt-10">
+      <Link
+        href={`/interiors/${activeStyle}`}
+        className="
+          inline-flex
+          items-center
+          justify-center
+
+          px-6
+          sm:px-8
+          py-3
+          md:py-4
+
+          border
+          border-[#D4A85A]
+          rounded-full
+
+          text-[#D4A85A]
+
+          font-[var(--font-avenir)]
+          uppercase
+          tracking-[2px]
+          md:tracking-[3px]
+          text-[9px]
+          sm:text-[10px]
+          md:text-xs
+          text-center
+
+          transition-all
+          duration-300
+
+          hover:bg-[#D4A85A]
+          hover:text-black
+          hover:shadow-[0_0_25px_rgba(212,168,90,0.25)]
+        "
+      >
+        Explore All Spaces In {currentStyle.title} →
+      </Link>
+    </div>
+
   </div>
-
-</div>
-
-
-{/* EXPLORE SELECTED STYLE */}
-<div className="flex justify-center mt-8 md:mt-10">
-
-  <Link
-    href={`/interiors/${activeStyle}`}
-    className="
-      inline-flex
-      items-center
-      justify-center
-      px-6
-      sm:px-8
-      py-3
-      md:py-4
-      border
-      border-[#D4A85A]
-      rounded-full
-      text-[#D4A85A]
-      font-[var(--font-avenir)]
-      uppercase
-      tracking-[2px]
-      md:tracking-[3px]
-      text-[9px]
-      sm:text-[10px]
-      md:text-xs
-      text-center
-      transition-all
-      duration-300
-      hover:bg-[#D4A85A]
-      hover:text-black
-      hover:shadow-[0_0_25px_rgba(212,168,90,0.25)]
-    "
-  >
-    Explore All Spaces In {currentStyle.title} →
-  </Link>
-
-</div>
-
-{/* CLOSE RESIDENTIAL CONTAINER */}
-</div>
-
 </section>
+{/* =====================================================
+    COMMERCIAL INTERIORS SECTION START
+===================================================== */}
 
-<section className="pt-10 md:pt-12 lg:pt-14 pb-4 md:pb-6 lg:pb-8 bg-[#071321]">
-
-  <div className="max-w-[1500px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-
-    <div className="flex items-center gap-4 mb-6 md:mb-8">
-  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
-
-  <p
+<section
+  className="
+    pt-10
+    md:pt-12
+    lg:pt-14
+    pb-4
+    md:pb-6
+    lg:pb-8
+    bg-[#071321]
+  "
+>
+  <div
     className="
-      font-[var(--font-avenir)]
-      uppercase
-      tracking-[5px]
-      md:tracking-[8px]
-      text-[#D4A85A]
-      text-[10px]
-      md:text-xs
-      whitespace-nowrap
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
     "
   >
-    Commercial Interiors
-  </p>
 
-  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
-</div>
+    {/* =====================================================
+        COMMERCIAL INTERIORS INTRO
+    ===================================================== */}
+
+    <div
+      className="
+        flex
+        items-center
+        gap-3
+        sm:gap-4
+        mb-5
+        md:mb-6
+      "
+    >
+      <div className="w-8 sm:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+      <p
+        className="
+          font-[var(--font-avenir)]
+          uppercase
+          tracking-[4px]
+          md:tracking-[7px]
+          text-[#D4A85A]
+          text-[9px]
+          md:text-[10px]
+          whitespace-nowrap
+        "
+      >
+        Commercial Interiors
+      </p>
+
+      <div className="w-8 sm:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+    </div>
+
+
+    {/* MAIN COMMERCIAL TITLE */}
 
     <h2
-  className="
-  text-4xl
-md:text-5xl
-lg:text-6xl
-leading-[1.08]
-md:leading-[1.02]
-mb-6
-  "
->
+      className="
+        font-heading
+        text-4xl
+        sm:text-5xl
+        md:text-5xl
+        lg:text-6xl
+        font-light
+        leading-[1.08]
+        md:leading-[1.05]
+        mb-6
+      "
+    >
       Spaces Designed
-      For Business Growth
+      <br className="sm:hidden" />
+      {" "}For Business Growth
     </h2>
 
+
+    {/* INTRO DESCRIPTION */}
+
     <p
-  className="
-  text-gray-300
-  max-w-3xl
-  text-sm
-md:text-base
-  leading-relaxed
-  mb-8
-md:mb-10
-  "
->
+      className="
+        font-[var(--font-avenir)]
+        text-gray-400
+        max-w-3xl
+        text-sm
+        md:text-base
+        font-light
+        leading-relaxed
+        mb-8
+        md:mb-10
+      "
+    >
       Corporate offices, retail environments,
       medical facilities, banks, malls and
       customer-facing spaces designed to elevate
       brand perception and customer experience.
     </p>
 
-{/* COMMERCIAL HERO */}
 
-<div
-  className="
-    relative
-    h-[360px]
-    sm:h-[400px]
-    md:h-[440px]
-    lg:h-[500px]
-    rounded-2xl
-    md:rounded-[30px]
-    overflow-hidden
-    mb-8
-    md:mb-10
-  "
->
+    {/* =====================================================
+        COMMERCIAL HERO
+    ===================================================== */}
 
-  <img
-    src={activeCommercial.hero}
-    alt={activeCommercial.title}
-    className="
-    absolute
-    inset-0
-    w-full
-    h-full
-    object-cover
-    "
-  />
-
-  <div
-    className="
-    absolute
-    inset-0
-    bg-gradient-to-r
-    from-[#071321]/95
-    via-[#071321]/70
-    to-transparent
-    "
-  />
-
-  <div
-  className="
-    relative
-    h-full
-    flex
-    items-center
-    px-5
-    sm:px-6
-    md:px-8
-    lg:px-12
-  "
->
-
-    <div className="max-w-3xl">
-
-      <p
+    <div
+      className="
+        relative
+        h-[360px]
+        sm:h-[400px]
+        md:h-[440px]
+        lg:h-[500px]
+        rounded-2xl
+        md:rounded-[30px]
+        overflow-hidden
+        mb-8
+        md:mb-10
+      "
+    >
+      <img
+        src={activeCommercial.hero}
+        alt={activeCommercial.title}
         className="
-        font-[var(--font-avenir)]
-uppercase
-tracking-[4px]
-md:tracking-[6px]
-text-[#D4A85A]
-text-[9px]
-md:text-[10px]
-mb-4
-        "
-      >
-        Commercial Interior Design
-      </p>
-
-      <h3
-        className="
-        text-3xl
-sm:text-4xl
-md:text-5xl
-leading-[1.05]
-mb-4
-md:mb-5
-        "
-      >
-        {activeCommercial.title}
-      </h3>
-
-      <div
-        className="
-        h-px
-        w-16
-        bg-[#D4A85A]
-        mb-5
+          absolute
+          inset-0
+          w-full
+          h-full
+          object-cover
         "
       />
 
-      <p
+      <div
         className="
-        text-sm
-md:text-base
-        text-gray-300
-        leading-relaxed
-        max-w-2xl
+          absolute
+          inset-0
+          bg-gradient-to-r
+          from-[#071321]/95
+          via-[#071321]/70
+          to-transparent
+        "
+      />
+
+      <div
+        className="
+          relative
+          h-full
+          flex
+          items-center
+          px-5
+          sm:px-6
+          md:px-8
+          lg:px-12
         "
       >
-        Explore curated interior environments
-        designed to elevate customer experience,
-        operational efficiency and brand value.
-      </p>
+        <div className="max-w-3xl">
 
+          {/* HERO EYEBROW */}
+
+          <div
+            className="
+              flex
+              items-center
+              gap-3
+              mb-4
+            "
+          >
+            <div className="w-7 md:w-9 h-px bg-[#D4A85A] flex-shrink-0" />
+
+            <p
+              className="
+                font-[var(--font-avenir)]
+                uppercase
+                tracking-[3px]
+                md:tracking-[5px]
+                text-[#D4A85A]
+                text-[8px]
+                md:text-[9px]
+                whitespace-nowrap
+              "
+            >
+              Commercial Interior Design
+            </p>
+
+            <div className="w-7 md:w-9 h-px bg-[#D4A85A] flex-shrink-0" />
+          </div>
+
+
+          {/* DYNAMIC COMMERCIAL TITLE */}
+
+          <h3
+            className="
+              font-heading
+              text-3xl
+              sm:text-4xl
+              md:text-5xl
+              lg:text-[54px]
+              font-light
+              leading-[1.08]
+              mb-5
+            "
+          >
+            {activeCommercial.title}
+          </h3>
+
+
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-sm
+              md:text-base
+              font-light
+              text-gray-300
+              leading-relaxed
+              max-w-2xl
+            "
+          >
+            Explore curated interior environments
+            designed to elevate customer experience,
+            operational efficiency and brand value.
+          </p>
+
+        </div>
+      </div>
     </div>
 
-  </div>
 
-</div>
-    {/* CATEGORY NAV */}
+    {/* =====================================================
+        COMMERCIAL CATEGORY NAVIGATION
+    ===================================================== */}
 
     <div
-  className="
-    flex
-    flex-wrap
-    gap-3
-    md:gap-4
-    mb-5
-    md:mb-6
-  "
->
+      className="
+        flex
+        flex-wrap
+        gap-3
+        md:gap-4
+        mb-5
+        md:mb-6
+      "
+    >
       {commercialTabs.map((tab) => (
-
         <button
           key={tab.key}
           onClick={() => {
@@ -2003,18 +2146,22 @@ md:text-base
             setCommercialSpace(0);
           }}
           className={`
-  px-4
-  sm:px-5
-  md:px-6
-  py-2.5
-  md:py-3
-  rounded-full
-  border
-  font-[var(--font-avenir)]
-  text-xs
-  md:text-sm
-  transition-all
-  duration-300
+            px-4
+            sm:px-5
+            md:px-6
+            py-2.5
+            md:py-3
+
+            rounded-full
+            border
+
+            font-[var(--font-avenir)]
+            text-[11px]
+            md:text-xs
+            font-medium
+
+            transition-all
+            duration-300
 
             ${
               commercialCategory === tab.key
@@ -2025,158 +2172,195 @@ md:text-base
         >
           {tab.label}
         </button>
-
       ))}
     </div>
 
   </div>
-
 </section>
 
-<section className="pb-10 md:pb-12 lg:pb-14 bg-[#071321]">
 
-  <div className="max-w-[1500px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+{/* =====================================================
+    COMMERCIAL INTERIORS GALLERY
+===================================================== */}
 
-    {/* SPACE NAV */}
+<section
+  className="
+    pb-10
+    md:pb-12
+    lg:pb-14
+    bg-[#071321]
+  "
+>
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+    "
+  >
+
+    {/* =====================================================
+        COMMERCIAL SPACE NAVIGATION
+    ===================================================== */}
 
     <div
       className="
-      flex
-      flex-wrap
-      gap-4
-      mb-6 md:mb-8
+        flex
+        flex-wrap
+        gap-3
+        md:gap-4
+        mb-6
+        md:mb-8
       "
     >
-      {activeCommercial.spaces.map(
-        (space, index) => (
+      {activeCommercial.spaces.map((space, index) => (
+        <button
+          key={space.name}
+          onClick={() =>
+            setCommercialSpace(index)
+          }
+          className={`
+            px-4
+            sm:px-5
+            md:px-6
+            py-2.5
+            md:py-3
 
-          <button
-            key={space.name}
-            onClick={() =>
-              setCommercialSpace(index)
+            rounded-full
+
+            font-[var(--font-avenir)]
+            text-[11px]
+            md:text-xs
+            font-medium
+
+            transition-all
+            duration-300
+
+            ${
+              commercialSpace === index
+                ? "bg-[#1c3a60] text-white"
+                : "bg-white/5 text-gray-300 hover:bg-white/10"
             }
-            className={`
-              px-4
-sm:px-5
-md:px-6
-py-2.5
-md:py-3
-rounded-full
-text-xs
-md:text-sm
-              transition-all
-              duration-300
-
-              ${
-                commercialSpace === index
-                  ? "bg-[#1c3a60] text-white"
-                  : "bg-white/5 text-gray-300 hover:bg-white/10"
-              }
-            `}
-          >
-            {space.name}
-          </button>
-
-        )
-      )}
+          `}
+        >
+          {space.name}
+        </button>
+      ))}
     </div>
 
-    {/* IMAGE GRID */}
+
+    {/* =====================================================
+        COMMERCIAL IMAGE GRID
+    ===================================================== */}
 
     <div
       className="
-      grid
-      md:grid-cols-2
-      xl:grid-cols-4
-      gap-4
-md:gap-6
-lg:gap-8
+        grid
+        md:grid-cols-2
+        xl:grid-cols-4
+        gap-4
+        md:gap-6
+        lg:gap-8
       "
     >
       {activeCommercial.spaces[
         commercialSpace
       ].images.map((image) => (
-
         <div
-  key={image}
-  onClick={() => {
-    setSelectedImage(image);
+          key={image}
+          onClick={() => {
+            setSelectedImage(image);
 
-    setSelectedImages(
-      activeCommercial.spaces[
-        commercialSpace
-      ].images
-    );
+            setSelectedImages(
+              activeCommercial.spaces[
+                commercialSpace
+              ].images
+            );
 
-    setSelectedImageIndex(
-      activeCommercial.spaces[
-        commercialSpace
-      ].images.indexOf(image)
-    );
-  }}
-  className="
-    relative
-    cursor-pointer
-    overflow-hidden
-    rounded-[30px]
-    group
-  "
->
-  <img
-    src={image}
-    alt=""
-    className="
-      w-full
-      h-[420px]
-      object-cover
-      transition-all
-      duration-700
-      group-hover:scale-105
-    "
-  />
+            setSelectedImageIndex(
+              activeCommercial.spaces[
+                commercialSpace
+              ].images.indexOf(image)
+            );
+          }}
+          className="
+            relative
+            cursor-pointer
+            overflow-hidden
+            rounded-2xl
+            md:rounded-[30px]
+            group
+          "
+        >
+          <img
+            src={image}
+            alt=""
+            className="
+              w-full
+              h-[300px]
+              sm:h-[360px]
+              md:h-[380px]
+              lg:h-[420px]
+              object-cover
+              transition-all
+              duration-700
+              group-hover:scale-105
+            "
+          />
 
-  {/* subtle hover overlay */}
+          {/* SUBTLE HOVER OVERLAY */}
 
-  <div
-    className="
-      absolute
-      inset-0
-      bg-black/0
-      group-hover:bg-black/15
-      transition-all
-      duration-500
-    "
-  />
+          <div
+            className="
+              absolute
+              inset-0
+              bg-black/0
+              group-hover:bg-black/15
+              transition-all
+              duration-500
+            "
+          />
 
-  {/* VIEW */}
+          {/* VIEW LABEL */}
 
-  <span
-    className="
-      absolute
-      right-5
-      bottom-5
-      font-[var(--font-avenir)]
-      text-[9px]
-      uppercase
-      tracking-[2px]
-      text-white/0
-      translate-y-2
-      group-hover:text-[#D4A85A]
-      group-hover:translate-y-0
-      transition-all
-      duration-500
-    "
-  >
-    View
-  </span>
-</div>
+          <span
+            className="
+              absolute
+              right-5
+              bottom-5
 
+              font-[var(--font-avenir)]
+              text-[9px]
+              uppercase
+              tracking-[2px]
+
+              text-white/0
+              translate-y-2
+
+              group-hover:text-[#D4A85A]
+              group-hover:translate-y-0
+
+              transition-all
+              duration-500
+            "
+          >
+            View
+          </span>
+        </div>
       ))}
     </div>
 
   </div>
-
 </section>
+
+{/* =====================================================
+    COMMERCIAL INTERIORS SECTION END
+===================================================== */}
+
 {/* =========================================================
     HOSPITALITY & LIFESTYLE — SECTION
 ========================================================= */}
@@ -3556,7 +3740,7 @@ md:rounded-2xl
 
 
 {/* =========================================================
-    TURNKEY INTERIOR PACKAGES
+    INTERIOR DESIGN SERVICES & FEES
 ========================================================= */}
 
 <section
@@ -3570,7 +3754,6 @@ md:rounded-2xl
     lg:py-14
   "
 >
-
   <div className="max-w-[1500px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12">
 
     {/* =====================================================
@@ -3580,68 +3763,60 @@ md:rounded-2xl
     <div className="max-w-4xl mb-10 md:mb-12">
 
       <div className="flex items-center gap-4 mb-6 md:mb-8">
-  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+        <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
 
-  <p
-    className="
-      font-[var(--font-avenir)]
-      uppercase
-      tracking-[5px]
-      md:tracking-[8px]
-      text-[#D4A85A]
-      text-[10px]
-      md:text-xs
-      whitespace-nowrap
-    "
-  >
-    Turnkey Interior Solutions
-  </p>
+        <p
+          className="
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[4px]
+            md:tracking-[7px]
+            text-[#D4A85A]
+            text-[9px]
+            md:text-[11px]
+          "
+        >
+          Interior Design Services & Fees
+        </p>
 
-  <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
-</div>
+        <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+      </div>
 
       <h2
         className="
           font-heading
           text-4xl
-md:text-5xl
-lg:text-6xl
-font-light
-leading-[1.08]
-md:leading-[1.02]
-tracking-[-0.015em]
-mb-6
-        "
-      >
-        Complete Interiors.
-        <br />
-        One Seamless Solution.
-      </h2>
-
-      <div
-        className="
-          w-16
-          h-px
-          bg-[#D4A85A]
+          md:text-5xl
+          lg:text-6xl
+          font-light
+          leading-[1.12]
+          md:leading-[1.05]
+          tracking-[-0.015em]
           mb-6
         "
-      />
+      >
+        Choose The Level Of
+        <br />
+        Support Your Project Needs.
+      </h2>
+
+      <div className="w-16 h-px bg-[#D4A85A] mb-6" />
 
       <p
         className="
           font-[var(--font-avenir)]
           text-sm
-md:text-base
+          md:text-base
           font-light
           leading-relaxed
           text-gray-300
           max-w-3xl
         "
       >
-        From concept and material selection to fabrication,
-        installation and final finishing, our turnkey interior
-        packages bring every element of your space together
-        under one coordinated solution.
+        From early design direction to complete project delivery,
+        our interior services are structured around the level of
+        design, documentation and implementation support your
+        project requires.
       </p>
 
     </div>
@@ -3662,7 +3837,7 @@ md:text-base
     >
 
       {/* ===================================================
-          ESSENTIAL
+          PACKAGE 01 — CONCEPT DESIGN
       =================================================== */}
 
       <div
@@ -3671,18 +3846,18 @@ md:text-base
           relative
           flex
           flex-col
-         min-h-0
-md:min-h-[580px]
-xl:min-h-[620px]
-rounded-2xl
-md:rounded-[26px]
+          min-h-0
+          md:min-h-[650px]
+          xl:min-h-[700px]
+          rounded-2xl
+          md:rounded-[26px]
           border
           border-white/10
           bg-[#0a1828]
           p-5
-sm:p-6
-md:p-7
-xl:p-8
+          sm:p-6
+          md:p-7
+          xl:p-8
           overflow-hidden
           transition-all
           duration-500
@@ -3691,7 +3866,6 @@ xl:p-8
           hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)]
         "
       >
-
         <div
           className="
             absolute
@@ -3711,9 +3885,10 @@ xl:p-8
           className="
             font-[var(--font-avenir)]
             text-[10px]
-md:text-[11px]
-tracking-[3px]
-md:tracking-[4px]
+            md:text-[11px]
+            uppercase
+            tracking-[3px]
+            md:tracking-[4px]
             text-[#D4A85A]
             mb-4
           "
@@ -3725,12 +3900,13 @@ md:tracking-[4px]
           className="
             font-heading
             text-3xl
-md:text-4xl
+            md:text-4xl
             font-light
+            leading-[1.05]
             mb-4
           "
         >
-          Essential
+          Concept Design
         </h3>
 
         <p
@@ -3740,128 +3916,127 @@ md:text-4xl
             font-light
             leading-relaxed
             text-gray-400
-            mb-8
+            mb-7
           "
         >
-          A refined foundation for creating a beautiful,
-          functional interior with carefully selected
-          finishes and essential detailing.
+          For clients who need a clear professional vision,
+          spatial direction and visual identity before moving
+          into detailed documentation or execution.
         </p>
 
-        <div
-          className="
-            border-t
-            border-white/10
-            pt-5
-            mb-6
-          "
-        >
-
+        <div className="border-t border-white/10 pt-5 mb-6">
           <p
             className="
               font-[var(--font-avenir)]
-              text-[11px]
+              text-[10px]
               uppercase
               tracking-[3px]
               text-gray-500
               mb-2
             "
           >
-            Starting from
+            Professional Fee From
           </p>
 
           <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-  <p
-    className="
-      font-heading
-      text-2xl
-      sm:text-3xl
-      font-light
-      text-white
-      whitespace-nowrap
-    "
-  >
-    KES XXX,XXX
-  </p>
+            <p
+              className="
+                font-heading
+                text-3xl
+                font-light
+                text-white
+                whitespace-nowrap
+              "
+            >
+              KES 1,500
+            </p>
 
-  <span
-    className="
-      font-[var(--font-avenir)]
-      text-xs
-      md:text-sm
-      text-gray-500
-      whitespace-nowrap
-    "
-  >
-    / m²
-  </span>
-</div>
-
-        </div>
-
-
-        <div className="flex-1">
+            <span
+              className="
+                font-[var(--font-avenir)]
+                text-xs
+                md:text-sm
+                text-gray-500
+              "
+            >
+              / m²
+            </span>
+          </div>
 
           <p
             className="
               font-[var(--font-avenir)]
-              text-[11px]
+              text-[10px]
+              text-gray-500
+              mt-2
+            "
+          >
+            Minimum professional fee applies.
+          </p>
+        </div>
+
+        <div className="flex-1">
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-[10px]
               uppercase
               tracking-[3px]
               text-[#D4A85A]
               mb-5
             "
           >
-            Includes
+            Key Deliverables
           </p>
 
           <ul
             className="
-              space-y-4
+              space-y-3
               font-[var(--font-avenir)]
-              text-sm
+              text-[13px]
               font-light
+              leading-relaxed
               text-gray-300
             "
           >
-            <li>Interior design concept</li>
-            <li>Selected wall finishes</li>
-            <li>Ceiling finishes</li>
-            <li>Basic lighting</li>
-            <li>Floor finishes</li>
-            <li>Essential joinery</li>
-            <li>Installation coordination</li>
+            <li>Design brief & space assessment</li>
+            <li>Space planning & furniture layout</li>
+            <li>Mood boards & design direction</li>
+            <li>Colour, material & finish palette</li>
+            <li>Furniture & lighting concept</li>
+            <li>1–2 3D views per key space</li>
+            <li>Up to 2 design revision rounds</li>
           </ul>
-
         </div>
 
-
         <button
-  onClick={() => setSelectedPackage("essential")}
-  className="
-    px-7
-    py-3
-    rounded-full
-    border
-    border-[#D4A85A]
-    text-[#D4A85A]
-    uppercase
-    tracking-[2px]
-    text-sm
-    transition-all
-    duration-300
-    hover:bg-[#D4A85A]
-    hover:text-black
-  "
->
-  Explore Package
-</button>
-
+          onClick={() => setSelectedPackage("concept")}
+          className="
+            w-full
+            mt-7
+            px-6
+            py-3
+            rounded-full
+            border
+            border-[#D4A85A]
+            text-[#D4A85A]
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[2px]
+            text-xs
+            transition-all
+            duration-300
+            hover:bg-[#D4A85A]
+            hover:text-black
+          "
+        >
+          Explore Package
+        </button>
       </div>
 
 
       {/* ===================================================
-          PREMIUM
+          PACKAGE 02 — COMPLETE INTERIOR DESIGN
       =================================================== */}
 
       <div
@@ -3871,49 +4046,56 @@ md:text-4xl
           flex
           flex-col
           min-h-0
-md:min-h-[580px]
-xl:min-h-[620px]
-rounded-2xl
-md:rounded-[26px]
+          md:min-h-[650px]
+          xl:min-h-[700px]
+          rounded-2xl
+          md:rounded-[26px]
           border
-          border-white/10
+          border-[#D4A85A]/40
           bg-[#0a1828]
           p-5
-sm:p-6
-md:p-7
-xl:p-8
+          sm:p-6
+          md:p-7
+          xl:p-8
           overflow-hidden
           transition-all
           duration-500
           hover:-translate-y-2
-          hover:border-[#D4A85A]/50
-          hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)]
+          hover:border-[#D4A85A]
+          hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]
         "
       >
+        <div className="absolute top-0 left-0 w-full h-[2px] bg-[#D4A85A]" />
 
         <div
           className="
             absolute
-            top-0
-            left-0
-            w-full
-            h-px
-            bg-gradient-to-r
-            from-transparent
-            via-[#D4A85A]
-            to-transparent
-            opacity-40
+            top-5
+            right-5
+            md:top-7
+            md:right-7
+            px-3
+            py-1
+            rounded-full
+            bg-[#D4A85A]
+            text-black
+            font-[var(--font-avenir)]
+            text-[8px]
+            uppercase
+            tracking-[1.5px]
           "
-        />
+        >
+          Most Popular
+        </div>
 
         <p
           className="
             font-[var(--font-avenir)]
             text-[10px]
+            md:text-[11px]
             uppercase
-md:text-[11px]
-tracking-[3px]
-md:tracking-[4px]
+            tracking-[3px]
+            md:tracking-[4px]
             text-[#D4A85A]
             mb-4
           "
@@ -3925,12 +4107,14 @@ md:tracking-[4px]
           className="
             font-heading
             text-3xl
-md:text-4xl
+            md:text-4xl
             font-light
+            leading-[1.05]
             mb-4
+            pr-16
           "
         >
-          Premium
+          Complete Interior Design
         </h3>
 
         <p
@@ -3940,128 +4124,129 @@ md:text-4xl
             font-light
             leading-relaxed
             text-gray-400
-            mb-8
+            mb-7
           "
         >
-          A more elevated interior package combining
-          enhanced finishes, customized detailing and
-          carefully coordinated design elements.
+          A complete design solution for clients who require
+          developed layouts, finishes, interior elements and
+          coordinated design information for implementation.
         </p>
 
-        <div
-          className="
-            border-t
-            border-white/10
-            pt-5
-            mb-6
-          "
-        >
-
+        <div className="border-t border-white/10 pt-5 mb-6">
           <p
             className="
               font-[var(--font-avenir)]
-              text-[11px]
+              text-[10px]
               uppercase
               tracking-[3px]
               text-gray-500
               mb-2
             "
           >
-            Starting from
+            Professional Fee From
           </p>
 
           <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-  <p
-    className="
-      font-heading
-      text-2xl
-      sm:text-3xl
-      font-light
-      text-white
-      whitespace-nowrap
-    "
-  >
-    KES XXX,XXX
-  </p>
+            <p
+              className="
+                font-heading
+                text-3xl
+                font-light
+                text-white
+                whitespace-nowrap
+              "
+            >
+              KES 2,500
+            </p>
 
-  <span
-    className="
-      font-[var(--font-avenir)]
-      text-xs
-      md:text-sm
-      text-gray-500
-      whitespace-nowrap
-    "
-  >
-    / m²
-  </span>
-</div>
-
-        </div>
-
-
-        <div className="flex-1">
+            <span
+              className="
+                font-[var(--font-avenir)]
+                text-xs
+                md:text-sm
+                text-gray-500
+              "
+            >
+              / m²
+            </span>
+          </div>
 
           <p
             className="
               font-[var(--font-avenir)]
-              text-[11px]
+              text-[10px]
+              text-gray-500
+              mt-2
+            "
+          >
+            Minimum professional fee applies.
+          </p>
+        </div>
+
+        <div className="flex-1">
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-[10px]
               uppercase
               tracking-[3px]
               text-[#D4A85A]
               mb-5
             "
           >
-            Includes
+            Key Deliverables
           </p>
 
           <ul
             className="
-              space-y-4
+              space-y-3
               font-[var(--font-avenir)]
-              text-sm
+              text-[13px]
               font-light
+              leading-relaxed
               text-gray-300
             "
           >
-            <li>Complete interior design</li>
-            <li>Premium wall finishes</li>
-            <li>Feature ceilings</li>
-            <li>Decorative & architectural lighting</li>
-            <li>Premium flooring</li>
-            <li>Customized joinery</li>
-            <li>Installation & coordination</li>
+            <li>Everything in Concept Design</li>
+            <li>Dimensioned interior layouts</li>
+            <li>Floor & ceiling design layouts</li>
+            <li>Lighting, switches & power layouts</li>
+            <li>Plumbing fixture coordination</li>
+            <li>Selected joinery concepts</li>
+            <li>Interior elevations & finish specifications</li>
+            <li>Photorealistic 3D visualisations</li>
+            <li>Up to 3 design revision rounds</li>
           </ul>
-
         </div>
 
-
         <button
-  onClick={() => setSelectedPackage("premium")}
-  className="
-    px-7
-    py-3
-    rounded-full
-    border
-    border-[#D4A85A]
-    text-[#D4A85A]
-    uppercase
-    tracking-[2px]
-    text-sm
-    transition-all
-    duration-300
-    hover:bg-[#D4A85A]
-    hover:text-black
-  "
->
-  Explore Package
-</button>
-
+          onClick={() => setSelectedPackage("complete")}
+          className="
+            w-full
+            mt-7
+            px-6
+            py-3
+            rounded-full
+            border
+            border-[#D4A85A]
+            text-[#D4A85A]
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[2px]
+            text-xs
+            transition-all
+            duration-300
+            hover:bg-[#D4A85A]
+            hover:text-black
+          "
+        >
+          Explore Package
+        </button>
       </div>
 
 
       {/* ===================================================
-          LUXURY
+          PACKAGE 03 — PREMIUM DESIGN + DOCUMENTATION
       =================================================== */}
 
       <div
@@ -4071,240 +4256,17 @@ md:text-4xl
           flex
           flex-col
           min-h-0
-md:min-h-[580px]
-xl:min-h-[620px]
-rounded-2xl
-md:rounded-[26px]
-          border
-          border-[#D4A85A]/40
-          bg-[#0a1828]
-         p-5
-sm:p-6
-md:p-7
-xl:p-8
-          overflow-hidden
-          transition-all
-          duration-500
-          hover:-translate-y-2
-          hover:border-[#D4A85A]
-          hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]
-        "
-      >
-
-        <div
-          className="
-            absolute
-            top-0
-            left-0
-            w-full
-            h-[2px]
-            bg-[#D4A85A]
-          "
-        />
-
-        <div
-          className="
-            absolute
-            top-5
-right-5
-md:top-7
-md:right-7
-            px-3
-            py-1
-            rounded-full
-            bg-[#D4A85A]
-            text-black
-            font-[var(--font-avenir)]
-            text-[9px]
-            uppercase
-            tracking-[2px]
-          "
-        >
-          Popular
-        </div>
-
-        <p
-          className="
-            font-[var(--font-avenir)]
-            text-[10px]
-            uppercase
-            md:text-[11px]
-tracking-[3px]
-md:tracking-[4px]
-            text-[#D4A85A]
-            mb-4
-          "
-        >
-          Package 03
-        </p>
-
-        <h3
-          className="
-            font-heading
-            text-3xl
-md:text-4xl
-            font-light
-            mb-4
-          "
-        >
-          Luxury
-        </h3>
-
-        <p
-          className="
-            font-[var(--font-avenir)]
-            text-sm
-            font-light
-            leading-relaxed
-            text-gray-400
-            mb-8
-          "
-        >
-          A sophisticated turnkey solution featuring
-          bespoke design, premium materials and
-          detailed architectural finishes.
-        </p>
-
-        <div
-          className="
-            border-t
-            border-white/10
-            pt-5
-            mb-6
-          "
-        >
-
-          <p
-            className="
-              font-[var(--font-avenir)]
-              text-[11px]
-              uppercase
-              tracking-[3px]
-              text-gray-500
-              mb-2
-            "
-          >
-            Starting from
-          </p>
-
-          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-  <p
-    className="
-      font-heading
-      text-2xl
-      sm:text-3xl
-      font-light
-      text-white
-      whitespace-nowrap
-    "
-  >
-    KES XXX,XXX
-  </p>
-
-  <span
-    className="
-      font-[var(--font-avenir)]
-      text-xs
-      md:text-sm
-      text-gray-500
-      whitespace-nowrap
-    "
-  >
-    / m²
-  </span>
-</div>
-
-        </div>
-
-
-        <div className="flex-1">
-
-          <p
-            className="
-              font-[var(--font-avenir)]
-              text-[11px]
-              uppercase
-              tracking-[3px]
-              text-[#D4A85A]
-              mb-5
-            "
-          >
-            Includes
-          </p>
-
-          <ul
-            className="
-              space-y-3
-              font-[var(--font-avenir)]
-              text-sm
-              font-light
-              text-gray-300
-            "
-          >
-            <li>Bespoke interior design</li>
-            <li>Premium architectural finishes</li>
-            <li>Custom feature walls & ceilings</li>
-            <li>Designer lighting scheme</li>
-            <li>Premium flooring</li>
-            <li>Full custom joinery</li>
-            <li>Complete installation management</li>
-          </ul>
-
-        </div>
-
-
-        <button
-  onClick={() => setSelectedPackage("luxury")}
-  className="
-    w-full
-md:w-auto
-mt-6
-px-5
-md:px-7
-py-3
-    rounded-full
-    border
-    border-[#D4A85A]
-    text-[#D4A85A]
-    uppercase
-    tracking-[1.5px]
-md:tracking-[2px]
-text-xs
-md:text-sm
-    transition-all
-    duration-300
-    hover:bg-[#D4A85A]
-    hover:text-black
-  "
->
-  Explore Package
-</button>
-
-      </div>
-
-
-      {/* ===================================================
-          SIGNATURE
-      =================================================== */}
-
-      <div
-        className="
-          group
-          relative
-          flex
-          flex-col
-         min-h-0
-md:min-h-[580px]
-xl:min-h-[620px]
-rounded-2xl
-md:rounded-[26px]
+          md:min-h-[650px]
+          xl:min-h-[700px]
+          rounded-2xl
+          md:rounded-[26px]
           border
           border-white/10
           bg-[#0a1828]
           p-5
-sm:p-6
-md:p-7
-xl:p-8
+          sm:p-6
+          md:p-7
+          xl:p-8
           overflow-hidden
           transition-all
           duration-500
@@ -4313,7 +4275,6 @@ xl:p-8
           hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)]
         "
       >
-
         <div
           className="
             absolute
@@ -4333,10 +4294,210 @@ xl:p-8
           className="
             font-[var(--font-avenir)]
             text-[10px]
-            uppercase
             md:text-[11px]
-tracking-[3px]
-md:tracking-[4px]
+            uppercase
+            tracking-[3px]
+            md:tracking-[4px]
+            text-[#D4A85A]
+            mb-4
+          "
+        >
+          Package 03
+        </p>
+
+        <h3
+          className="
+            font-heading
+            text-3xl
+            md:text-4xl
+            font-light
+            leading-[1.05]
+            mb-4
+          "
+        >
+          Premium Design + Documentation
+        </h3>
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-sm
+            font-light
+            leading-relaxed
+            text-gray-400
+            mb-7
+          "
+        >
+          An execution-ready design package with comprehensive
+          technical information, specialist coordination and
+          detailed documentation for accurate implementation.
+        </p>
+
+        <div className="border-t border-white/10 pt-5 mb-6">
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-[10px]
+              uppercase
+              tracking-[3px]
+              text-gray-500
+              mb-2
+            "
+          >
+            Professional Fee From
+          </p>
+
+          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+            <p
+              className="
+                font-heading
+                text-3xl
+                font-light
+                text-white
+                whitespace-nowrap
+              "
+            >
+              KES 4,500
+            </p>
+
+            <span
+              className="
+                font-[var(--font-avenir)]
+                text-xs
+                md:text-sm
+                text-gray-500
+              "
+            >
+              / m²
+            </span>
+          </div>
+
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-[10px]
+              text-gray-500
+              mt-2
+            "
+          >
+            Minimum professional fee applies.
+          </p>
+        </div>
+
+        <div className="flex-1">
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-[10px]
+              uppercase
+              tracking-[3px]
+              text-[#D4A85A]
+              mb-5
+            "
+          >
+            Key Deliverables
+          </p>
+
+          <ul
+            className="
+              space-y-3
+              font-[var(--font-avenir)]
+              text-[13px]
+              font-light
+              leading-relaxed
+              text-gray-300
+            "
+          >
+            <li>Everything in Complete Interior Design</li>
+            <li>Detailed joinery & fabrication drawings</li>
+            <li>Interior elevations, sections & details</li>
+            <li>Detailed finishes & material schedules</li>
+            <li>MEP design & specialist coordination</li>
+            <li>BOQ / detailed cost schedule</li>
+            <li>Contractor pricing & tender support</li>
+            <li>One pre-construction/site coordination review</li>
+          </ul>
+        </div>
+
+        <button
+          onClick={() => setSelectedPackage("premium")}
+          className="
+            w-full
+            mt-7
+            px-6
+            py-3
+            rounded-full
+            border
+            border-[#D4A85A]
+            text-[#D4A85A]
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[2px]
+            text-xs
+            transition-all
+            duration-300
+            hover:bg-[#D4A85A]
+            hover:text-black
+          "
+        >
+          Explore Package
+        </button>
+      </div>
+
+
+      {/* ===================================================
+          PACKAGE 04 — FULL-SERVICE / TURNKEY
+      =================================================== */}
+
+      <div
+        className="
+          group
+          relative
+          flex
+          flex-col
+          min-h-0
+          md:min-h-[650px]
+          xl:min-h-[700px]
+          rounded-2xl
+          md:rounded-[26px]
+          border
+          border-white/10
+          bg-[#0a1828]
+          p-5
+          sm:p-6
+          md:p-7
+          xl:p-8
+          overflow-hidden
+          transition-all
+          duration-500
+          hover:-translate-y-2
+          hover:border-[#D4A85A]/50
+          hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)]
+        "
+      >
+        <div
+          className="
+            absolute
+            top-0
+            left-0
+            w-full
+            h-px
+            bg-gradient-to-r
+            from-transparent
+            via-[#D4A85A]
+            to-transparent
+            opacity-40
+          "
+        />
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-[10px]
+            md:text-[11px]
+            uppercase
+            tracking-[3px]
+            md:tracking-[4px]
             text-[#D4A85A]
             mb-4
           "
@@ -4348,12 +4509,13 @@ md:tracking-[4px]
           className="
             font-heading
             text-3xl
-md:text-4xl
+            md:text-4xl
             font-light
+            leading-[1.05]
             mb-4
           "
         >
-          Signature
+          Full-Service / Turnkey
         </h3>
 
         <p
@@ -4363,124 +4525,490 @@ md:text-4xl
             font-light
             leading-relaxed
             text-gray-400
-            mb-8
+            mb-7
           "
         >
-          Our most comprehensive bespoke experience,
-          created for clients seeking a completely
-          personalized interior from concept to completion.
+          Our complete interior service for clients who want
+          one coordinated team guiding the project from design
+          and procurement through implementation and handover.
         </p>
 
-        <div
-          className="
-            border-t
-            border-white/10
-            pt-5
-            mb-6
-          "
-        >
-
+        <div className="border-t border-white/10 pt-5 mb-6">
           <p
             className="
               font-[var(--font-avenir)]
-              text-[11px]
+              text-[10px]
               uppercase
               tracking-[3px]
               text-gray-500
               mb-2
             "
           >
-            Starting from
+            Professional Fee From
           </p>
 
-         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-  <p
-    className="
-      font-heading
-      text-2xl
-      sm:text-3xl
-      font-light
-      text-white
-      whitespace-nowrap
-    "
-  >
-    KES XXX,XXX
-  </p>
+          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+            <p
+              className="
+                font-heading
+                text-3xl
+                font-light
+                text-white
+                whitespace-nowrap
+              "
+            >
+              10%
+            </p>
 
-  <span
-    className="
-      font-[var(--font-avenir)]
-      text-xs
-      md:text-sm
-      text-gray-500
-      whitespace-nowrap
-    "
-  >
-    / m²
-  </span>
-</div>
-        </div>
-
-
-        <div className="flex-1">
+            <span
+              className="
+                font-[var(--font-avenir)]
+                text-xs
+                md:text-sm
+                text-gray-500
+              "
+            >
+              of project cost
+            </span>
+          </div>
 
           <p
             className="
               font-[var(--font-avenir)]
-              text-[11px]
+              text-[10px]
+              text-gray-500
+              mt-2
+            "
+          >
+            Final fee depends on project scope and complexity.
+          </p>
+        </div>
+
+        <div className="flex-1">
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-[10px]
               uppercase
               tracking-[3px]
               text-[#D4A85A]
               mb-5
             "
           >
-            Includes
+            Key Deliverables
           </p>
 
           <ul
             className="
-              space-y-4
+              space-y-3
               font-[var(--font-avenir)]
-              text-sm
+              text-[13px]
               font-light
+              leading-relaxed
               text-gray-300
             "
           >
-            <li>Fully bespoke interior design</li>
-            <li>Premium & imported finishes</li>
-            <li>Architectural lighting design</li>
-            <li>Custom ceilings & feature walls</li>
-            <li>Luxury flooring solutions</li>
-            <li>Complete bespoke joinery</li>
-            <li>Procurement & project management</li>
-            <li>Full turnkey installation</li>
+            <li>Complete design & documentation</li>
+            <li>BOQ, budgeting & procurement planning</li>
+            <li>MEP & specialist consultant coordination</li>
+            <li>Material, furniture & fixture sourcing</li>
+            <li>Contractor & supplier coordination</li>
+            <li>Site implementation & quality control</li>
+            <li>Installation, snagging & styling</li>
+            <li>Final project handover</li>
           </ul>
+        </div>
 
+        <button
+          onClick={() => setSelectedPackage("turnkey")}
+          className="
+            w-full
+            mt-7
+            px-6
+            py-3
+            rounded-full
+            border
+            border-[#D4A85A]
+            text-[#D4A85A]
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[2px]
+            text-xs
+            transition-all
+            duration-300
+            hover:bg-[#D4A85A]
+            hover:text-black
+          "
+        >
+          Explore Package
+        </button>
+      </div>
+
+    </div>
+
+
+    {/* =====================================================
+        IMPORTANT PRICING NOTE
+    ===================================================== */}
+
+    <div
+      className="
+        mt-7
+        border-l
+        border-[#D4A85A]
+        pl-5
+        md:pl-6
+        max-w-5xl
+      "
+    >
+      <p
+        className="
+          font-[var(--font-avenir)]
+          text-xs
+          md:text-sm
+          font-light
+          leading-relaxed
+          text-gray-400
+        "
+      >
+        Professional fees cover the design and professional services
+        described within each package. Construction materials, labour,
+        furniture, equipment and physical fit-out costs are separate
+        unless specifically included within an approved turnkey project
+        quotation and BOQ.
+      </p>
+    </div>
+
+
+    {/* =====================================================
+        OTHER WAYS TO WORK WITH US
+    ===================================================== */}
+
+    <div className="mt-14 md:mt-16">
+
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-10 h-px bg-[#D4A85A]" />
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[4px]
+            md:tracking-[6px]
+            text-[#D4A85A]
+            text-[9px]
+            md:text-[10px]
+          "
+        >
+          Flexible Engagements
+        </p>
+
+        <div className="w-10 h-px bg-[#D4A85A]" />
+      </div>
+
+      <h3
+        className="
+          font-heading
+          text-3xl
+          md:text-4xl
+          lg:text-5xl
+          font-light
+          leading-[1.08]
+          mb-8
+        "
+      >
+        Other Ways To Work With Us.
+      </h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        {/* CONSULTATION */}
+
+        <div
+          className="
+            rounded-2xl
+            border
+            border-white/10
+            bg-white/[0.025]
+            p-6
+            md:p-7
+          "
+        >
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-[9px]
+              uppercase
+              tracking-[3px]
+              text-[#D4A85A]
+              mb-4
+            "
+          >
+            Consultation
+          </p>
+
+          <h4 className="font-heading text-2xl md:text-3xl font-light mb-3">
+            From KES 5,000 / Hour
+          </h4>
+
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-sm
+              font-light
+              leading-relaxed
+              text-gray-400
+            "
+          >
+            Professional design advice, layout reviews, material and
+            finish guidance, renovation advice and targeted design
+            consultation. On-site consultations are quoted separately
+            based on location and scope.
+          </p>
         </div>
 
 
-        <button
-  onClick={() => setSelectedPackage("signature")}
-  className="
-    px-7
-    py-3
-    rounded-full
-    border
-    border-[#D4A85A]
-    text-[#D4A85A]
-    uppercase
-    tracking-[2px]
-    text-sm
-    transition-all
-    duration-300
-    hover:bg-[#D4A85A]
-    hover:text-black
-  "
->
-  Explore Package
-</button>
+        {/* SINGLE SPACE */}
+
+        <div
+          className="
+            rounded-2xl
+            border
+            border-white/10
+            bg-white/[0.025]
+            p-6
+            md:p-7
+          "
+        >
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-[9px]
+              uppercase
+              tracking-[3px]
+              text-[#D4A85A]
+              mb-4
+            "
+          >
+            Defined Scope
+          </p>
+
+          <h4 className="font-heading text-2xl md:text-3xl font-light mb-3">
+            Fixed Project Fee
+          </h4>
+
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-sm
+              font-light
+              leading-relaxed
+              text-gray-400
+            "
+          >
+            Ideal for individual rooms, selected commercial spaces
+            or clearly defined specialist assignments. Fees are
+            determined by space size, complexity and required
+            deliverables.
+          </p>
+        </div>
+
+
+        {/* SITE VISITS */}
+
+        <div
+          className="
+            rounded-2xl
+            border
+            border-white/10
+            bg-white/[0.025]
+            p-6
+            md:p-7
+          "
+        >
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-[9px]
+              uppercase
+              tracking-[3px]
+              text-[#D4A85A]
+              mb-4
+            "
+          >
+            Site Services
+          </p>
+
+          <h4 className="font-heading text-2xl md:text-3xl font-light mb-3">
+            Quoted Per Visit
+          </h4>
+
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-sm
+              font-light
+              leading-relaxed
+              text-gray-400
+            "
+          >
+            Site assessments, project reviews, design compliance
+            inspections and professional representation. Travel,
+            accommodation and logistics are additional where required.
+          </p>
+        </div>
 
       </div>
+
+    </div>
+
+
+    {/* =====================================================
+        INDICATIVE FIT-OUT BUDGETS
+    ===================================================== */}
+
+    <div
+      className="
+        mt-14
+        md:mt-16
+        rounded-2xl
+        md:rounded-[28px]
+        border
+        border-white/10
+        bg-[#0a1828]
+        p-5
+        sm:p-6
+        md:p-8
+        lg:p-10
+      "
+    >
+      <div className="max-w-3xl mb-8">
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-[9px]
+            uppercase
+            tracking-[4px]
+            text-[#D4A85A]
+            mb-4
+          "
+        >
+          Project Planning Guide
+        </p>
+
+        <h3
+          className="
+            font-heading
+            text-3xl
+            md:text-4xl
+            lg:text-5xl
+            font-light
+            leading-[1.08]
+            mb-4
+          "
+        >
+          Indicative Fit-Out Budgets
+        </h3>
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-sm
+            font-light
+            leading-relaxed
+            text-gray-400
+          "
+        >
+          These figures provide an early planning guide for physical
+          interior implementation. The final project cost is established
+          through the approved design, specifications and BOQ.
+        </p>
+      </div>
+
+
+      <div
+        className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-4
+          gap-px
+          bg-white/10
+          border
+          border-white/10
+          rounded-2xl
+          overflow-hidden
+        "
+      >
+
+        <div className="bg-[#071321] p-6">
+          <p className="font-[var(--font-avenir)] text-[9px] uppercase tracking-[3px] text-gray-500 mb-3">
+            Essential
+          </p>
+          <p className="font-heading text-2xl md:text-3xl font-light">
+            From KES 15,000
+          </p>
+          <p className="font-[var(--font-avenir)] text-xs text-gray-500 mt-1">
+            per m²
+          </p>
+        </div>
+
+        <div className="bg-[#071321] p-6">
+          <p className="font-[var(--font-avenir)] text-[9px] uppercase tracking-[3px] text-gray-500 mb-3">
+            Contemporary
+          </p>
+          <p className="font-heading text-2xl md:text-3xl font-light">
+            From KES 25,000
+          </p>
+          <p className="font-[var(--font-avenir)] text-xs text-gray-500 mt-1">
+            per m²
+          </p>
+        </div>
+
+        <div className="bg-[#071321] p-6">
+          <p className="font-[var(--font-avenir)] text-[9px] uppercase tracking-[3px] text-gray-500 mb-3">
+            Premium
+          </p>
+          <p className="font-heading text-2xl md:text-3xl font-light">
+            From KES 40,000
+          </p>
+          <p className="font-[var(--font-avenir)] text-xs text-gray-500 mt-1">
+            per m²
+          </p>
+        </div>
+
+        <div className="bg-[#071321] p-6">
+          <p className="font-[var(--font-avenir)] text-[9px] uppercase tracking-[3px] text-[#D4A85A] mb-3">
+            Luxury / Bespoke
+          </p>
+          <p className="font-heading text-2xl md:text-3xl font-light">
+            From KES 65,000
+          </p>
+          <p className="font-[var(--font-avenir)] text-xs text-gray-500 mt-1">
+            per m²
+          </p>
+        </div>
+
+      </div>
+
+      <p
+        className="
+          font-[var(--font-avenir)]
+          text-[10px]
+          md:text-[11px]
+          font-light
+          leading-relaxed
+          text-gray-500
+          mt-5
+          max-w-5xl
+        "
+      >
+        Indicative planning allowances only and not quotations. Actual
+        costs vary according to project scope, existing conditions,
+        material specifications, custom joinery, furniture, equipment,
+        specialist services, project location and selected level of finish.
+      </p>
 
     </div>
 
@@ -4491,20 +5019,20 @@ md:text-4xl
 
     <div
       className="
-       mt-10
-md:mt-12
-rounded-2xl
-md:rounded-[28px]
+        mt-10
+        md:mt-12
+        rounded-2xl
+        md:rounded-[28px]
         border
         border-white/10
         bg-[#0a1828]
         px-5
-sm:px-6
-md:px-8
-py-7
-md:py-9
-lg:px-10
-lg:py-10
+        sm:px-6
+        md:px-8
+        py-7
+        md:py-9
+        lg:px-10
+        lg:py-10
         flex
         flex-col
         lg:flex-row
@@ -4514,34 +5042,32 @@ lg:py-10
         gap-8
       "
     >
-
       <div>
-
         <p
           className="
             font-[var(--font-avenir)]
-            text-[11px]
+            text-[10px]
             uppercase
             tracking-[4px]
             text-[#D4A85A]
             mb-3
           "
         >
-          Need Help Choosing?
+          Not Sure Where To Start?
         </p>
 
         <h3
           className="
             font-heading
             text-2xl
-md:text-3xl
-lg:text-4xl
-leading-[1.1]
+            md:text-3xl
+            lg:text-4xl
+            leading-[1.1]
             font-light
             mb-3
           "
         >
-          Let's find the right package for your space.
+          Let's define the right scope for your project.
         </h3>
 
         <p
@@ -4549,53 +5075,55 @@ leading-[1.1]
             font-[var(--font-avenir)]
             text-sm
             font-light
+            leading-relaxed
             text-gray-400
+            max-w-2xl
           "
         >
-          Every project is different. We can tailor the
-          scope, finishes and specifications around your
-          requirements.
+          Tell us about your space, project stage and expectations.
+          We will recommend the appropriate service and prepare a
+          project-specific proposal.
         </p>
-
       </div>
 
-
-     <Link
-  href="/consultation"
-  className="
-    inline-flex
-    items-center
-    justify-center
-    w-full
-    sm:w-auto
-    px-6
-    md:px-7
-    py-3
-    rounded-full
-    border
-    border-[#D4A85A]
-    text-[#D4A85A]
-    font-[var(--font-avenir)]
-    text-xs
-    md:text-sm
-    font-medium
-    uppercase
-    tracking-[1.5px]
-    md:tracking-[2px]
-    transition-all
-    duration-300
-    hover:bg-[#D4A85A]
-    hover:text-black
-    hover:shadow-[0_0_25px_rgba(212,168,90,0.30)]
-  "
->
-  Book Consultation
-</Link>
+      <Link
+        href="/consultation"
+        className="
+          inline-flex
+          items-center
+          justify-center
+          w-full
+          sm:w-auto
+          px-6
+          md:px-7
+          py-3
+          rounded-full
+          border
+          border-[#D4A85A]
+          text-[#D4A85A]
+          font-[var(--font-avenir)]
+          text-xs
+          font-medium
+          uppercase
+          tracking-[2px]
+          transition-all
+          duration-300
+          hover:bg-[#D4A85A]
+          hover:text-black
+          hover:shadow-[0_0_25px_rgba(212,168,90,0.30)]
+        "
+      >
+        Book Consultation
+      </Link>
     </div>
 
   </div>
-
 </section>
+
+
+{/* =========================================================
+    PACKAGE DETAILS MODAL
+========================================================= */}
 
 {selectedPackage && (
   <div
@@ -4609,29 +5137,28 @@ leading-[1.1]
       bg-black/80
       backdrop-blur-md
       px-4
-sm:px-6
-py-6
-md:py-10
+      sm:px-6
+      py-6
+      md:py-10
     "
     onClick={() => setSelectedPackage(null)}
   >
-
     <div
       className="
         relative
         w-full
-        max-w-3xl
-max-h-[92vh]
+        max-w-4xl
+        max-h-[92vh]
         overflow-y-auto
         rounded-2xl
-md:rounded-[28px]
+        md:rounded-[28px]
         border
         border-white/10
         bg-[#071321]
         p-5
-sm:p-6
-md:p-8
-lg:p-10
+        sm:p-6
+        md:p-8
+        lg:p-10
         shadow-[0_0_80px_rgba(0,0,0,0.5)]
       "
       onClick={(e) => e.stopPropagation()}
@@ -4643,13 +5170,17 @@ lg:p-10
         onClick={() => setSelectedPackage(null)}
         className="
           absolute
-          top-6
-          right-7
-          text-3xl
+          top-4
+          right-5
+          md:top-6
+          md:right-7
+          text-2xl
+          md:text-3xl
           text-white/60
           transition-all
           hover:text-[#D4A85A]
         "
+        aria-label="Close package details"
       >
         ×
       </button>
@@ -4657,18 +5188,25 @@ lg:p-10
 
       {/* PACKAGE LABEL */}
 
-      <p
-        className="
-          font-[var(--font-avenir)]
-          uppercase
-          tracking-[5px]
-          text-sm
-          text-[#D4A85A]
-          mb-5
-        "
-      >
-        Interior Design Package
-      </p>
+      <div className="flex items-center gap-3 mb-5">
+        <div className="w-8 h-px bg-[#D4A85A]" />
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[3px]
+            md:tracking-[5px]
+            text-[9px]
+            md:text-[10px]
+            text-[#D4A85A]
+          "
+        >
+          Interior Design Package
+        </p>
+
+        <div className="w-8 h-px bg-[#D4A85A]" />
+      </div>
 
 
       {/* PACKAGE TITLE */}
@@ -4676,32 +5214,30 @@ lg:p-10
       <h2
         className="
           font-heading
-          text-5xl
+          text-3xl
+          sm:text-4xl
+          md:text-5xl
           lg:text-6xl
           font-light
-          leading-[0.95]
+          leading-[1.08]
           text-white
-          mb-6
+          mb-5
+          pr-8
         "
       >
-        {selectedPackage === "essential" && "Essential Package"}
+        {selectedPackage === "concept" && "Concept Design"}
 
-        {selectedPackage === "signature" && "Signature Package"}
+        {selectedPackage === "complete" && "Complete Interior Design"}
 
-        {selectedPackage === "premium" && "Premium Package"}
+        {selectedPackage === "premium" &&
+          "Premium Design + Documentation"}
+
+        {selectedPackage === "turnkey" &&
+          "Full-Service / Turnkey"}
       </h2>
 
 
-      {/* DIVIDER */}
-
-      <div
-        className="
-          w-16
-          h-px
-          bg-[#D4A85A]
-          mb-8
-        "
-      />
+      <div className="w-16 h-px bg-[#D4A85A] mb-7" />
 
 
       {/* DESCRIPTION */}
@@ -4709,25 +5245,30 @@ lg:p-10
       <p
         className="
           font-[var(--font-avenir)]
-          text-lg
+          text-sm
+          md:text-base
           font-light
           leading-relaxed
           text-gray-300
-          mb-10
+          mb-7
+          max-w-3xl
         "
       >
-        {selectedPackage === "essential" &&
-          "A refined interior design solution for clients looking for a beautifully planned and thoughtfully designed space."}
+        {selectedPackage === "concept" &&
+          "A focused concept service for clients who need professional spatial planning, a clear design direction and realistic visualisation before proceeding to detailed design or implementation."}
 
-        {selectedPackage === "signature" &&
-          "A comprehensive interior design experience combining design development, material selection and detailed interior planning."}
+        {selectedPackage === "complete" &&
+          "Our core interior design service, developed for clients who require a complete design solution with coordinated layouts, finishes, interior elements and visualisation for implementation."}
 
         {selectedPackage === "premium" &&
-          "A complete luxury interior design experience with detailed design development, premium finishes and end-to-end coordination."}
+          "A comprehensive execution-ready design service combining detailed technical documentation, bespoke joinery, specialist MEP coordination, cost information and contractor support."}
+
+        {selectedPackage === "turnkey" &&
+          "Our complete end-to-end interior service, coordinating design, documentation, specialist consultants, procurement, contractors, implementation, quality control, styling and final handover."}
       </p>
 
 
-      {/* STARTING PRICE */}
+      {/* PRICE */}
 
       <div
         className="
@@ -4735,81 +5276,297 @@ lg:p-10
           border
           border-white/10
           bg-white/[0.03]
-          p-6
+          p-5
+          md:p-6
           mb-8
         "
       >
-
         <p
           className="
             font-[var(--font-avenir)]
             uppercase
             tracking-[3px]
-            text-xs
+            text-[10px]
             text-gray-400
             mb-2
           "
         >
-          Starting From
+          Professional Fee From
         </p>
 
         <p
           className="
             font-heading
             text-3xl
+            md:text-4xl
+            font-light
             text-[#D4A85A]
           "
         >
-          {selectedPackage === "essential" && "KES XXXK / SQM"}
+          {selectedPackage === "concept" && "KES 1,500 / m²"}
 
-          {selectedPackage === "signature" && "KES XXXK / SQM"}
+          {selectedPackage === "complete" && "KES 2,500 / m²"}
 
-          {selectedPackage === "premium" && "KES XXXK / SQM"}
+          {selectedPackage === "premium" && "KES 4,500 / m²"}
+
+          {selectedPackage === "turnkey" && "10% of Project Cost"}
         </p>
-
-      </div>
-
-
-      {/* WHAT'S INCLUDED */}
-
-      <div className="mb-10">
 
         <p
           className="
             font-[var(--font-avenir)]
-            uppercase
-            tracking-[3px]
-            text-sm
-            text-[#D4A85A]
-            mb-5
-          "
-        >
-          What's Included
-        </p>
-
-        <ul
-          className="
-            space-y-4
-            font-[var(--font-avenir)]
-            text-gray-300
+            text-[10px]
+            md:text-xs
             font-light
+            leading-relaxed
+            text-gray-500
+            mt-2
           "
         >
+          {selectedPackage !== "turnkey"
+            ? "Minimum professional fee applies."
+            : "Final professional fee is determined by project scope, complexity, procurement requirements and level of project management."}
+        </p>
+      </div>
 
-          <li>✓ Interior design consultation</li>
 
-          <li>✓ Space planning and layout development</li>
+      {/* =====================================================
+          CONCEPT DETAILS
+      ===================================================== */}
 
-          <li>✓ Material and finish selection</li>
+      {selectedPackage === "concept" && (
+        <div className="grid md:grid-cols-2 gap-8 mb-9">
 
-          <li>✓ Furniture and lighting recommendations</li>
+          <div>
+            <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[10px] text-[#D4A85A] mb-5">
+              What's Included
+            </p>
 
-          <li>✓ Detailed interior design direction</li>
+            <ul className="space-y-3 font-[var(--font-avenir)] text-sm font-light leading-relaxed text-gray-300">
+              <li>✓ Initial design brief / consultation</li>
+              <li>✓ Review of available drawings</li>
+              <li>✓ Space planning & furniture layout</li>
+              <li>✓ Mood boards & style direction</li>
+              <li>✓ Colour & material palette</li>
+              <li>✓ Furniture & styling direction</li>
+              <li>✓ Preliminary lighting concept</li>
+              <li>✓ 1–2 3D views per key space</li>
+              <li>✓ Up to 2 design revision rounds</li>
+              <li>✓ Final concept presentation</li>
+            </ul>
+          </div>
 
-          <li>✓ Project coordination</li>
+          <div>
+            <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[10px] text-gray-500 mb-5">
+              Not Included
+            </p>
 
-        </ul>
+            <ul className="space-y-3 font-[var(--font-avenir)] text-sm font-light leading-relaxed text-gray-400">
+              <li>Technical construction drawings</li>
+              <li>Detailed joinery drawings</li>
+              <li>MEP engineering documentation</li>
+              <li>BOQ / detailed cost plan</li>
+              <li>Procurement</li>
+              <li>Contractor coordination</li>
+              <li>Site supervision</li>
+              <li>Construction & installation</li>
+            </ul>
+          </div>
 
+        </div>
+      )}
+
+
+      {/* =====================================================
+          COMPLETE DESIGN DETAILS
+      ===================================================== */}
+
+      {selectedPackage === "complete" && (
+        <div className="grid md:grid-cols-2 gap-8 mb-9">
+
+          <div>
+            <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[10px] text-[#D4A85A] mb-5">
+              What's Included
+            </p>
+
+            <ul className="space-y-3 font-[var(--font-avenir)] text-sm font-light leading-relaxed text-gray-300">
+              <li>✓ Everything in Concept Design</li>
+              <li>✓ Developed furniture layouts</li>
+              <li>✓ Dimensioned interior floor plans</li>
+              <li>✓ Floor finish layouts</li>
+              <li>✓ Reflected ceiling design</li>
+              <li>✓ Lighting layouts</li>
+              <li>✓ Switch, socket & power layouts</li>
+              <li>✓ Plumbing fixture coordination</li>
+              <li>✓ Key interior elevations</li>
+              <li>✓ Material & finish specifications</li>
+              <li>✓ Selected joinery concepts</li>
+              <li>✓ Photorealistic 3D visualisations</li>
+              <li>✓ Up to 3 design revision rounds</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[10px] text-gray-500 mb-5">
+              Not Included
+            </p>
+
+            <ul className="space-y-3 font-[var(--font-avenir)] text-sm font-light leading-relaxed text-gray-400">
+              <li>Detailed fabrication/shop drawings</li>
+              <li>Comprehensive BOQ unless separately commissioned</li>
+              <li>Specialist engineering design</li>
+              <li>Procurement & purchasing</li>
+              <li>Construction labour & materials</li>
+              <li>Contractor management</li>
+              <li>Regular site supervision</li>
+            </ul>
+          </div>
+
+        </div>
+      )}
+
+
+      {/* =====================================================
+          PREMIUM DETAILS
+      ===================================================== */}
+
+      {selectedPackage === "premium" && (
+        <div className="grid md:grid-cols-2 gap-8 mb-9">
+
+          <div>
+            <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[10px] text-[#D4A85A] mb-5">
+              What's Included
+            </p>
+
+            <ul className="space-y-3 font-[var(--font-avenir)] text-sm font-light leading-relaxed text-gray-300">
+              <li>✓ Everything in Complete Interior Design</li>
+              <li>✓ Detailed interior layouts</li>
+              <li>✓ Interior elevations & sections</li>
+              <li>✓ Detailed ceiling & lighting plans</li>
+              <li>✓ Detailed joinery/fabrication drawings</li>
+              <li>✓ Feature wall & bespoke detailing</li>
+              <li>✓ Finishes & material schedules</li>
+              <li>✓ MEP design & specialist coordination</li>
+              <li>✓ BOQ / detailed cost schedule</li>
+              <li>✓ Contractor pricing/tender support</li>
+              <li>✓ Design clarification during pricing</li>
+              <li>✓ One pre-construction/site coordination review</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[10px] text-gray-500 mb-5">
+              Specialist Coordination
+            </p>
+
+            <p className="font-[var(--font-avenir)] text-sm font-light leading-relaxed text-gray-400 mb-5">
+              Electrical, lighting, plumbing and other building
+              services are coordinated with the interior design.
+              Where specialist engineering design is required,
+              appropriate consultants may be incorporated into
+              the project team.
+            </p>
+
+            <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[10px] text-gray-500 mb-4">
+              Not Included
+            </p>
+
+            <ul className="space-y-3 font-[var(--font-avenir)] text-sm font-light leading-relaxed text-gray-400">
+              <li>Construction materials & labour</li>
+              <li>Furniture/material procurement</li>
+              <li>Continuous site supervision</li>
+              <li>Full contractor/project management</li>
+              <li>Additional site visits beyond agreed scope</li>
+            </ul>
+          </div>
+
+        </div>
+      )}
+
+
+      {/* =====================================================
+          TURNKEY DETAILS
+      ===================================================== */}
+
+      {selectedPackage === "turnkey" && (
+        <div className="grid md:grid-cols-2 gap-8 mb-9">
+
+          <div>
+            <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[10px] text-[#D4A85A] mb-5">
+              Full-Service Scope
+            </p>
+
+            <ul className="space-y-3 font-[var(--font-avenir)] text-sm font-light leading-relaxed text-gray-300">
+              <li>✓ Complete design & technical documentation</li>
+              <li>✓ Photorealistic 3D visualisation</li>
+              <li>✓ BOQ & project budgeting</li>
+              <li>✓ MEP & specialist consultant coordination</li>
+              <li>✓ Procurement planning & sourcing</li>
+              <li>✓ Furniture, fixture & material sourcing</li>
+              <li>✓ Contractor & supplier coordination</li>
+              <li>✓ Site implementation management</li>
+              <li>✓ Design compliance & quality control</li>
+              <li>✓ Installation coordination</li>
+              <li>✓ Styling & furniture placement</li>
+              <li>✓ Snagging & final handover</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[10px] text-[#D4A85A] mb-5">
+              How Turnkey Pricing Works
+            </p>
+
+            <p className="font-[var(--font-avenir)] text-sm font-light leading-relaxed text-gray-300 mb-5">
+              The professional fee starts from 10% of the agreed
+              project cost and covers the professional services,
+              coordination and project management scope defined
+              in the appointment.
+            </p>
+
+            <p className="font-[var(--font-avenir)] text-sm font-light leading-relaxed text-gray-400 mb-5">
+              Physical execution costs — including materials,
+              labour, joinery, furniture, fixtures and equipment —
+              are established separately through the approved
+              project budget and BOQ.
+            </p>
+
+            <p className="font-[var(--font-avenir)] text-sm font-light leading-relaxed text-gray-400">
+              Specialist consultants and trades are coordinated
+              through the project team as required by the scope,
+              complexity and technical requirements of the project.
+            </p>
+          </div>
+
+        </div>
+      )}
+
+
+      {/* REVISION / SCOPE NOTE */}
+
+      <div
+        className="
+          border-t
+          border-white/10
+          pt-6
+          mb-8
+        "
+      >
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-[10px]
+            md:text-xs
+            font-light
+            leading-relaxed
+            text-gray-500
+          "
+        >
+          Revisions are subject to the allowance stated within the
+          selected package. Major changes to an approved design,
+          changes to the original brief or additional services are
+          treated as variations and may be quoted separately.
+        </p>
       </div>
 
 
@@ -4820,26 +5577,31 @@ lg:p-10
         onClick={() => setSelectedPackage(null)}
         className="
           inline-flex
+          w-full
+          sm:w-auto
           items-center
           justify-center
-          px-8
-          py-4
+          px-6
+          md:px-8
+          py-3
+          md:py-4
           rounded-full
           bg-[#D4A85A]
           text-black
+          font-[var(--font-avenir)]
           uppercase
           tracking-[2px]
-          text-sm
+          text-xs
+          md:text-sm
           transition-all
           duration-300
           hover:bg-white
         "
       >
-        Book A Consultation
+        Discuss Your Project
       </Link>
 
     </div>
-
   </div>
 )}
 
@@ -4847,429 +5609,7 @@ lg:p-10
 
 </section>
 
-{/* =========================================================
-    FOOTER
-========================================================= */}
-
-<footer
-  className="
-    border-t
-    border-white/10
-    py-24
-    overflow-hidden
-  "
->
-
-  <div className="w-full px-6 sm:px-8 lg:px-32">
-
-    <div
-      className="
-        grid
-        lg:grid-cols-[1.8fr_1fr_1fr_1fr_0.8fr]
-        gap-20
-      "
-    >
-
-      {/* =====================================================
-          BRAND
-      ===================================================== */}
-
-      <div className="flex flex-col items-center">
-
-        <img
-          src="/logo/logo-white.png"
-          alt="Apiyo Design Studio"
-          className="
-            w-80
-            object-contain
-            mb-8
-          "
-        />
-
-        <p
-          className="
-            uppercase
-            tracking-[5px]
-            text-[#D4A85A]
-            text-sm
-            text-center
-          "
-        >
-          Architecture • Interiors • Visualization
-        </p>
-
-      </div>
-
-
-      {/* =====================================================
-          QUICK LINKS
-      ===================================================== */}
-
-      <div>
-
-        <p
-          className="
-            uppercase
-            tracking-[4px]
-            text-[#D4A85A]
-            mb-8
-          "
-        >
-          Quick Links
-        </p>
-
-        <div className="flex flex-col gap-4">
-
-          <Link
-            href="/"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            Home
-          </Link>
-
-          <Link
-            href="/house-plans"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            House Plans
-          </Link>
-
-          <Link
-            href="/interiors"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            Interior Design
-          </Link>
-
-          <Link
-            href="/3d"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            3D Visualization
-          </Link>
-
-          <Link
-            href="/students"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            Student Services
-          </Link>
-
-          <Link
-            href="/consultation"
-            className="
-              text-gray-300
-              hover:text-[#D4A85A]
-              transition-all
-              duration-300
-            "
-          >
-            Contact
-          </Link>
-
-        </div>
-
-      </div>
-
-
-      {/* =====================================================
-          SERVICES
-      ===================================================== */}
-
-      <div>
-
-        <p
-          className="
-            uppercase
-            tracking-[4px]
-            text-[#D4A85A]
-            mb-8
-          "
-        >
-          Services
-        </p>
-
-        <div
-          className="
-            flex
-            flex-col
-            gap-4
-            text-gray-300
-          "
-        >
-
-          <p>Architectural Design</p>
-
-          <p>Interior Design</p>
-
-          <p>3D Visualization</p>
-
-          <p>Custom Home Design</p>
-
-          <p>House Plans</p>
-
-          <p>Student Services</p>
-
-        </div>
-
-      </div>
-
-
-      {/* =====================================================
-          CONTACT
-      ===================================================== */}
-
-      <div>
-
-        <p
-          className="
-            uppercase
-            tracking-[4px]
-            text-[#D4A85A]
-            mb-8
-          "
-        >
-          Contact
-        </p>
-
-        <div className="space-y-5">
-
-          <div className="flex items-center gap-4">
-
-            <Mail
-              size={18}
-              className="text-[#D4A85A]"
-            />
-
-            <span className="text-gray-300">
-              info@apiyodesignstudio.co.ke
-            </span>
-
-          </div>
-
-
-          <div className="flex items-center gap-4">
-
-            <Phone
-              size={18}
-              className="text-[#D4A85A]"
-            />
-
-            <span className="text-gray-300">
-              0754 525407
-            </span>
-
-          </div>
-
-
-          <div className="flex items-center gap-4">
-
-            <MapPin
-              size={18}
-              className="text-[#D4A85A]"
-            />
-
-            <span className="text-gray-300">
-              Nairobi, Kenya
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* =====================================================
-          FOLLOW US
-      ===================================================== */}
-
-      <div>
-
-        <p
-          className="
-            uppercase
-            tracking-[4px]
-            text-[#D4A85A]
-            mb-8
-          "
-        >
-          Follow Us
-        </p>
-
-        <div className="flex gap-5 flex-wrap">
-
-          <FaInstagram
-            className="
-              text-[#D4A85A]
-              text-xl
-              cursor-pointer
-              hover:text-white
-              hover:scale-125
-              transition-all
-              duration-300
-            "
-          />
-
-          <FaFacebookF
-            className="
-              text-[#D4A85A]
-              text-xl
-              cursor-pointer
-              hover:text-white
-              hover:scale-125
-              transition-all
-              duration-300
-            "
-          />
-
-          <FaLinkedinIn
-            className="
-              text-[#D4A85A]
-              text-xl
-              cursor-pointer
-              hover:text-white
-              hover:scale-125
-              transition-all
-              duration-300
-            "
-          />
-
-          <FaXTwitter
-            className="
-              text-[#D4A85A]
-              text-xl
-              cursor-pointer
-              hover:text-white
-              hover:scale-125
-              transition-all
-              duration-300
-            "
-          />
-
-          <FaWhatsapp
-            className="
-              text-[#D4A85A]
-              text-xl
-              cursor-pointer
-              hover:text-white
-              hover:scale-125
-              transition-all
-              duration-300
-            "
-          />
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    {/* =====================================================
-        DIVIDER
-    ===================================================== */}
-
-    <div
-      className="
-        h-px
-        bg-gradient-to-r
-        from-transparent
-        via-[#D4A85A]/40
-        to-transparent
-        my-16
-      "
-    />
-
-
-    {/* =====================================================
-        COPYRIGHT
-    ===================================================== */}
-
-    <div
-      className="
-        text-center
-        text-gray-500
-        text-sm
-      "
-    >
-      © 2026 Apiyo Design Studio. All Rights Reserved.
-    </div>
-
-  </div>
-
-</footer>
-
-
-{/* =========================================================
-    FLOATING WHATSAPP
-========================================================= */}
-
-<a
-  href="https://wa.me/254754525407"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="
-    fixed
-    bottom-4
-right-4
-sm:bottom-6
-sm:right-6
-lg:bottom-8
-lg:right-8
-w-14
-h-14
-sm:w-16
-sm:h-16
-lg:w-20
-lg:h-20
-    rounded-full
-    backdrop-blur-xl
-    bg-white/10
-    border
-    border-white/20
-    flex
-    items-center
-    justify-center
-    transition-all
-    duration-300
-    hover:bg-[#D4A85A]
-    hover:scale-110
-    hover:shadow-[0_0_30px_rgba(212,168,90,0.35)]
-  "
->
-  <FaWhatsapp
-    className="
-      text-white
-      text-2xl
-    "
-  />
-</a>
+<Footer />
 
     </main>
   );

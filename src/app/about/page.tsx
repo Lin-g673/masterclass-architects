@@ -1,1928 +1,593 @@
 "use client";
 
-import Navbar from "@/app/components/Navbar";
-import Footer from "@/app/components/Footer";
-
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
-import {
-  HeartHandshake,
-  Users,
-  Leaf,
-  ShieldCheck,
-  Fingerprint,
-  Sun,
-  Wind,
-  Droplets,
-  Trees,
-  ArrowRight,
-  Quote,
-} from "lucide-react";
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
 
-/* =====================================================
-   CORE PILLARS
-===================================================== */
+    handleScroll();
 
-const pillars = [
-  {
-    number: "01",
-    title: "Dignity",
-    subtitle: "Design For The Person First.",
-    description:
-      "We believe good architecture should improve everyday life regardless of status, income or project scale. Comfort, safety, privacy, accessibility and beauty should never be privileges reserved for a few.",
-    icon: Users,
-  },
+    window.addEventListener("scroll", handleScroll);
 
-  {
-    number: "02",
-    title: "Service",
-    subtitle: "Architecture With Purpose Beyond Itself.",
-    description:
-      "Architecture should serve the people who inhabit it, the communities around it and the generations that follow. We measure the value of architecture by what it contributes to life.",
-    icon: HeartHandshake,
-  },
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-  {
-    number: "03",
-    title: "Responsibility",
-    subtitle: "Build With Tomorrow In Mind.",
-    description:
-      "We design with an awareness of climate, resources and future generations. Passive strategies, responsible materials, water, energy, adaptability and durability are considered from the beginning.",
-    icon: Leaf,
-  },
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
-  {
-    number: "04",
-    title: "Resilience",
-    subtitle: "Design For When Architecture Is Needed Most.",
-    description:
-      "We believe architecture can help communities prepare for, withstand and recover from difficult circumstances including flooding, drought, displacement, inadequate housing and humanitarian crises.",
-    icon: ShieldCheck,
-  },
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
-  {
-    number: "05",
-    title: "Identity",
-    subtitle: "Architecture With A Point Of View.",
-    description:
-      "Every project should respond to its place while carrying the thinking of the studio that created it. Our ambition is to develop architecture that is purposeful, recognisable and distinctly ours.",
-    icon: Fingerprint,
-  },
-];
+  const navItems = [
+    {
+      name: "Home",
+      href: "/",
+    },
+    {
+      name: "House Plans",
+      href: "/house-plans",
+    },
+    {
+      name: "Interior Design",
+      href: "/interiors",
+    },
+    {
+      name: "3D Visualization",
+      href: "/3d",
+    },
+    {
+      name: "Projects",
+      href: "/projects",
+    },
+    {
+      name: "Students",
+      href: "/students",
+    },
+    {
+      name: "About Us",
+      href: "/about",
+    },
+  ];
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
-/* =====================================================
-   APIYO FRAMEWORK
-===================================================== */
-
-const apiyoFramework = [
-  {
-    letter: "A",
-    title: "Architecture",
-    description:
-      "As an instrument of positive change.",
-  },
-
-  {
-    letter: "P",
-    title: "People",
-    description:
-      "At the centre of every decision.",
-  },
-
-  {
-    letter: "I",
-    title: "Impact",
-    description:
-      "Measured beyond the building.",
-  },
-
-  {
-    letter: "Y",
-    title: "Years Ahead",
-    description:
-      "Designing responsibly for generations to come.",
-  },
-
-  {
-    letter: "O",
-    title: "Opportunity",
-    description:
-      "To leave every place better than we found it.",
-  },
-];
-
-
-/* =====================================================
-   PASSIVE PRINCIPLES
-===================================================== */
-
-const passivePrinciples = [
-  {
-    title: "Light",
-    icon: Sun,
-  },
-  {
-    title: "Air",
-    icon: Wind,
-  },
-  {
-    title: "Water",
-    icon: Droplets,
-  },
-  {
-    title: "Landscape",
-    icon: Trees,
-  },
-];
-
-
-/* =====================================================
-   PAGE
-===================================================== */
-
-export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#071321] text-white">
-
-      <Navbar />
-
-
+    <>
       {/* =====================================================
-          HERO
+          MAIN NAVBAR
       ===================================================== */}
 
-      <section
-        className="
-          relative
-          min-h-screen
-          overflow-hidden
-        "
+      <header
+        className={`
+          fixed
+          top-0
+          left-0
+          z-50
+          w-full
+          transition-all
+          duration-300
+          ${
+            scrolled || menuOpen
+              ? "bg-white shadow-[0_4px_30px_rgba(0,0,0,0.06)]"
+              : "bg-transparent"
+          }
+        `}
       >
-
-        {/* HERO IMAGE */}
-
-        <img
-          src="/about/abouthero.png"
-          alt="Apiyo Design Studio"
-          draggable={false}
-          className="
-            absolute
-            inset-0
-            w-full
-            h-full
-            object-cover
-            select-none
-          "
-        />
-
-
-        {/* DARK OVERLAY */}
-
         <div
-          className="
-            absolute
-            inset-0
-            bg-gradient-to-r
-            from-[#071321]/95
-            via-[#071321]/76
-            to-[#071321]/30
-          "
-        />
-
-
-        {/* HERO CONTENT */}
-
-        <div
-          className="
-            relative
-            z-10
-            min-h-screen
+          className={`
+            max-w-[1800px]
+            mx-auto
+            px-5
+            md:px-8
+            lg:px-12
+            xl:px-14
             flex
             items-center
-          "
-        >
+            transition-all
+            duration-300
 
-          <div
+            ${
+              scrolled || menuOpen
+                ? `
+                  h-[54px]
+                  md:h-[54px]
+                  lg:h-[54px]
+                `
+                : `
+                  h-[64px]
+                  md:h-[70px]
+                  lg:h-[76px]
+                `
+            }
+          `}
+        >
+          {/* =====================================================
+              LOGO
+          ===================================================== */}
+
+          <Link
+            href="/"
+            onClick={closeMenu}
+            aria-label="Apiyo Design Studio Home"
             className="
-              w-full
-              max-w-[1500px]
-              mx-auto
-              px-5
-              sm:px-6
-              md:px-8
-              lg:px-10
-              xl:px-12
-              pt-24
-              md:pt-28
+              flex
+              items-center
+              flex-shrink-0
             "
           >
+            <img
+              src={
+                scrolled || menuOpen
+                  ? "/logo/logo-black.png"
+                  : "/logo/logo-white.png"
+              }
+              alt="Apiyo Design Studio"
+              draggable={false}
+              className={`
+                w-auto
+                select-none
+                transition-all
+                duration-300
 
-            <div className="max-w-5xl">
+                ${
+                  scrolled || menuOpen
+                    ? "h-7 md:h-7 lg:h-8"
+                    : "h-9 md:h-10 lg:h-11"
+                }
+              `}
+            />
+          </Link>
 
-              {/* EYEBROW */}
+          {/* =====================================================
+              DESKTOP NAVIGATION
+          ===================================================== */}
 
-              <div
-                className="
-                  flex
-                  items-center
-                  gap-4
-                  mb-8
-                "
-              >
+          <nav
+            className={`
+              hidden
+              xl:flex
+              flex-1
+              items-center
+              justify-center
+              gap-7
+              2xl:gap-9
 
-                <div className="w-10 h-px bg-[#D4A85A]" />
-
-                <p
-                  className="
-                    font-[var(--font-avenir)]
-                    uppercase
-                    tracking-[8px]
-                    text-[#D4A85A]
-                    text-[10px]
-                    md:text-xs
-                    whitespace-nowrap
-                  "
-                >
-                  About Apiyo Design Studio
-                </p>
-
-                <div className="w-10 h-px bg-[#D4A85A]" />
-
-              </div>
-
-
-              {/* MAIN HEADING */}
-
-              <h1
-                className="
-                  font-heading
-                  text-4xl
-                  sm:text-6xl
-                  md:text-7xl
-                  lg:text-8xl
-                  font-light
-                  leading-[1.03]
-                  max-w-5xl
-                  mb-8
-                "
-              >
-                <span className="block">
-  Designing What Matters.
-</span>
-
-<span className="block mt-2">
-  Building What Lasts.
-</span>
-              </h1>
-
-
-              {/* DESCRIPTION */}
-
-              <p
-                className="
-                  max-w-2xl
-                  font-[var(--font-avenir)]
-                  text-base
-                  sm:text-lg
-                  md:text-xl
-                  font-light
-                  text-gray-300
-                  leading-relaxed
-                "
-              >
-                We believe architecture carries a responsibility
-                beyond appearance — to people, place, climate
-                and the generations that follow.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        {/* SCROLL INDICATOR */}
-
-        <div
-          className="
-            absolute
-            z-20
-            bottom-8
-            md:bottom-10
-            left-1/2
-            -translate-x-1/2
-            flex
-            flex-col
-            items-center
-            gap-3
-          "
-        >
-
-          <span
-            className="
               font-[var(--font-avenir)]
+              text-[11px]
+              2xl:text-[12px]
+              font-medium
               uppercase
-              tracking-[6px]
-              md:tracking-[9px]
-              text-[9px]
-              md:text-[10px]
-              text-[#D4A85A]
-              whitespace-nowrap
-            "
+              tracking-[0.14em]
+
+              ${
+                scrolled
+                  ? "text-[#1c3a60]"
+                  : "text-white"
+              }
+            `}
           >
-            Our Story
-          </span>
-
-          <div className="w-px h-10 bg-[#D4A85A]" />
-
-        </div>
-
-      </section>
-
-
-
-      {/* =====================================================
-          PURPOSE
-      ===================================================== */}
-
-      <section
-        className="
-          py-20
-          md:py-24
-          lg:py-20
-        "
-      >
-
-        <div
-          className="
-            max-w-[1500px]
-            mx-auto
-            px-5
-            sm:px-6
-            md:px-8
-            lg:px-10
-            xl:px-12
-          "
-        >
-
-          {/* EYEBROW */}
-
-          <div
-            className="
-              flex
-              items-center
-              gap-4
-              mb-10
-            "
-          >
-
-            <div className="w-10 h-px bg-[#D4A85A]" />
-
-            <p
-              className="
-                font-[var(--font-avenir)]
-                uppercase
-                tracking-[8px]
-                text-[#D4A85A]
-                text-[10px]
-                md:text-xs
-                whitespace-nowrap
-              "
-            >
-              Our Purpose
-            </p>
-
-            <div className="w-10 h-px bg-[#D4A85A]" />
-
-          </div>
-
-
-          {/* CENTER STATEMENT */}
-
-          <div
-            className="
-              max-w-5xl
-              mx-auto
-              text-center
-            "
-          >
-
-            <p
-              className="
-                font-[var(--font-avenir)]
-                uppercase
-                tracking-[5px]
-                text-[#D4A85A]
-                text-[10px]
-                md:text-xs
-                mb-6
-              "
-            >
-              Design In Service Of Life
-            </p>
-
-
-            <h2
-              className="
-                font-heading
-                text-4xl
-                md:text-5xl
-                lg:text-7xl
-                font-light
-                leading-[1.05]
-                mb-8
-              "
-            >
-              Architecture
-                                               
-              Of Dignity.
-            </h2>
-
-
-            <p
-              className="
-                max-w-3xl
-                mx-auto
-                font-[var(--font-avenir)]
-                text-base
-                md:text-lg
-                text-gray-400
-                leading-relaxed
-              "
-            >
-              At Apiyo Design Studio, architecture is not simply
-              the creation of buildings. It is the shaping of
-              environments in which people live, work, gather,
-              grow and build their futures.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* =====================================================
-          ORIGIN STORY
-      ===================================================== */}
-
-      <section
-        className="
-          py-20
-          md:py-24
-          lg:py-20
-        "
-      >
-
-        <div
-          className="
-            max-w-[1500px]
-            mx-auto
-            px-5
-            sm:px-6
-            md:px-8
-            lg:px-10
-            xl:px-12
-          "
-        >
-
-          <div
-            className="
-              grid
-              grid-cols-1
-              lg:grid-cols-[0.95fr_1.05fr]
-              gap-12
-              lg:gap-20
-              items-center
-            "
-          >
-{/* IMAGE */}
-
-<div
-  className="
-    relative
-    overflow-hidden
-    rounded-2xl
-
-    aspect-[4/3]
-
-    lg:aspect-auto
-    lg:h-full
-    lg:min-h-0
-  "
->
-  <img
-    src="/about/origin.png"
-    alt="The origin of Apiyo Design Studio"
-    draggable={false}
-    className="
-      absolute
-      inset-0
-      w-full
-      h-full
-      object-cover
-      select-none
-      transition-transform
-      duration-[1200ms]
-      hover:scale-[1.03]
-    "
-  />
-</div>
-
-
-            {/* STORY */}
-
-            <div>
-
-              <div
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
                 className="
-                  flex
-                  items-center
-                  gap-4
-                  mb-8
+                  relative
+                  whitespace-nowrap
+
+                  transition-colors
+                  duration-300
+
+                  hover:text-[#D4A85A]
+
+                  after:absolute
+                  after:left-0
+                  after:-bottom-2
+                  after:h-px
+                  after:w-0
+                  after:bg-[#D4A85A]
+                  after:transition-all
+                  after:duration-300
+
+                  hover:after:w-full
                 "
               >
-
-                <div className="w-10 h-px bg-[#D4A85A]" />
-
-                <p
-                  className="
-                    font-[var(--font-avenir)]
-                    uppercase
-                    tracking-[8px]
-                    text-[#D4A85A]
-                    text-[10px]
-                    md:text-xs
-                    whitespace-nowrap
-                  "
-                >
-                  Where The Purpose Began
-                </p>
-
-                <div className="w-10 h-px bg-[#D4A85A]" />
-
-              </div>
-
-
-              <h2
-                className="
-                  font-heading
-                  text-4xl
-                  md:text-5xl
-                  lg:text-6xl
-                  font-light
-                  leading-[1.05]
-                  mb-7
-                "
-              >
-                Architecture Became
-                A Way To Serve.
-              </h2>
-
-
-              <div
-                className="
-                  space-y-6
-                  max-w-2xl
-                  font-[var(--font-avenir)]
-                  text-sm
-                  md:text-base
-                  text-gray-400
-                  leading-relaxed
-                "
-              >
-
-                <p>
-                  Growing up in Kibera made the relationship
-                  between people and the built environment
-                  impossible to ignore.
-                </p>
-
-                <p>
-                  Housing, sanitation, infrastructure and access
-                  to dignified spaces were not abstract design
-                  discussions. They directly influenced health,
-                  opportunity, safety and the experience of
-                  everyday life.
-                </p>
-
-                <p>
-                  Architecture therefore became more than a
-                  profession. It became an opportunity to
-                  participate in creating a better future.
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* =====================================================
-          THE NAME — APIYO
-      ===================================================== */}
-
-      <section
-        className="
-    py-14
-    md:py-16
-    lg:py-20
-        "
-      >
-
-        <div
-          className="
-            max-w-[1500px]
-            mx-auto
-            px-5
-            sm:px-6
-            md:px-8
-            lg:px-10
-            xl:px-12
-          "
-        >
-
-          {/* EYEBROW */}
-
-          <div
-            className="
-              flex
-              items-center
-              gap-4
-              mb-10
-            "
-          >
-
-            <div className="w-10 h-px bg-[#D4A85A]" />
-
-            <p
-              className="
-                font-[var(--font-avenir)]
-                uppercase
-                tracking-[8px]
-                text-[#D4A85A]
-                text-[10px]
-                md:text-xs
-                whitespace-nowrap
-              "
-            >
-              More Than A Name
-            </p>
-
-            <div className="w-10 h-px bg-[#D4A85A]" />
-
-          </div>
-
-
-          <div
-            className="
-              grid
-              grid-cols-1
-              lg:grid-cols-[0.8fr_1.2fr]
-              gap-12
-              lg:gap-24
-            "
-          >
-
-            {/* LEFT STATEMENT */}
-
-            <div>
-
-              <h2
-                className="
-                  font-heading
-                  text-5xl
-                  md:text-6xl
-                  lg:text-7xl
-                  font-light
-                  leading-[1.05]
-                "
-              >
-                Apiyo Is Our Name.
-                <br />
-                But It Is Also
-                <br />
-                Our Inheritance.
-              </h2>
-
-            </div>
-
-
-            {/* RIGHT STORY */}
-
-            <div
-              className="
-                space-y-6
-                font-[var(--font-avenir)]
-                text-sm
-                md:text-base
-                lg:text-lg
-                text-gray-400
-                leading-relaxed
-              "
-            >
-
-              <p>
-                Across generations, the name has been associated
-                within our family with service — the belief that
-                progress means little unless it contributes to
-                the lives of others.
-              </p>
-
-
-              <p>
-                That principle took different forms across
-                generations. Through community development,
-                empowerment, better sanitation and improved
-                living conditions, the generation before us
-                demonstrated that meaningful change begins by
-                serving people.
-              </p>
-
-
-              <p>
-                For our founder, growing up in Kibera made the
-                relationship between people and the built
-                environment deeply personal. Housing was not
-                simply architecture. The quality of one's
-                surroundings could influence health, dignity,
-                opportunity and the experience of everyday life.
-              </p>
-
-
-              <p>
-                Architecture became a way of continuing that
-                legacy.
-              </p>
-
-
-              <p
-                className="
-                  text-white
-                  text-base
-                  md:text-lg
-                "
-              >
-                Apiyo Design Studio therefore carries the name
-                not simply because it belongs to its founder,
-                but because of what it represents: service,
-                responsibility and the belief that the work we
-                leave behind should make the world, in however
-                small a way, better.
-              </p>
-
-
-              <p>
-                That responsibility extends especially to moments
-                when good design matters most — to communities
-                facing inadequate housing, environmental change,
-                displacement and disaster. We believe architecture
-                can help create places that protect, adapt and
-                restore dignity, even in the most difficult
-                circumstances.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* =====================================================
-          APIYO FRAMEWORK
-      ===================================================== */}
-
-      <section
-        className="
-    py-14
-    md:py-16
-    lg:py-20
-        "
-      >
-
-        <div
-          className="
-            max-w-[1500px]
-            mx-auto
-            px-5
-            sm:px-6
-            md:px-8
-            lg:px-10
-            xl:px-12
-          "
-        >
-
-          {/* TITLE */}
-
-          <div
-            className="
-              flex
-              items-center
-              gap-4
-              mb-12
-            "
-          >
-
-            <div className="w-10 h-px bg-[#D4A85A]" />
-
-            <p
-              className="
-                font-[var(--font-avenir)]
-                uppercase
-                tracking-[8px]
-                text-[#D4A85A]
-                text-[10px]
-                md:text-xs
-              "
-            >
-              The Name Today
-            </p>
-
-            <div className="w-10 h-px bg-[#D4A85A]" />
-
-          </div>
-
-
-          <div
-            className="
-              max-w-4xl
-              mx-auto
-              text-center
-              mb-14
-              md:mb-20
-            "
-          >
-
-            <h2
-              className="
-                font-heading
-                text-4xl
-                md:text-5xl
-                lg:text-6xl
-                font-light
-                leading-[1.05]
-                mb-6
-              "
-            >
-              A Name Inherited.
-              <br />
-              A Purpose Continued.
-            </h2>
-
-            <p
-              className="
-                max-w-2xl
-                mx-auto
-                font-[var(--font-avenir)]
-                text-sm
-                md:text-base
-                text-gray-400
-                leading-relaxed
-              "
-            >
-              Today, the values carried by the Apiyo name
-              are expressed through five ideas.
-            </p>
-
-          </div>
-
-
-          {/* APIYO LETTERS */}
-
-          <div
-            className="
-              grid
-              grid-cols-1
-              sm:grid-cols-2
-              lg:grid-cols-5
-              border-t
-              border-b
-              border-white/10
-            "
-          >
-
-            {apiyoFramework.map((item, index) => (
-
-              <div
-                key={item.letter}
-                className={`
-                  group
-                  py-10
-                  md:py-12
-                  px-6
-                  text-center
-                  transition-all
-                  duration-500
-                  hover:bg-white
-                  hover:text-[#071321]
-
-                  ${
-                    index < apiyoFramework.length - 1
-                      ? "lg:border-r lg:border-white/10"
-                      : ""
-                  }
-                `}
-              >
-
-                <span
-                  className="
-                    block
-                    font-heading
-                    text-7xl
-                    md:text-8xl
-                    font-light
-                    text-[#D4A85A]
-                    mb-5
-                  "
-                >
-                  {item.letter}
-                </span>
-
-
-                <h3
-                  className="
-                    font-heading
-                    text-2xl
-                    md:text-3xl
-                    font-light
-                    mb-4
-                  "
-                >
-                  {item.title}
-                </h3>
-
-
-                <p
-                  className="
-                    font-[var(--font-avenir)]
-                    text-sm
-                    text-gray-400
-                    leading-relaxed
-                    transition-colors
-                    duration-500
-                    group-hover:text-[#071321]/70
-                  "
-                >
-                  {item.description}
-                </p>
-
-              </div>
-
+                {item.name}
+              </Link>
             ))}
+          </nav>
 
-          </div>
+          {/* =====================================================
+              DESKTOP CONSULTATION
+          ===================================================== */}
 
-        </div>
-
-      </section>
-
-
-
-      {/* =====================================================
-          FIVE PILLARS
-      ===================================================== */}
-
-      <section
-        className="
-    py-14
-    md:py-16
-    lg:py-20
-        "
-      >
-
-        <div
-          className="
-            max-w-[1500px]
-            mx-auto
-            px-5
-            sm:px-6
-            md:px-8
-            lg:px-10
-            xl:px-12
-          "
-        >
-
-          {/* EYEBROW */}
-
-          <div
-            className="
-              flex
+          <Link
+            href="/consultation"
+            className={`
+              hidden
+              xl:inline-flex
               items-center
-              gap-4
-              mb-10
-            "
-          >
+              justify-center
 
-            <div className="w-10 h-px bg-[#D4A85A]" />
+              px-5
+              h-[34px]
 
-            <p
-              className="
-                font-[var(--font-avenir)]
-                uppercase
-                tracking-[8px]
-                text-[#D4A85A]
-                text-[10px]
-                md:text-xs
-              "
-            >
-              What Guides Our Work
-            </p>
+              rounded-full
+              border
 
-            <div className="w-10 h-px bg-[#D4A85A]" />
+              font-[var(--font-avenir)]
+              text-[12px]
+              font-medium
+              tracking-[0.02em]
+              whitespace-nowrap
 
-          </div>
+              transition-all
+              duration-300
 
-
-          <div
-            className="
-              max-w-4xl
-              mx-auto
-              text-center
-              mb-14
-              md:mb-20
-            "
-          >
-
-            <h2
-              className="
-                font-heading
-                text-4xl
-                md:text-5xl
-                lg:text-6xl
-                font-light
-                leading-[1.05]
-                mb-6
-              "
-            >
-              Five Principles.
-              <br />
-              One Responsibility.
-            </h2>
-
-
-            <p
-              className="
-                max-w-2xl
-                mx-auto
-                font-[var(--font-avenir)]
-                text-sm
-                md:text-base
-                text-gray-400
-                leading-relaxed
-              "
-            >
-              These principles guide how we think about
-              architecture, how we make decisions and what
-              we hope every Apiyo project contributes.
-            </p>
-
-          </div>
-
-
-          {/* PILLARS */}
-
-          <div
-            className="
-              grid
-              grid-cols-1
-              md:grid-cols-2
-              xl:grid-cols-5
-              gap-4
-              md:gap-5
-            "
-          >
-
-            {pillars.map((pillar) => {
-
-              const Icon = pillar.icon;
-
-              return (
-
-                <div
-                  key={pillar.number}
-                  className="
-                    group
-                    min-h-[430px]
-                    border
-                    border-white/10
-                    rounded-2xl
-                    p-7
-                    md:p-8
-                    bg-white/[0.015]
-                    transition-all
-                    duration-500
-                    hover:-translate-y-2
-                    hover:bg-white
-                    hover:text-[#071321]
-                    hover:border-t-[#D4A85A]
-                  "
-                >
-
-                  <div
-                    className="
-                      flex
-                      items-center
-                      justify-between
-                      mb-12
-                    "
-                  >
-
-                    <span
-                      className="
-                        font-[var(--font-avenir)]
-                        text-[10px]
-                        tracking-[3px]
-                        text-[#D4A85A]
-                      "
-                    >
-                      {pillar.number}
-                    </span>
-
-
-                    <Icon
-                      size={24}
-                      strokeWidth={1.3}
-                      className="text-[#D4A85A]"
-                    />
-
-                  </div>
-
-
-                  <h3
-                    className="
-                      font-heading
-                      text-3xl
-                      font-light
-                      mb-3
-                    "
-                  >
-                    {pillar.title}
-                  </h3>
-
-
-                  <p
-                    className="
-                      font-[var(--font-avenir)]
-                      uppercase
-                      tracking-[2px]
-                      text-[9px]
-                      text-[#D4A85A]
-                      leading-relaxed
-                      mb-6
-                    "
-                  >
-                    {pillar.subtitle}
-                  </p>
-
-
-                  <p
-                    className="
-                      font-[var(--font-avenir)]
-                      text-sm
-                      text-gray-400
-                      leading-relaxed
-                      transition-colors
-                      duration-500
-                      group-hover:text-[#071321]/70
-                    "
-                  >
-                    {pillar.description}
-                  </p>
-
-                </div>
-
-              );
-
-            })}
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* =====================================================
-          RESPONSIBLE / PASSIVE DESIGN
-      ===================================================== */}
-
-      <section
-        className="
-    py-14
-    md:py-16
-    lg:py-20
-        "
-      >
-
-        <div
-          className="
-            max-w-[1500px]
-            mx-auto
-            px-5
-            sm:px-6
-            md:px-8
-            lg:px-10
-            xl:px-12
-          "
-        >
-
-          <div
-            className="
-              grid
-              grid-cols-1
-              lg:grid-cols-[1.05fr_0.95fr]
-              gap-12
-              lg:gap-20
-              items-center
-            "
-          >
-
-            {/* CONTENT */}
-
-            <div>
-
-              <div
-                className="
-                  flex
-                  items-center
-                  gap-4
-                  mb-8
-                "
-              >
-
-                <div className="w-10 h-px bg-[#D4A85A]" />
-
-                <p
-                  className="
-                    font-[var(--font-avenir)]
-                    uppercase
-                    tracking-[8px]
+              ${
+                scrolled
+                  ? `
+                    border-[#1c3a60]
+                    text-[#1c3a60]
+                    hover:bg-[#1c3a60]
+                    hover:text-white
+                  `
+                  : `
+                    border-[#D4A85A]
                     text-[#D4A85A]
-                    text-[10px]
-                    md:text-xs
-                    whitespace-nowrap
-                  "
-                >
-                  Designing Responsibly
-                </p>
-
-                <div className="w-10 h-px bg-[#D4A85A]" />
-
-              </div>
-
-
-              <h2
-                className="
-                  font-heading
-                  text-4xl
-                  md:text-5xl
-                  lg:text-6xl
-                  font-light
-                  leading-[1.05]
-                  mb-7
-                "
-              >
-                Let Architecture
-                Do The Work First.
-              </h2>
-
-
-              <p
-                className="
-                  max-w-xl
-                  font-[var(--font-avenir)]
-                  text-sm
-                  md:text-base
-                  text-gray-400
-                  leading-relaxed
-                  mb-9
-                "
-              >
-                We believe the most sustainable building
-                systems begin with architecture itself.
-                Before relying on technology, we design
-                for orientation, shade, daylight, natural
-                ventilation, water, landscape and material
-                efficiency.
-              </p>
-
-
-              <div
-                className="
-                  grid
-                  grid-cols-2
-                  gap-4
-                "
-              >
-
-                {passivePrinciples.map((item) => {
-
-                  const Icon = item.icon;
-
-                  return (
-
-                    <div
-                      key={item.title}
-                      className="
-                        flex
-                        items-center
-                        gap-4
-                        border
-                        border-white/10
-                        rounded-xl
-                        px-5
-                        py-5
-                      "
-                    >
-
-                      <Icon
-                        size={20}
-                        strokeWidth={1.4}
-                        className="
-                          text-[#D4A85A]
-                          flex-shrink-0
-                        "
-                      />
-
-                      <span
-                        className="
-                          font-[var(--font-avenir)]
-                          text-sm
-                          text-gray-300
-                        "
-                      >
-                        {item.title}
-                      </span>
-
-                    </div>
-
-                  );
-
-                })}
-
-              </div>
-
-            </div>
-
-
-            {/* IMAGE */}
-
-            <div
-              className="
-                relative
-                overflow-hidden
-                rounded-2xl
-                aspect-[4/3]
-              "
-            >
-
-              <img
-                src="/about/legacy.png"
-                alt="Climate responsive architecture"
-                draggable={false}
-                className="
-                  absolute
-                  inset-0
-                  w-full
-                  h-full
-                  object-cover
-                  select-none
-                  transition-transform
-                  duration-[1200ms]
-                  hover:scale-[1.03]
-                "
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* =====================================================
-    RESILIENCE / HUMANITARIAN ARCHITECTURE
-===================================================== */}
-
-<section
-  className="
-    py-14
-    md:py-16
-    lg:py-20
-  "
->
-
-  <div
-    className="
-      max-w-[1500px]
-      mx-auto
-      px-5
-      sm:px-6
-      md:px-8
-      lg:px-10
-      xl:px-12
-    "
-  >
-
-    {/* =====================================================
-        EYEBROW — LEFT ALIGNED
-    ===================================================== */}
-
-    <div
-      className="
-        flex
-        items-center
-        gap-4
-        mb-10
-      "
-    >
-
-      <div className="w-10 h-px bg-[#D4A85A]" />
-
-      <p
-  className="
-    font-[var(--font-avenir)]
-    uppercase
-    tracking-[4px]
-    sm:tracking-[6px]
-    md:tracking-[8px]
-    text-[#D4A85A]
-    text-[9px]
-    md:text-xs
-    leading-relaxed
-    text-center
-    sm:text-left
-  "
->
-  Architecture In Service Of Humanity
-</p>
-      <div className="w-10 h-px bg-[#D4A85A]" />
-
-    </div>
-
-
-    {/* =====================================================
-        IMAGE + CONTENT
-    ===================================================== */}
-
-    <div
-      className="
-        grid
-        grid-cols-1
-        lg:grid-cols-[1.05fr_0.95fr]
-        gap-12
-        lg:gap-20
-        items-stretch
-      "
-    >
-
-      {/* =====================================================
-          LEFT — IMAGE
-      ===================================================== */}
-
-      <div
-        className="
-          relative
-          overflow-hidden
-          rounded-2xl
-
-          aspect-[4/3]
-
-          lg:aspect-auto
-          lg:h-full
-          lg:min-h-[480px]
-        "
-      >
-
-        <img
-          src="/about/resilient.png"
-          alt="Flood resilient housing designed for communities"
-          draggable={false}
-          className="
-            absolute
-            inset-0
-            w-full
-            h-full
-            object-cover
-            select-none
-            transition-transform
-            duration-[1200ms]
-            hover:scale-[1.03]
-          "
-        />
-
-        {/* SUBTLE IMAGE OVERLAY */}
-
-        <div
-          className="
-            absolute
-            inset-0
-            bg-gradient-to-t
-            from-[#071321]/20
-            via-transparent
-            to-transparent
-            pointer-events-none
-          "
-        />
-
-      </div>
-
-
-      {/* =====================================================
-          RIGHT — CONTENT
-      ===================================================== */}
-
-      <div
-        className="
-          flex
-          items-center
-        "
-      >
-
-        <div className="max-w-2xl">
-
-          {/* SMALL LABEL */}
-
-          <p
-            className="
-              font-[var(--font-avenir)]
-              uppercase
-              tracking-[7px]
-              text-[#D4A85A]
-              text-[10px]
-              md:text-xs
-              mb-7
-            "
+                    hover:bg-[#D4A85A]
+                    hover:text-[#071321]
+                  `
+              }
+            `}
           >
-            Resilience
-          </p>
+            Book Consultation
+          </Link>
 
-
-          {/* HEADING */}
-
-          <h2
-  className="
-    font-heading
-    text-4xl
-    md:text-5xl
-    lg:text-6xl
-    font-light
-    leading-[1.18]
-    md:leading-[1.1]
-    lg:leading-[1.05]
-    mb-7
-  "
->
-            Dignity Should Not
-            <br className="hidden sm:block" />
-            Disappear When
-            <br className="hidden sm:block" />
-            Disaster Strikes.
-          </h2>
-
-
-          {/* MAIN DESCRIPTION */}
-
-          <p
-            className="
-              font-[var(--font-avenir)]
-              text-sm
-              md:text-base
-              text-gray-300
-              leading-relaxed
-              mb-7
-            "
-          >
-            We believe architecture can contribute to how
-            communities prepare for, withstand and recover
-            from crisis. Our long-term ambition includes
-            research and design solutions for flooding,
-            drought, displacement, climate pressure,
-            inadequate housing and humanitarian emergencies.
-          </p>
-
-
-          {/* SECOND DESCRIPTION */}
-
-          <p
-            className="
-              font-[var(--font-avenir)]
-              text-sm
-              md:text-base
-              text-gray-400
-              leading-relaxed
-            "
-          >
-            Adaptable shelter, resilient housing, passive
-            environmental design, modular construction,
-            sanitation, water-conscious settlements and
-            community infrastructure can all become
-            instruments of service.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-      {/* =====================================================
-          THE FUTURE / SIGNATURE ARCHITECTURE
-      ===================================================== */}
-
-      <section
-        className="
-    py-14
-    md:py-16
-    lg:py-20
-        "
-      >
-
-        <div
-          className="
-            max-w-[1500px]
-            mx-auto
-            px-5
-            sm:px-6
-            md:px-8
-            lg:px-10
-            xl:px-12
-          "
-        >
+          {/* =====================================================
+              MOBILE / TABLET CONTROLS
+          ===================================================== */}
 
           <div
             className="
+              xl:hidden
+              ml-auto
               flex
               items-center
-              gap-4
-              mb-10
+              gap-3
             "
           >
+            <Link
+              href="/consultation"
+              onClick={closeMenu}
+              className={`
+                inline-flex
+                items-center
+                justify-center
 
-            <div className="w-10 h-px bg-[#D4A85A]" />
+                h-[34px]
+                px-3.5
 
-            <p
-              className="
+                rounded-full
+                border
+
                 font-[var(--font-avenir)]
-                uppercase
-                tracking-[8px]
-                text-[#D4A85A]
-                text-[10px]
-                md:text-xs
-              "
+                text-[9px]
+                sm:text-[10px]
+                font-medium
+                tracking-[0.02em]
+                whitespace-nowrap
+
+                transition-colors
+                duration-300
+
+                ${
+                  scrolled || menuOpen
+                    ? `
+                      border-[#1c3a60]
+                      text-[#1c3a60]
+                    `
+                    : `
+                      border-[#D4A85A]
+                      text-[#D4A85A]
+                    `
+                }
+              `}
             >
-              The Architecture We Seek
-            </p>
+              Book Consultation
+            </Link>
 
-            <div className="w-10 h-px bg-[#D4A85A]" />
+            <button
+              type="button"
+              onClick={() =>
+                setMenuOpen((current) => !current)
+              }
+              aria-label={
+                menuOpen
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
+              }
+              aria-expanded={menuOpen}
+              className={`
+                w-9
+                h-9
 
+                flex
+                items-center
+                justify-center
+
+                rounded-full
+                border
+
+                transition-all
+                duration-300
+
+                ${
+                  scrolled || menuOpen
+                    ? `
+                      border-[#1c3a60]/20
+                      text-[#1c3a60]
+                    `
+                    : `
+                      border-white/30
+                      text-white
+                    `
+                }
+              `}
+            >
+              {menuOpen ? (
+                <X size={19} strokeWidth={1.5} />
+              ) : (
+                <Menu size={20} strokeWidth={1.5} />
+              )}
+            </button>
           </div>
+        </div>
+      </header>
 
+      {/* =====================================================
+          MOBILE BACKDROP
+      ===================================================== */}
 
-          <div
-            className="
-              max-w-5xl
-              mx-auto
-              text-center
-            "
+      <button
+        type="button"
+        aria-label="Close navigation menu"
+        onClick={closeMenu}
+        className={`
+          fixed
+          inset-0
+          z-[55]
+          xl:hidden
+
+          bg-black/50
+          backdrop-blur-[2px]
+
+          transition-opacity
+          duration-300
+
+          ${
+            menuOpen
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          }
+        `}
+      />
+
+      {/* =====================================================
+          MOBILE SLIDE MENU
+      ===================================================== */}
+
+      <aside
+        className={`
+          fixed
+          top-0
+          right-0
+          z-[60]
+
+          xl:hidden
+
+          h-[100dvh]
+          w-[88%]
+          max-w-[390px]
+
+          bg-[#071321]
+          text-white
+
+          shadow-[-20px_0_60px_rgba(0,0,0,0.25)]
+
+          transition-transform
+          duration-500
+          ease-out
+
+          ${
+            menuOpen
+              ? "translate-x-0"
+              : "translate-x-full"
+          }
+        `}
+      >
+        {/* MENU HEADER */}
+
+        <div
+          className="
+            h-[60px]
+            px-5
+
+            flex
+            items-center
+            justify-between
+
+            border-b
+            border-white/10
+          "
+        >
+          <Link
+            href="/"
+            onClick={closeMenu}
+            aria-label="Apiyo Design Studio Home"
           >
-
-            <Quote
-              size={36}
-              strokeWidth={1}
+            <img
+              src="/logo/logo-white.png"
+              alt="Apiyo Design Studio"
+              draggable={false}
               className="
-                text-[#D4A85A]
-                mx-auto
-                mb-8
+                h-8
+                w-auto
+                select-none
               "
             />
+          </Link>
 
-
-            <h2
-              className="
-                font-heading
-                text-4xl
-                md:text-5xl
-                lg:text-7xl
-                font-light
-                leading-[1.08]
-                mb-8
-              "
-            >
-              Architecture That Belongs
-              To Its Place, Serves Its People
-              And Carries A Recognisable Hand.
-            </h2>
-
-
-            <p
-              className="
-                max-w-3xl
-                mx-auto
-                font-[var(--font-avenir)]
-                text-sm
-                md:text-base
-                lg:text-lg
-                text-gray-400
-                leading-relaxed
-              "
-            >
-              Our ambition is not to repeat a shape or façade.
-              It is to develop a body of work united by consistent
-              convictions — light, shade, air, landscape,
-              threshold, material honesty and human scale.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* =====================================================
-          FINAL CTA
-      ===================================================== */}
-
-      <section
-        className="
-          pt-12
-          md:pt-16
-          pb-24
-          md:pb-28
-          lg:pb-32
-        "
-      >
-
-        <div
-          className="
-            max-w-[1500px]
-            mx-auto
-            px-5
-            sm:px-6
-            md:px-8
-            lg:px-10
-            xl:px-12
-          "
-        >
-
-          <div
+          <button
+            type="button"
+            onClick={closeMenu}
+            aria-label="Close navigation menu"
             className="
+              w-9
+              h-9
+
+              rounded-full
+
               border
-              border-[#D4A85A]/25
-              rounded-[28px]
-              md:rounded-[36px]
-              lg:rounded-[44px]
-              bg-gradient-to-br
-              from-white/[0.04]
-              to-white/[0.01]
-              px-6
-              sm:px-8
-              md:px-12
-              lg:px-16
-              py-14
-              md:py-16
-              lg:py-20
+              border-white/15
+
+              flex
+              items-center
+              justify-center
+
+              text-white
+
+              hover:border-[#D4A85A]
+              hover:text-[#D4A85A]
+
+              transition-colors
+              duration-300
             "
           >
-
-            <div
-              className="
-                grid
-                grid-cols-1
-                lg:grid-cols-[1fr_auto]
-                gap-10
-                lg:gap-16
-                items-center
-              "
-            >
-
-              {/* COPY */}
-
-              <div>
-
-                <p
-                  className="
-                    font-[var(--font-avenir)]
-                    uppercase
-                    tracking-[8px]
-                    text-[#D4A85A]
-                    text-[10px]
-                    md:text-xs
-                    mb-7
-                  "
-                >
-                  Design With Purpose
-                </p>
-
-
-                <h2
-                  className="
-                    font-heading
-                    text-4xl
-                    sm:text-5xl
-                    md:text-6xl
-                    font-light
-                    leading-[1.05]
-                    mb-6
-                  "
-                >
-                  Let's Create Something
-                  <br />
-                  Worth Leaving Behind.
-                </h2>
-
-
-                <p
-                  className="
-                    max-w-2xl
-                    font-[var(--font-avenir)]
-                    text-sm
-                    md:text-base
-                    text-gray-400
-                    leading-relaxed
-                  "
-                >
-                  Whether you are planning a home, development,
-                  workplace, hospitality project or socially
-                  driven initiative, we would be glad to hear
-                  what you hope to create.
-                </p>
-
-              </div>
-
-
-              {/* CTA */}
-
-              <Link
-                href="/consultation"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-3
-                  px-8
-                  md:px-10
-                  py-4
-                  rounded-full
-                  bg-[#D4A85A]
-                  text-black
-                  font-[var(--font-avenir)]
-                  text-sm
-                  font-medium
-                  whitespace-nowrap
-                  transition-all
-                  duration-300
-                  hover:bg-white
-                  hover:scale-[1.02]
-                "
-              >
-                Start A Conversation
-                <ArrowRight size={17} />
-              </Link>
-
-            </div>
-
-          </div>
-
+            <X size={19} strokeWidth={1.5} />
+          </button>
         </div>
 
-      </section>
+        {/* MENU LINKS */}
 
+        <nav
+          className="
+            px-6
+            pt-4
+          "
+        >
+          {navItems.map((item, index) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              onClick={closeMenu}
+              className="
+                group
 
+                flex
+                items-center
+                justify-between
 
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
+                py-3
 
-      <Footer />
+                border-b
+                border-white/10
 
-    </main>
+                font-[var(--font-garamond)]
+                text-[20px]
+                sm:text-[21px]
+                font-light
+                leading-tight
+
+                transition-colors
+                duration-300
+
+                hover:text-[#D4A85A]
+              "
+            >
+              <span>{item.name}</span>
+
+              <span
+                className="
+                  font-[var(--font-avenir)]
+                  text-[8px]
+                  tracking-[0.15em]
+                  text-white/25
+
+                  group-hover:text-[#D4A85A]
+                "
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </Link>
+          ))}
+        </nav>
+
+        {/* MENU BOTTOM */}
+
+        <div className="px-6 pt-5">
+          <Link
+            href="/consultation"
+            onClick={closeMenu}
+            className="
+              w-full
+              h-[44px]
+
+              inline-flex
+              items-center
+              justify-center
+
+              rounded-full
+
+              bg-[#D4A85A]
+              text-[#071321]
+
+              font-[var(--font-avenir)]
+              text-[11px]
+              font-medium
+
+              transition-colors
+              duration-300
+
+              hover:bg-white
+            "
+          >
+            Book Consultation
+          </Link>
+
+          <p
+            className="
+              mt-4
+
+              font-[var(--font-avenir)]
+              text-[8px]
+              uppercase
+              tracking-[0.18em]
+
+              text-white/30
+            "
+          >
+            Architecture · Interiors · Visualization
+          </p>
+        </div>
+      </aside>
+    </>
   );
 }
