@@ -40,14 +40,12 @@ export const housePlans: HousePlan[] = [
     title: "Modern 3 Bedroom Bungalow",
     category: "Bungalow",
 
-    image:
-      "/house-plans/bungalows/bungalow-01/hero.png",
+    image: "/houseplans/bungalow1a.png",
 
     gallery: [
-      "/house-plans/bungalows/bungalow-01/hero.png",
-      "/house-plans/bungalows/bungalow-01/view-02.png",
-      "/house-plans/bungalows/bungalow-01/view-03.png",
-      "/house-plans/bungalows/bungalow-01/view-04.png",
+      "/houseplans/bungalow1a.png",
+      "/houseplans/bungalow1b.png",
+      "/houseplans/bungalow1c.png",
     ],
 
     bedrooms: 3,
@@ -105,11 +103,12 @@ export const housePlans: HousePlan[] = [
     title: "Contemporary 4 Bedroom Bungalow",
     category: "Bungalow",
 
-    image:
-      "/house-plans/bungalows/bungalow-02/hero.png",
+    image: "/houseplans/bungalow2a.png",
 
     gallery: [
-      "/house-plans/bungalows/bungalow-02/hero.png",
+      "/houseplans/bungalow2a.png",
+      "/houseplans/bungalow2b.png",
+      "/houseplans/bungalow2c.png",
     ],
 
     bedrooms: 4,
@@ -167,11 +166,12 @@ export const housePlans: HousePlan[] = [
     title: "Compact 3 Bedroom Bungalow",
     category: "Bungalow",
 
-    image:
-      "/house-plans/bungalows/bungalow-03/hero.png",
+    image: "/houseplans/bungalow3a.jpeg",
 
     gallery: [
-      "/house-plans/bungalows/bungalow-03/hero.png",
+      "/houseplans/bungalow3a.jpeg",
+      "/houseplans/bungalow3b.jpeg",
+      "/houseplans/bungalow3c.jpeg",
     ],
 
     bedrooms: 3,
@@ -229,11 +229,12 @@ export const housePlans: HousePlan[] = [
     title: "Luxury 4 Bedroom Bungalow",
     category: "Bungalow",
 
-    image:
-      "/house-plans/bungalows/bungalow-04/hero.png",
+    image: "/houseplans/bungalow4a.png",
 
     gallery: [
-      "/house-plans/bungalows/bungalow-04/hero.png",
+      "/houseplans/bungalow4a.png",
+      "/houseplans/bungalow4b.png",
+      "/houseplans/bungalow4c.png",
     ],
 
     bedrooms: 4,
@@ -291,11 +292,12 @@ export const housePlans: HousePlan[] = [
     title: "Modern 2 Bedroom Bungalow",
     category: "Bungalow",
 
-    image:
-      "/house-plans/bungalows/bungalow-05/hero.png",
+    image: "/houseplans/bungalow5a.jpeg",
 
     gallery: [
-      "/house-plans/bungalows/bungalow-05/hero.png",
+      "/houseplans/bungalow5a.jpeg",
+      "/houseplans/bungalow5b.jpeg",
+      "/houseplans/bungalow5c.jpeg",
     ],
 
     bedrooms: 2,
@@ -353,11 +355,12 @@ export const housePlans: HousePlan[] = [
     title: "Courtyard Family Bungalow",
     category: "Bungalow",
 
-    image:
-      "/house-plans/bungalows/bungalow-06/hero.png",
+    image: "/houseplans/bungalow6a.jpeg",
 
     gallery: [
-      "/house-plans/bungalows/bungalow-06/hero.png",
+      "/houseplans/bungalow6a.jpeg",
+      "/houseplans/bungalow6b.jpeg",
+      "/houseplans/bungalow6c.jpeg",
     ],
 
     bedrooms: 4,
@@ -466,6 +469,7 @@ export const housePlans: HousePlan[] = [
     ],
   },
 
+
   {
     slug: "contemporary-5-bedroom-maisonette",
     code: "ADS-M02",
@@ -522,6 +526,7 @@ export const housePlans: HousePlan[] = [
       "3D Exterior Views",
     ],
   },
+
 
   {
     slug: "compact-4-bedroom-maisonette",
@@ -580,6 +585,7 @@ export const housePlans: HousePlan[] = [
     ],
   },
 
+
   {
     slug: "luxury-5-bedroom-maisonette",
     code: "ADS-M04",
@@ -636,6 +642,7 @@ export const housePlans: HousePlan[] = [
       "3D Exterior Views",
     ],
   },
+
 
   {
     slug: "tropical-4-bedroom-maisonette",

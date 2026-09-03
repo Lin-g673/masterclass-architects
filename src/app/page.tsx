@@ -128,7 +128,6 @@ const heroMessages = [
 
   "From concept to completion, we create thoughtful architecture and interiors through integrated design, visualization and execution.",
 ];
-
 const visualizations = [
   {
     nav: "Exterior",
@@ -138,7 +137,14 @@ const visualizations = [
     media: "/visualization/exterior.png",
     type: "image",
   },
-
+  {
+    nav: "Animation",
+    title: "Walkthrough Animation",
+    description:
+      "Cinematic fly-through videos that immerse viewers in the project and communicate scale, space and design intent.",
+    media: "/3d/3dvideo.mp4",
+    type: "video",
+  },
   {
     nav: "Interior",
     title: "Interior Visualization",
@@ -147,16 +153,6 @@ const visualizations = [
     media: "/visualization/interior.png",
     type: "image",
   },
-
-  {
-    nav: "Animation",
-    title: "Walkthrough Animation",
-    description:
-      "Cinematic fly-through videos that immerse viewers in the project and communicate scale, space and design intent.",
-    media: "/visualization/walkthrough.mp4",
-    type: "video",
-  },
-
   {
     nav: "Marketing",
     title: "Real Estate Marketing Visuals",
@@ -314,9 +310,8 @@ return (
     
      {/* GLOBAL NAVBAR */}
 <Navbar />
-
-      {/* HERO */}
-    <section
+{/* HERO */}
+<section
   className="
     relative
     min-h-[760px]
@@ -326,189 +321,196 @@ return (
     overflow-hidden
   "
 >
-{heroImages.map((image, index) => (
+  {heroImages.map((image, index) => (
+    <div
+      key={image}
+      className={`
+        absolute
+        inset-0
+        transition-opacity
+        duration-[1800ms]
+        ease-in-out
+        ${
+          currentHero === index
+            ? "opacity-100"
+            : "opacity-0"
+        }
+      `}
+    >
+      <img
+        src={image}
+        alt=""
+        draggable={false}
+        className="
+          w-full
+          h-full
+          object-cover
+          object-center
+          select-none
+        "
+      />
+    </div>
+  ))}
+
   <div
-    key={image}
-    className={`
+    className="
       absolute
       inset-0
-      transition-opacity
-      duration-[1800ms]
-      ease-in-out
-      ${
-        currentHero === index
-          ? "opacity-100"
-          : "opacity-0"
-      }
-    `}
-  >
-    <img
-      src={image}
-      alt=""
-      draggable={false}
-      className="
-        w-full
-        h-full
-        object-cover
-        object-center
-        select-none
-      "
-    />
-  </div>
-))}
+      bg-gradient-to-r
+      from-[#071321]/95
+      via-[#071321]/75
+      via-50%
+      to-transparent
+    "
+  />
 
- <div
-  className="
-  absolute
-  inset-0
-  bg-gradient-to-r
-  from-[#071321]/95
-  via-[#071321]/75
-  via-50%
-  to-transparent
-  "
-></div>
-        <div className="relative max-w-[1500px]
-mx-auto
-w-full
-px-5
-sm:px-6
-md:px-8
-lg:px-10
-xl:px-12
-pt-20
-md:pt-16">
-          <div className="max-w-4xl">
-
-            <div className="flex items-center gap-4 mb-5 md:mb-6">
-
-  <div className="w-8 md:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
-
-  <p
+  <div
     className="
-      font-[var(--font-avenir)]
-      uppercase
-      tracking-[4px]
-      md:tracking-[7px]
-      text-[#D4A85A]
-      text-[9px]
-      md:text-[11px]
-      whitespace-nowrap
+      relative
+      max-w-[1500px]
+      mx-auto
+      w-full
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+      pt-20
+      md:pt-16
     "
   >
-    Welcome To Apiyo Design Studio
-  </p>
+    <div className="max-w-4xl">
 
-  <div className="w-8 md:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+      <div className="flex items-center gap-4 mb-5 md:mb-6">
+        <div className="w-8 md:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
 
-</div>
+        <p
+          className="
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[4px]
+            md:tracking-[7px]
+            text-[#D4A85A]
+            text-[9px]
+            md:text-[11px]
+            whitespace-nowrap
+          "
+        >
+          Welcome To Apiyo Design Studio
+        </p>
 
-           <h1
-  className="
-  font-heading
-  text-[44px]
-  sm:text-5xl
-  md:text-6xl
-  lg:text-7xl
-  xl:text-[78px]
-  font-light
-  leading-[0.95]
-  tracking-[-0.02em]
-  mb-6
-  md:mb-7
-  max-w-[850px]
-  "
->
-  VISUALIZE
-  <br />
+        <div className="w-8 md:w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+      </div>
 
-  <span className="text-[#D4A85A]">
-    DESIGN
-  </span>
+      <h1
+        className="
+          font-heading
+          text-[44px]
+          sm:text-5xl
+          md:text-6xl
+          lg:text-7xl
+          xl:text-[78px]
+          font-light
+          leading-[0.95]
+          tracking-[-0.02em]
+          mb-6
+          md:mb-7
+          max-w-[850px]
+        "
+      >
+        VISUALIZE
+        <br />
 
-  <br />
+        <span className="text-[#D4A85A]">
+          DESIGN
+        </span>
 
-  BUILD
-</h1>
+        <br />
 
-            <div className="w-24 h-[2px] bg-[#D4A85A] mb-8"></div>
+        BUILD
+      </h1>
 
-            <p
-  key={currentHero}
-  className="
-  font-[var(--font-avenir)]
-  text-gray-200
-  text-[12px]
-  sm:text-[13px]
-  md:text-sm
-  leading-relaxed
-  mb-6
-  md:mb-7
-  max-w-xl
-  md:max-w-2xl
-  animate-fadeUp
-"
->
-  {heroMessages[currentHero]}
-</p>
+      <div className="w-24 h-[2px] bg-[#D4A85A] mb-8" />
 
-            <div className="flex flex-wrap gap-4">
-              <Link
-  href="/consultation"
-  className="
-    inline-flex
-    items-center
-    justify-center
-    bg-[#D4A85A]
-    text-black
-    px-6
-    md:px-8
-    py-3
-    md:py-3.5
-    rounded-full
-    font-[var(--font-avenir)]
-    text-xs
-    md:text-sm
-    font-medium
-    transition-all
-    duration-300
-    hover:scale-[1.03]
-    hover:shadow-[0_0_30px_rgba(212,168,90,0.35)]
-  "
->
-  Book Free Consultation
-</Link>
+      <p
+        key={currentHero}
+        className="
+          font-[var(--font-avenir)]
+          text-gray-200
+          text-[12px]
+          sm:text-[13px]
+          md:text-sm
+          leading-relaxed
+          mb-6
+          md:mb-7
+          max-w-xl
+          md:max-w-2xl
+          animate-fadeUp
+        "
+      >
+        {heroMessages[currentHero]}
+      </p>
 
-              <Link
-  href="#services"
-  className="
-    inline-flex
-    items-center
-    justify-center
-    border
-    border-[#D4A85A]
-    text-[#D4A85A]
-    px-6
-    md:px-8
-    py-3
-    md:py-3.5
-    rounded-full
-    font-[var(--font-avenir)]
-    text-xs
-    md:text-sm
-    transition-all
-    duration-300
-    hover:bg-[#D4A85A]
-    hover:text-black
-  "
->
-  Our Services
-</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="flex flex-wrap gap-4">
 
+        {/* PRIMARY CTA */}
+        <Link
+          href="/consultation"
+          className="
+            inline-flex
+            items-center
+            justify-center
+            bg-[#D4A85A]
+            text-black
+            px-6
+            md:px-8
+            py-3
+            md:py-3.5
+            rounded-full
+            font-[var(--font-avenir)]
+            text-xs
+            md:text-sm
+            font-medium
+            transition-all
+            duration-300
+            hover:scale-[1.03]
+            hover:shadow-[0_0_30px_rgba(212,168,90,0.35)]
+          "
+        >
+          Book Consultation
+        </Link>
+
+        {/* SECONDARY CTA */}
+        <Link
+          href="/projects"
+          className="
+            inline-flex
+            items-center
+            justify-center
+            border
+            border-[#D4A85A]
+            text-[#D4A85A]
+            px-6
+            md:px-8
+            py-3
+            md:py-3.5
+            rounded-full
+            font-[var(--font-avenir)]
+            text-xs
+            md:text-sm
+            transition-all
+            duration-300
+            hover:bg-[#D4A85A]
+            hover:text-black
+          "
+        >
+          View Projects
+        </Link>
+
+      </div>
+    </div>
+  </div>
+</section>
 {/* FLOATING STATS */}
 
 <section className="relative z-20 -mt-20 md:-mt-16">
