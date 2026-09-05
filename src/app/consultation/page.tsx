@@ -22,6 +22,10 @@ export default function ConsultationPage() {
 const [service, setService] =
   useState("Interior Design");
 
+const [isSubmitting, setIsSubmitting] = useState(false);
+const [submitSuccess, setSubmitSuccess] = useState(false);
+const [submitError, setSubmitError] = useState("");
+
 const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 const faqs = [
   {
@@ -55,6 +59,69 @@ const faqs = [
       "Yes. We handle renovations, interior transformations, remodeling projects and upgrades for both residential and commercial spaces.",
   },
 ];
+
+const handleSubmit = async (
+  event: React.FormEvent<HTMLFormElement>
+) => {
+  event.preventDefault();
+
+  setIsSubmitting(true);
+  setSubmitSuccess(false);
+  setSubmitError("");
+
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+
+  const data = {
+    service,
+    fullName: formData.get("fullName"),
+    email: formData.get("email"),
+    phone: formData.get("phone"),
+    location: formData.get("location"),
+    projectType: formData.get("projectType"),
+    siteSize: formData.get("siteSize"),
+    landStatus: formData.get("landStatus"),
+    budget: formData.get("budget"),
+    preferredStyle: formData.get("preferredStyle"),
+    plotSize: formData.get("plotSize"),
+    bedrooms: formData.get("bedrooms"),
+    floors: formData.get("floors"),
+    companyName: formData.get("companyName"),
+    renderingService: formData.get("renderingService"),
+    documentation: formData.get("documentation"),
+    university: formData.get("university"),
+    course: formData.get("course"),
+    studentService: formData.get("studentService"),
+    notes: formData.get("notes"),
+  };
+
+  try {
+    const response = await fetch("/api/consultation", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error("Unable to submit consultation request.");
+    }
+
+    setSubmitSuccess(true);
+    form.reset();
+
+    setTimeout(() => {
+      setSubmitSuccess(false);
+    }, 10000);
+  } catch (error) {
+    setSubmitError(
+      "We couldn't send your request. Please try again or contact us directly on WhatsApp."
+    );
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
 return (
   <main className="bg-[#071321] text-white min-h-screen">
@@ -472,6 +539,7 @@ lg:text-6xl
 <div>
 
 <form
+  onSubmit={handleSubmit}
   className="
   bg-white/[0.03]
   backdrop-blur-xl
@@ -488,67 +556,73 @@ lg:p-10
 >
 
   {/* COMMON FIELDS */}
+<input
+  type="text"
+  name="fullName"
+  placeholder="Full Name"
+  required
+  className="
+  bg-transparent
+  border
+  border-white/10
+  rounded-2xl
+  px-7
+  py-5
+  outline-none
+  focus:border-[#D4A85A]
+  "
+/>
 
-  <input
-    type="text"
-    placeholder="Full Name"
-    className="
-    bg-transparent
-    border
-    border-white/10
-    rounded-2xl
-    px-7
-    py-5
-    outline-none
-    focus:border-[#D4A85A]
-    "
-  />
+<input
+  type="email"
+  name="email"
+  placeholder="Email Address"
+  required
+  className="
+  bg-transparent
+  border
+  border-white/10
+  rounded-2xl
+  px-7
+  py-5
+  outline-none
+  focus:border-[#D4A85A]
+  "
+/>
 
-  <input
-    type="email"
-    placeholder="Email Address"
-    className="
-    bg-transparent
-    border
-    border-white/10
-    rounded-2xl
-    px-7
-    py-5
-    outline-none
-    focus:border-[#D4A85A]
-    "
-  />
+<input
+  type="tel"
+  name="phone"
+  placeholder="Phone / WhatsApp"
+  required
+  className="
+  bg-transparent
+  border
+  border-white/10
+  rounded-2xl
+  px-7
+  py-5
+  outline-none
+  focus:border-[#D4A85A]
+  "
+/>
 
-  <input
-    type="tel"
-    placeholder="Phone / WhatsApp"
-    className="
-    bg-transparent
-    border
-    border-white/10
-    rounded-2xl
-    px-7
-    py-5
-    outline-none
-    focus:border-[#D4A85A]
-    "
-  />
-
-  <input
-    type="text"
-    placeholder="Project Location"
-    className="
-    bg-transparent
-    border
-    border-white/10
-    rounded-2xl
-    px-7
-    py-5
-    outline-none
-    focus:border-[#D4A85A]
-    "
-  />
-
+<input
+  type="text"
+  name="location"
+  placeholder="Project Location"
+  required
+  className="
+  bg-transparent
+  border
+  border-white/10
+  rounded-2xl
+  px-7
+  py-5
+  outline-none
+  focus:border-[#D4A85A]
+  "
+/>
   {/* ARCHITECTURE */}
 
   {service === "Architecture" && (
@@ -700,24 +774,26 @@ lg:p-10
   )}
 
   <textarea
-    rows={6}
-    placeholder="Additional Notes"
-    className="
-    bg-transparent
-    border
-    border-white/10
-    rounded-2xl
-    px-7
-    py-5
-    resize-none
-    outline-none
-    focus:border-[#D4A85A]
-    "
-  />
+  name="notes"
+  rows={6}
+  placeholder="Additional Notes"
+  className="
+  bg-transparent
+  border
+  border-white/10
+  rounded-2xl
+  px-7
+  py-5
+  resize-none
+  outline-none
+  focus:border-[#D4A85A]
+  "
+/>
 
-  <button
-    type="submit"
-    className="
+ <button
+  type="submit"
+  disabled={isSubmitting}
+  className="
     py-5
     rounded-full
     bg-[#D4A85A]
@@ -725,12 +801,55 @@ lg:p-10
     font-medium
     transition-all
     duration-300
-    hover:scale-105
+    hover:scale-[1.02]
+    disabled:opacity-60
+    disabled:cursor-not-allowed
+  "
+>
+  {isSubmitting
+    ? "Sending Request..."
+    : "Submit Consultation Request"}
+</button>
+{submitSuccess && (
+  <div
+    className="
+      rounded-2xl
+      border
+      border-[#D4A85A]/30
+      bg-[#D4A85A]/10
+      px-6
+      py-5
+      text-center
     "
   >
-    Submit Consultation Request
-  </button>
+    <p className="font-heading text-2xl text-[#D4A85A] mb-2">
+      Thank You
+    </p>
 
+    <p className="text-gray-300 leading-relaxed">
+      Your consultation request has been received.
+      Our team will review your project details and
+      one of our experts will reach out shortly.
+    </p>
+  </div>
+)}
+
+{submitError && (
+  <div
+    className="
+      rounded-2xl
+      border
+      border-red-400/20
+      bg-red-400/10
+      px-6
+      py-4
+      text-center
+      text-red-200
+    "
+  >
+    {submitError}
+  </div>
+)}
 </form>
 
 </div>

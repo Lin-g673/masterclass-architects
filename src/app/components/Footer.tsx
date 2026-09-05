@@ -66,52 +66,73 @@ export default function Footer() {
       </div>
 
       {/* QUICK LINKS */}
-      <div>
+<div>
 
-        <p
-          className="
-          uppercase
-          tracking-[4px]
-          text-[#D4A85A]
-          mb-8
-          "
-        >
-          Quick Links
-        </p>
+  <p
+    className="
+    uppercase
+    tracking-[4px]
+    text-[#D4A85A]
+    mb-8
+    "
+  >
+    Quick Links
+  </p>
 
-        <div className="flex flex-col gap-4">
+  <div className="flex flex-col gap-4">
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
-            Home
-          </a>
+    <a
+      href="/"
+      className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300"
+    >
+      Home
+    </a>
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
-            House Plans
-          </a>
+    <a
+      href="/house-plans"
+      className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300"
+    >
+      House Plans
+    </a>
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
-            Custom Design
-          </a>
+    <a
+      href="/consultation"
+      className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300"
+    >
+      Custom Design
+    </a>
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
-            Interior Design
-          </a>
+    <a
+      href="/interiors"
+      className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300"
+    >
+      Interior Design
+    </a>
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
-            3D Visualization
-          </a>
+    <a
+      href="/3d"
+      className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300"
+    >
+      3D Visualization
+    </a>
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
-            Student Services
-          </a>
+    <a
+      href="/students"
+      className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300"
+    >
+      Student Services
+    </a>
 
-          <a href="#" className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300">
-            Contact
-          </a>
+    <a
+      href="/consultation"
+      className="text-gray-300 hover:text-[#D4A85A] transition-all duration-300"
+    >
+      Contact
+    </a>
 
-        </div>
+  </div>
 
-      </div>
+</div>
 
       {/* SERVICES */}
       <div>
