@@ -73,26 +73,65 @@ const handleSubmit = async (
   const formData = new FormData(form);
 
   const data = {
+    // GENERAL
     service,
     fullName: formData.get("fullName"),
     email: formData.get("email"),
     phone: formData.get("phone"),
     location: formData.get("location"),
-    projectType: formData.get("projectType"),
-    siteSize: formData.get("siteSize"),
-    landStatus: formData.get("landStatus"),
-    budget: formData.get("budget"),
+    notes: formData.get("notes"),
+
+    // ARCHITECTURE
+
+projectType: formData.get("projectType"),
+
+siteSize: formData.get("siteSize"),
+
+landStatus: formData.get("landStatus"),
+
+budget: formData.get("budget"),
+
+projectStage: formData.get("projectStage"),
+
+architectureSupport: formData.getAll("architectureSupport"),
+
+    // INTERIOR DESIGN
     preferredStyle: formData.get("preferredStyle"),
+
+    // HOUSE PLANS
     plotSize: formData.get("plotSize"),
     bedrooms: formData.get("bedrooms"),
     floors: formData.get("floors"),
+
+    // 3D VISUALIZATION
     companyName: formData.get("companyName"),
     renderingService: formData.get("renderingService"),
+    numberOfRenders: formData.get("numberOfRenders"),
+    animationDuration: formData.get("animationDuration"),
+    modelAvailable: formData.get("modelAvailable"),
     documentation: formData.get("documentation"),
+    visualizationProjectType: formData.get(
+      "visualizationProjectType"
+    ),
+    deadline: formData.get("deadline"),
+
+    // STUDENT SERVICES
     university: formData.get("university"),
     course: formData.get("course"),
-    studentService: formData.get("studentService"),
-    notes: formData.get("notes"),
+
+    studentRequestType: formData.getAll(
+      "studentRequestType"
+    ),
+
+    studentServices: formData.getAll(
+      "studentServices"
+    ),
+
+    softwareTraining: formData.getAll("softwareTraining"),
+trainingPackage: formData.get("trainingPackage"),
+trainingFormat: formData.get("trainingFormat"),
+skillLevel: formData.get("skillLevel"),
+    trainingGoals: formData.get("trainingGoals"),
   };
 
   try {
@@ -114,12 +153,17 @@ const handleSubmit = async (
     setTimeout(() => {
       setSubmitSuccess(false);
     }, 10000);
+
   } catch (error) {
+
     setSubmitError(
       "We couldn't send your request. Please try again or contact us directly on WhatsApp."
     );
+
   } finally {
+
     setIsSubmitting(false);
+
   }
 };
 
@@ -622,40 +666,263 @@ lg:p-10
   outline-none
   focus:border-[#D4A85A]
   "
-/>
-  {/* ARCHITECTURE */}
+/>{/* =====================================================
+    ARCHITECTURE
+===================================================== */}
 
-  {service === "Architecture" && (
-    <>
+{service === "Architecture" && (
+  <>
 
-      <select className="bg-[#071321] border border-white/10 rounded-2xl px-6 py-5">
-        <option>Project Type</option>
-        <option>Residential</option>
-        <option>Commercial</option>
-        <option>Mixed Use</option>
-        <option>Hospitality</option>
-      </select>
+    {/* PROJECT TYPE */}
 
-      <input
-        type="text"
-        placeholder="Approximate Site Size"
-        className="bg-transparent border border-white/10 rounded-2xl px-7 py-5"
-      />
+    <select
+      name="projectType"
+      required
+      defaultValue=""
+      className="
+        bg-[#071321]
+        border
+        border-white/10
+        rounded-2xl
+        px-6
+        py-5
+        text-white
+      "
+    >
+      <option value="" disabled>
+        What Are You Planning To Build?
+      </option>
 
-      <select className="bg-[#071321] border border-white/10 rounded-2xl px-6 py-5">
-        <option>Do You Have Land?</option>
-        <option>Yes</option>
-        <option>No</option>
-      </select>
+      <option value="Private Home / Villa">
+        Private Home / Villa
+      </option>
+<option value="Renovation / Alteration">
+  Renovation / Alteration
+</option>
+      <option value="Apartments / Multi-Residential">
+        Apartments / Multi-Residential
+      </option>
 
-      <input
-        type="text"
-        placeholder="Estimated Budget"
-        className="bg-transparent border border-white/10 rounded-2xl px-7 py-5"
-      />
+      <option value="Commercial / Office">
+        Commercial / Office
+      </option>
 
-    </>
-  )}
+      <option value="Hospitality">
+        Hotel / Hospitality
+      </option>
+
+      <option value="Mixed-Use Development">
+        Mixed-Use Development
+      </option>
+
+      <option value="High-Rise Development">
+        High-Rise Development
+      </option>
+
+      <option value="Institutional / Educational">
+        Institutional / Educational
+      </option>
+
+      <option value="Religious / Community">
+        Church / Religious / Community
+      </option>
+
+      <option value="Healthcare">
+        Healthcare
+      </option>
+
+      <option value="Industrial / Specialised">
+        Industrial / Specialised
+      </option>
+
+      <option value="Masterplanning / Larger Development">
+        Masterplanning / Larger Development
+      </option>
+
+      <option value="Other">
+        Other / Something Different
+      </option>
+    </select>
+
+
+    {/* SITE SIZE */}
+
+    <input
+      type="text"
+      name="siteSize"
+      placeholder="Approximate Site / Plot Size"
+      className="
+        bg-transparent
+        border
+        border-white/10
+        rounded-2xl
+        px-7
+        py-5
+      "
+    />
+
+
+    {/* LAND STATUS */}
+
+    <select
+      name="landStatus"
+      defaultValue=""
+      className="
+        bg-[#071321]
+        border
+        border-white/10
+        rounded-2xl
+        px-6
+        py-5
+        text-white
+      "
+    >
+      <option value="" disabled>
+        Site / Land Status
+      </option>
+
+      <option value="I already own the site">
+        I Already Own The Site
+      </option>
+
+      <option value="I am purchasing / securing the site">
+        I Am Purchasing / Securing The Site
+      </option>
+
+      <option value="I am still looking for land">
+        I Am Still Looking For Land
+      </option>
+
+      <option value="Existing building / redevelopment">
+        Existing Building / Redevelopment
+      </option>
+
+      <option value="Not applicable / Not sure yet">
+        Not Applicable / Not Sure Yet
+      </option>
+    </select>
+
+
+    {/* PROJECT STAGE */}
+
+    <select
+      name="projectStage"
+      defaultValue=""
+      className="
+        bg-[#071321]
+        border
+        border-white/10
+        rounded-2xl
+        px-6
+        py-5
+        text-white
+      "
+    >
+      <option value="" disabled>
+        Where Are You In The Project?
+      </option>
+
+      <option value="Starting from an idea">
+        Starting From An Idea
+      </option>
+
+      <option value="I have a brief / requirements">
+        I Have A Brief / Requirements
+      </option>
+
+      <option value="I have sketches / an initial concept">
+        I Have Sketches / An Initial Concept
+      </option>
+
+      <option value="I have an existing design that needs development">
+        I Have An Existing Design That Needs Development
+      </option>
+
+      <option value="Project already under development / construction">
+        Project Already Under Development / Construction
+      </option>
+    </select>
+
+
+    {/* BUDGET */}
+
+    <input
+      type="text"
+      name="budget"
+      placeholder="Estimated Construction Budget (If Known)"
+      className="
+        bg-transparent
+        border
+        border-white/10
+        rounded-2xl
+        px-7
+        py-5
+      "
+    />
+
+{/* ARCHITECTURAL SUPPORT */}
+
+<div
+  className="
+    border
+    border-white/10
+    rounded-2xl
+    px-7
+    py-6
+  "
+>
+  <p className="text-white mb-2">
+    What Architectural Support Do You Need?
+  </p>
+
+  <p className="text-white/50 text-sm mb-6">
+    Select all that apply.
+  </p>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+
+    {[
+      "Concept Design",
+      "Design Development",
+      "As-Built Survey & Documentation",
+      "Renovation / Alteration Design",
+      "Technical / Construction Drawings",
+      "Approval / Submission Documentation",
+      "Construction Support",
+      "Full Architectural Service",
+      "Not Sure — I Need Guidance",
+    ].map((item) => (
+      <label
+        key={item}
+        className="
+          flex
+          items-center
+          gap-3
+          cursor-pointer
+          text-white/75
+        "
+      >
+        <input
+          type="checkbox"
+          name="architectureSupport"
+          value={item}
+          className="
+            w-4
+            h-4
+            accent-[#D4A85A]
+            cursor-pointer
+          "
+        />
+
+        <span>{item}</span>
+      </label>
+    ))}
+
+  </div>
+</div>
+
+  </>
+)}
 
   {/* INTERIOR DESIGN */}
 
@@ -715,63 +982,1137 @@ lg:p-10
 
     </>
   )}
-
   {/* 3D VISUALIZATION */}
 
   {service === "3D Visualization" && (
     <>
 
+      {/* COMPANY NAME */}
+
       <input
         type="text"
-        placeholder="Company Name"
-        className="bg-transparent border border-white/10 rounded-2xl px-7 py-5"
+        name="companyName"
+        placeholder="Company Name (Optional)"
+        className="
+          bg-transparent
+          border
+          border-white/10
+          rounded-2xl
+          px-7
+          py-5
+          outline-none
+          transition-colors
+          focus:border-[#D4A85A]/60
+        "
       />
 
-      <select className="bg-[#071321] border border-white/10 rounded-2xl px-6 py-5">
-        <option>Rendering Service</option>
-        <option>Architectural Rendering</option>
-        <option>Interior Rendering</option>
-        <option>Animation</option>
-        <option>Interactive Walkthrough</option>
+
+      {/* SERVICE REQUIRED */}
+
+      <select
+        name="renderingService"
+        defaultValue=""
+        required
+        className="
+          bg-[#071321]
+          border
+          border-white/10
+          rounded-2xl
+          px-6
+          py-5
+          outline-none
+          transition-colors
+          focus:border-[#D4A85A]/60
+        "
+      >
+        <option value="" disabled>
+          Service Required *
+        </option>
+
+        <option value="Exterior Still Render">
+          Exterior Still Render
+        </option>
+
+        <option value="Interior Still Render">
+          Interior Still Render
+        </option>
+
+        <option value="Exterior + Interior Renders">
+          Exterior + Interior Renders
+        </option>
+
+        <option value="Architectural Animation">
+          Architectural Animation
+        </option>
+
+        <option value="3D Modelling + Rendering">
+          3D Modelling + Rendering
+        </option>
+
+        <option value="Complete Visualization Package">
+          Complete Visualization Package
+        </option>
       </select>
 
-      <select className="bg-[#071321] border border-white/10 rounded-2xl px-6 py-5">
-        <option>Documentation Available</option>
-        <option>Technical Drawings</option>
-        <option>3D Models</option>
-        <option>Partial Documentation</option>
+
+      {/* NUMBER OF RENDERS */}
+
+      <input
+        type="number"
+        name="numberOfRenders"
+        min="1"
+        placeholder="Number of Still Renders Required"
+        className="
+          bg-transparent
+          border
+          border-white/10
+          rounded-2xl
+          px-7
+          py-5
+          outline-none
+          transition-colors
+          focus:border-[#D4A85A]/60
+        "
+      />
+
+
+      {/* ANIMATION DURATION */}
+
+      <select
+        name="animationDuration"
+        defaultValue=""
+        className="
+          bg-[#071321]
+          border
+          border-white/10
+          rounded-2xl
+          px-6
+          py-5
+          outline-none
+          transition-colors
+          focus:border-[#D4A85A]/60
+        "
+      >
+        <option value="" disabled>
+          Animation Duration (If Required)
+        </option>
+
+        <option value="30 Seconds">
+          30 Seconds
+        </option>
+
+        <option value="1 Minute">
+          1 Minute
+        </option>
+
+        <option value="2 Minutes">
+          2 Minutes
+        </option>
+
+        <option value="3 Minutes">
+          3 Minutes
+        </option>
+
+        <option value="More Than 3 Minutes">
+          More Than 3 Minutes
+        </option>
       </select>
+
+
+      {/* EXISTING 3D MODEL */}
+
+      <select
+        name="modelAvailable"
+        defaultValue=""
+        required
+        className="
+          bg-[#071321]
+          border
+          border-white/10
+          rounded-2xl
+          px-6
+          py-5
+          outline-none
+          transition-colors
+          focus:border-[#D4A85A]/60
+        "
+      >
+        <option value="" disabled>
+          Do You Have A 3D Model? *
+        </option>
+
+        <option value="Yes - Complete 3D Model">
+          Yes — Complete 3D Model
+        </option>
+
+        <option value="Yes - Partial 3D Model">
+          Yes — Partial 3D Model
+        </option>
+
+        <option value="No 3D Model">
+          No — I Need 3D Modelling
+        </option>
+      </select>
+
+
+      {/* DOCUMENTATION */}
+
+      <select
+        name="documentation"
+        defaultValue=""
+        required
+        className="
+          bg-[#071321]
+          border
+          border-white/10
+          rounded-2xl
+          px-6
+          py-5
+          outline-none
+          transition-colors
+          focus:border-[#D4A85A]/60
+        "
+      >
+        <option value="" disabled>
+          Documentation Available *
+        </option>
+
+        <option value="Technical Drawings">
+          Technical Drawings
+        </option>
+
+        <option value="3D Model + Technical Drawings">
+          3D Model + Technical Drawings
+        </option>
+
+        <option value="Sketches / Concept Drawings">
+          Sketches / Concept Drawings
+        </option>
+
+        <option value="Reference Images Only">
+          Reference Images Only
+        </option>
+
+        <option value="Partial Documentation">
+          Partial Documentation
+        </option>
+      </select>
+
+
+      {/* PROJECT TYPE */}
+
+      <select
+        name="visualizationProjectType"
+        defaultValue=""
+        className="
+          bg-[#071321]
+          border
+          border-white/10
+          rounded-2xl
+          px-6
+          py-5
+          outline-none
+          transition-colors
+          focus:border-[#D4A85A]/60
+        "
+      >
+        <option value="" disabled>
+          Project Type
+        </option>
+
+        <option value="Residential">
+          Residential
+        </option>
+
+        <option value="Commercial">
+          Commercial
+        </option>
+
+        <option value="Hospitality">
+          Hospitality
+        </option>
+
+        <option value="Interior Design">
+          Interior Design
+        </option>
+
+        <option value="Property Development">
+          Property Development
+        </option>
+
+        <option value="Other">
+          Other
+        </option>
+      </select>
+
+
+      {/* DELIVERY DATE */}
+
+      <div
+        className="
+          border
+          border-white/10
+          rounded-2xl
+          px-7
+          py-3
+          focus-within:border-[#D4A85A]/60
+          transition-colors
+        "
+      >
+        <label
+          htmlFor="visualizationDeadline"
+          className="
+            block
+            font-[var(--font-avenir)]
+            text-[10px]
+            uppercase
+            tracking-[2px]
+            text-gray-500
+            mb-1
+          "
+        >
+          Required Delivery Date
+        </label>
+
+        <input
+          id="visualizationDeadline"
+          type="date"
+          name="deadline"
+          className="
+            w-full
+            bg-transparent
+            outline-none
+            text-gray-200
+            font-[var(--font-avenir)]
+          "
+        />
+      </div>
 
     </>
   )}
-
-  {/* STUDENT SERVICES */}
+    {/* STUDENT SERVICES */}
 
   {service === "Student Services" && (
-    <>
+  <>
 
-      <input
-        type="text"
-        placeholder="University"
-        className="bg-transparent border border-white/10 rounded-2xl px-7 py-5"
-      />
+    {/* =====================================================
+        UNIVERSITY / INSTITUTION
+    ===================================================== */}
 
-      <input
-        type="text"
-        placeholder="Course"
-        className="bg-transparent border border-white/10 rounded-2xl px-7 py-5"
-      />
+    <input
+      type="text"
+      name="university"
+      placeholder="University / Institution"
+      className="
+        bg-transparent border border-white/10 rounded-2xl
+        px-7 py-5 outline-none transition-colors
+        focus:border-[#D4A85A]/60
+      "
+    />
 
-      <select className="bg-[#071321] border border-white/10 rounded-2xl px-6 py-5">
-        <option>Service Needed</option>
-        <option>3D Modelling</option>
-        <option>Rendering</option>
-        <option>Portfolio Assistance</option>
-        <option>Presentation Boards</option>
-      </select>
 
-    </>
-  )}
+    {/* COURSE */}
+
+    <input
+      type="text"
+      name="course"
+      placeholder="Course / Programme"
+      className="
+        bg-transparent border border-white/10 rounded-2xl
+        px-7 py-5 outline-none transition-colors
+        focus:border-[#D4A85A]/60
+      "
+    />
+
+
+    {/* =====================================================
+        TYPE OF SUPPORT
+    ===================================================== */}
+
+    <div
+      className="
+        sm:col-span-2
+        border border-white/10 rounded-2xl
+        p-6 md:p-7 bg-white/[0.015]
+      "
+    >
+
+      <div className="mb-6">
+
+        <p className="font-[var(--font-avenir)] text-sm text-gray-200 mb-2">
+          What Do You Need Help With?
+        </p>
+
+        <p className="font-[var(--font-avenir)] text-xs text-gray-500 leading-relaxed">
+          Select one or both depending on the support you require.
+        </p>
+
+      </div>
+
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+        {[
+          "Project / Academic Design Assistance",
+          "Software Training & Mentorship",
+        ].map((item) => (
+
+          <label
+            key={item}
+            className="
+              flex items-center gap-4
+              border border-white/10 rounded-xl
+              px-5 py-4 cursor-pointer
+              transition-all duration-300
+              hover:border-[#D4A85A]/50
+              hover:bg-white/[0.03]
+            "
+          >
+
+            <input
+              type="checkbox"
+              name="studentRequestType"
+              value={item}
+              className="w-4 h-4 accent-[#D4A85A] shrink-0"
+            />
+
+            <span className="font-[var(--font-avenir)] text-sm text-gray-300">
+              {item}
+            </span>
+
+          </label>
+
+        ))}
+
+      </div>
+
+    </div>
+
+
+    {/* =====================================================
+        PROJECT / ACADEMIC ASSISTANCE
+    ===================================================== */}
+
+    <div
+      className="
+        sm:col-span-2
+        border border-white/10 rounded-2xl
+        p-6 md:p-7 bg-white/[0.015]
+      "
+    >
+
+      <div className="mb-6">
+
+        <p className="font-[var(--font-avenir)] text-sm text-gray-200 mb-2">
+          Project &amp; Academic Design Assistance
+        </p>
+
+        <p className="font-[var(--font-avenir)] text-xs text-gray-500 leading-relaxed">
+          Select the areas where you would like guidance and support
+          with your current project.
+        </p>
+
+      </div>
+
+
+      {/* ASSISTANCE OPTIONS */}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+        {[
+          "Concept & Design Development Assistance",
+          "Architectural Drawing Assistance",
+          "3D Modelling Assistance",
+          "Architectural Visualization / Rendering Assistance",
+          "Presentation & Portfolio Assistance",
+          "Model-Making Assistance",
+          "Thesis Assistance",
+        ].map((item) => (
+
+          <label
+            key={item}
+            className="
+              flex items-start gap-4
+              border border-white/10 rounded-xl
+              px-5 py-4 cursor-pointer
+              transition-all duration-300
+              hover:border-[#D4A85A]/50
+              hover:bg-white/[0.03]
+            "
+          >
+
+            <input
+              type="checkbox"
+              name="studentServices"
+              value={item}
+              className="
+                mt-1 w-4 h-4
+                accent-[#D4A85A]
+                shrink-0
+              "
+            />
+
+            <span
+              className="
+                font-[var(--font-avenir)]
+                text-sm text-gray-300
+                leading-relaxed
+              "
+            >
+              {item}
+            </span>
+
+          </label>
+
+        ))}
+
+      </div>
+
+
+      {/* =====================================================
+          COMPLETE ASSISTANCE PACKAGE
+      ===================================================== */}
+
+      <label
+        className="
+          flex items-start gap-4
+          mt-4
+          border border-[#D4A85A]/40
+          rounded-xl
+          px-5 py-5
+          cursor-pointer
+          bg-[#D4A85A]/[0.04]
+          transition-all duration-300
+          hover:bg-[#D4A85A]/[0.08]
+          hover:border-[#D4A85A]/70
+        "
+      >
+
+        <input
+          type="checkbox"
+          name="studentServices"
+          value="Complete Project Guidance Package"
+          className="
+            mt-1 w-4 h-4
+            accent-[#D4A85A]
+            shrink-0
+          "
+        />
+
+        <div>
+
+          <span
+            className="
+              block
+              font-[var(--font-avenir)]
+              text-sm
+              text-[#D4A85A]
+              font-medium
+            "
+          >
+            Complete Project Guidance Package
+          </span>
+
+          <span
+            className="
+              block mt-1
+              font-[var(--font-avenir)]
+              text-xs text-gray-500
+              leading-relaxed
+            "
+          >
+            Broader guidance across design development, drawings,
+            modelling, visualization and presentation depending on
+            your project's requirements.
+          </span>
+
+        </div>
+
+      </label>
+
+
+      {/* =====================================================
+          PRINTING ADD-ON
+      ===================================================== */}
+
+      <label
+        className="
+          flex items-start gap-4
+          mt-4
+          border border-white/10
+          rounded-xl
+          px-5 py-5
+          cursor-pointer
+          transition-all duration-300
+          hover:border-[#D4A85A]/40
+          hover:bg-white/[0.025]
+        "
+      >
+
+        <input
+          type="checkbox"
+          name="studentServices"
+          value="Include Final Printing, Binding & Delivery"
+          className="
+            mt-1 w-4 h-4
+            accent-[#D4A85A]
+            shrink-0
+          "
+        />
+
+        <div>
+
+          <span
+            className="
+              block
+              font-[var(--font-avenir)]
+              text-sm
+              text-gray-200
+            "
+          >
+            Include Final Printing, Binding &amp; Delivery
+          </span>
+
+          <span
+            className="
+              block mt-1
+              font-[var(--font-avenir)]
+              text-xs text-gray-500
+              leading-relaxed
+            "
+          >
+            Optional add-on for projects supported by ADS. We can
+            arrange the final physical output and delivery once your
+            project is ready.
+          </span>
+
+        </div>
+
+      </label>
+
+    </div>
+
+
+    {/* =====================================================
+        SOFTWARE TRAINING
+    ===================================================== */}
+
+    <div
+      className="
+        sm:col-span-2
+        border border-[#D4A85A]/30
+        rounded-2xl
+        p-6 md:p-8
+        bg-[#D4A85A]/[0.025]
+      "
+    >
+
+      {/* TRAINING HEADER */}
+
+      <div className="mb-7">
+
+        <p
+          className="
+            font-heading
+            text-2xl md:text-3xl
+            text-white
+            mb-2
+          "
+        >
+          Learn The Tools. Design With Confidence.
+        </p>
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-xs md:text-sm
+            text-gray-400
+            leading-relaxed
+            max-w-2xl
+          "
+        >
+          Practical software training focused on architectural drawing,
+          modelling, documentation and visualization workflows. Choose
+          the software and training package that best fits your goals.
+        </p>
+
+      </div>
+
+
+      {/* =====================================================
+          SOFTWARE OPTIONS
+      ===================================================== */}
+
+      <div className="mb-8">
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-xs
+            text-gray-400
+            mb-3
+          "
+        >
+          Which software would you like to learn?
+        </p>
+
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+
+          {[
+            "ArchiCAD",
+            "AutoCAD",
+            "SketchUp",
+            "Revit",
+            "Lumion",
+            "3ds Max",
+          ].map((software) => (
+
+            <label
+              key={software}
+              className="
+                flex items-center gap-3
+                border border-white/10
+                rounded-xl
+                px-4 md:px-5
+                py-4
+                cursor-pointer
+                transition-all duration-300
+                hover:border-[#D4A85A]/60
+                hover:bg-white/[0.03]
+              "
+            >
+
+              <input
+                type="checkbox"
+                name="softwareTraining"
+                value={software}
+                className="
+                  w-4 h-4
+                  accent-[#D4A85A]
+                  shrink-0
+                "
+              />
+
+              <span
+                className="
+                  font-[var(--font-avenir)]
+                  text-sm text-gray-200
+                "
+              >
+                {software}
+              </span>
+
+            </label>
+
+          ))}
+
+        </div>
+
+      </div>
+
+
+      {/* =====================================================
+          TRAINING PACKAGES
+      ===================================================== */}
+
+      <div>
+
+        <div className="mb-4">
+
+          <p className="font-[var(--font-avenir)] text-sm text-gray-200 mb-1">
+            Select Your Training Package
+          </p>
+
+          <p className="font-[var(--font-avenir)] text-xs text-gray-500">
+            Each software includes 12 hours of guided training.
+          </p>
+
+        </div>
+
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+
+          {/* SINGLE SOFTWARE */}
+
+          <label
+            className="
+              flex flex-col
+              border border-white/10
+              rounded-xl
+              p-5
+              cursor-pointer
+              transition-all duration-300
+              hover:border-[#D4A85A]/50
+              hover:bg-white/[0.03]
+            "
+          >
+
+            <div className="flex items-start gap-3">
+
+              <input
+                type="radio"
+                name="trainingPackage"
+                value="Single Software — KSh 4,000"
+                className="
+                  mt-1 w-4 h-4
+                  accent-[#D4A85A]
+                  shrink-0
+                "
+              />
+
+              <div>
+
+                <span
+                  className="
+                    block
+                    font-[var(--font-avenir)]
+                    text-sm text-gray-200
+                    mb-2
+                  "
+                >
+                  Single Software
+                </span>
+
+                <span
+                  className="
+                    block
+                    font-heading
+                    text-3xl
+                    font-light
+                    text-[#D4A85A]
+                    mb-2
+                  "
+                >
+                  KSh 4,000
+                </span>
+
+                <span
+                  className="
+                    block
+                    font-[var(--font-avenir)]
+                    text-[11px]
+                    text-gray-500
+                    leading-relaxed
+                  "
+                >
+                  2 weeks · 12 hours
+                  <br />
+                  6 sessions × 2 hours
+                </span>
+
+              </div>
+
+            </div>
+
+          </label>
+
+
+          {/* ANY TWO SOFTWARE */}
+
+          <label
+            className="
+              relative
+              flex flex-col
+              border border-[#D4A85A]/45
+              rounded-xl
+              p-5
+              cursor-pointer
+              bg-[#D4A85A]/[0.04]
+              transition-all duration-300
+              hover:border-[#D4A85A]/70
+              hover:bg-[#D4A85A]/[0.07]
+            "
+          >
+
+            <span
+              className="
+                absolute
+                top-4
+                right-4
+                font-[var(--font-avenir)]
+                uppercase
+                tracking-[2px]
+                text-[7px]
+                text-[#D4A85A]
+              "
+            >
+              Popular
+            </span>
+
+
+            <div className="flex items-start gap-3">
+
+              <input
+                type="radio"
+                name="trainingPackage"
+                value="Any 2 Software — KSh 7,000"
+                className="
+                  mt-1 w-4 h-4
+                  accent-[#D4A85A]
+                  shrink-0
+                "
+              />
+
+              <div>
+
+                <span
+                  className="
+                    block
+                    font-[var(--font-avenir)]
+                    text-sm text-gray-200
+                    mb-2
+                  "
+                >
+                  Any 2 Software
+                </span>
+
+                <span
+                  className="
+                    block
+                    font-heading
+                    text-3xl
+                    font-light
+                    text-[#D4A85A]
+                    mb-2
+                  "
+                >
+                  KSh 7,000
+                </span>
+
+                <span
+                  className="
+                    block
+                    font-[var(--font-avenir)]
+                    text-[11px]
+                    text-gray-500
+                    leading-relaxed
+                  "
+                >
+                  24 total hours
+                  <br />
+                  Save KSh 1,000
+                </span>
+
+              </div>
+
+            </div>
+
+          </label>
+
+
+          {/* DESIGN TO RENDER */}
+
+          <label
+            className="
+              flex flex-col
+              border border-white/10
+              rounded-xl
+              p-5
+              cursor-pointer
+              transition-all duration-300
+              hover:border-[#D4A85A]/50
+              hover:bg-white/[0.03]
+            "
+          >
+
+            <div className="flex items-start gap-3">
+
+              <input
+                type="radio"
+                name="trainingPackage"
+                value="Design-to-Render Path — KSh 10,000"
+                className="
+                  mt-1 w-4 h-4
+                  accent-[#D4A85A]
+                  shrink-0
+                "
+              />
+
+              <div>
+
+                <span
+                  className="
+                    block
+                    font-[var(--font-avenir)]
+                    text-sm text-gray-200
+                    mb-2
+                  "
+                >
+                  Design-To-Render Path
+                </span>
+
+                <span
+                  className="
+                    block
+                    font-heading
+                    text-3xl
+                    font-light
+                    text-[#D4A85A]
+                    mb-2
+                  "
+                >
+                  KSh 10,000
+                </span>
+
+                <span
+                  className="
+                    block
+                    font-[var(--font-avenir)]
+                    text-[11px]
+                    text-gray-500
+                    leading-relaxed
+                  "
+                >
+                  3 complementary software
+                  <br />
+                  36 total hours
+                </span>
+
+              </div>
+
+            </div>
+
+          </label>
+
+        </div>
+
+      </div>
+
+
+      {/* TRAINING NOTE */}
+
+      <div
+        className="
+          mt-6
+          pt-5
+          border-t border-white/10
+        "
+      >
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            text-[10px] md:text-xs
+            text-gray-500
+            leading-relaxed
+          "
+        >
+          Practical skills-based training focused on improving your
+          architectural software workflow. ADS software training is
+          not an accredited or certification course.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    {/* =====================================================
+        TRAINING FORMAT
+    ===================================================== */}
+
+    <select
+      name="trainingFormat"
+      defaultValue=""
+      className="
+        bg-[#071321]
+        border border-white/10
+        rounded-2xl
+        px-6 py-5
+        outline-none
+        transition-colors
+        focus:border-[#D4A85A]/60
+      "
+    >
+
+      <option value="" disabled>
+        Preferred Training Format
+      </option>
+
+      <option value="Online Training">
+        Online Training
+      </option>
+
+      <option value="In-Person Training">
+        In-Person Training
+      </option>
+
+      <option value="Either Online or In-Person">
+        Either Online or In-Person
+      </option>
+
+    </select>
+
+
+    {/* =====================================================
+        SKILL LEVEL
+    ===================================================== */}
+
+    <select
+      name="skillLevel"
+      defaultValue=""
+      className="
+        bg-[#071321]
+        border border-white/10
+        rounded-2xl
+        px-6 py-5
+        outline-none
+        transition-colors
+        focus:border-[#D4A85A]/60
+      "
+    >
+
+      <option value="" disabled>
+        Current Skill Level
+      </option>
+
+      <option value="Complete Beginner">
+        Complete Beginner
+      </option>
+
+      <option value="Beginner">
+        Beginner
+      </option>
+
+      <option value="Intermediate">
+        Intermediate
+      </option>
+
+      <option value="Advanced">
+        Advanced
+      </option>
+
+      <option value="Specific Skills">
+        I Need Help With Specific Skills
+      </option>
+
+    </select>
+
+
+    {/* =====================================================
+        TRAINING GOALS
+    ===================================================== */}
+
+    <textarea
+      name="trainingGoals"
+      rows={4}
+      placeholder="What would you like to learn? e.g. ArchiCAD modelling, construction drawings, Lumion rendering..."
+      className="
+        sm:col-span-2
+        bg-transparent
+        border border-white/10
+        rounded-2xl
+        px-7 py-5
+        outline-none
+        resize-none
+        transition-colors
+        focus:border-[#D4A85A]/60
+      "
+    />
+
+  </>
+)}
 
   <textarea
   name="notes"

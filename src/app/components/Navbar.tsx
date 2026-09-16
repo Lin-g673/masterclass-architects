@@ -44,6 +44,10 @@ export default function Navbar() {
       href: "/",
     },
     {
+  name: "Architecture",
+  href: "/architecture",
+},
+    {
       name: "House Plans",
       href: "/house-plans",
     },

@@ -727,6 +727,468 @@ md:text-xl
   </div>
 </section>
 
+{/* =====================================================
+    ARCHITECTURE
+===================================================== */}
+
+<section
+  className="
+    py-14
+    md:py-18
+    lg:py-22
+  "
+>
+  <div
+    className="
+      max-w-[1500px]
+      mx-auto
+      px-5
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+    "
+  >
+
+    {/* EYEBROW */}
+
+    <div
+      className="
+        flex
+        items-center
+        gap-4
+        mb-8
+        md:mb-10
+      "
+    >
+      <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+
+      <p
+        className="
+          font-[var(--font-avenir)]
+          uppercase
+          tracking-[5px]
+          md:tracking-[8px]
+          text-[#D4A85A]
+          text-[10px]
+          md:text-xs
+          whitespace-nowrap
+        "
+      >
+        Architectural Design
+      </p>
+
+      <div className="w-10 h-px bg-[#D4A85A] flex-shrink-0" />
+    </div>
+
+
+    {/* MAIN ARCHITECTURE FEATURE */}
+
+    <div
+      className="
+        grid
+        grid-cols-1
+        lg:grid-cols-[1.15fr_0.85fr]
+        gap-8
+        lg:gap-14
+        xl:gap-20
+        items-stretch
+      "
+    >
+
+      {/* IMAGE */}
+
+      <Link
+        href="/architecture"
+        className="
+          group
+          relative
+          min-h-[420px]
+          sm:min-h-[500px]
+          lg:min-h-[620px]
+          overflow-hidden
+          rounded-2xl
+          border
+          border-white/10
+        "
+      >
+        <img
+          src="/architecture/commercial.png"
+          alt="Architectural design by Apiyo Design Studio"
+          className="
+            absolute
+            inset-0
+            w-full
+            h-full
+            object-cover
+            transition-transform
+            duration-700
+            group-hover:scale-[1.03]
+          "
+        />
+
+        {/* IMAGE OVERLAY */}
+
+        <div
+          className="
+            absolute
+            inset-0
+            bg-gradient-to-t
+            from-[#071321]/80
+            via-transparent
+            to-transparent
+          "
+        />
+
+
+        {/* IMAGE CAPTION */}
+
+        <div
+          className="
+            absolute
+            left-6
+            right-6
+            bottom-6
+            md:left-8
+            md:right-8
+            md:bottom-8
+            flex
+            items-end
+            justify-between
+            gap-6
+          "
+        >
+          <div>
+            <p
+              className="
+                font-[var(--font-avenir)]
+                text-[9px]
+                md:text-[10px]
+                uppercase
+                tracking-[4px]
+                text-[#D4A85A]
+                mb-2
+              "
+            >
+              From Idea To Architecture
+            </p>
+
+            <p
+              className="
+                font-heading
+                text-2xl
+                md:text-3xl
+                font-light
+                text-white
+              "
+            >
+              Designed Around Your Ambition.
+            </p>
+          </div>
+
+          <div
+            className="
+              hidden
+              sm:flex
+              w-12
+              h-12
+              rounded-full
+              border
+              border-white/30
+              items-center
+              justify-center
+              text-white
+              transition-all
+              duration-300
+              group-hover:bg-[#D4A85A]
+              group-hover:text-[#071321]
+              group-hover:border-[#D4A85A]
+            "
+          >
+            →
+          </div>
+        </div>
+
+      </Link>
+
+
+      {/* CONTENT */}
+
+      <div
+        className="
+          flex
+          flex-col
+          justify-center
+          lg:py-8
+        "
+      >
+
+        <p
+          className="
+            font-[var(--font-avenir)]
+            uppercase
+            tracking-[4px]
+            text-[#D4A85A]
+            text-[9px]
+            md:text-[10px]
+            mb-5
+          "
+        >
+          Full Architectural Services
+        </p>
+
+
+        <h2
+          className="
+            font-heading
+            text-4xl
+            sm:text-5xl
+            md:text-6xl
+            lg:text-[64px]
+            font-light
+            leading-[1.02]
+            tracking-[-0.02em]
+          "
+        >
+          Want To Build?
+          <br />
+
+          <span className="text-[#D4A85A]">
+            Start With Architecture.
+          </span>
+        </h2>
+
+
+        <p
+          className="
+            mt-7
+            font-[var(--font-avenir)]
+            text-sm
+            md:text-base
+            text-white/60
+            leading-relaxed
+            max-w-xl
+          "
+        >
+          Whether you have land, an existing building, a development
+          opportunity or simply an idea, we provide architectural
+          design from the first conversation through design,
+          visualization, documentation and project development.
+        </p>
+
+
+        {/* BUILDING TYPES */}
+
+        <div
+          className="
+            mt-8
+            pt-7
+            border-t
+            border-white/10
+          "
+        >
+          <p
+            className="
+              font-[var(--font-avenir)]
+              text-[9px]
+              uppercase
+              tracking-[3px]
+              text-white/40
+              mb-5
+            "
+          >
+            Architecture Across Building Types
+          </p>
+
+          <div
+            className="
+              grid
+              grid-cols-2
+              gap-x-6
+              gap-y-3
+            "
+          >
+            {[
+              "Homes & Villas",
+              "Apartments",
+              "Commercial",
+              "Hospitality",
+              "Mixed-Use",
+              "High-Rise",
+              "Institutional",
+              "Religious",
+              "Healthcare",
+              "Industrial",
+            ].map((item) => (
+              <div
+                key={item}
+                className="
+                  flex
+                  items-center
+                  gap-3
+                  font-[var(--font-avenir)]
+                  text-xs
+                  md:text-sm
+                  text-white/70
+                "
+              >
+                <span
+                  className="
+                    w-1
+                    h-1
+                    rounded-full
+                    bg-[#D4A85A]
+                    flex-shrink-0
+                  "
+                />
+
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+
+        {/* NEW BUILD + RENOVATION */}
+
+        <div
+          className="
+            mt-8
+            grid
+            grid-cols-2
+            border-y
+            border-white/10
+          "
+        >
+          <div
+            className="
+              py-5
+              pr-5
+              border-r
+              border-white/10
+            "
+          >
+            <p
+              className="
+                font-heading
+                text-xl
+                md:text-2xl
+                font-light
+                text-white
+              "
+            >
+              New Builds
+            </p>
+
+            <p
+              className="
+                mt-1
+                font-[var(--font-avenir)]
+                text-[11px]
+                md:text-xs
+                text-white/45
+              "
+            >
+              From blank site to complete design.
+            </p>
+          </div>
+
+
+          <div className="py-5 pl-5">
+            <p
+              className="
+                font-heading
+                text-xl
+                md:text-2xl
+                font-light
+                text-white
+              "
+            >
+              Renovations
+            </p>
+
+            <p
+              className="
+                mt-1
+                font-[var(--font-avenir)]
+                text-[11px]
+                md:text-xs
+                text-white/45
+              "
+            >
+              Existing buildings, reimagined.
+            </p>
+          </div>
+        </div>
+
+
+        {/* CTA */}
+
+        <div
+          className="
+            mt-8
+            flex
+            flex-wrap
+            items-center
+            gap-4
+          "
+        >
+          <Link
+            href="/architecture"
+            className="
+              inline-flex
+              items-center
+              justify-center
+              gap-3
+              bg-[#D4A85A]
+              text-[#071321]
+              px-7
+              py-3.5
+              rounded-full
+              font-[var(--font-avenir)]
+              text-xs
+              font-medium
+              transition-all
+              duration-300
+              hover:bg-white
+              hover:scale-[1.02]
+            "
+          >
+            Explore Architecture
+            <span>→</span>
+          </Link>
+
+
+          <Link
+            href="/consultation"
+            className="
+              inline-flex
+              items-center
+              justify-center
+              px-7
+              py-3.5
+              rounded-full
+              border
+              border-white/20
+              text-white
+              font-[var(--font-avenir)]
+              text-xs
+              transition-all
+              duration-300
+              hover:border-[#D4A85A]
+              hover:text-[#D4A85A]
+            "
+          >
+            Start Your Project
+          </Link>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 {/* PROJECTS */}
       {/* PROJECTS */}
@@ -3283,7 +3745,6 @@ mb-5">
   </div>
 
 </section>
-
 {/* =====================================================
     STUDENT SERVICES
 ===================================================== */}
@@ -3383,9 +3844,9 @@ mb-5">
             md:mb-6
           "
         >
-          Academic support
+          Learn the tools.
           <br />
-          for future designers.
+          Design with confidence.
         </h2>
 
 
@@ -3399,14 +3860,191 @@ mb-5">
             leading-relaxed
             max-w-xl
             mb-7
-            md:mb-8
           "
         >
-          From presentation boards and photorealistic renders to
-          architectural models and portfolio development, we help
-          students transform ideas into professional-quality
-          submissions that stand out.
+          Practical software training, design guidance and project
+          assistance for architecture and design students. Build your
+          skills, strengthen your drawings and visualizations, and
+          develop the confidence to take your ideas from concept to
+          final presentation.
         </p>
+
+
+        {/* =================================================
+            STUDENT BENEFITS
+        ================================================= */}
+        <div
+          className="
+            grid
+            grid-cols-2
+            gap-x-5
+            gap-y-5
+            max-w-xl
+            mb-8
+          "
+        >
+
+          {/* GUIDANCE */}
+          <div className="flex items-start gap-3">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="
+                w-5 h-5
+                md:w-6 md:h-6
+                text-[#D4A85A]
+                flex-shrink-0
+                mt-0.5
+              "
+            >
+              <path d="M3 10.5 12 6l9 4.5L12 15 3 10.5Z" />
+              <path d="M6 12v5l6 3 6-3v-5" />
+              <path d="M21 10.5V16" />
+            </svg>
+
+            <div>
+              <p
+                className="
+                  font-[var(--font-avenir)]
+                  text-[11px]
+                  sm:text-xs
+                  text-gray-300
+                  leading-snug
+                "
+              >
+                Guidance,
+                <br />
+                Not Shortcuts
+              </p>
+            </div>
+
+          </div>
+
+
+          {/* ONLINE / IN PERSON */}
+          <div className="flex items-start gap-3">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="
+                w-5 h-5
+                md:w-6 md:h-6
+                text-[#D4A85A]
+                flex-shrink-0
+                mt-0.5
+              "
+            >
+              <rect x="3" y="4" width="18" height="12" rx="1" />
+              <path d="M8 20h8M12 16v4" />
+            </svg>
+
+            <div>
+              <p
+                className="
+                  font-[var(--font-avenir)]
+                  text-[11px]
+                  sm:text-xs
+                  text-gray-300
+                  leading-snug
+                "
+              >
+                Online &amp;
+                <br />
+                In-Person Training
+              </p>
+            </div>
+
+          </div>
+
+
+          {/* ONE ON ONE */}
+          <div className="flex items-start gap-3">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="
+                w-5 h-5
+                md:w-6 md:h-6
+                text-[#D4A85A]
+                flex-shrink-0
+                mt-0.5
+              "
+            >
+              <circle cx="9" cy="8" r="3" />
+              <circle cx="17" cy="9" r="2.5" />
+              <path d="M3.5 19c.5-3.2 2.4-5 5.5-5s5 1.8 5.5 5" />
+              <path d="M14 15c1-.8 2-1.2 3.3-1.2 2.3 0 3.7 1.3 4.2 3.7" />
+            </svg>
+
+            <div>
+              <p
+                className="
+                  font-[var(--font-avenir)]
+                  text-[11px]
+                  sm:text-xs
+                  text-gray-300
+                  leading-snug
+                "
+              >
+                One-on-One
+                <br />
+                or Small Groups
+              </p>
+            </div>
+
+          </div>
+
+
+          {/* PRINTING */}
+          <div className="flex items-start gap-3">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="
+                w-5 h-5
+                md:w-6 md:h-6
+                text-[#D4A85A]
+                flex-shrink-0
+                mt-0.5
+              "
+            >
+              <path d="M6 9V3h12v6" />
+              <rect x="4" y="9" width="16" height="8" rx="1" />
+              <path d="M7 14h10v7H7z" />
+              <path d="M17 12h.01" />
+            </svg>
+
+            <div>
+              <p
+                className="
+                  font-[var(--font-avenir)]
+                  text-[11px]
+                  sm:text-xs
+                  text-gray-300
+                  leading-snug
+                "
+              >
+                Printing, Binding
+                <br />
+                &amp; Delivery
+              </p>
+            </div>
+
+          </div>
+
+        </div>
 
 
         {/* BUTTON */}
@@ -3441,301 +4079,349 @@ mb-5">
       </div>
 
 
-      {/* =================================================
-          PIN BOARD
-      ================================================= */}
+     {/* =================================================
+    PIN BOARD
+================================================= */}
+<div
+  className="
+    relative
+    w-full
+    flex
+    justify-center
+    items-start
+  "
+>
+
+  <div
+    className="
+      grid
+      grid-cols-1
+      sm:grid-cols-2
+      w-full
+      max-w-[760px]
+    "
+  >
+
+    {/* =================================================
+        SHEET 01 — 3D VISUALIZATION
+    ================================================= */}
+    <div
+      className="
+        group
+        relative
+        min-h-[230px]
+        md:min-h-[250px]
+        lg:h-[280px]
+        bg-white/5
+        backdrop-blur-xl
+        border
+        border-white/10
+        p-5
+        sm:p-6
+        lg:p-6
+        transition-all
+        duration-500
+        hover:bg-white
+        hover:-translate-y-1
+        lg:hover:-translate-y-2
+        overflow-hidden
+      "
+    >
+
+      {/* PINS */}
+      <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+
+      {/* IMAGE PLACEHOLDER */}
       <div
         className="
-          relative
           w-full
-          flex
-          justify-center
-          items-start
+          h-14
+          sm:h-16
+          lg:h-[72px]
+          bg-black/10
+          mb-4
+          lg:mb-5
+        "
+      />
+
+      <h3
+        className="
+          font-heading
+          text-[#D4A85A]
+          text-xl
+          lg:text-[22px]
+          font-light
+          leading-[1.1]
+          mb-2
         "
       >
+        3D Visualization Assistance
+      </h3>
 
-        <div
-          className="
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            w-full
-            max-w-[760px]
-          "
-        >
+      <p
+        className="
+          font-[var(--font-avenir)]
+          text-[11px]
+          md:text-xs
+          text-gray-300
+          leading-[1.55]
+          group-hover:text-gray-700
+          transition-all
+          duration-500
+        "
+      >
+        Guidance with 3D modelling, rendering and presentation
+        visuals for stronger studio submissions.
+      </p>
 
-          {/* =================================================
-              SHEET 01
-          ================================================= */}
-          <div
-            className="
-              group
-              relative
-              min-h-[230px]
-              md:min-h-[260px]
-              lg:h-[280px]
-              bg-white/5
-              backdrop-blur-xl
-              border
-              border-white/10
-              p-5
-              sm:p-6
-              lg:p-8
-              transition-all
-              duration-500
-              hover:bg-white
-              hover:-translate-y-1
-              lg:hover:-translate-y-2
-            "
-          >
-
-            {/* PINS */}
-            <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-
-            <div className="w-full h-16 sm:h-20 lg:h-24 bg-black/10 mb-5 lg:mb-6" />
-
-            <h3
-              className="
-                font-heading
-                text-[#D4A85A]
-                text-2xl
-                lg:text-3xl
-                font-light
-                mb-2
-                lg:mb-3
-              "
-            >
-              3D Rendering
-            </h3>
-
-            <p
-              className="
-                font-[var(--font-avenir)]
-                text-xs
-                md:text-sm
-                text-gray-300
-                leading-relaxed
-                group-hover:text-gray-700
-                transition-all
-                duration-500
-              "
-            >
-              Photorealistic visualizations for studio projects and presentations.
-            </p>
-
-          </div>
+    </div>
 
 
-          {/* =================================================
-              SHEET 02
-          ================================================= */}
-          <div
-            className="
-              group
-              relative
-              min-h-[230px]
-              md:min-h-[260px]
-              lg:h-[280px]
-              bg-white/5
-              backdrop-blur-xl
-              border
-              border-white/10
-              p-5
-              sm:p-6
-              lg:p-8
-              transition-all
-              duration-500
-              hover:bg-white
-              hover:-translate-y-1
-              lg:hover:-translate-y-2
-            "
-          >
+    {/* =================================================
+        SHEET 02 — DRAWINGS
+    ================================================= */}
+    <div
+      className="
+        group
+        relative
+        min-h-[230px]
+        md:min-h-[250px]
+        lg:h-[280px]
+        bg-white/5
+        backdrop-blur-xl
+        border
+        border-white/10
+        p-5
+        sm:p-6
+        lg:p-6
+        transition-all
+        duration-500
+        hover:bg-white
+        hover:-translate-y-1
+        lg:hover:-translate-y-2
+        overflow-hidden
+      "
+    >
 
-            {/* PINS */}
-            <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      {/* PINS */}
+      <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
 
-            <div className="w-full h-16 sm:h-20 lg:h-24 bg-black/10 mb-5 lg:mb-6" />
+      {/* IMAGE PLACEHOLDER */}
+      <div
+        className="
+          w-full
+          h-14
+          sm:h-16
+          lg:h-[72px]
+          bg-black/10
+          mb-4
+          lg:mb-5
+        "
+      />
 
-            <h3
-              className="
-                font-heading
-                text-[#D4A85A]
-                text-2xl
-                lg:text-3xl
-                font-light
-                mb-2
-                lg:mb-3
-              "
-            >
-              Drawing Enhancement
-            </h3>
+      <h3
+        className="
+          font-heading
+          text-[#D4A85A]
+          text-xl
+          lg:text-[22px]
+          font-light
+          leading-[1.1]
+          mb-2
+        "
+      >
+        Drawing Assistance
+      </h3>
 
-            <p
-              className="
-                font-[var(--font-avenir)]
-                text-xs
-                md:text-sm
-                text-gray-300
-                leading-relaxed
-                group-hover:text-gray-700
-                transition-all
-                duration-500
-              "
-            >
-              Refining drawings, layouts and visual documentation to
-              communicate design intent with greater clarity and precision.
-            </p>
+      <p
+        className="
+          font-[var(--font-avenir)]
+          text-[11px]
+          md:text-xs
+          text-gray-300
+          leading-[1.55]
+          group-hover:text-gray-700
+          transition-all
+          duration-500
+        "
+      >
+        Guidance with concept, presentation and working drawings
+        for clear, professional communication.
+      </p>
 
-          </div>
-
-
-          {/* =================================================
-              SHEET 03
-          ================================================= */}
-          <div
-            className="
-              group
-              relative
-              min-h-[230px]
-              md:min-h-[260px]
-              lg:h-[280px]
-              bg-white/5
-              backdrop-blur-xl
-              border
-              border-white/10
-              p-5
-              sm:p-6
-              lg:p-8
-              transition-all
-              duration-500
-              hover:bg-white
-              hover:-translate-y-1
-              lg:hover:-translate-y-2
-            "
-          >
-
-            {/* PINS */}
-            <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-
-            <div className="w-full h-16 sm:h-20 lg:h-24 bg-black/10 mb-5 lg:mb-6" />
-
-            <h3
-              className="
-                font-heading
-                text-[#D4A85A]
-                text-2xl
-                lg:text-3xl
-                font-light
-                mb-2
-                lg:mb-3
-              "
-            >
-              Architectural Models
-            </h3>
-
-            <p
-              className="
-                font-[var(--font-avenir)]
-                text-xs
-                md:text-sm
-                text-gray-300
-                leading-relaxed
-                group-hover:text-gray-700
-                transition-all
-                duration-500
-              "
-            >
-              Physical and digital model development for design exploration
-              and project presentation.
-            </p>
-
-          </div>
+    </div>
 
 
-          {/* =================================================
-              SHEET 04
-          ================================================= */}
-          <div
-            className="
-              group
-              relative
-              min-h-[230px]
-              md:min-h-[260px]
-              lg:h-[280px]
-              bg-white/5
-              backdrop-blur-xl
-              border
-              border-white/10
-              p-5
-              sm:p-6
-              lg:p-8
-              transition-all
-              duration-500
-              hover:bg-white
-              hover:-translate-y-1
-              lg:hover:-translate-y-2
-            "
-          >
+    {/* =================================================
+        SHEET 03 — MODELS
+    ================================================= */}
+    <div
+      className="
+        group
+        relative
+        min-h-[230px]
+        md:min-h-[250px]
+        lg:h-[280px]
+        bg-white/5
+        backdrop-blur-xl
+        border
+        border-white/10
+        p-5
+        sm:p-6
+        lg:p-6
+        transition-all
+        duration-500
+        hover:bg-white
+        hover:-translate-y-1
+        lg:hover:-translate-y-2
+        overflow-hidden
+      "
+    >
 
-            {/* PINS */}
-            <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
-            <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      {/* PINS */}
+      <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
 
-            <div className="w-full h-16 sm:h-20 lg:h-24 bg-black/10 mb-5 lg:mb-6" />
+      {/* IMAGE PLACEHOLDER */}
+      <div
+        className="
+          w-full
+          h-14
+          sm:h-16
+          lg:h-[72px]
+          bg-black/10
+          mb-4
+          lg:mb-5
+        "
+      />
 
-            <h3
-              className="
-                font-heading
-                text-[#D4A85A]
-                text-2xl
-                lg:text-3xl
-                font-light
-                mb-2
-                lg:mb-3
-              "
-            >
-              Portfolio Development
-            </h3>
+      <h3
+        className="
+          font-heading
+          text-[#D4A85A]
+          text-xl
+          lg:text-[22px]
+          font-light
+          leading-[1.1]
+          mb-2
+        "
+      >
+        Model-Making Assistance
+      </h3>
 
-            <p
-              className="
-                font-[var(--font-avenir)]
-                text-xs
-                md:text-sm
-                text-gray-300
-                leading-relaxed
-                group-hover:text-gray-700
-                transition-all
-                duration-500
-              "
-            >
-              Curated project presentations that showcase skills, process
-              and design thinking.
-            </p>
+      <p
+        className="
+          font-[var(--font-avenir)]
+          text-[11px]
+          md:text-xs
+          text-gray-300
+          leading-[1.55]
+          group-hover:text-gray-700
+          transition-all
+          duration-500
+        "
+      >
+        Guidance with physical and digital architectural models
+        for design development and presentation.
+      </p>
 
-          </div>
+    </div>
 
-        </div>
 
-      </div>
+    {/* =================================================
+        SHEET 04 — SOFTWARE TRAINING
+    ================================================= */}
+    <div
+      className="
+        group
+        relative
+        min-h-[230px]
+        md:min-h-[250px]
+        lg:h-[280px]
+        bg-white/5
+        backdrop-blur-xl
+        border
+        border-white/10
+        p-5
+        sm:p-6
+        lg:p-6
+        transition-all
+        duration-500
+        hover:bg-white
+        hover:-translate-y-1
+        lg:hover:-translate-y-2
+        overflow-hidden
+      "
+    >
+
+      {/* PINS */}
+      <div className="absolute top-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute top-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute bottom-[-6px] left-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+      <div className="absolute bottom-[-6px] right-[-6px] w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-gradient-to-br from-[#f4d28a] via-[#D4A85A] to-[#8f6a2e]" />
+
+      {/* IMAGE PLACEHOLDER */}
+      <div
+        className="
+          w-full
+          h-14
+          sm:h-16
+          lg:h-[72px]
+          bg-black/10
+          mb-4
+          lg:mb-5
+        "
+      />
+
+      <h3
+        className="
+          font-heading
+          text-[#D4A85A]
+          text-xl
+          lg:text-[22px]
+          font-light
+          leading-[1.1]
+          mb-2
+        "
+      >
+        Software Training
+      </h3>
+
+      <p
+        className="
+          font-[var(--font-avenir)]
+          text-[11px]
+          md:text-xs
+          text-gray-300
+          leading-[1.55]
+          group-hover:text-gray-700
+          transition-all
+          duration-500
+        "
+      >
+        Practical ArchiCAD, AutoCAD, SketchUp, Revit, Lumion
+        and 3ds Max training — online or in person.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
 
     </div>
 
   </div>
 
 </section>
-
 {/* =====================================================
     ARCHITECTURAL QUOTE
 ===================================================== */}

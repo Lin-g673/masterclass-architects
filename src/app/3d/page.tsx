@@ -2121,6 +2121,619 @@ lg:py-14
       </section>
 
       {/* =================================================
+          VISUALIZATION PRICING
+      ================================================= */}
+
+      <section
+        className="
+          py-10
+          md:py-12
+          lg:py-14
+        "
+      >
+        <div
+          className="
+            max-w-[1500px]
+            mx-auto
+            px-5
+            sm:px-6
+            md:px-8
+            lg:px-10
+            xl:px-12
+          "
+        >
+
+          {/* SECTION HEADING */}
+
+          <div className="mb-12 md:mb-16">
+
+            <div
+              className="
+                flex
+                items-center
+                gap-4
+                mb-14
+              "
+            >
+              <div className="h-px w-10 bg-[#D4A85A]" />
+
+              <p
+                className="
+                  font-[var(--font-avenir)]
+                  uppercase
+                  tracking-[8px]
+                  text-[#D4A85A]
+                  text-[10px]
+                  md:text-xs
+                  whitespace-nowrap
+                "
+              >
+                Visualization Pricing
+              </p>
+
+              <div className="h-px w-10 bg-[#D4A85A]" />
+            </div>
+
+
+            <div className="max-w-4xl mx-auto text-center">
+
+              <h2
+                className="
+                  font-heading
+                  text-4xl
+                  md:text-5xl
+                  lg:text-6xl
+                  font-light
+                  leading-[1.05]
+                "
+              >
+                Clear Pricing.
+                <br />
+                Exceptional Visuals.
+              </h2>
+
+              <p
+                className="
+                  mt-5
+                  max-w-2xl
+                  mx-auto
+                  text-gray-400
+                  font-[var(--font-avenir)]
+                  text-sm
+                  md:text-base
+                  leading-relaxed
+                "
+              >
+                Straightforward rates for professional architectural
+                visualisation, from individual still renders to
+                cinematic project animations.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          {/* PRICING CARDS */}
+
+          <div
+            className="
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+              lg:grid-cols-4
+              gap-5
+              md:gap-6
+            "
+          >
+
+            {/* EXTERIOR */}
+
+            <div
+              className="
+                group
+                min-h-[330px]
+                border
+                border-white/10
+                rounded-2xl
+                p-7
+                md:p-8
+                bg-white/[0.015]
+                flex
+                flex-col
+                transition-all
+                duration-500
+                hover:-translate-y-2
+                hover:bg-white
+                hover:text-[#071321]
+                hover:border-t-[#D4A85A]
+              "
+            >
+              <div
+                className="
+                  font-[var(--font-avenir)]
+                  uppercase
+                  tracking-[3px]
+                  text-[9px]
+                  text-[#D4A85A]
+                  mb-8
+                "
+              >
+                Still Render
+              </div>
+
+              <h3
+                className="
+                  font-heading
+                  text-2xl
+                  md:text-3xl
+                  font-light
+                  mb-4
+                "
+              >
+                Exterior
+                <br />
+                Visualization
+              </h3>
+
+              <p
+                className="
+                  font-[var(--font-avenir)]
+                  text-sm
+                  text-gray-400
+                  group-hover:text-[#071321]/65
+                  leading-relaxed
+                  mb-8
+                "
+              >
+                Photorealistic exterior architectural render supplied
+                as a final 4K-resolution image.
+              </p>
+
+              <div className="mt-auto">
+
+                <p
+                  className="
+                    font-[var(--font-avenir)]
+                    uppercase
+                    tracking-[2px]
+                    text-[9px]
+                    text-gray-500
+                    group-hover:text-[#071321]/50
+                    mb-2
+                  "
+                >
+                  From
+                </p>
+
+                <div className="flex items-end gap-2">
+
+                  <span
+                    className="
+                      font-heading
+                      text-4xl
+                      md:text-5xl
+                      font-light
+                      text-[#D4A85A]
+                    "
+                  >
+                    KSh 3,000
+                  </span>
+
+                  <span
+                    className="
+                      font-[var(--font-avenir)]
+                      text-xs
+                      text-gray-500
+                      group-hover:text-[#071321]/50
+                      mb-2
+                    "
+                  >
+                    / image
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* INTERIOR */}
+
+            <div
+              className="
+                group
+                min-h-[330px]
+                border
+                border-white/10
+                rounded-2xl
+                p-7
+                md:p-8
+                bg-white/[0.015]
+                flex
+                flex-col
+                transition-all
+                duration-500
+                hover:-translate-y-2
+                hover:bg-white
+                hover:text-[#071321]
+                hover:border-t-[#D4A85A]
+              "
+            >
+              <div
+                className="
+                  font-[var(--font-avenir)]
+                  uppercase
+                  tracking-[3px]
+                  text-[9px]
+                  text-[#D4A85A]
+                  mb-8
+                "
+              >
+                Still Render
+              </div>
+
+              <h3
+                className="
+                  font-heading
+                  text-2xl
+                  md:text-3xl
+                  font-light
+                  mb-4
+                "
+              >
+                Interior
+                <br />
+                Visualization
+              </h3>
+
+              <p
+                className="
+                  font-[var(--font-avenir)]
+                  text-sm
+                  text-gray-400
+                  group-hover:text-[#071321]/65
+                  leading-relaxed
+                  mb-8
+                "
+              >
+                High-detail interior render developed with materials,
+                furniture, lighting and atmosphere.
+              </p>
+
+              <div className="mt-auto">
+
+                <p
+                  className="
+                    font-[var(--font-avenir)]
+                    uppercase
+                    tracking-[2px]
+                    text-[9px]
+                    text-gray-500
+                    group-hover:text-[#071321]/50
+                    mb-2
+                  "
+                >
+                  From
+                </p>
+
+                <div className="flex items-end gap-2">
+
+                  <span
+                    className="
+                      font-heading
+                      text-4xl
+                      md:text-5xl
+                      font-light
+                      text-[#D4A85A]
+                    "
+                  >
+                    KSh 3,000
+                  </span>
+
+                  <span
+                    className="
+                      font-[var(--font-avenir)]
+                      text-xs
+                      text-gray-500
+                      group-hover:text-[#071321]/50
+                      mb-2
+                    "
+                  >
+                    / image
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* ANIMATION */}
+
+            <div
+              className="
+                group
+                min-h-[330px]
+                border
+                border-white/10
+                rounded-2xl
+                p-7
+                md:p-8
+                bg-white/[0.015]
+                flex
+                flex-col
+                transition-all
+                duration-500
+                hover:-translate-y-2
+                hover:bg-white
+                hover:text-[#071321]
+                hover:border-t-[#D4A85A]
+              "
+            >
+              <div
+                className="
+                  font-[var(--font-avenir)]
+                  uppercase
+                  tracking-[3px]
+                  text-[9px]
+                  text-[#D4A85A]
+                  mb-8
+                "
+              >
+                Motion
+              </div>
+
+              <h3
+                className="
+                  font-heading
+                  text-2xl
+                  md:text-3xl
+                  font-light
+                  mb-4
+                "
+              >
+                Architectural
+                <br />
+                Animation
+              </h3>
+
+              <p
+                className="
+                  font-[var(--font-avenir)]
+                  text-sm
+                  text-gray-400
+                  group-hover:text-[#071321]/65
+                  leading-relaxed
+                  mb-8
+                "
+              >
+                Cinematic architectural walkthrough animation prepared
+                for presentations, marketing and project launches.
+              </p>
+
+              <div className="mt-auto">
+
+                <p
+                  className="
+                    font-[var(--font-avenir)]
+                    uppercase
+                    tracking-[2px]
+                    text-[9px]
+                    text-gray-500
+                    group-hover:text-[#071321]/50
+                    mb-2
+                  "
+                >
+                  From
+                </p>
+
+                <div className="flex items-end gap-2">
+
+                  <span
+                    className="
+                      font-heading
+                      text-4xl
+                      md:text-5xl
+                      font-light
+                      text-[#D4A85A]
+                    "
+                  >
+                    KSh 50,000
+                  </span>
+
+                  <span
+                    className="
+                      font-[var(--font-avenir)]
+                      text-xs
+                      text-gray-500
+                      group-hover:text-[#071321]/50
+                      mb-2
+                    "
+                  >
+                    / min
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* 3D MODELLING */}
+
+            <div
+              className="
+                group
+                min-h-[330px]
+                border
+                border-white/10
+                rounded-2xl
+                p-7
+                md:p-8
+                bg-white/[0.015]
+                flex
+                flex-col
+                transition-all
+                duration-500
+                hover:-translate-y-2
+                hover:bg-white
+                hover:text-[#071321]
+                hover:border-t-[#D4A85A]
+              "
+            >
+              <div
+                className="
+                  font-[var(--font-avenir)]
+                  uppercase
+                  tracking-[3px]
+                  text-[9px]
+                  text-[#D4A85A]
+                  mb-8
+                "
+              >
+                Project Setup
+              </div>
+
+              <h3
+                className="
+                  font-heading
+                  text-2xl
+                  md:text-3xl
+                  font-light
+                  mb-4
+                "
+              >
+                3D
+                <br />
+                Modelling
+              </h3>
+
+              <p
+                className="
+                  font-[var(--font-avenir)]
+                  text-sm
+                  text-gray-400
+                  group-hover:text-[#071321]/65
+                  leading-relaxed
+                  mb-8
+                "
+              >
+                Required where a suitable architectural or interior
+                3D model is not supplied with the project.
+              </p>
+
+              <div className="mt-auto">
+
+                <p
+                  className="
+                    font-[var(--font-avenir)]
+                    uppercase
+                    tracking-[2px]
+                    text-[9px]
+                    text-gray-500
+                    group-hover:text-[#071321]/50
+                    mb-2
+                  "
+                >
+                  Pricing
+                </p>
+
+                <span
+                  className="
+                    font-heading
+                    text-4xl
+                    md:text-5xl
+                    font-light
+                    text-[#D4A85A]
+                  "
+                >
+                  Custom Quote
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* PRICING NOTES + CTA */}
+
+          <div
+            className="
+              mt-8
+              md:mt-10
+              border
+              border-white/10
+              rounded-2xl
+              px-6
+              py-6
+              md:px-8
+              md:py-7
+              flex
+              flex-col
+              lg:flex-row
+              lg:items-center
+              lg:justify-between
+              gap-6
+            "
+          >
+
+            <div className="max-w-3xl">
+
+              <p
+                className="
+                  font-[var(--font-avenir)]
+                  text-xs
+                  md:text-sm
+                  text-gray-400
+                  leading-relaxed
+                "
+              >
+                Still render pricing applies to final 4K images.
+                3D modelling is quoted separately where a usable
+                model is not supplied. Final fees may vary depending
+                on project scope, complexity and required deliverables.
+              </p>
+
+            </div>
+
+            <Link
+              href="/consultation"
+              className="
+                inline-flex
+                items-center
+                justify-center
+                shrink-0
+                px-7
+                py-4
+                rounded-full
+                bg-[#D4A85A]
+                text-black
+                font-[var(--font-avenir)]
+                text-sm
+                font-medium
+                transition-all
+                duration-300
+                hover:bg-white
+                hover:scale-[1.02]
+              "
+            >
+              Request A Quote
+              <span className="ml-3">→</span>
+            </Link>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =================================================
           WHAT WE NEED + FINAL CTA
       ================================================= */}
 
