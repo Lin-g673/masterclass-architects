@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Architecture Student Support & Software Training | Apiyo Design Studio",
   description:
-    "Explore architecture student support, design guidance and architectural software training at Apiyo Design Studio, including Archicad, AutoCAD and SketchUp.",
+  "Architecture student support and practical ArchiCAD, AutoCAD, SketchUp and Lumion training in Kenya. Get guidance with design, 3D modelling, rendering and architectural presentations.",
 };
 
 export default function StudentsLayout({

@@ -36,9 +36,9 @@ const studentServices = [
   },
 
   {
-    title: "3D & Rendering Assistance",
+    title: "3D, Rendering & Software Training",
     description:
-      "Guidance with 3D modelling, architectural visualisation and rendering to help you communicate your design clearly.",
+  "Practical training in ArchiCAD, AutoCAD, SketchUp and Lumion, alongside guidance with 3D modelling, architectural visualisation and rendering.",
     icon: ImageIcon,
   },
 
@@ -300,9 +300,9 @@ export default function StudentsPage() {
                   mb-10
                 "
               >
-                Professional support for architecture and design
-                students developing models, drawings, visualisations
-                and presentation material for academic projects.
+                Practical architectural design guidance for students,
+including concept development, CAD drawings, 3D modelling,
+rendering, thesis presentations and model-making support.
               </p>
 
 

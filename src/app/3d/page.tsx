@@ -413,6 +413,7 @@ export default function VisualizationPage() {
         {/* VIDEO */}
 
         <video
+        aria-label="Architectural 3D visualization and rendering showcase by Apiyo Design Studio"
   autoPlay
   muted
   loop
@@ -565,10 +566,11 @@ export default function VisualizationPage() {
                 max-w-2xl
               "
             >
-              We create photorealistic 3D
-              visualisations that bring architectural
-              and interior design concepts to life
-              before they are built.
+              We create photorealistic architectural 3D
+renderings, interior visualisations and
+cinematic walkthrough animations for
+homes, commercial spaces and developments
+in Kenya and beyond.
             </p>
 
             <Link
@@ -1545,7 +1547,7 @@ lg:py-14
     >
       <img
         src={renderImages[0]}
-        alt="3D visualisation 1"
+        alt="Photorealistic dusk rendering of a modern high-rise tower"
         draggable={false}
         className="
           absolute
@@ -1581,7 +1583,7 @@ lg:py-14
     >
       <img
         src={renderImages[6]}
-        alt="3D visualisation 7"
+        alt="Aerial nighttime rendering of a high-rise building in an urban neighbourhood"
         draggable={false}
         className="
           absolute
@@ -1634,7 +1636,7 @@ lg:py-14
     >
       <img
         src={renderImages[7]}
-        alt="3D visualisation 8"
+        alt="Interior 3D rendering of a luxury automotive showroom"
         draggable={false}
         className="
           absolute
@@ -1670,7 +1672,7 @@ lg:py-14
     >
       <img
         src={renderImages[1]}
-        alt="3D visualisation 2"
+        alt="Exterior 3D rendering of a contemporary apartment development at sunset"
         draggable={false}
         className="
           absolute
@@ -1723,7 +1725,7 @@ lg:py-14
     >
       <img
         src={renderImages[2]}
-        alt="3D visualisation 3"
+        alt="Photorealistic interior rendering of a contemporary living room"
         draggable={false}
         className="
           absolute
@@ -1759,7 +1761,7 @@ lg:py-14
     >
       <img
         src={renderImages[8]}
-        alt="3D visualisation 9"
+        alt="Interior rendering of a contemporary bathroom with an illuminated mirror"
         draggable={false}
         className="
           absolute
@@ -1812,7 +1814,7 @@ lg:py-14
     >
       <img
         src={renderImages[9]}
-        alt="3D visualisation 10"
+        alt="Exterior 3D rendering of a modern pitched-roof family home at sunset"
         draggable={false}
         className="
           absolute
@@ -1848,7 +1850,7 @@ lg:py-14
     >
       <img
         src={renderImages[3]}
-        alt="3D visualisation 4"
+        alt="Exterior architectural rendering of a modern two-storey maisonette"
         draggable={false}
         className="
           absolute
@@ -1900,7 +1902,7 @@ lg:py-14
     >
       <img
         src={renderImages[4]}
-        alt="3D visualisation 5"
+        alt="Interior 3D rendering of a modern white kitchen"
         draggable={false}
         className="
           absolute
@@ -1936,7 +1938,7 @@ lg:py-14
     >
       <img
         src={renderImages[5]}
-        alt="3D visualisation 6"
+        alt="Photorealistic interior rendering of a contemporary supermarket"
         draggable={false}
         className="
           absolute
