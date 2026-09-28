@@ -1,6 +1,6 @@
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import {
@@ -10,7 +10,11 @@ import {
   CalendarDays,
 } from "lucide-react";
 
-
+export const metadata: Metadata = {
+  title: "Architecture & Interior Design Projects | Apiyo Design Studio",
+  description:
+    "Explore Apiyo Design Studio's portfolio of residential, commercial and religious architecture, including maisonettes, bungalows and residential developments in Kenya and beyond.",
+};
 /* =====================================================
    PROJECT DATA
 ===================================================== */
