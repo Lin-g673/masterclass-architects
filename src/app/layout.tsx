@@ -41,11 +41,10 @@ const avenir = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Apiyo Design Studio",
+  title: "Apiyo Design Studio | Architecture & Interior Design in Kenya",
   description:
-    "Architecture • Interior Design • 3D Visualization • Construction",
+    "Apiyo Design Studio provides architectural design, house plans, interior design, 3D visualization and renovation services in Nairobi and across Kenya.",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
