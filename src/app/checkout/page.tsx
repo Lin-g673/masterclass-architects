@@ -724,7 +724,7 @@ const handlePayment = async () => {
                   "
                 >
                   KES{" "}
-                  {plan.price.toLocaleString()}
+{Math.round(plan.priceUSD * 130).toLocaleString()}
                 </span>
 
               </div>

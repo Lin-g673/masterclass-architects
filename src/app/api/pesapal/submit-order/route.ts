@@ -72,7 +72,7 @@ export async function POST(request: Request) {
     const orderAmount =
       baseUrl.includes("cybqa.pesapal.com")
         ? 1
-        : Number(plan.price);
+        : Math.round(Number(plan.priceUSD) * 130);
 
     /*
       First save the order in Supabase.

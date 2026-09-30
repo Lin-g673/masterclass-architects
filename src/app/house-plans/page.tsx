@@ -860,58 +860,88 @@ export default function HousePlansPage() {
                     {plan.shortDescription}
                   </p>
 
+{/* SPECS */}
 
-                  {/* SPECS */}
+<div
+  className="
+    flex
+    flex-wrap
+    gap-x-5
+    gap-y-3
+    border-y
+    border-white/10
+    py-4
+    mb-6
+  "
+>
 
-                  <div
-                    className="
-                      flex
-                      flex-wrap
-                      gap-x-5
-                      gap-y-3
-                      border-y
-                      border-white/10
-                      py-4
-                      mb-6
-                    "
-                  >
+  {plan.category === "Apartment" ? (
+    <>
+      <div className="flex items-center gap-2">
+        <BedDouble
+          size={15}
+          className="text-[#D4A85A]"
+        />
+        <span className="text-xs text-gray-300">
+          {plan.oneBedroomUnits} × 1 Bedroom
+        </span>
+      </div>
 
-                    <div className="flex items-center gap-2">
-                      <BedDouble
-                        size={15}
-                        className="text-[#D4A85A]"
-                      />
-                      <span className="text-xs text-gray-300">
-                        {plan.bedrooms} Beds
-                      </span>
-                    </div>
+      <div className="flex items-center gap-2">
+        <BedDouble
+          size={15}
+          className="text-[#D4A85A]"
+        />
+        <span className="text-xs text-gray-300">
+          {plan.bedsitters} Bedsitters
+        </span>
+      </div>
 
+      <div className="flex items-center gap-2">
+        <Ruler
+          size={15}
+          className="text-[#D4A85A]"
+        />
+        <span className="text-xs text-gray-300">
+          {plan.area} m²
+        </span>
+      </div>
+    </>
+  ) : (
+    <>
+      <div className="flex items-center gap-2">
+        <BedDouble
+          size={15}
+          className="text-[#D4A85A]"
+        />
+        <span className="text-xs text-gray-300">
+          {plan.bedrooms} Beds
+        </span>
+      </div>
 
-                    <div className="flex items-center gap-2">
-                      <Bath
-                        size={15}
-                        className="text-[#D4A85A]"
-                      />
-                      <span className="text-xs text-gray-300">
-                        {plan.bathrooms} Baths
-                      </span>
-                    </div>
+      <div className="flex items-center gap-2">
+        <Bath
+          size={15}
+          className="text-[#D4A85A]"
+        />
+        <span className="text-xs text-gray-300">
+          {plan.bathrooms} Baths
+        </span>
+      </div>
 
+      <div className="flex items-center gap-2">
+        <Ruler
+          size={15}
+          className="text-[#D4A85A]"
+        />
+        <span className="text-xs text-gray-300">
+          {plan.area} m²
+        </span>
+      </div>
+    </>
+  )}
 
-                    <div className="flex items-center gap-2">
-                      <Ruler
-                        size={15}
-                        className="text-[#D4A85A]"
-                      />
-                      <span className="text-xs text-gray-300">
-                        {plan.area} m²
-                      </span>
-                    </div>
-
-                  </div>
-
-
-
+</div>
                   {/* PRICE */}
 
                   <div
@@ -938,16 +968,29 @@ export default function HousePlansPage() {
                         PDF Plan
                       </p>
 
-                      <p
-                        className="
-                          font-heading
-                          text-2xl
-                          text-[#D4A85A]
-                        "
-                      >
-                        KES{" "}
-                        {plan.price.toLocaleString()}
-                      </p>
+                      <div>
+  <p
+    className="
+      font-heading
+      text-2xl
+      text-[#D4A85A]
+    "
+  >
+    USD ${plan.priceUSD.toLocaleString()}
+  </p>
+
+  <p
+    className="
+      mt-1
+      font-[var(--font-avenir)]
+      text-[10px]
+      text-gray-500
+    "
+  >
+    Approx. KES{" "}
+    {Math.round(plan.priceUSD * 130).toLocaleString()}
+  </p>
+</div>
 
                     </div>
 

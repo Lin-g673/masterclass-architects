@@ -15,7 +15,12 @@ export type HousePlan = {
   length: number;
   width: number;
 
-  price: number;
+  priceUSD: number;
+
+  // Apartment-specific information
+  oneBedroomUnits?: number;
+  bedsitters?: number;
+  shops?: number;
 
   description: string;
   shortDescription: string;
@@ -46,17 +51,18 @@ export const housePlans: HousePlan[] = [
       "/houseplans/bungalow1a.png",
       "/houseplans/bungalow1b.png",
       "/houseplans/bungalow1c.png",
+      "/houseplans/plan1.png",
     ],
 
     bedrooms: 3,
-    bathrooms: 3,
+    bathrooms: 2,
     floors: 1,
 
-    area: 165,
-    length: 14.5,
-    width: 12.8,
+    area: 130,
+    length: 13,
+    width: 10,
 
-    price: 35000,
+    priceUSD: 130,
 
     shortDescription:
       "A refined three-bedroom family bungalow designed for comfortable contemporary living.",
@@ -87,7 +93,7 @@ export const housePlans: HousePlan[] = [
       "Window Schedule",
       "Floor Finishes",
       "Furniture Layout",
-      "Selected Construction Details",
+      "Septic Details",
       "3D Exterior Views",
     ],
   },
@@ -108,18 +114,18 @@ export const housePlans: HousePlan[] = [
     gallery: [
       "/houseplans/bungalow2a.png",
       "/houseplans/bungalow2b.png",
-      "/houseplans/bungalow2c.png",
+      "/houseplans/plan2.png",
     ],
 
     bedrooms: 4,
-    bathrooms: 3,
+    bathrooms: 5,
     floors: 1,
 
-    area: 210,
-    length: 16.2,
-    width: 14.1,
+    area: 208,
+    length: 16,
+    width: 12,
 
-    price: 45000,
+    priceUSD: 208,
 
     shortDescription:
       "A spacious contemporary bungalow balancing family privacy with generous shared spaces.",
@@ -150,7 +156,7 @@ export const housePlans: HousePlan[] = [
       "Window Schedule",
       "Floor Finishes",
       "Furniture Layout",
-      "Selected Construction Details",
+      "Septic Details",
       "3D Exterior Views",
     ],
   },
@@ -172,17 +178,18 @@ export const housePlans: HousePlan[] = [
       "/houseplans/bungalow3a.jpeg",
       "/houseplans/bungalow3b.jpeg",
       "/houseplans/bungalow3c.jpeg",
+      "/houseplans/plan3.png",
     ],
 
     bedrooms: 3,
     bathrooms: 2,
     floors: 1,
 
-    area: 135,
-    length: 13.2,
-    width: 11.4,
+    area: 176.88,
+    length: 13.8,
+    width: 12.6,
 
-    price: 30000,
+    priceUSD: 176.88,
 
     shortDescription:
       "An efficient three-bedroom home designed to make excellent use of a compact footprint.",
@@ -196,7 +203,7 @@ export const housePlans: HousePlan[] = [
     features: [
       "Efficient footprint",
       "Three bedrooms",
-      "Open living and dining",
+      "Spacious living and dining",
       "Practical kitchen",
       "Clear circulation",
       "Simple construction geometry",
@@ -213,7 +220,7 @@ export const housePlans: HousePlan[] = [
       "Window Schedule",
       "Floor Finishes",
       "Furniture Layout",
-      "Selected Construction Details",
+      "Septic Details",
       "3D Exterior Views",
     ],
   },
@@ -224,9 +231,9 @@ export const housePlans: HousePlan[] = [
   ===================================================== */
 
   {
-    slug: "luxury-4-bedroom-bungalow",
+    slug: "luxury-3-bedroom-bungalow",
     code: "ADS-B04",
-    title: "Luxury 4 Bedroom Bungalow",
+    title: "Luxury 3 Bedroom Bungalow",
     category: "Bungalow",
 
     image: "/houseplans/bungalow4a.png",
@@ -235,20 +242,21 @@ export const housePlans: HousePlan[] = [
       "/houseplans/bungalow4a.png",
       "/houseplans/bungalow4b.png",
       "/houseplans/bungalow4c.png",
+      "/houseplans/plan4.png",
     ],
 
-    bedrooms: 4,
+    bedrooms: 3,
     bathrooms: 4,
     floors: 1,
 
-    area: 260,
-    length: 18,
-    width: 15.2,
+    area: 225,
+    length: 15,
+    width: 15,
 
-    price: 55000,
+    priceUSD: 225,
 
     shortDescription:
-      "A premium four-bedroom bungalow designed around generous family living and refined proportions.",
+      "A premium three-bedroom bungalow designed around generous family living and refined proportions.",
 
     description:
       "A generous contemporary bungalow combining privacy, large shared spaces and a refined architectural expression suitable for a premium family residence.",
@@ -257,7 +265,7 @@ export const housePlans: HousePlan[] = [
       "Clients seeking spacious single-level luxury living.",
 
     features: [
-      "Four generous bedrooms",
+      "Three generous bedrooms",
       "Large living and dining areas",
       "Premium master suite",
       "Spacious kitchen",
@@ -276,7 +284,7 @@ export const housePlans: HousePlan[] = [
       "Window Schedule",
       "Floor Finishes",
       "Furniture Layout",
-      "Selected Construction Details",
+      "Septic Details",
       "3D Exterior Views",
     ],
   },
@@ -304,28 +312,28 @@ export const housePlans: HousePlan[] = [
     bathrooms: 2,
     floors: 1,
 
-    area: 105,
-    length: 11.5,
-    width: 10.2,
+    area: 172.8,
+    length: 14.4,
+    width: 12,
 
-    price: 25000,
+    priceUSD: 172.8,
 
     shortDescription:
-      "A compact two-bedroom home suited to young families, retirement living or rental investment.",
+      "A comfortable two-bedroom home designed around efficient planning and generous everyday living.",
 
     description:
-      "A compact and efficient two-bedroom bungalow designed for comfortable everyday living without unnecessary floor area.",
+      "A practical two-bedroom bungalow designed to provide comfortable living spaces, efficient circulation and a contemporary residential character.",
 
     idealFor:
-      "Small families, retirement homes and rental development.",
+      "Small families, couples, retirement living and homeowners seeking a spacious two-bedroom residence.",
 
     features: [
+      "Efficient footprint",
       "Two bedrooms",
-      "Compact footprint",
-      "Open living spaces",
-      "Efficient kitchen",
-      "Natural lighting",
-      "Straightforward construction",
+      "Spacious living and dining",
+      "Practical kitchen",
+      "Clear circulation",
+      "Contemporary façade",
     ],
 
     includedDrawings: [
@@ -339,7 +347,7 @@ export const housePlans: HousePlan[] = [
       "Window Schedule",
       "Floor Finishes",
       "Furniture Layout",
-      "Selected Construction Details",
+      "Septic Details",
       "3D Exterior Views",
     ],
   },
@@ -361,34 +369,35 @@ export const housePlans: HousePlan[] = [
       "/houseplans/bungalow6a.jpeg",
       "/houseplans/bungalow6b.jpeg",
       "/houseplans/bungalow6c.jpeg",
+      "/houseplans/plan6.png",
     ],
 
-    bedrooms: 4,
-    bathrooms: 4,
+    bedrooms: 3,
+    bathrooms: 2,
     floors: 1,
 
-    area: 245,
-    length: 17.5,
-    width: 15,
+    area: 145.2,
+    length: 13.2,
+    width: 11,
 
-    price: 55000,
+    priceUSD: 145.2,
 
     shortDescription:
-      "A four-bedroom residence arranged around light, privacy and an intimate courtyard experience.",
+      "A contemporary three-bedroom family bungalow combining efficient planning with comfortable everyday living.",
 
     description:
-      "A contemporary bungalow where landscape and architecture work together to create a private and naturally lit family environment.",
+      "A thoughtfully planned three-bedroom bungalow that balances family living, practical circulation, natural lighting and a contemporary architectural character.",
 
     idealFor:
-      "Families seeking a private, landscape-focused residence.",
+      "Families seeking an efficient contemporary single-level home.",
 
     features: [
-      "Central courtyard",
-      "Four bedrooms",
-      "Strong natural ventilation",
-      "Private family spaces",
-      "Landscape integration",
-      "Generous indoor-outdoor living",
+      "Efficient footprint",
+      "Three bedrooms",
+      "Spacious living and dining",
+      "Practical kitchen",
+      "Clear circulation",
+      "Contemporary façade",
     ],
 
     includedDrawings: [
@@ -402,14 +411,14 @@ export const housePlans: HousePlan[] = [
       "Window Schedule",
       "Floor Finishes",
       "Furniture Layout",
-      "Selected Construction Details",
+      "Septic Details",
       "3D Exterior Views",
     ],
   },
 
 
   /* =====================================================
-     MAISONETTES
+     MAISONETTE 01
   ===================================================== */
 
   {
@@ -418,22 +427,25 @@ export const housePlans: HousePlan[] = [
     title: "Modern 4 Bedroom Maisonette",
     category: "Maisonette",
 
-    image:
-      "/house-plans/maisonettes/maisonette-01/hero.png",
+    image: "/houseplans/maisonette3a.png",
 
     gallery: [
-      "/house-plans/maisonettes/maisonette-01/hero.png",
+      "/houseplans/maisonette3a.png",
+      "/houseplans/maisonette3b.png",
+      "/houseplans/maisonette3c.png",
+      "/houseplans/maisonetteplan1a.png",
+      "/houseplans/maisonetteplan1b.png",
     ],
 
     bedrooms: 4,
-    bathrooms: 4,
+    bathrooms: 5,
     floors: 2,
 
-    area: 250,
+    area: 364,
     length: 13.4,
-    width: 11.8,
+    width: 10.8,
 
-    price: 60000,
+    priceUSD: 364,
 
     shortDescription:
       "A contemporary two-storey family residence combining efficiency, privacy and strong architectural character.",
@@ -454,6 +466,7 @@ export const housePlans: HousePlan[] = [
     ],
 
     includedDrawings: [
+      "Site Plan",
       "Ground Floor Plan",
       "First Floor Plan",
       "Roof Plan",
@@ -462,39 +475,44 @@ export const housePlans: HousePlan[] = [
       "Door Schedule",
       "Window Schedule",
       "Floor Finishes",
-      "Furniture Layout",
-      "Selected Construction Details",
-      "Stair Details",
+      "Septic Tank Details",
       "3D Exterior Views",
     ],
   },
 
 
+  /* =====================================================
+     MAISONETTE 02
+  ===================================================== */
+
   {
-    slug: "contemporary-5-bedroom-maisonette",
+    slug: "contemporary-4-bedroom-maisonette",
     code: "ADS-M02",
-    title: "Contemporary 5 Bedroom Maisonette",
+    title: "Contemporary 4 Bedroom Maisonette",
     category: "Maisonette",
 
-    image:
-      "/house-plans/maisonettes/maisonette-02/hero.png",
+    image: "/houseplans/maisonette2a.png",
 
     gallery: [
-      "/house-plans/maisonettes/maisonette-02/hero.png",
+      "/houseplans/maisonette4a.png",
+      "/houseplans/maisonette4b.png",
+      "/houseplans/maisonette4c.png",
+      "/houseplans/maisonetteplan2a.png",
+      "/houseplans/maisonetteplan2b.png",
     ],
 
-    bedrooms: 5,
+    bedrooms: 4,
     bathrooms: 5,
     floors: 2,
 
-    area: 330,
+    area: 430,
     length: 15,
-    width: 13.5,
+    width: 10.5,
 
-    price: 75000,
+    priceUSD: 430,
 
     shortDescription:
-      "A spacious five-bedroom maisonette created for premium contemporary family living.",
+      "A spacious four-bedroom maisonette created for premium contemporary family living.",
 
     description:
       "A generous two-storey residence combining large entertaining spaces, private bedroom suites and a modern architectural language.",
@@ -503,7 +521,7 @@ export const housePlans: HousePlan[] = [
       "Larger families and premium residential developments.",
 
     features: [
-      "Five bedrooms",
+      "Four bedrooms",
       "Premium master suite",
       "Large family lounge",
       "Formal and informal living",
@@ -512,6 +530,7 @@ export const housePlans: HousePlan[] = [
     ],
 
     includedDrawings: [
+      "Site Plan",
       "Ground Floor Plan",
       "First Floor Plan",
       "Roof Plan",
@@ -520,36 +539,103 @@ export const housePlans: HousePlan[] = [
       "Door Schedule",
       "Window Schedule",
       "Floor Finishes",
-      "Furniture Layout",
-      "Selected Construction Details",
-      "Stair Details",
+      "Septic Tank Details",
       "3D Exterior Views",
     ],
   },
 
 
+  /* =====================================================
+     MAISONETTE 03
+  ===================================================== */
+
   {
-    slug: "compact-4-bedroom-maisonette",
+    slug: "signature-4-bedroom-maisonette",
     code: "ADS-M03",
-    title: "Compact 4 Bedroom Maisonette",
+    title: "Signature 4 Bedroom Maisonette",
     category: "Maisonette",
 
-    image:
-      "/house-plans/maisonettes/maisonette-03/hero.png",
+    image: "/houseplans/maisonette6a.png",
 
     gallery: [
-      "/house-plans/maisonettes/maisonette-03/hero.png",
+      "/houseplans/maisonette6a.png",
+      "/houseplans/maisonette6b.png",
+      "/houseplans/maisonetteplan3a.png",
+      "/houseplans/maisonetteplan3b.png",
     ],
 
     bedrooms: 4,
-    bathrooms: 3,
+    bathrooms: 5,
     floors: 2,
 
-    area: 215,
-    length: 12.6,
+    area: 320,
+    length: 14,
+    width: 12.5,
+
+    priceUSD: 320,
+
+    shortDescription:
+      "A spacious four-bedroom maisonette created for contemporary family living.",
+
+    description:
+      "A generous two-storey residence combining comfortable family spaces, private bedroom suites and a strong contemporary architectural character.",
+
+    idealFor:
+      "Families seeking a spacious contemporary multi-storey residence.",
+
+    features: [
+      "Four bedrooms",
+      "Premium master suite",
+      "Large family lounge",
+      "Formal and informal living",
+      "Generous kitchen",
+      "Strong contemporary form",
+    ],
+
+    includedDrawings: [
+      "Site Plan",
+      "Ground Floor Plan",
+      "First Floor Plan",
+      "Roof Plan",
+      "Exterior Elevations",
+      "Building Sections",
+      "Door Schedule",
+      "Window Schedule",
+      "Floor Finishes",
+      "Septic Tank Details",
+      "3D Exterior Views",
+    ],
+  },
+
+
+  /* =====================================================
+     MAISONETTE 04
+  ===================================================== */
+
+  {
+    slug: "compact-4-bedroom-maisonette",
+    code: "ADS-M04",
+    title: "Compact 4 Bedroom Maisonette",
+    category: "Maisonette",
+
+    image: "/houseplans/maisonette2a.png",
+
+    gallery: [
+      "/houseplans/maisonette2a.png",
+      "/houseplans/maisonette2b.png",
+      "/houseplans/maisonetteplan4a.png",
+      "/houseplans/maisonetteplan4b.png",
+    ],
+
+    bedrooms: 4,
+    bathrooms: 2,
+    floors: 2,
+
+    area: 320,
+    length: 14.6,
     width: 10.8,
 
-    price: 50000,
+    priceUSD: 320,
 
     shortDescription:
       "A compact maisonette maximizing family accommodation on a controlled building footprint.",
@@ -570,6 +656,7 @@ export const housePlans: HousePlan[] = [
     ],
 
     includedDrawings: [
+      "Site Plan",
       "Ground Floor Plan",
       "First Floor Plan",
       "Roof Plan",
@@ -578,36 +665,41 @@ export const housePlans: HousePlan[] = [
       "Door Schedule",
       "Window Schedule",
       "Floor Finishes",
-      "Furniture Layout",
-      "Selected Construction Details",
-      "Stair Details",
+      "Septic Tank Details",
       "3D Exterior Views",
     ],
   },
 
 
+  /* =====================================================
+     MAISONETTE 05
+  ===================================================== */
+
   {
     slug: "luxury-5-bedroom-maisonette",
-    code: "ADS-M04",
+    code: "ADS-M05",
     title: "Luxury 5 Bedroom Maisonette",
     category: "Maisonette",
 
-    image:
-      "/house-plans/maisonettes/maisonette-04/hero.png",
+    image: "/houseplans/villa2.png",
 
     gallery: [
-      "/house-plans/maisonettes/maisonette-04/hero.png",
+      "/houseplans/villa2.png",
+      "/houseplans/villa3.png",
+      "/houseplans/villa4.png",
+      "/houseplans/pitched1a.png",
+      "/houseplans/pitched1b.png",
     ],
 
     bedrooms: 5,
-    bathrooms: 6,
-    floors: 2,
+    bathrooms: 5,
+    floors: 3,
 
-    area: 390,
-    length: 16.5,
-    width: 14.8,
+    area: 350,
+    length: 15.6,
+    width: 10.8,
 
-    price: 90000,
+    priceUSD: 350,
 
     shortDescription:
       "A refined five-bedroom home designed for generous luxury living and sophisticated entertaining.",
@@ -628,6 +720,7 @@ export const housePlans: HousePlan[] = [
     ],
 
     includedDrawings: [
+      "Site Plan",
       "Ground Floor Plan",
       "First Floor Plan",
       "Roof Plan",
@@ -636,74 +729,76 @@ export const housePlans: HousePlan[] = [
       "Door Schedule",
       "Window Schedule",
       "Floor Finishes",
-      "Furniture Layout",
-      "Selected Construction Details",
-      "Stair Details",
-      "3D Exterior Views",
-    ],
-  },
-
-
-  {
-    slug: "tropical-4-bedroom-maisonette",
-    code: "ADS-M05",
-    title: "Tropical 4 Bedroom Maisonette",
-    category: "Maisonette",
-
-    image:
-      "/house-plans/maisonettes/maisonette-05/hero.png",
-
-    gallery: [
-      "/house-plans/maisonettes/maisonette-05/hero.png",
-    ],
-
-    bedrooms: 4,
-    bathrooms: 4,
-    floors: 2,
-
-    area: 275,
-    length: 14,
-    width: 12.5,
-
-    price: 65000,
-
-    shortDescription:
-      "A climate-conscious maisonette emphasizing shade, ventilation and comfortable indoor-outdoor living.",
-
-    description:
-      "A contemporary four-bedroom maisonette developed around climate-responsive ideas including deep shade, controlled openings and generous outdoor transition spaces.",
-
-    idealFor:
-      "Warm-climate residential locations and families who value indoor-outdoor living.",
-
-    features: [
-      "Four bedrooms",
-      "Climate-conscious façade",
-      "Generous shading",
-      "Cross ventilation",
-      "Covered terraces",
-      "Landscape connection",
-    ],
-
-    includedDrawings: [
-      "Ground Floor Plan",
-      "First Floor Plan",
-      "Roof Plan",
-      "Exterior Elevations",
-      "Building Sections",
-      "Door Schedule",
-      "Window Schedule",
-      "Floor Finishes",
-      "Furniture Layout",
-      "Selected Construction Details",
-      "Stair Details",
+      "Septic Tank Details",
       "3D Exterior Views",
     ],
   },
 
 
   /* =====================================================
-     APARTMENT
+     MAISONETTE 06
+  ===================================================== */
+
+  {
+    slug: "modern-family-4-bedroom-maisonette",
+    code: "ADS-M06",
+    title: "Modern 4 Bedroom Maisonette",
+    category: "Maisonette",
+
+    image: "/houseplans/maisonette5a.png",
+
+    gallery: [
+      "/houseplans/maisonette5a.png",
+      "/houseplans/maisonette5b.png",
+      "/houseplans/maisonette5c.png",
+    ],
+
+    bedrooms: 4,
+    bathrooms: 2,
+    floors: 2,
+
+    area: 320,
+    length: 14.6,
+    width: 10.8,
+
+    priceUSD: 320,
+
+    shortDescription:
+      "A contemporary two-storey family residence combining efficiency, privacy and strong architectural character.",
+
+    description:
+      "A well-balanced four-bedroom maisonette designed around contemporary family life with clearly separated social and private levels.",
+
+    idealFor:
+      "Growing families seeking a modern multi-storey residence.",
+
+    features: [
+      "Four bedrooms",
+      "Two-storey arrangement",
+      "Generous master suite",
+      "Open social spaces",
+      "Balcony spaces",
+      "Contemporary façade",
+    ],
+
+    includedDrawings: [
+      "Site Plan",
+      "Ground Floor Plan",
+      "First Floor Plan",
+      "Roof Plan",
+      "Exterior Elevations",
+      "Building Sections",
+      "Door Schedule",
+      "Window Schedule",
+      "Floor Finishes",
+      "Septic Tank Details",
+      "3D Exterior Views",
+    ],
+  },
+
+
+  /* =====================================================
+     APARTMENT 01
   ===================================================== */
 
   {
@@ -712,53 +807,60 @@ export const housePlans: HousePlan[] = [
     title: "Contemporary Apartment Block",
     category: "Apartment",
 
-    image:
-      "/house-plans/apartments/apartment-01/hero.png",
+    image: "/houseplans/apartment1a.png",
 
     gallery: [
-      "/house-plans/apartments/apartment-01/hero.png",
+      "/houseplans/apartment1a.png",
+      "/houseplans/apartment1b.png",
+      "/houseplans/apartment1c.png",
     ],
 
-    bedrooms: 2,
-    bathrooms: 2,
+    // These are used by the existing house-plan interface.
+    // We will customise the apartment display separately.
+    bedrooms: 1,
+    bathrooms: 1,
     floors: 4,
 
-    area: 720,
-    length: 20,
-    width: 14,
+    oneBedroomUnits: 9,
+    bedsitters: 39,
+    shops: 4,
 
-    price: 120000,
+    area: 850,
+    length: 25,
+    width: 15,
+
+    priceUSD: 850,
 
     shortDescription:
-      "A contemporary multi-unit residential concept designed around efficient circulation and rental value.",
+      "A contemporary mixed residential apartment development designed around efficient land use, rental value and practical circulation.",
 
     description:
-      "A modern apartment development concept balancing efficient land use, functional residential units, shared circulation and contemporary architectural character.",
+      "A modern apartment development combining one-bedroom units, bedsitters and commercial shops within an efficient multi-storey residential scheme designed for rental-property investment.",
 
     idealFor:
-      "Residential developers and rental-property investors.",
+      "Residential developers, rental-property investors and mixed-use property developments.",
 
     features: [
-      "Multi-unit residential planning",
+      "9 one-bedroom units",
+      "39 bedsitters",
+      "4 commercial shops",
+      "Four-storey development",
       "Efficient circulation",
-      "Rental-focused layouts",
+      "Rental-focused planning",
       "Contemporary façade",
-      "Shared services strategy",
-      "Developer-oriented planning",
     ],
 
     includedDrawings: [
-      "Site Planning Concept",
-      "Typical Floor Plans",
+      "Site Plan",
+      "Ground Floor Plan",
+      "First Floor Plan",
       "Roof Plan",
       "Exterior Elevations",
       "Building Sections",
       "Door Schedule",
       "Window Schedule",
-      "Selected Construction Details",
-      "Circulation Layout",
-      "Parking Layout",
-      "Furniture Layout",
+      "Floor Finishes",
+      "Septic Tank Details",
       "3D Exterior Views",
     ],
   },

@@ -570,14 +570,25 @@ if (!response.ok) {
                 "
               >
 
-                {[
-                  [BedDouble, plan.bedrooms, "Bedrooms"],
-                  [Bath, plan.bathrooms, "Bathrooms"],
-                  [Layers3, plan.floors, "Floors"],
-                  [Ruler, plan.area, "Area (m²)"],
-                  [Ruler, plan.length, "Length (m)"],
-                  [Ruler, plan.width, "Width (m)"],
-                ].map(
+                {(
+  plan.category === "Apartment"
+  ? [
+      [BedDouble, plan.oneBedroomUnits, "1 Bedroom Units"],
+      [BedDouble, plan.bedsitters, "Bedsitters"],
+      [Layers3, plan.shops, "Shops"],
+      [Layers3, plan.floors, "Floors"],
+      [Ruler, plan.area, "Area (m²)"],
+      [Ruler, `${plan.length} × ${plan.width}`, "Footprint (m)"],
+    ]
+    : [
+        [BedDouble, plan.bedrooms, "Bedrooms"],
+        [Bath, plan.bathrooms, "Bathrooms"],
+        [Layers3, plan.floors, "Floors"],
+        [Ruler, plan.area, "Area (m²)"],
+        [Ruler, plan.length, "Length (m)"],
+        [Ruler, plan.width, "Width (m)"],
+      ]
+).map(
                   ([Icon, value, label]: any) => (
 
                     <div
@@ -741,16 +752,30 @@ if (!response.ok) {
       PDF Package
     </p>
 
-    <p
-      className="
-        font-heading
-        text-4xl
-        text-[#D4A85A]
-        font-light
-      "
-    >
-      KES {plan.price.toLocaleString()}
-    </p>
+    <div>
+  <p
+    className="
+      font-heading
+      text-4xl
+      text-[#D4A85A]
+      font-light
+    "
+  >
+    USD ${plan.priceUSD.toLocaleString()}
+  </p>
+
+  <p
+    className="
+      mt-1
+      font-[var(--font-avenir)]
+      text-xs
+      text-[#8795A5]
+    "
+  >
+    Approx. KES{" "}
+    {Math.round(plan.priceUSD * 130).toLocaleString()}
+  </p>
+</div>
   </div>
 
   {/* CHECKOUT BUTTON */}
@@ -1982,16 +2007,29 @@ font-semibold
                       {item.title}
                     </h3>
 
-                    <p
-                      className="
-                        text-[#D4A85A]
-                        font-heading
-                        text-xl
-                      "
-                    >
-                      KES{" "}
-                      {item.price.toLocaleString()}
-                    </p>
+                    <div>
+  <p
+    className="
+      text-[#D4A85A]
+      font-heading
+      text-xl
+    "
+  >
+    USD ${item.priceUSD.toLocaleString()}
+  </p>
+
+  <p
+    className="
+      mt-1
+      font-[var(--font-avenir)]
+      text-[10px]
+      text-[#8795A5]
+    "
+  >
+    Approx. KES{" "}
+    {Math.round(item.priceUSD * 130).toLocaleString()}
+  </p>
+</div>
 
                   </div>
 

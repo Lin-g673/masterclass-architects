@@ -405,10 +405,10 @@ useEffect(() => {
                   mb-9
                 "
               >
-                From private homes and apartments to commercial,
-                hospitality, religious, institutional, mixed-use
-                and large-scale developments, we transform sites,
-                ideas and ambitions into considered architecture.
+                Apiyo Design Studio provides architectural design
+services in Nairobi and across Kenya, from bespoke
+homes, maisonettes and apartments to commercial,
+hospitality, institutional and mixed-use developments.
               </p>
 
 
