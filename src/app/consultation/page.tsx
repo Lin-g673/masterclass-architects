@@ -178,7 +178,7 @@ return (
 <section className="relative min-h-screen overflow-hidden">
 
   <img
-    src="/consultation/consultationhero.png"
+    src="/consultation/consultationhero.webp"
     alt="Consultation"
     className="
     absolute

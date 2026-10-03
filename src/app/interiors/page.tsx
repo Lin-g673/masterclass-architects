@@ -25,58 +25,58 @@ import { ArrowRight } from "lucide-react";
 const commercialGallery = {
   corporate: {
     title: "Corporate Offices",
-    hero: "/interiors/commercial/corporate/corporatehero.png",
+    hero: "/interiors/commercial/corporate/corporatehero.webp",
 
     spaces: [
       {
         name: "Office Partitions",
         images: [
-          "/interiors/commercial/corporate/partition1.png",
-          "/interiors/commercial/corporate/partition2.png",
-          "/interiors/commercial/corporate/partition3.png",
-          "/interiors/commercial/corporate/partition4.png",
+          "/interiors/commercial/corporate/partition1.webp",
+          "/interiors/commercial/corporate/partition2.webp",
+          "/interiors/commercial/corporate/partition3.webp",
+          "/interiors/commercial/corporate/partition4.webp",
         ],
       },
 
       {
         name: "Private Offices",
         images: [
-          "/interiors/commercial/corporate/office1.png",
-          "/interiors/commercial/corporate/office2.png",
-          "/interiors/commercial/corporate/office3.png",
-          "/interiors/commercial/corporate/office4.png",
-          "/interiors/commercial/corporate/office5.png",
+          "/interiors/commercial/corporate/office1.webp",
+          "/interiors/commercial/corporate/office2.webp",
+          "/interiors/commercial/corporate/office3.webp",
+          "/interiors/commercial/corporate/office4.webp",
+          "/interiors/commercial/corporate/office5.webp",
         ],
       },
 
       {
         name: "Boardrooms",
         images: [
-          "/interiors/commercial/corporate/board1.png",
-          "/interiors/commercial/corporate/board2.png",
-          "/interiors/commercial/corporate/board3.png",
-          "/interiors/commercial/corporate/board4.png",
-          "/interiors/commercial/corporate/board5.png",
+          "/interiors/commercial/corporate/board1.webp",
+          "/interiors/commercial/corporate/board2.webp",
+          "/interiors/commercial/corporate/board3.webp",
+          "/interiors/commercial/corporate/board4.webp",
+          "/interiors/commercial/corporate/board5.webp",
         ],
       },
 
       {
         name: "Co-working Spaces",
         images: [
-          "/interiors/commercial/corporate/coworking1.png",
-          "/interiors/commercial/corporate/coworking2.png",
-          "/interiors/commercial/corporate/coworking3.png",
-          "/interiors/commercial/corporate/coworking4.png",
-          "/interiors/commercial/corporate/coworking5.png",
-          "/interiors/commercial/corporate/coworking6.png",
+          "/interiors/commercial/corporate/coworking1.webp",
+          "/interiors/commercial/corporate/coworking2.webp",
+          "/interiors/commercial/corporate/coworking3.webp",
+          "/interiors/commercial/corporate/coworking4.webp",
+          "/interiors/commercial/corporate/coworking5.webp",
+          "/interiors/commercial/corporate/coworking6.webp",
         ],
       },
 
       {
         name: "Reception",
         images: [
-          "/interiors/commercial/corporate/reception1.png",
-          "/interiors/commercial/corporate/reception2.png",
+          "/interiors/commercial/corporate/reception1.webp",
+          "/interiors/commercial/corporate/reception2.webp",
         ],
       },
     ],
@@ -84,68 +84,68 @@ const commercialGallery = {
 
   retail: {
     title: "Retail Spaces",
-    hero: "/interiors/commercial/retail/retailhero.png",
+    hero: "/interiors/commercial/retail/retailhero.webp",
 
     spaces: [
       {
         name: "Supermarket",
         images: [
-          "/interiors/commercial/retail/super1.png",
-          "/interiors/commercial/retail/super2.png",
-          "/interiors/commercial/retail/super3.png",
-          "/interiors/commercial/retail/super4.png",
-          "/interiors/commercial/retail/super5.png",
+          "/interiors/commercial/retail/super1.webp",
+          "/interiors/commercial/retail/super2.webp",
+          "/interiors/commercial/retail/super3.webp",
+          "/interiors/commercial/retail/super4.webp",
+          "/interiors/commercial/retail/super5.webp",
         ],
       },
 
       {
         name: "Electronics Store",
         images: [
-          "/interiors/commercial/retail/electronics1.png",
-          "/interiors/commercial/retail/electronics2.png",
-          "/interiors/commercial/retail/electronics3.png",
-          "/interiors/commercial/retail/electronics4.png",
+          "/interiors/commercial/retail/electronics1.webp",
+          "/interiors/commercial/retail/electronics2.webp",
+          "/interiors/commercial/retail/electronics3.webp",
+          "/interiors/commercial/retail/electronics4.webp",
         ],
       },
 
       {
         name: "Clothing Store",
         images: [
-          "/interiors/commercial/retail/clothes1.png",
-          "/interiors/commercial/retail/clothes2.png",
+          "/interiors/commercial/retail/clothes1.webp",
+          "/interiors/commercial/retail/clothes2.webp",
         ],
       },
 
       {
         name: "Shoe Store",
         images: [
-          "/interiors/commercial/retail/shoe1.png",
-          "/interiors/commercial/retail/shoe2.png",
+          "/interiors/commercial/retail/shoe1.webp",
+          "/interiors/commercial/retail/shoe2.webp",
         ],
       },
 
       {
         name: "Beauty Store",
         images: [
-          "/interiors/commercial/retail/beauty1.png",
-          "/interiors/commercial/retail/beauty2.png",
+          "/interiors/commercial/retail/beauty1.webp",
+          "/interiors/commercial/retail/beauty2.webp",
         ],
       },
 
       {
         name: "Wine & Liquor",
         images: [
-          "/interiors/commercial/retail/wine1.png",
-          "/interiors/commercial/retail/wine2.png",
+          "/interiors/commercial/retail/wine1.webp",
+          "/interiors/commercial/retail/wine2.webp",
         ],
       },
 
       {
         name: "Retail Showroom",
         images: [
-          "/interiors/commercial/retail/showroom1.png",
-          "/interiors/commercial/retail/showroom2.png",
-          "/interiors/commercial/retail/showroom3.png",
+          "/interiors/commercial/retail/showroom1.webp",
+          "/interiors/commercial/retail/showroom2.webp",
+          "/interiors/commercial/retail/showroom3.webp",
         ],
       },
     ],
@@ -153,53 +153,53 @@ const commercialGallery = {
 
   medical: {
     title: "Medical Facilities",
-    hero: "/interiors/commercial/medical/medicalhero.png",
+    hero: "/interiors/commercial/medical/medicalhero.webp",
 
     spaces: [
       {
         name: "Hospital Lobby",
         images: [
-          "/interiors/commercial/medical/hosplobby1.png",
-          "/interiors/commercial/medical/hosplobby2.png",
+          "/interiors/commercial/medical/hosplobby1.webp",
+          "/interiors/commercial/medical/hosplobby2.webp",
         ],
       },
 
       {
         name: "Waiting Area",
         images: [
-          "/interiors/commercial/medical/waiting1.png",
-          "/interiors/commercial/medical/waiting2.png",
-          "/interiors/commercial/medical/waiting3.png",
-          "/interiors/commercial/medical/waiting4.png",
-          "/interiors/commercial/medical/waiting5.png",
+          "/interiors/commercial/medical/waiting1.webp",
+          "/interiors/commercial/medical/waiting2.webp",
+          "/interiors/commercial/medical/waiting3.webp",
+          "/interiors/commercial/medical/waiting4.webp",
+          "/interiors/commercial/medical/waiting5.webp",
         ],
       },
 
       {
         name: "Consultation Rooms",
         images: [
-          "/interiors/commercial/medical/consultation1.png",
-          "/interiors/commercial/medical/consultation2.png",
+          "/interiors/commercial/medical/consultation1.webp",
+          "/interiors/commercial/medical/consultation2.webp",
         ],
       },
 
       {
         name: "Treatment Rooms",
         images: [
-          "/interiors/commercial/medical/treatment1.png",
-          "/interiors/commercial/medical/treatment2.png",
-          "/interiors/commercial/medical/treatment3.png",
-          "/interiors/commercial/medical/treatment4.png",
+          "/interiors/commercial/medical/treatment1.webp",
+          "/interiors/commercial/medical/treatment2.webp",
+          "/interiors/commercial/medical/treatment3.webp",
+          "/interiors/commercial/medical/treatment4.webp",
         ],
       },
 
       {
         name: "Pharmacy",
         images: [
-          "/interiors/commercial/medical/pharmacy1.png",
-          "/interiors/commercial/medical/pharmacy2.png",
-          "/interiors/commercial/medical/pharmacy3.png",
-          "/interiors/commercial/medical/pharmacy4.png",
+          "/interiors/commercial/medical/pharmacy 1.webp",
+          "/interiors/commercial/medical/pharmacy2.webp",
+          "/interiors/commercial/medical/pharmacy3.webp",
+          "/interiors/commercial/medical/pharmacy4.webp",
         ],
       },
     ],
@@ -207,37 +207,37 @@ const commercialGallery = {
 
   banking: {
     title: "Banking Facilities",
-    hero: "/interiors/commercial/banking/bankhero.png",
+    hero: "/interiors/commercial/banking/bankhero.webp",
 
     spaces: [
       {
         name: "Banking Hall",
         images: [
-          "/interiors/commercial/banking/bankinghall1.png",
-          "/interiors/commercial/banking/bankinghall2.png",
-          "/interiors/commercial/banking/bankinghall3.png",
+          "/interiors/commercial/banking/bankinghall1.webp",
+          "/interiors/commercial/banking/bankinghall2.webp",
+          "/interiors/commercial/banking/bankinghall3.webp",
         ],
       },
 
       {
         name: "Consultation Area",
         images: [
-          "/interiors/commercial/banking/consultation1.png",
-          "/interiors/commercial/banking/consultation2.png",
-          "/interiors/commercial/banking/consultation3.png",
-          "/interiors/commercial/banking/consultation4.png",
-          "/interiors/commercial/banking/consultation5.png",
+          "/interiors/commercial/banking/consultation1.webp",
+          "/interiors/commercial/banking/consultation2.webp",
+          "/interiors/commercial/banking/consultation3.webp",
+          "/interiors/commercial/banking/consultation4.webp",
+          "/interiors/commercial/banking/consultation5.webp",
         ],
       },
 
       {
         name: "Executive Offices",
         images: [
-          "/interiors/commercial/banking/eoffice1.png",
-          "/interiors/commercial/banking/eoffice2.png",
-          "/interiors/commercial/banking/eoffice3.png",
-          "/interiors/commercial/banking/eoffice4.png",
-          "/interiors/commercial/banking/eoffice5.png",
+          "/interiors/commercial/banking/eoffice1.webp",
+          "/interiors/commercial/banking/eoffice2.webp",
+          "/interiors/commercial/banking/eoffice3.webp",
+          "/interiors/commercial/banking/eoffice4.webp",
+          "/interiors/commercial/banking/eoffice5.webp",
         ],
       },
     ],
@@ -245,19 +245,19 @@ const commercialGallery = {
 
   mall: {
     title: "Shopping Malls",
-    hero: "/interiors/commercial/mall/mallhero.png",
+    hero: "/interiors/commercial/mall/mallhero.webp",
 
     spaces: [
       {
         name: "Mall Interior",
         images: [
-          "/interiors/commercial/mall/mall1.png",
-          "/interiors/commercial/mall/mall2.png",
-          "/interiors/commercial/mall/mall3.png",
-          "/interiors/commercial/mall/mall4.png",
-          "/interiors/commercial/mall/mall5.png",
-          "/interiors/commercial/mall/mall6.png",
-          "/interiors/commercial/mall/mall7.png",
+          "/interiors/commercial/mall/mall1.webp",
+          "/interiors/commercial/mall/mall2.webp",
+          "/interiors/commercial/mall/mall3.webp",
+          "/interiors/commercial/mall/mall4.webp",
+          "/interiors/commercial/mall/mall5.webp",
+          "/interiors/commercial/mall/mall6.webp",
+          "/interiors/commercial/mall/mall7.webp",
         ],
       },
     ],
@@ -266,52 +266,52 @@ const commercialGallery = {
 const hospitalityGallery = {
   restaurants: {
     title: "Restaurants & Cafés",
-    hero: "/interiors/hospitality/restaurant/restauranthero.png",
+    hero: "/interiors/hospitality/restaurant/restauranthero.webp",
 
     spaces: [
       {
         name: "Restaurant Dining",
         images: [
-          "/interiors/hospitality/restaurant/restaurant1.png",
-          "/interiors/hospitality/restaurant/restaurant2.png",
-          "/interiors/hospitality/restaurant/restaurant3.png",
-          "/interiors/hospitality/restaurant/restaurant4.png",
-          "/interiors/hospitality/restaurant/restaurant5.png",
-          "/interiors/hospitality/restaurant/restaurant6.png",
-          "/interiors/hospitality/restaurant/restaurant7.png",
-          "/interiors/hospitality/restaurant/restaurant8.png",
+          "/interiors/hospitality/restaurant/restaurant1.webp",
+          "/interiors/hospitality/restaurant/restaurant2.webp",
+          "/interiors/hospitality/restaurant/restaurant3.webp",
+          "/interiors/hospitality/restaurant/restaurant4.webp",
+          "/interiors/hospitality/restaurant/restaurant5.webp",
+          "/interiors/hospitality/restaurant/restaurant6.webp",
+          "/interiors/hospitality/restaurant/restaurant7.webp",
+          "/interiors/hospitality/restaurant/restaurant8.webp",
         ],
       },
 
       {
         name: "Cafe",
         images: [
-          "/interiors/hospitality/restaurant/cafe1.png",
-          "/interiors/hospitality/restaurant/cafe2.png",
-          "/interiors/hospitality/restaurant/cafe3.png",
-          "/interiors/hospitality/restaurant/cafe4.png",
-          "/interiors/hospitality/restaurant/cafe5.png",
-          "/interiors/hospitality/restaurant/cafe6.png",
+          "/interiors/hospitality/restaurant/cafe1.webp",
+          "/interiors/hospitality/restaurant/cafe2.webp",
+          "/interiors/hospitality/restaurant/cafe3.webp",
+          "/interiors/hospitality/restaurant/cafe4.webp",
+          "/interiors/hospitality/restaurant/cafe5.webp",
+          "/interiors/hospitality/restaurant/cafe6.webp",
         ],
       },
 
       {
         name: "Bar Lounge",
         images: [
-          "/interiors/hospitality/restaurant/bar1.png",
-          "/interiors/hospitality/restaurant/bar2.png",
-          "/interiors/hospitality/restaurant/bar3.png",
-          "/interiors/hospitality/restaurant/bar4.png",
-          "/interiors/hospitality/restaurant/bar5.png",
-          "/interiors/hospitality/restaurant/bar6.png",
+          "/interiors/hospitality/restaurant/bar1.webp",
+          "/interiors/hospitality/restaurant/bar2.webp",
+          "/interiors/hospitality/restaurant/bar3.webp",
+          "/interiors/hospitality/restaurant/bar4.webp",
+          "/interiors/hospitality/restaurant/bar5.webp",
+          "/interiors/hospitality/restaurant/bar6.webp",
         ],
       },
 
       {
         name: "Rooftop Dining",
         images: [
-          "/interiors/hospitality/restaurant/rooftop1.png",
-          "/interiors/hospitality/restaurant/rooftop2.png",
+          "/interiors/hospitality/restaurant/rooftop1.webp",
+          "/interiors/hospitality/restaurant/rooftop2.webp",
         ],
       },
     ],
@@ -319,55 +319,55 @@ const hospitalityGallery = {
 
   wellness: {
     title: "Beauty & Wellness",
-    hero: "/interiors/hospitality/beauty/beautyhero.png",
+    hero: "/interiors/hospitality/beauty/beautyhero.webp",
 
     spaces: [
       {
         name: "Luxury Salon",
         images: [
-          "/interiors/hospitality/beauty/salon1.png",
-          "/interiors/hospitality/beauty/salon2.png",
-          "/interiors/hospitality/beauty/salon3.png",
-          "/interiors/hospitality/beauty/salon4.png",
-          "/interiors/hospitality/beauty/salon5.png",
-          "/interiors/hospitality/beauty/salon6.png",
-          "/interiors/hospitality/beauty/salon7.png",
-          "/interiors/hospitality/beauty/salon8.png",
-          "/interiors/hospitality/beauty/salon9.png",
-          "/interiors/hospitality/beauty/salon10.png",
+          "/interiors/hospitality/beauty/salon1.webp",
+          "/interiors/hospitality/beauty/salon2.webp",
+          "/interiors/hospitality/beauty/salon3.webp",
+          "/interiors/hospitality/beauty/salon4.webp",
+          "/interiors/hospitality/beauty/salon5.webp",
+          "/interiors/hospitality/beauty/salon6.webp",
+          "/interiors/hospitality/beauty/salon7.webp",
+          "/interiors/hospitality/beauty/salon8.webp",
+          "/interiors/hospitality/beauty/salon9.webp",
+          "/interiors/hospitality/beauty/salon10.webp",
         ],
       },
 
       {
         name: "Spa",
         images: [
-          "/interiors/hospitality/beauty/spa1.png",
-          "/interiors/hospitality/beauty/spa2.png",
-          "/interiors/hospitality/beauty/spa3.png",
-          "/interiors/hospitality/beauty/spa4.png",
-          "/interiors/hospitality/beauty/spa5.png",
-          "/interiors/hospitality/beauty/spa6.png",
+          "/interiors/hospitality/beauty/spa1.webp",
+          "/interiors/hospitality/beauty/spa2.webp",
+          "/interiors/hospitality/beauty/spa3.webp",
+          "/interiors/hospitality/beauty/spa4.webp",
+          "/interiors/hospitality/beauty/spa5.webp",
+          "/interiors/hospitality/beauty/spa6.webp",
         ],
       },
 
       {
         name: "Spa Reception",
         images: [
-          "/interiors/hospitality/beauty/spareception1.png",
-          "/interiors/hospitality/beauty/spareception2.png",
-          "/interiors/hospitality/beauty/spareception3.png",
-          "/interiors/hospitality/beauty/spareception4.png",
-          "/interiors/hospitality/beauty/spareception5.png",
+          "/interiors/hospitality/beauty/spareception1.webp",
+          "/interiors/hospitality/beauty/spareception2.webp",
+          "/interiors/hospitality/beauty/spareception3.webp",
+          "/interiors/hospitality/beauty/spareception4.webp",
+          "/interiors/hospitality/beauty/spareception5.webp",
         ],
       },
 
       {
         name: "Barber Shop",
         images: [
-          "/interiors/hospitality/beauty/barber1.png",
-          "/interiors/hospitality/beauty/barber2.png",
-          "/interiors/hospitality/beauty/barber3.png",
-          "/interiors/hospitality/beauty/barber4.png",
+          "/interiors/hospitality/beauty/barber1.webp",
+          "/interiors/hospitality/beauty/barber2.webp",
+          "/interiors/hospitality/beauty/barber3.webp",
+          "/interiors/hospitality/beauty/barber4.webp",
         ],
       },
     ],
@@ -375,36 +375,36 @@ const hospitalityGallery = {
 
   fitness: {
     title: "Fitness & Wellness",
-    hero: "/interiors/hospitality/fitness/fitnesshero.png",
+    hero: "/interiors/hospitality/fitness/fitnesshero.webp",
 
     spaces: [
       {
         name: "Gym Reception",
         images: [
-          "/interiors/hospitality/fitness/gymreception1.png",
-          "/interiors/hospitality/fitness/gymreception2.png",
+          "/interiors/hospitality/fitness/gymreception1.webp",
+          "/interiors/hospitality/fitness/gymreception2.webp",
         ],
       },
 
       {
         name: "Workout Floor",
         images: [
-          "/interiors/hospitality/fitness/workoutfloor1.png",
-          "/interiors/hospitality/fitness/workoutfloor2.png",
-          "/interiors/hospitality/fitness/workoutfloor3.png",
-          "/interiors/hospitality/fitness/workoutfloor4.png",
-          "/interiors/hospitality/fitness/workoutfloor5.png",
-          "/interiors/hospitality/fitness/workoutfloor6.png",
-          "/interiors/hospitality/fitness/workoutfloor7.png",
+          "/interiors/hospitality/fitness/workoutfloor1.webp",
+          "/interiors/hospitality/fitness/workoutfloor2.webp",
+          "/interiors/hospitality/fitness/workoutfloor3.webp",
+          "/interiors/hospitality/fitness/workoutfloor4.webp",
+          "/interiors/hospitality/fitness/workoutfloor5.webp",
+          "/interiors/hospitality/fitness/workoutfloor6.webp",
+          "/interiors/hospitality/fitness/workoutfloor7.webp",
         ],
       },
 
       {
         name: "Yoga Studio",
         images: [
-          "/interiors/hospitality/fitness/yoga1.png",
-          "/interiors/hospitality/fitness/yoga2.png",
-          "/interiors/hospitality/fitness/yoga3.png",
+          "/interiors/hospitality/fitness/yoga1.webp",
+          "/interiors/hospitality/fitness/yoga2.webp",
+          "/interiors/hospitality/fitness/yoga3.webp",
         ],
       },
     ],
@@ -412,45 +412,45 @@ const hospitalityGallery = {
 
   hotels: {
     title: "Hotels & Resorts",
-    hero: "/interiors/hospitality/hotels/hotelhero.png",
+    hero: "/interiors/hospitality/hotels/hotelhero.webp",
 
     spaces: [
       {
         name: "Hotel Lobby",
         images: [
-          "/interiors/hospitality/hotels/lobby1.png",
-          "/interiors/hospitality/hotels/lobby2.png",
+          "/interiors/hospitality/hotels/lobby1.webp",
+          "/interiors/hospitality/hotels/lobby2.webp",
         ],
       },
 
       {
         name: "Executive Lounge",
         images: [
-          "/interiors/hospitality/hotels/elounge1.png",
-          "/interiors/hospitality/hotels/elounge2.png",
+          "/interiors/hospitality/hotels/elounge1.webp",
+          "/interiors/hospitality/hotels/elounge2.webp",
         ],
       },
 
       {
         name: "Luxury Suites",
         images: [
-          "/interiors/hospitality/hotels/suite1.png",
-          "/interiors/hospitality/hotels/suite2.png",
-          "/interiors/hospitality/hotels/suite3.png",
-          "/interiors/hospitality/hotels/suite4.png",
-          "/interiors/hospitality/hotels/suite5.png",
+          "/interiors/hospitality/hotels/suite1.webp",
+          "/interiors/hospitality/hotels/suite2.webp",
+          "/interiors/hospitality/hotels/suite3.webp",
+          "/interiors/hospitality/hotels/suite4.webp",
+          "/interiors/hospitality/hotels/suite5.webp",
         ],
       },
 
       {
         name: "Hotel Restaurant",
         images: [
-          "/interiors/hospitality/hotels/restaurant1.png",
-          "/interiors/hospitality/hotels/restaurant2.png",
-          "/interiors/hospitality/hotels/restaurant3.png",
-          "/interiors/hospitality/hotels/restaurant4.png",
-          "/interiors/hospitality/hotels/restaurant5.png",
-          "/interiors/hospitality/hotels/restaurant6.png",
+          "/interiors/hospitality/hotels/restaurant1.webp",
+          "/interiors/hospitality/hotels/restaurant2.webp",
+          "/interiors/hospitality/hotels/restaurant3.webp",
+          "/interiors/hospitality/hotels/restaurant4.webp",
+          "/interiors/hospitality/hotels/restaurant5.webp",
+          "/interiors/hospitality/hotels/restaurant6.webp",
         ],
       },
     ],
@@ -461,44 +461,44 @@ const fitoutCategories = [
   {
     key: "ceiling",
     label: "Ceiling",
-    hero: "/fitout/ceiling/ceilinghero.png",
+    hero: "/fitout/ceiling/ceilinghero.webp",
 
     spaces: [
       {
         name: "Gypsum",
         images: [
-          "/fitout/ceiling/gypsum1.png",
-          "/fitout/ceiling/gypsum2.png",
+          "/fitout/ceiling/gypsum1.webp",
+          "/fitout/ceiling/gypsum2.webp",
         ],
       },
       {
         name: "Coffered",
         images: [
-          "/fitout/ceiling/coffered.png",
+          "/fitout/ceiling/coffered.webp",
         ],
       },
       {
         name: "PVC",
         images: [
-          "/fitout/ceiling/pvc.png",
+          "/fitout/ceiling/pvc.webp",
         ],
       },
       {
         name: "Acoustic",
         images: [
-          "/fitout/ceiling/acoustic.png",
+          "/fitout/ceiling/acoustic.webp",
         ],
       },
       {
         name: "Exposed",
         images: [
-          "/fitout/ceiling/exposed.png",
+          "/fitout/ceiling/exposed.webp",
         ],
       },
       {
         name: "Wood",
         images: [
-          "/fitout/ceiling/wood.png",
+          "/fitout/ceiling/wood.webp",
         ],
       },
     ],
@@ -507,66 +507,66 @@ const fitoutCategories = [
   {
     key: "lighting",
     label: "Lighting",
-    hero: "/fitout/lighting/lightinghero.png",
+    hero: "/fitout/lighting/lightinghero.webp",
 
     spaces: [
       {
         name: "Linear Lighting",
         images: [
-          "/fitout/lighting/linear1.png",
-          "/fitout/lighting/linear2.png",
+          "/fitout/lighting/linear1.webp",
+          "/fitout/lighting/linear2.webp",
         ],
       },
       {
         name: "Linear Pendant",
         images: [
-          "/fitout/lighting/linearpendant1.png",
-          "/fitout/lighting/linearpendant2.png",
+          "/fitout/lighting/linearpendant1.webp",
+          "/fitout/lighting/linearpendant2.webp",
         ],
       },
       {
         name: "Magnetic",
         images: [
-          "/fitout/lighting/magnetic.png",
+          "/fitout/lighting/magnetic.webp",
         ],
       },
       {
         name: "LED",
         images: [
-          "/fitout/lighting/led1.png",
-          "/fitout/lighting/led2.png",
+          "/fitout/lighting/led1.webp",
+          "/fitout/lighting/led2.webp",
         ],
       },
       {
         name: "Pendant",
         images: [
-          "/fitout/lighting/pendant1.png",
-          "/fitout/lighting/pendant2.png",
+          "/fitout/lighting/pendant1.webp",
+          "/fitout/lighting/pendant2.webp",
         ],
       },
       {
         name: "Downlight",
         images: [
-          "/fitout/lighting/downlight.png",
+          "/fitout/lighting/downlight.webp",
         ],
       },
       {
         name: "Track",
         images: [
-          "/fitout/lighting/track.png",
+          "/fitout/lighting/track.webp",
         ],
       },
       {
         name: "Spotlight",
         images: [
-          "/fitout/lighting/spotlight.png",
+          "/fitout/lighting/spotlight.webp",
         ],
       },
       {
         name: "Wall Light",
         images: [
-          "/fitout/lighting/walllight1.png",
-          "/fitout/lighting/walllight2.png",
+          "/fitout/lighting/wallight1.webp",
+          "/fitout/lighting/walllight2.webp",
         ],
       },
     ],
@@ -575,59 +575,59 @@ const fitoutCategories = [
   {
     key: "feature-walls",
     label: "Feature Walls",
-    hero: "/fitout/featurewalls/featurehero.png",
+    hero: "/fitout/featurewalls/featurehero.webp",
 
     spaces: [
       {
         name: "TV Walls",
         images: [
-          "/fitout/featurewalls/tvwall1.png",
-          "/fitout/featurewalls/tvwall2.png",
-          "/fitout/featurewalls/tvwall3.png",
-          "/fitout/featurewalls/tvwall4.png",
-          "/fitout/featurewalls/tvwall5.png",
-          "/fitout/featurewalls/tvwall6.png",
+          "/fitout/featurewalls/tvwall1.webp",
+          "/fitout/featurewalls/tvwall2.webp",
+          "/fitout/featurewalls/tvwall3.webp",
+          "/fitout/featurewalls/tvwall4.webp",
+          "/fitout/featurewalls/tvwall5.webp",
+          "/fitout/featurewalls/tvwall6.webp",
         ],
       },
       {
         name: "Fluted",
         images: [
-          "/fitout/featurewalls/fluted.png",
+          "/fitout/featurewalls/fluted.webp",
         ],
       },
       {
         name: "Marble",
         images: [
-          "/fitout/featurewalls/marble.png",
+          "/fitout/featurewalls/marble.webp",
         ],
       },
       {
         name: "Wainscoting",
         images: [
-          "/fitout/featurewalls/wainscoting1.png",
-          "/fitout/featurewalls/wainscoting2.png",
+          "/fitout/featurewalls/wainscoting1.webp",
+          "/fitout/featurewalls/wainscoting2.webp",
         ],
       },
       {
         name: "Headboards",
         images: [
-          "/fitout/featurewalls/headboard1.png",
-          "/fitout/featurewalls/headboard2.png",
-          "/fitout/featurewalls/headboard3.png",
-          "/fitout/featurewalls/headboard4.png",
-          "/fitout/featurewalls/headboard5.png",
+          "/fitout/featurewalls/headboard1.webp",
+          "/fitout/featurewalls/headboard2.webp",
+          "/fitout/featurewalls/headboard3.webp",
+          "/fitout/featurewalls/headboard4.webp",
+          "/fitout/featurewalls/headboard5.webp",
         ],
       },
       {
         name: "Reception",
         images: [
-          "/fitout/featurewalls/reception1.png",
-          "/fitout/featurewalls/reception2.png",
-          "/fitout/featurewalls/reception3.png",
-          "/fitout/featurewalls/reception4.png",
-          "/fitout/featurewalls/reception5.png",
-          "/fitout/featurewalls/reception6.png",
-          "/fitout/featurewalls/reception7.png",
+          "/fitout/featurewalls/reception1.webp",
+          "/fitout/featurewalls/reception2.webp",
+          "/fitout/featurewalls/reception3.webp",
+          "/fitout/featurewalls/reception4.webp",
+          "/fitout/featurewalls/reception5.webp",
+          "/fitout/featurewalls/reception6.webp",
+          "/fitout/featurewalls/reception7.webp",
         ],
       },
     ],
@@ -636,43 +636,43 @@ const fitoutCategories = [
   {
     key: "paints",
     label: "Paints",
-    hero: "/fitout/paint/painthero.png",
+    hero: "/fitout/paint/painthero.webp",
 
     spaces: [
       {
         name: "Luxury Paint",
         images: [
-          "/fitout/paint/luxurypaint.png",
+          "/fitout/paint/luxurypaint.webp",
         ],
       },
       {
         name: "Decorative Paint",
         images: [
-          "/fitout/paint/decorativepaint.png",
+          "/fitout/paint/decorativepaint.webp",
         ],
       },
       {
         name: "Textured Paint",
         images: [
-          "/fitout/paint/texturedpaint.png",
+          "/fitout/paint/texturedpaint.webp",
         ],
       },
       {
         name: "Wallpaper",
         images: [
-          "/fitout/paint/wallpaper.png",
+          "/fitout/paint/wallpaper.webp",
         ],
       },
       {
         name: "Special Coating",
         images: [
-          "/fitout/paint/specialcoating.png",
+          "/fitout/paint/specialcoating.webp",
         ],
       },
       {
         name: "Accent Wall",
         images: [
-          "/fitout/paint/accentwall.png",
+          "/fitout/paint/accentwall.webp",
         ],
       },
     ],
@@ -681,44 +681,44 @@ const fitoutCategories = [
   {
     key: "flooring",
     label: "Flooring",
-    hero: "/fitout/flooring/flooringhero.png",
+    hero: "/fitout/flooring/flooringhero.webp",
 
     spaces: [
       {
         name: "Porcelain",
         images: [
-          "/fitout/flooring/porcelain1.png",
-          "/fitout/flooring/porcelain2.png",
+          "/fitout/flooring/porcelain1.webp",
+          "/fitout/flooring/porcelain2.webp",
         ],
       },
       {
         name: "SPC",
         images: [
-          "/fitout/flooring/spc.png",
+          "/fitout/flooring/spc2.webp",
         ],
       },
       {
         name: "Vinyl",
         images: [
-          "/fitout/flooring/vinyl.png",
+          "/fitout/flooring/vinyl.webp",
         ],
       },
       {
         name: "Herringbone",
         images: [
-          "/fitout/flooring/herringbone.png",
+          "/fitout/flooring/herringbone.webp",
         ],
       },
       {
         name: "Ceramic",
         images: [
-          "/fitout/flooring/ceramic.png",
+          "/fitout/flooring/ceramic.webp",
         ],
       },
       {
         name: "Epoxy",
         images: [
-          "/fitout/flooring/epoxy.png",
+          "/fitout/flooring/epoxy.webp",
         ],
       },
     ],
@@ -727,59 +727,59 @@ const fitoutCategories = [
   {
     key: "joinery",
     label: "Joinery",
-    hero: "/fitout/joinery/joineryhero.png",
+    hero: "/fitout/joinery/joineryhero.webp",
 
     spaces: [
       {
         name: "Kitchen Cabinets",
         images: [
-          "/fitout/joinery/kitchencabinet1.png",
-          "/fitout/joinery/kitchencabinet2.png",
-          "/fitout/joinery/kitchencabinet3.png",
-          "/fitout/joinery/kitchencabinet4.png",
-          "/fitout/joinery/kitchencabinet5.png",
-          "/fitout/joinery/kitchencabinet6.png",
+          "/fitout/joinery/kitchencabinet1.webp",
+          "/fitout/joinery/kitchencabinet2.webp",
+          "/fitout/joinery/kitchencabinet3.webp",
+          "/fitout/joinery/kitchencabinet4.webp",
+          "/fitout/joinery/kitchencabinet5.webp",
+          "/fitout/joinery/kitchencabinet6.webp",
         ],
       },
       {
         name: "Wardrobes",
         images: [
-          "/fitout/joinery/wardrobe1.png",
-          "/fitout/joinery/wardrobe2.png",
-          "/fitout/joinery/wardrobe3.png",
-          "/fitout/joinery/wardrobe4.png",
-          "/fitout/joinery/wardrobe5.png",
+          "/fitout/joinery/wardrobe1.webp",
+          "/fitout/joinery/wardrobe2.webp",
+          "/fitout/joinery/wardrobe3.webp",
+          "/fitout/joinery/wardrobe4.webp",
+          "/fitout/joinery/wardrobe5.webp",
         ],
       },
       {
         name: "Kitchen Islands",
         images: [
-          "/fitout/joinery/island1.png",
-          "/fitout/joinery/island2.png",
-          "/fitout/joinery/island3.png",
-          "/fitout/joinery/island4.png",
+          "/fitout/joinery/island1.webp",
+          "/fitout/joinery/island2.webp",
+          "/fitout/joinery/island3.webp",
+          "/fitout/joinery/island4.webp",
         ],
       },
       {
         name: "Office Joinery",
         images: [
-          "/fitout/joinery/officejoinery1.png",
-          "/fitout/joinery/officejoinery2.png",
+          "/fitout/joinery/officejoinery1.webp",
+          "/fitout/joinery/officejoinery2.webp",
         ],
       },
       {
         name: "Reception Desks",
         images: [
-          "/fitout/joinery/receptiondesk1.png",
-          "/fitout/joinery/receptiondesk2.png",
+          "/fitout/joinery/receptiondesk1.webp",
+          "/fitout/joinery/receptiondesk2.webp",
         ],
       },
       {
         name: "Custom Joinery",
         images: [
-          "/fitout/joinery/custom1.png",
-          "/fitout/joinery/custom2.png",
-          "/fitout/joinery/custom3.png",
+          "/fitout/joinery/custom1.webp",
+          "/fitout/joinery/custom2.webp",
+          "/fitout/joinery/custom3.webp",
         ],
       },
     ],
@@ -788,24 +788,24 @@ const fitoutCategories = [
   {
     key: "plumbing",
     label: "Plumbing",
-    hero: "/fitout/plumbing/plumbinghero.png",
+    hero: "/fitout/plumbing/plumbinghero.webp",
 
     spaces: [
       {
         name: "Vanities",
         images: [
-          "/fitout/plumbing/vanity1.png",
-          "/fitout/plumbing/vanity2.png",
-          "/fitout/plumbing/vanity3.png",
-          "/fitout/plumbing/vanity4.png",
+          "/fitout/plumbing/vanity1.webp",
+          "/fitout/plumbing/vanity2.webp",
+          "/fitout/plumbing/vanity3.webp",
+          "/fitout/plumbing/vanity4.webp",
         ],
       },
       {
         name: "Mirrors",
         images: [
-          "/fitout/plumbing/mirror1.png",
-          "/fitout/plumbing/mirror2.png",
-          "/fitout/plumbing/mirror3.png",
+          "/fitout/plumbing/mirror1.webp",
+          "/fitout/plumbing/mirror2.webp",
+          "/fitout/plumbing/mirror3.webp",
         ],
       },
     ],
@@ -841,103 +841,103 @@ const commercialTabs = [
 const styles = {
   "modern-luxury": {
     title: "Modern Luxury",
-    hero: "/modern-luxury/modernluxurydining2.png",
+    hero: "/modern-luxury/modernluxurydining2.webp",
 
     spaces: [
       {
         name: "Living Room",
-        image: "/modern-luxury/modernluxurylounge3.png",
+        image: "/modern-luxury/modernluxurylounge3.webp",
       },
       {
         name: "Dining",
-        image: "/modern-luxury/modernluxurydining1.png",
+        image: "/modern-luxury/modernluxurydining1.webp",
       },
       {
         name: "Kitchen",
-        image: "/modern-luxury/modernluxurykitchen1.png",
+        image: "/modern-luxury/modernluxurykitchen1.webp",
       },
       {
         name: "Bedroom",
-        image: "/modern-luxury/modernluxurybed1.png",
+        image: "/modern-luxury/modernluxurybed1.webp",
       },
       {
         name: "Bathroom",
-        image: "/modern-luxury/modernluxurybath3.png",
+        image: "/modern-luxury/modernluxurybath3.webp",
       },
       {
         name: "Office",
-        image: "/modern-luxury/modernluxuryoffice1.png",
+        image: "/modern-luxury/modernluxuryoffice1.webp",
       },
     ],
   },
 
   japandi: {
     title: "Japandi",
-    hero: "/japandi/japandidining3.png",
+    hero: "/japandi/japandidining3.webp",
 
     spaces: [
-      { name: "Living Room", image: "/japandi/japandiliving2.png" },
-      { name: "Dining", image: "/japandi/japandidining3.png" },
-      { name: "Kitchen", image: "/japandi/japandikitchen2.png" },
-      { name: "Bedroom", image: "/japandi/japandibed2.png" },
-      { name: "Bathroom", image: "/japandi/japandibath2.png" },
-      { name: "Office", image: "/japandi/japandioffice1.png" },
+      { name: "Living Room", image: "/japandi/japandiliving2.webp" },
+      { name: "Dining", image: "/japandi/japandidining3.webp" },
+      { name: "Kitchen", image: "/japandi/japandikitchen2.webp" },
+      { name: "Bedroom", image: "/japandi/japandibed2.webp" },
+      { name: "Bathroom", image: "/japandi/japandibath2.webp" },
+      { name: "Office", image: "/japandi/japandioffice1.webp" },
     ],
   },
 
   minimalist: {
     title: "Minimalist",
-    hero: "/minimalist/minimalistdining3.png",
+    hero: "/minimalist/minimalistdining3.webp",
 
     spaces: [
-      { name: "Living Room", image: "/minimalist/minimalistliving2.png" },
-      { name: "Dining", image: "/minimalist/minimalistdining3.png" },
-      { name: "Kitchen", image: "/minimalist/minimalistkitchen3.png" },
-      { name: "Bedroom", image: "/minimalist/minimalistbed3.png" },
-      { name: "Bathroom", image: "/minimalist/minimalistbath2.png" },
-      { name: "Office", image: "/minimalist/minimalistoffice1.png" },
+      { name: "Living Room", image: "/minimalist/minimalistliving2.webp" },
+      { name: "Dining", image: "/minimalist/minimalistdining3.webp" },
+      { name: "Kitchen", image: "/minimalist/minimalistkitchen3.webp" },
+      { name: "Bedroom", image: "/minimalist/minimalistbed3.webp" },
+      { name: "Bathroom", image: "/minimalist/minimalistbath2.webp" },
+      { name: "Office", image: "/minimalist/minimalistoffice1.webp" },
     ],
   },
 
   scandinavian: {
     title: "Scandinavian",
-    hero: "/scandinavian/scandinaviandining1.png",
+    hero: "/scandinavian/scandinaviandining1.webp",
 
     spaces: [
-      { name: "Living Room", image: "/scandinavian/scandinavianliving2.png" },
-      { name: "Dining", image: "/scandinavian/scandinaviandining1.png" },
-      { name: "Kitchen", image: "/scandinavian/scandinaviankitchen2.png" },
-      { name: "Bedroom", image: "/scandinavian/scandinavianbed1.png" },
-      { name: "Bathroom", image: "/scandinavian/scandinavianbath3.png" },
-      { name: "Office", image: "/scandinavian/scandinavianoffice1.png" },
+      { name: "Living Room", image: "/scandinavian/scandinavianliving2.webp" },
+      { name: "Dining", image: "/scandinavian/scandinaviandining1.webp" },
+      { name: "Kitchen", image: "/scandinavian/scandinaviankitchen2.webp" },
+      { name: "Bedroom", image: "/scandinavian/scandinavianbed1.webp" },
+      { name: "Bathroom", image: "/scandinavian/scandinavianbath3.webp" },
+      { name: "Office", image: "/scandinavian/scandinavianoffice1.webp" },
     ],
   },
 
   classical: {
     title: "Classical",
-    hero: "/classical/classicaldining2.png",
+    hero: "/classical/classicaldining2.webp",
 
     spaces: [
-      { name: "Living Room", image: "/classical/classicalliving1.png" },
-      { name: "Dining", image: "/classical/classicaldining2.png" },
-      { name: "Kitchen", image: "/classical/classicalkitchen2.png" },
-      { name: "Bedroom", image: "/classical/classicalbed1.png" },
-      { name: "Bathroom", image: "/classical/classicalbath3.png" },
-      { name: "Office", image: "/classical/classicaloffice1.png" },
+      { name: "Living Room", image: "/classical/classicalliving1.webp" },
+      { name: "Dining", image: "/classical/classicaldining2.webp" },
+      { name: "Kitchen", image: "/classical/classicalkitchen2.webp" },
+      { name: "Bedroom", image: "/classical/classicalbed1.webp" },
+      { name: "Bathroom", image: "/classical/classicalbath3.webp" },
+      { name: "Office", image: "/classical/classicaloffice1.webp" },
     ],
   },
 
   coastal: {
     title: "Coastal",
-    hero: "/coastal/coastaldining2.png",
+    hero: "/coastal/coastaldining2.webp",
 
     spaces: [
-      { name: "Living Room", image: "/coastal/coastalliving1.png" },
-      { name: "Dining", image: "/coastal/coastaldining2.png" },
-      { name: "Kitchen", image: "/coastal/coastalkitchen2.png" },
-      { name: "Bedroom", image: "/coastal/coastalbed2.png" },
-      { name: "Bathroom", image: "/coastal/coastalbath2.png" },
-      { name: "Office", image: "/coastal/coastaloffice2.png" },
+      { name: "Living Room", image: "/coastal/coastalliving1.webp" },
+      { name: "Dining", image: "/coastal/coastaldining2.webp" },
+      { name: "Kitchen", image: "/coastal/coastalkitchen2.webp" },
+      { name: "Bedroom", image: "/coastal/coastalbed2.webp" },
+      { name: "Bathroom", image: "/coastal/coastalbath2.webp" },
+      { name: "Office", image: "/coastal/coastaloffice2.webp" },
     ],
   },
 };
@@ -1068,7 +1068,7 @@ useEffect(() => {
   <div className="absolute inset-0">
 
     <img
-      src="/interior-hero/interiorhero.png"
+      src="/interior-hero/interiorhero.webp"
       alt="Luxury Interior Design"
       className="
       w-full

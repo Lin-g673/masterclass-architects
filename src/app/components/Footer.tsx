@@ -42,7 +42,7 @@ export default function Footer() {
       <div className="flex flex-col items-center">
 
         <img
-          src="/logo/logo-white.png"
+          src="/logo/logo-white.webp"
           alt="Apiyo Design Studio"
           className="
           w-80

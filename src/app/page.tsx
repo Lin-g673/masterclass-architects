@@ -110,11 +110,11 @@ useEffect(() => {
   },
 ];
 const heroImages = [
-  "/hero/concept.png",
-  "/hero/interior.png",
-  "/hero/exterior.png",
-  "/hero/construction.png",
-  "/hero/completed.png",
+  "/hero/concept.webp",
+  "/hero/interior.webp",
+  "/hero/exterior.webp",
+  "/hero/construction.webp",
+  "/hero/completed.webp",
 ];
 
 const heroMessages = [
@@ -134,7 +134,7 @@ const visualizations = [
     title: "Architectural Visualization",
     description:
       "High-end exterior renderings showcasing architecture, materials, lighting and environmental context.",
-    media: "/visualization/exterior.png",
+    media: "/visualization/exterior.webp",
     type: "image",
   },
   {
@@ -150,7 +150,7 @@ const visualizations = [
     title: "Interior Visualization",
     description:
       "Photorealistic interiors showcasing textures, furniture, finishes and atmosphere with exceptional realism.",
-    media: "/visualization/interior.png",
+    media: "/visualization/interior.webp",
     type: "image",
   },
   {
@@ -158,7 +158,7 @@ const visualizations = [
     title: "Real Estate Marketing Visuals",
     description:
       "Premium imagery, animations and presentation materials designed to attract buyers, investors and development partners.",
-    media: "/visualization/marketing.mp4",
+    media: "/visualization/Marketing-optimized.mp4",
     type: "video",
   },
 ];
@@ -168,7 +168,7 @@ const featuredProjects = [
     title: "Asembo Catholic Church",
     location: "Siaya, Kenya",
     category: "Religious Architecture",
-    image: "/feature/asembo.png",
+    image: "/feature/asembo.webp",
     description:
       "A contemporary place of worship designed to create a strong spiritual presence while embracing natural light and community gathering spaces.",
   },
@@ -177,7 +177,7 @@ const featuredProjects = [
     title: "Benin Contemporary Maisonette",
     location: "Benin City",
     category: "Residential Architecture",
-    image: "/feature/benin.png",
+    image: "/feature/benin.webp",
     description:
       "A modern family residence combining elegant proportions, clean architectural lines and luxurious contemporary living.",
   },
@@ -186,7 +186,7 @@ const featuredProjects = [
     title: "Modern Family Bungalow",
     location: "Kakamega, Kenya",
     category: "Residential Architecture",
-    image: "/feature/western.png",
+    image: "/feature/western.webp",
     description:
       "A practical and beautiful bungalow designed around comfort, functionality and seamless indoor-outdoor living.",
   },
@@ -196,7 +196,7 @@ const interiorServices = [
 {
   title: "Residential",
   category: "Luxury Homes • Villas • Apartments",
-  image: "/minimalist/minimalistbed1.png",
+  image: "/minimalist/minimalistbed1.webp",
   description:
     "Luxury residential interiors ranging from Modern Luxury, Japandi, Scandinavian, Minimalist, Classical and Coastal design styles.",
   button: "Explore Interior Styles",
@@ -207,7 +207,7 @@ const interiorServices = [
 {
   title: "Commercial",
   category: "Offices • Corporate Spaces • Law Firms",
-  image: "/interiors/commercial/corporate/board4.png",
+  image: "/interiors/commercial/corporate/board4.webp",
   description:
     "Professional workspaces designed to communicate prestige and productivity.",
   button: "Explore Commercial Design",
@@ -218,7 +218,7 @@ const interiorServices = [
 {
   title: "Hospitality",
   category: "Restaurants • Cafés • Hotels",
-  image: "/interiors/hospitality/restaurant/restaurant4.png",
+  image: "/interiors/hospitality/restaurant/restaurant4.webp",
   description:
     "Experiential hospitality interiors crafted to create memorable guest experiences.",
   button: "Explore Hospitality Design",
@@ -229,7 +229,7 @@ const interiorServices = [
 {
   title: "Interior Fit-Out & Finishes",
   category: "Execution & Installation",
-  image: "/fitout/hero/interiorfitout.png",
+  image: "/fitout/hero/interiorfitout.webp",
   description:
     "Complete interior execution including cabinetry, gypsum ceilings, lighting, wall paneling and flooring.",
   button: "Explore Fit-Out Services",
@@ -240,69 +240,58 @@ const interiorServices = [
 
  const projects = [
   {
-    title: "Luxury Contemporary Villa",
-    description:
-      "A premium residence blending modern luxury with timeless elegance.",
-    image: "/house-designs/villa.png",
+    title: "Contemporary Apartment Block",
+    image: "/houseplans-optimized/apartment1c.webp",
+    bedrooms: "9 One-Bedroom Units",
+    bathrooms: "39 Bedsitters",
+    size: "850 SQM",
+    floors: "4 Floors",
+    link: "/house-plans/contemporary-apartment-block",
+  },
+  {
+    title: "Luxury 5 Bedroom Maisonette",
+    image: "/houseplans-optimized/maisonette1a.webp",
     bedrooms: "5 Bedrooms",
-    bathrooms: "6 Bathrooms",
-    size: "550 SQM",
-    floors: "2 Floors",
+    bathrooms: "5 Bathrooms",
+    size: "350 SQM",
+    floors: "3 Floors",
+    link: "/house-plans/luxury-5-bedroom-maisonette",
   },
-
   {
-    title: "Modern Family Bungalow",
-    description:
-      "Spacious single-level living designed for comfort and functionality.",
-    image: "/house-designs/bungalow.png",
+    title: "Contemporary 4 Bedroom Maisonette",
+    image: "/houseplans-optimized/maisonette4a.webp",
     bedrooms: "4 Bedrooms",
-    bathrooms: "4 Bathrooms",
-    size: "240 SQM",
-    floors: "1 Floor",
+    bathrooms: "5 Bathrooms",
+    size: "430 SQM",
+    floors: "2 Floors",
+    link: "/house-plans/contemporary-4-bedroom-maisonette",
   },
-
   {
-    title: "Elegant Maisonette",
-    description:
-      "Contemporary family living with generous spaces and natural light.",
-    image: "/house-designs/maisonette.png",
+    title: "Signature 4 Bedroom Maisonette",
+    image: "/houseplans-optimized/maisonette6a.webp",
     bedrooms: "4 Bedrooms",
     bathrooms: "5 Bathrooms",
     size: "320 SQM",
     floors: "2 Floors",
+    link: "/house-plans/signature-4-bedroom-maisonette",
   },
-
   {
-    title: "Modern Tropical Home",
-    description:
-      "A warm tropical retreat balancing indoor and outdoor living.",
-    image: "/house-designs/tropical.jpg",
-    bedrooms: "4 Bedrooms",
-    bathrooms: "4 Bathrooms",
-    size: "280 SQM",
-    floors: "2 Floors",
+    title: "Nuru 3 Bedroom Bungalow",
+    image: "/houseplans-optimized/bungalow6a.webp",
+    bedrooms: "3 Bedrooms",
+    bathrooms: "2 Bathrooms",
+    size: "145.2 SQM",
+    floors: "1 Floor",
+    link: "/house-plans/Nuru-3-bedroom-bungalow",
   },
-
   {
-    title: "Executive Apartment Block",
-    description:
-      "Efficient multi-family housing with modern amenities.",
-    image: "/house-designs/apartment.png",
-    bedrooms: "12 Units",
-    bathrooms: "Multiple",
-    size: "1200 SQM",
-    floors: "4 Floors",
-  },
-
-  {
-    title: "Mixed-Use Commercial Centre",
-    description:
-      "Retail and office spaces integrated into one vibrant development.",
-    image: "/house-designs/commercial.png",
-    bedrooms: "Retail + Offices",
-    bathrooms: "Shared Facilities",
-    size: "1800 SQM",
-    floors: "3 Floors",
+    title: "Amani 3 Bedroom Bungalow",
+    image: "/houseplans-optimized/bungalow1a.webp",
+    bedrooms: "3 Bedrooms",
+    bathrooms: "2 Bathrooms",
+    size: "130 SQM",
+    floors: "1 Floor",
+    link: "/house-plans/Amani-3-bedroom-bungalow",
   },
 ];
 return (
@@ -813,7 +802,7 @@ md:text-xl
         "
       >
         <img
-          src="/architecture/commercial.png"
+          src="/architecture/commercial.webp"
           alt="Architectural design by Apiyo Design Studio"
           className="
             absolute
@@ -1256,9 +1245,10 @@ md:text-xl
 
             {projects.map((project) => (
   <div
- className="
-group
-relative
+    key={project.link}
+    className="
+      group
+      relative
 overflow-hidden
 rounded-3xl
 bg-transparent
@@ -1351,7 +1341,7 @@ mb-5">
     </div>
 
     <Link
-  href="/house-plans"
+ href={project.link}
   className="
     inline-flex
     font-[var(--font-avenir)]
@@ -1366,12 +1356,65 @@ mb-5">
   Explore Design →
 </Link>
 
-  </div>
+    </div>
 
 </div>
 ))}
+</div>
+
+<div
+  className="
+    mt-10
+    md:mt-14
+    w-full
+    flex
+    flex-col
+    md:flex-row
+    items-center
+    justify-between
+    gap-5
+    border-t
+    border-white/10
+    pt-8
+    text-center
+    md:text-left
+  "
+>
+  <p className="font-[var(--font-avenir)] text-sm md:text-base text-white/65">
+    Looking for something different? Explore our complete collection of
+    ready-made house plans.
+  </p>
+
+  <Link
+    href="/house-plans"
+    className="
+      inline-flex
+      shrink-0
+      items-center
+      justify-center
+      gap-3
+      rounded-full
+      border
+      border-[#D4A85A]
+      px-7
+      py-3.5
+      font-[var(--font-avenir)]
+      text-xs
+      md:text-sm
+      font-medium
+      text-[#D4A85A]
+      transition-all
+      duration-300
+      hover:bg-[#D4A85A]
+      hover:text-[#071321]
+    "
+  >
+    View All House Plans
+    <span aria-hidden="true">→</span>
+  </Link>
+</div>
           </div>
-        </div>
+        
       </section>
 
 {/* =====================================================
@@ -1586,7 +1629,7 @@ mb-5">
           "
         >
           <img
-            src="/blueprint/blueprint.png"
+            src="/blueprint/blueprint.webp"
             alt="Architectural floor plan"
             className="
               w-full
@@ -2240,7 +2283,7 @@ mb-5">
         loop
         playsInline
         preload="auto"
-        poster="/3d/3d1.png"
+        poster="/3d/3d1.webp"
         className="
           w-full
           h-full
@@ -4442,7 +4485,7 @@ mb-5">
   <div className="absolute inset-0">
 
     <img
-      src="/vision/vision.png"
+      src="/vision/vision.webp"
       alt=""
       className="
         w-full

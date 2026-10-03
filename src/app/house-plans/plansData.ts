@@ -40,18 +40,17 @@ export const housePlans: HousePlan[] = [
   ===================================================== */
 
   {
-    slug: "modern-3-bedroom-bungalow",
+    slug: "Amani-3-bedroom-bungalow",
     code: "ADS-B01",
-    title: "Modern 3 Bedroom Bungalow",
+    title: "Amani 3 Bedroom Bungalow",
     category: "Bungalow",
 
-    image: "/houseplans/bungalow1a.png",
+    image: "/houseplans-optimized/bungalow1a.webp",
 
     gallery: [
-      "/houseplans/bungalow1a.png",
-      "/houseplans/bungalow1b.png",
-      "/houseplans/bungalow1c.png",
-      "/houseplans/plan1.png",
+      "/houseplans-optimized/bungalow1a.webp",
+      "/houseplans-optimized/bungalow1b.webp",
+      "/houseplans-optimized/plan1.webp",
     ],
 
     bedrooms: 3,
@@ -109,12 +108,12 @@ export const housePlans: HousePlan[] = [
     title: "Contemporary 4 Bedroom Bungalow",
     category: "Bungalow",
 
-    image: "/houseplans/bungalow2a.png",
+    image: "/houseplans-optimized/bungalow2a.webp",
 
     gallery: [
-      "/houseplans/bungalow2a.png",
-      "/houseplans/bungalow2b.png",
-      "/houseplans/plan2.png",
+      "/houseplans-optimized/bungalow2a.webp",
+      "/houseplans-optimized/bungalow2b.webp",
+      "/houseplans-optimized/plan2.webp",
     ],
 
     bedrooms: 4,
@@ -167,18 +166,17 @@ export const housePlans: HousePlan[] = [
   ===================================================== */
 
   {
-    slug: "compact-3-bedroom-bungalow",
+    slug: "Zuri-3-bedroom-bungalow",
     code: "ADS-B03",
-    title: "Compact 3 Bedroom Bungalow",
+    title: "Zuri 3 Bedroom Bungalow",
     category: "Bungalow",
 
-    image: "/houseplans/bungalow3a.jpeg",
+    image: "/houseplans-optimized/bungalow3a.webp",
 
     gallery: [
-      "/houseplans/bungalow3a.jpeg",
-      "/houseplans/bungalow3b.jpeg",
-      "/houseplans/bungalow3c.jpeg",
-      "/houseplans/plan3.png",
+      "/houseplans-optimized/bungalow3a.webp",
+      "/houseplans-optimized/bungalow3b.webp",
+      "/houseplans-optimized/plan3.webp",
     ],
 
     bedrooms: 3,
@@ -231,18 +229,18 @@ export const housePlans: HousePlan[] = [
   ===================================================== */
 
   {
-    slug: "luxury-3-bedroom-bungalow",
+    slug: "Elara-3-bedroom-bungalow",
     code: "ADS-B04",
-    title: "Luxury 3 Bedroom Bungalow",
+    title: "Elara 3 Bedroom Bungalow",
     category: "Bungalow",
 
-    image: "/houseplans/bungalow4a.png",
+    image: "/houseplans-optimized/bungalow4a.webp",
 
     gallery: [
-      "/houseplans/bungalow4a.png",
-      "/houseplans/bungalow4b.png",
-      "/houseplans/bungalow4c.png",
-      "/houseplans/plan4.png",
+      "/houseplans-optimized/bungalow4a.webp",
+      "/houseplans-optimized/bungalow4b.webp",
+      "/houseplans-optimized/bungalow4c.webp",
+      "/houseplans-optimized/plan4.webp",
     ],
 
     bedrooms: 3,
@@ -295,20 +293,20 @@ export const housePlans: HousePlan[] = [
   ===================================================== */
 
   {
-    slug: "modern-2-bedroom-bungalow",
+    slug: "Horizon-3-bedroom-bungalow",
     code: "ADS-B05",
-    title: "Modern 2 Bedroom Bungalow",
+    title: "Horizon 3 Bedroom Bungalow",
     category: "Bungalow",
 
-    image: "/houseplans/bungalow5a.jpeg",
+    image: "/houseplans-optimized/bungalow5a.webp",
 
     gallery: [
-      "/houseplans/bungalow5a.jpeg",
-      "/houseplans/bungalow5b.jpeg",
-      "/houseplans/bungalow5c.jpeg",
+      "/houseplans-optimized/bungalow5a.webp",
+      "/houseplans-optimized/bungalow5b.webp",
+      "/houseplans-optimized/plan5.webp",
     ],
 
-    bedrooms: 2,
+    bedrooms: 3,
     bathrooms: 2,
     floors: 1,
 
@@ -319,13 +317,13 @@ export const housePlans: HousePlan[] = [
     priceUSD: 172.8,
 
     shortDescription:
-      "A comfortable two-bedroom home designed around efficient planning and generous everyday living.",
+      "A comfortable three-bedroom home designed around efficient planning and generous everyday living.",
 
     description:
-      "A practical two-bedroom bungalow designed to provide comfortable living spaces, efficient circulation and a contemporary residential character.",
+      "A practical three-bedroom bungalow designed to provide comfortable living spaces, efficient circulation and a contemporary residential character.",
 
     idealFor:
-      "Small families, couples, retirement living and homeowners seeking a spacious two-bedroom residence.",
+      "Small families, couples, retirement living and homeowners seeking a spacious three-bedroom residence.",
 
     features: [
       "Efficient footprint",
@@ -358,18 +356,18 @@ export const housePlans: HousePlan[] = [
   ===================================================== */
 
   {
-    slug: "courtyard-family-bungalow",
+    slug: "Nuru-3-bedroom-bungalow",
     code: "ADS-B06",
-    title: "Courtyard Family Bungalow",
+    title: "Nuru 3 Bedroom Bungalow",
     category: "Bungalow",
 
-    image: "/houseplans/bungalow6a.jpeg",
+    image: "/houseplans-optimized/bungalow6a.webp",
 
     gallery: [
-      "/houseplans/bungalow6a.jpeg",
-      "/houseplans/bungalow6b.jpeg",
-      "/houseplans/bungalow6c.jpeg",
-      "/houseplans/plan6.png",
+      "/houseplans-optimized/bungalow6a.webp",
+      "/houseplans-optimized/bungalow6b.webp",
+      "/houseplans-optimized/bungalow6c.webp",
+      "/houseplans-optimized/plan6.webp",
     ],
 
     bedrooms: 3,
@@ -427,14 +425,14 @@ export const housePlans: HousePlan[] = [
     title: "Modern 4 Bedroom Maisonette",
     category: "Maisonette",
 
-    image: "/houseplans/maisonette3a.png",
+    image: "/houseplans-optimized/maisonette3a.webp",
 
     gallery: [
-      "/houseplans/maisonette3a.png",
-      "/houseplans/maisonette3b.png",
-      "/houseplans/maisonette3c.png",
-      "/houseplans/maisonetteplan1a.png",
-      "/houseplans/maisonetteplan1b.png",
+      "/houseplans-optimized/maisonette3a.webp",
+      "/houseplans-optimized/maisonette3b.webp",
+      "/houseplans-optimized/maisonette3c.webp",
+      "/houseplans-optimized/maisonetteplan1a.webp",
+      "/houseplans-optimized/maisonetteplan1b.webp",
     ],
 
     bedrooms: 4,
@@ -491,14 +489,14 @@ export const housePlans: HousePlan[] = [
     title: "Contemporary 4 Bedroom Maisonette",
     category: "Maisonette",
 
-    image: "/houseplans/maisonette2a.png",
+    image: "/houseplans-optimized/maisonette4a.webp",
 
     gallery: [
-      "/houseplans/maisonette4a.png",
-      "/houseplans/maisonette4b.png",
-      "/houseplans/maisonette4c.png",
-      "/houseplans/maisonetteplan2a.png",
-      "/houseplans/maisonetteplan2b.png",
+      "/houseplans-optimized/maisonette4a.webp",
+      "/houseplans-optimized/maisonette4b.webp",
+      "/houseplans-optimized/maisonette4c.webp",
+      "/houseplans-optimized/maisonetteplan2a.webp",
+      "/houseplans-optimized/maisonetteplan2b.webp",
     ],
 
     bedrooms: 4,
@@ -555,13 +553,13 @@ export const housePlans: HousePlan[] = [
     title: "Signature 4 Bedroom Maisonette",
     category: "Maisonette",
 
-    image: "/houseplans/maisonette6a.png",
+    image: "/houseplans-optimized/maisonette6a.webp",
 
     gallery: [
-      "/houseplans/maisonette6a.png",
-      "/houseplans/maisonette6b.png",
-      "/houseplans/maisonetteplan3a.png",
-      "/houseplans/maisonetteplan3b.png",
+      "/houseplans-optimized/maisonette6a.webp",
+      "/houseplans-optimized/maisonette6b.webp",
+      "/houseplans-optimized/maisonetteplan3a.webp",
+      "/houseplans-optimized/maisonetteplan3b.webp",
     ],
 
     bedrooms: 4,
@@ -618,13 +616,13 @@ export const housePlans: HousePlan[] = [
     title: "Compact 4 Bedroom Maisonette",
     category: "Maisonette",
 
-    image: "/houseplans/maisonette2a.png",
+    image: "/houseplans-optimized/maisonette2a.webp",
 
     gallery: [
-      "/houseplans/maisonette2a.png",
-      "/houseplans/maisonette2b.png",
-      "/houseplans/maisonetteplan4a.png",
-      "/houseplans/maisonetteplan4b.png",
+      "/houseplans-optimized/maisonette2a.webp",
+      "/houseplans-optimized/maisonette2b.webp",
+      "/houseplans-optimized/maisonetteplan4a.webp",
+      "/houseplans-optimized/maisonetteplan4b.webp",
     ],
 
     bedrooms: 4,
@@ -681,14 +679,14 @@ export const housePlans: HousePlan[] = [
     title: "Luxury 5 Bedroom Maisonette",
     category: "Maisonette",
 
-    image: "/houseplans/villa2.png",
+    image: "/houseplans-optimized/maisonette1a.webp",
 
     gallery: [
-      "/houseplans/villa2.png",
-      "/houseplans/villa3.png",
-      "/houseplans/villa4.png",
-      "/houseplans/pitched1a.png",
-      "/houseplans/pitched1b.png",
+      "/houseplans-optimized/maisonette1a.webp",
+      "/houseplans-optimized/maisonette1b.webp",
+      "/houseplans-optimized/maisonette1c.webp",
+      "/houseplans-optimized/pitched1a.webp",
+      "/houseplans-optimized/pitched1b.webp",
     ],
 
     bedrooms: 5,
@@ -745,12 +743,12 @@ export const housePlans: HousePlan[] = [
     title: "Modern 4 Bedroom Maisonette",
     category: "Maisonette",
 
-    image: "/houseplans/maisonette5a.png",
+    image: "/houseplans-optimized/maisonette5a.webp",
 
     gallery: [
-      "/houseplans/maisonette5a.png",
-      "/houseplans/maisonette5b.png",
-      "/houseplans/maisonette5c.png",
+      "/houseplans-optimized/maisonette5a.webp",
+      "/houseplans-optimized/maisonette5b.webp",
+      "/houseplans-optimized/maisonette5c.webp",
     ],
 
     bedrooms: 4,
@@ -807,12 +805,12 @@ export const housePlans: HousePlan[] = [
     title: "Contemporary Apartment Block",
     category: "Apartment",
 
-    image: "/houseplans/apartment1a.png",
+    image: "/houseplans-optimized/apartment1a.webp",
 
     gallery: [
-      "/houseplans/apartment1a.png",
-      "/houseplans/apartment1b.png",
-      "/houseplans/apartment1c.png",
+      "/houseplans-optimized/apartment1a.webp",
+      "/houseplans-optimized/apartment1b.webp",
+      "/houseplans-optimized/apartment1c.webp",
     ],
 
     // These are used by the existing house-plan interface.

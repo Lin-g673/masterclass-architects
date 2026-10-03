@@ -11,16 +11,16 @@ import Link from "next/link";
 ===================================================== */
 
 const renderImages = [
-  "/3d/3d1.png",
-  "/3d/3d2.png",
-  "/3d/3d3.png",
-  "/3d/3d4.png",
-  "/3d/3d5.png",
-  "/3d/3d6.png",
-  "/3d/3d7.png",
-  "/3d/3d8.png",
-  "/3d/3d9.png",
-  "/3d/3d10.png",
+  "/3d/3d1.webp",
+  "/3d/3d2.webp",
+  "/3d/3d3.webp",
+  "/3d/3d4.webp",
+  "/3d/3d5.webp",
+  "/3d/3d6.webp",
+  "/3d/3d7.webp",
+  "/3d/3d8.webp",
+  "/3d/3d9.webp",
+  "/3d/3d10.webp",
 ];
 
 const expertise = [
@@ -419,7 +419,7 @@ export default function VisualizationPage() {
   loop
   playsInline
   preload="auto"
-  poster="/3d/3d1.png"
+  poster="/3d/3d1.webp"
   className="
     absolute
     inset-0
@@ -1087,7 +1087,7 @@ lg:py-14
             {/* RENDER IMAGE */}
 
             <img
-              src="/3d/apartment1.png"
+              src="/3d/apartment1.webp"
               alt="Photorealistic 3D render"
               draggable={false}
               className="
@@ -1117,7 +1117,7 @@ lg:py-14
             >
 
               <img
-                src="/3d/sketch1.png"
+                src="/3d/sketch1.webp"
                 alt="Design sketch"
                 draggable={false}
                 className="

@@ -31,10 +31,10 @@ const projectData = {
     client: "Private / Parish Project",
 
     hero:
-      "/projects/asembo/asembo.jpg",
+      "/projects/asembo/asembo.webp",
 
     gallery: [
-      "/projects/asembo/asembo.jpg",
+      "/projects/asembo/asembo.webp",
     ],
 
     description:
@@ -63,10 +63,10 @@ const projectData = {
     client: "Private Client",
 
     hero:
-      "/projects/benin/benin.png",
+      "/projects/benin/benin.webp",
 
     gallery: [
-      "/projects/benin/benin.png",
+      "/projects/benin/benin.webp",
     ],
 
     description:
@@ -95,10 +95,10 @@ const projectData = {
     client: "Private Client",
 
     hero:
-      "/projects/bungalow/bungalow.png",
+      "/projects/bungalow/bungalow.webp",
 
     gallery: [
-      "/projects/bungalow/bungalow.png",
+      "/projects/bungalow/bungalow.webp",
     ],
 
     description:
@@ -127,10 +127,10 @@ const projectData = {
     client: "Private Developer",
 
     hero:
-      "/projects/djibouti/djibouti.png",
+      "/projects/djibouti/djibouti.webp",
 
     gallery: [
-      "/projects/djibouti/djibouti.png",
+      "/projects/djibouti/djibouti.webp",
     ],
 
     description:

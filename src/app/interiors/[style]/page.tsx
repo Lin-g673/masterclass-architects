@@ -31,42 +31,42 @@ import {
 const styleData = {
   "modern-luxury": {
     title: "Modern Luxury",
-    hero: "/modern-luxury/modernluxurylounge1.png",
+    hero: "/modern-luxury/modernluxurylounge1.webp",
     description:
       "Elegant interiors crafted with timeless sophistication, premium materials and refined detailing.",
   },
 
   japandi: {
     title: "Japandi",
-    hero: "/japandi/japandihero.png",
+    hero: "/japandi/japandihero.webp",
     description:
       "A harmonious blend of Japanese minimalism and Scandinavian warmth.",
   },
 
   minimalist: {
     title: "Minimalist",
-    hero: "/minimalist/minimalistbed3.png",
+    hero: "/minimalist/minimalistbed3.webp",
     description:
       "Clean lines, uncluttered spaces and purposeful simplicity.",
   },
 
   scandinavian: {
     title: "Scandinavian",
-    hero: "/scandinavian/scandinaviandining1.png",
+    hero: "/scandinavian/scandinaviandining1.webp",
     description:
       "Bright, functional and welcoming interiors inspired by Nordic design.",
   },
 
   classical: {
     title: "Classical",
-    hero: "/classical/classicalliving3.png",
+    hero: "/classical/classicalliving3.webp",
     description:
       "Timeless elegance defined by symmetry, detailing and luxury finishes.",
   },
 
   coastal: {
     title: "Coastal",
-    hero: "/coastal/coastalliving3.png",
+    hero: "/coastal/coastalliving3.webp",
     description:
       "Relaxed interiors inspired by natural light, sea tones and airy living.",
   },
@@ -79,229 +79,229 @@ const styleData = {
 const galleryData = {
   "modern-luxury": {
     "Living Room": [
-      "/modern-luxury/modernluxurylounge1.png",
-      "/modern-luxury/modernluxurylounge2.png",
-      "/modern-luxury/modernluxurylounge3.png",
+      "/modern-luxury/modernluxurylounge1.webp",
+      "/modern-luxury/modernluxurylounge2.webp",
+      "/modern-luxury/modernluxurylounge3.webp",
     ],
 
     Dining: [
-      "/modern-luxury/modernluxurydining1.png",
-      "/modern-luxury/modernluxurydining2.png",
-      "/modern-luxury/modernluxurydining3.png",
+      "/modern-luxury/modernluxurydining1.webp",
+      "/modern-luxury/modernluxurydining2.webp",
+      "/modern-luxury/modernluxurydining3.webp",
     ],
 
     Kitchen: [
-      "/modern-luxury/modernluxurykitchen1.png",
-      "/modern-luxury/modernluxurykitchen2.png",
-      "/modern-luxury/modernluxurykitchen3.png",
+      "/modern-luxury/modernluxurykitchen1.webp",
+      "/modern-luxury/modernluxurykitchen2.webp",
+      "/modern-luxury/modernluxurykitchen3.webp",
     ],
 
     Bedroom: [
-      "/modern-luxury/modernluxurybed1.png",
-      "/modern-luxury/modernluxurybed2.png",
-      "/modern-luxury/modernluxurybed3.png",
+      "/modern-luxury/modernluxurybed1.webp",
+      "/modern-luxury/modernluxurybed2.webp",
+      "/modern-luxury/modernluxurybed3.webp",
     ],
 
     Bathroom: [
-      "/modern-luxury/modernluxurybath1.png",
-      "/modern-luxury/modernluxurybath2.png",
-      "/modern-luxury/modernluxurybath3.png",
+      "/modern-luxury/modernluxurybath1.webp",
+      "/modern-luxury/modernluxurybath2.webp",
+      "/modern-luxury/modernluxurybath3.webp",
     ],
 
     Office: [
-      "/modern-luxury/modernluxuryoffice1.png",
-      "/modern-luxury/modernluxuryoffice2.png",
-      "/modern-luxury/modernluxuryoffice3.png",
+      "/modern-luxury/modernluxuryoffice1.webp",
+      "/modern-luxury/modernluxuryoffice2.webp",
+      "/modern-luxury/modernluxuryoffice3.webp",
     ],
   },
 
   japandi: {
     "Living Room": [
-      "/japandi/japandiliving1.png",
-      "/japandi/japandiliving2.png",
-      "/japandi/japandiliving3.png",
+      "/japandi/japandiliving1.webp",
+      "/japandi/japandiliving2.webp",
+      "/japandi/japandiliving3.webp",
     ],
 
     Dining: [
-      "/japandi/japandidining1.png",
-      "/japandi/japandidining2.png",
-      "/japandi/japandidining3.png",
+      "/japandi/japandidining1.webp",
+      "/japandi/japandidining2.webp",
+      "/japandi/japandidining3.webp",
     ],
 
     Kitchen: [
-      "/japandi/japandikitchen1.png",
-      "/japandi/japandikitchen2.png",
-      "/japandi/japandikitchen3.png",
+      "/japandi/japandikitchen1.webp",
+      "/japandi/japandikitchen2.webp",
+      "/japandi/japandikitchen3.webp",
     ],
 
     Bedroom: [
-      "/japandi/japandibed1.png",
-      "/japandi/japandibed2.png",
-      "/japandi/japandibed3.png",
+      "/japandi/japandibed1.webp",
+      "/japandi/japandibed2.webp",
+      "/japandi/japandibed3.webp",
     ],
 
     Bathroom: [
-      "/japandi/japandibath1.png",
-      "/japandi/japandibath2.png",
-      "/japandi/japandibath3.png",
+      "/japandi/japandibath1.webp",
+      "/japandi/japandibath2.webp",
+      "/japandi/japandibath3.webp",
     ],
 
     Office: [
-      "/japandi/japandioffice1.png",
-      "/japandi/japandioffice2.png",
-      "/japandi/japandioffice3.png",
+      "/japandi/japandioffice1.webp",
+      "/japandi/japandioffice2.webp",
+      "/japandi/japandioffice3.webp",
     ],
   },
 
   minimalist: {
     "Living Room": [
-      "/minimalist/minimalistliving1.png",
-      "/minimalist/minimalistliving2.png",
-      "/minimalist/minimalistliving3.png",
+      "/minimalist/minimalistliving1.webp",
+      "/minimalist/minimalistliving2.webp",
+      "/minimalist/minimalistliving3.webp",
     ],
 
     Dining: [
-      "/minimalist/minimalistdining1.png",
-      "/minimalist/minimalistdining2.png",
-      "/minimalist/minimalistdining3.png",
+      "/minimalist/minimalistdining1.webp",
+      "/minimalist/minimalistdining2.webp",
+      "/minimalist/minimalistdining3.webp",
     ],
 
     Kitchen: [
-      "/minimalist/minimalistkitchen1.png",
-      "/minimalist/minimalistkitchen2.png",
-      "/minimalist/minimalistkitchen3.png",
+      "/minimalist/minimalistkitchen1.webp",
+      "/minimalist/minimalistkitchen2.webp",
+      "/minimalist/minimalistkitchen3.webp",
     ],
 
     Bedroom: [
-      "/minimalist/minimalistbed1.png",
-      "/minimalist/minimalistbed2.png",
-      "/minimalist/minimalistbed3.png",
+      "/minimalist/minimalistbed1.webp",
+      "/minimalist/minimalistbed2.webp",
+      "/minimalist/minimalistbed3.webp",
     ],
 
     Bathroom: [
-      "/minimalist/minimalistbath1.png",
-      "/minimalist/minimalistbath2.png",
-      "/minimalist/minimalistbath3.png",
+      "/minimalist/minimalistbath1.webp",
+      "/minimalist/minimalistbath2.webp",
+      "/minimalist/minimalistbath3.webp",
     ],
 
     Office: [
-      "/minimalist/minimalistoffice1.png",
-      "/minimalist/minimalistoffice2.png",
-      "/minimalist/minimalistoffice3.png",
+      "/minimalist/minimalistoffice1.webp",
+      "/minimalist/minimalistoffice2.webp",
+      "/minimalist/minimalistoffice3.webp",
     ],
   },
 
   scandinavian: {
     "Living Room": [
-      "/scandinavian/scandinavianliving1.png",
-      "/scandinavian/scandinavianliving2.png",
-      "/scandinavian/scandinavianliving3.png",
+      "/scandinavian/scandinavianliving1.webp",
+      "/scandinavian/scandinavianliving2.webp",
+      "/scandinavian/scandinavianliving3.webp",
     ],
 
     Dining: [
-      "/scandinavian/scandinaviandining1.png",
-      "/scandinavian/scandinaviandining2.png",
-      "/scandinavian/scandinaviandining3.png",
+      "/scandinavian/scandinaviandining1.webp",
+      "/scandinavian/scandinaviandining2.webp",
+      "/scandinavian/scandinaviandining3.webp",
     ],
 
     Kitchen: [
-      "/scandinavian/scandinaviankitchen1.png",
-      "/scandinavian/scandinaviankitchen2.png",
-      "/scandinavian/scandinaviankitchen3.png",
+      "/scandinavian/scandinaviankitchen1.webp",
+      "/scandinavian/scandinaviankitchen2.webp",
+      "/scandinavian/scandinaviankitchen3.webp",
     ],
 
     Bedroom: [
-      "/scandinavian/scandinavianbed1.png",
-      "/scandinavian/scandinavianbed2.png",
-      "/scandinavian/scandinavianbed3.png",
+      "/scandinavian/scandinavianbed1.webp",
+      "/scandinavian/scandinavianbed2.webp",
+      "/scandinavian/scandinavianbed3.webp",
     ],
 
     Bathroom: [
-      "/scandinavian/scandinavianbath1.png",
-      "/scandinavian/scandinavianbath2.png",
-      "/scandinavian/scandinavianbath3.png",
+      "/scandinavian/scandinavianbath1.webp",
+      "/scandinavian/scandinavianbath2.webp",
+      "/scandinavian/scandinavianbath3.webp",
     ],
 
     Office: [
-      "/scandinavian/scandinavianoffice1.png",
-      "/scandinavian/scandinavianoffice2.png",
-      "/scandinavian/scandinavianoffice3.png",
+      "/scandinavian/scandinavianoffice1.webp",
+      "/scandinavian/scandinavianoffice2.webp",
+      "/scandinavian/scandinavianoffice3.webp",
     ],
   },
 
   classical: {
     "Living Room": [
-      "/classical/classicalliving1.png",
-      "/classical/classicalliving2.png",
-      "/classical/classicalliving3.png",
+      "/classical/classicalliving1.webp",
+      "/classical/classicalliving2.webp",
+      "/classical/classicalliving3.webp",
     ],
 
     Dining: [
-      "/classical/classicaldining1.png",
-      "/classical/classicaldining2.png",
-      "/classical/classicaldining3.png",
+      "/classical/classicaldining1.webp",
+      "/classical/classicaldining2.webp",
+      "/classical/classicaldining3.webp",
     ],
 
     Kitchen: [
-      "/classical/classicalkitchen1.png",
-      "/classical/classicalkitchen2.png",
-      "/classical/classicalkitchen3.png",
+      "/classical/classicalkitchen1.webp",
+      "/classical/classicalkitchen2.webp",
+      "/classical/classicalkitchen3.webp",
     ],
 
     Bedroom: [
-      "/classical/classicalbed1.png",
-      "/classical/classicalbed2.png",
-      "/classical/classicalbed3.png",
+      "/classical/classicalbed1.webp",
+      "/classical/classicalbed2.webp",
+      "/classical/classicalbed3.webp",
     ],
 
     Bathroom: [
-      "/classical/classicalbath1.png",
-      "/classical/classicalbath2.png",
-      "/classical/classicalbath3.png",
+      "/classical/classicalbath1.webp",
+      "/classical/classicalbath2.webp",
+      "/classical/classicalbath3.webp",
     ],
 
     Office: [
-      "/classical/classicaloffice1.png",
-      "/classical/classicaloffice2.png",
-      "/classical/classicaloffice3.png",
+      "/classical/classicaloffice1.webp",
+      "/classical/classicaloffice2.webp",
+      "/classical/classicaloffice3.webp",
     ],
   },
 
   coastal: {
     "Living Room": [
-      "/coastal/coastalliving1.png",
-      "/coastal/coastalliving2.png",
-      "/coastal/coastalliving3.png",
+      "/coastal/coastalliving1.webp",
+      "/coastal/coastalliving2.webp",
+      "/coastal/coastalliving3.webp",
     ],
 
     Dining: [
-      "/coastal/coastaldining1.png",
-      "/coastal/coastaldining2.png",
-      "/coastal/coastaldining3.png",
+      "/coastal/coastaldining1.webp",
+      "/coastal/coastaldining2.webp",
+      "/coastal/coastaldining3.webp",
     ],
 
     Kitchen: [
-      "/coastal/coastalkitchen1.png",
-      "/coastal/coastalkitchen2.png",
-      "/coastal/coastalkitchen3.png",
+      "/coastal/coastalkitchen1.webp",
+      "/coastal/coastalkitchen2.webp",
+      "/coastal/coastalkitchen3.webp",
     ],
 
     Bedroom: [
-      "/coastal/coastalbedroom1.png",
-      "/coastal/coastalbedroom2.png",
-      "/coastal/coastalbedroom3.png",
+      "/coastal/coastalbed1.webp",
+      "/coastal/coastalbed2.webp",
+      "/coastal/coastalbed3.webp",
     ],
 
     Bathroom: [
-      "/coastal/coastalbath1.png",
-      "/coastal/coastalbath2.png",
-      "/coastal/coastalbath3.png",
+      "/coastal/coastalbath1.webp",
+      "/coastal/coastalbath2.webp",
+      "/coastal/coastalbath3.webp",
     ],
 
     Office: [
-      "/coastal/coastaloffice1.png",
-      "/coastal/coastaloffice2.png",
-      "/coastal/coastaloffice3.png",
+      "/coastal/coastaloffice1.webp",
+      "/coastal/coastaloffice2.webp",
+      "/coastal/coastaloffice3.webp",
     ],
   },
 };

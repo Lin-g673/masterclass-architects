@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import ImageProtection from "./components/ImageProtection";
 
 const garamond = localFont({
   src: "./fonts/GaramondPremierPro-LightDisplay.otf",
@@ -45,6 +46,7 @@ export const metadata: Metadata = {
   description:
     "Apiyo Design Studio provides architectural design, house plans, interior design, 3D visualization and renovation services in Nairobi and across Kenya.",
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -55,7 +57,10 @@ export default function RootLayout({
       lang="en"
       className={`${garamond.variable} ${avenir.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <ImageProtection />
+        {children}
+      </body>
     </html>
   );
 }

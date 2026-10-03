@@ -276,7 +276,7 @@ useEffect(() => {
       >
 
         <img
-          src="/architecture/3d2.png"
+          src="/architecture/3d2.webp"
           alt="Contemporary apartment architecture by Apiyo Design Studio"
           draggable={false}
           className="
@@ -692,7 +692,7 @@ hospitality, institutional and mixed-use developments.
               "
             >
               <img
-                src="/architecture/commercial.png"
+                src="/architecture/commercial.webp"
                 alt="Commercial architecture by Apiyo Design Studio"
                 draggable={false}
                 className="
@@ -1109,7 +1109,7 @@ hospitality, institutional and mixed-use developments.
           >
 
             <img
-              src="/architecture/hotel.png"
+              src="/architecture/hotel.webp"
               alt="Hospitality architecture by Apiyo Design Studio"
               draggable={false}
               className="
@@ -1575,7 +1575,7 @@ hospitality, institutional and mixed-use developments.
               "
             >
               <img
-                src="/architecture/sketch.png"
+                src="/architecture/sketch.webp"
                 alt="Architectural concept development and sketch process"
                 draggable={false}
                 className="
@@ -1795,7 +1795,7 @@ hospitality, institutional and mixed-use developments.
               "
             >
               <img
-                src="/architecture/3d1.png"
+                src="/architecture/3d1.webp"
                 alt="Large scale architecture and high rise development"
                 draggable={false}
                 className="
@@ -2085,7 +2085,7 @@ lg:text-5xl
               "
             >
               <img
-                src="/architecture/villa.png"
+                src="/architecture/villa.webp"
                 alt="Bespoke residential villa architecture"
                 draggable={false}
                 className="
@@ -2255,7 +2255,7 @@ lg:text-5xl
       {/* AFTER IMAGE */}
 
       <img
-        src="/architecture/after.png"
+        src="/architecture/after.webp"
         alt="Renovated architectural project"
         draggable={false}
         className="
@@ -2286,7 +2286,7 @@ lg:text-5xl
       >
 
         <img
-          src="/architecture/before.png"
+          src="/architecture/before.webp"
           alt="Building before architectural renovation"
           draggable={false}
           className="

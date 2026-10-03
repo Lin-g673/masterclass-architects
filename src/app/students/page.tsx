@@ -160,7 +160,7 @@ export default function StudentsPage() {
         {/* HERO IMAGE */}
 
         <img
-          src="/students/studenthero.png"
+          src="/students/studenthero.webp"
           alt="Architecture student studio model"
           draggable={false}
           className="
@@ -1760,7 +1760,7 @@ rendering, thesis presentations and model-making support.
       >
 
         <img
-          src="/students/studentsupport.png"
+          src="/students/studentsupport.webp"
           alt="Architecture students developing a design project"
           draggable={false}
           className="

@@ -28,7 +28,7 @@ const projects = [
     location: "Asembo",
     type: "Religious Architecture",
     image:
-      "/projects/asembo/asembo.jpg",
+      "/projects/asembo/asembo.webp",
     description:
       "A contemporary place of worship designed to create a strong spiritual presence while embracing natural light and community gathering spaces.",
   },
@@ -41,7 +41,7 @@ const projects = [
     location: "Benin",
     type: "Residential Architecture",
     image:
-      "/projects/benin/benin.png",
+      "/projects/benin/benin.webp",
     description:
       "A modern family residence combining elegant proportions, clean architectural lines and luxurious contemporary living.",
   },
@@ -54,7 +54,7 @@ const projects = [
     location: "",
     type: "Residential Architecture",
     image:
-      "/projects/bungalow/bungalow.png",
+      "/projects/bungalow/bungalow.webp",
     description:
       "A practical and beautiful bungalow designed around comfort, functionality and seamless indoor-outdoor living.",
   },
@@ -67,7 +67,7 @@ const projects = [
     location: "Djibouti",
     type: "17 Maisonette Units",
     image:
-      "/projects/djibouti/djibouti.png",
+      "/projects/djibouti/djibouti.webp",
     description:
       "A contemporary gated residential community comprising seventeen maisonette units designed around privacy, cohesive architectural character and comfortable family living.",
   },
@@ -109,7 +109,7 @@ export default function ProjectsPage() {
   {/* HERO IMAGE */}
 
   <img
-    src="/projects/projecthero.png"
+    src="/projects/projecthero.webp"
     alt="Apiyo Design Studio selected architectural projects"
     draggable={false}
     className="

@@ -164,7 +164,7 @@ export default function AboutPage() {
         {/* HERO IMAGE */}
 
         <img
-          src="/about/abouthero.png"
+          src="/about/abouthero.webp"
           alt="Apiyo Design Studio"
           draggable={false}
           className="
@@ -517,7 +517,7 @@ export default function AboutPage() {
   "
 >
   <img
-    src="/about/origin.png"
+    src="/about/origin.webp"
     alt="The origin of Apiyo Design Studio"
     draggable={false}
     className="
@@ -1393,7 +1393,7 @@ export default function AboutPage() {
             >
 
               <img
-                src="/about/legacy.png"
+                src="/about/legacy.webp"
                 alt="Climate responsive architecture"
                 draggable={false}
                 className="
@@ -1514,7 +1514,7 @@ export default function AboutPage() {
       >
 
         <img
-          src="/about/resilient.png"
+          src="/about/resilient.webp"
           alt="Flood resilient housing designed for communities"
           draggable={false}
           className="

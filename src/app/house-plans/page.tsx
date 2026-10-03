@@ -85,7 +85,7 @@ export default function HousePlansPage() {
       >
 
         <img
-          src="/house-plans/hero/houseplanshero.png"
+          src="/house-plans/hero/houseplanshero.webp"
           alt="Apiyo Design Studio house plans"
           draggable={false}
           className="

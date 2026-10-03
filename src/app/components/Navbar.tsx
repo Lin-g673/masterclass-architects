@@ -144,8 +144,8 @@ export default function Navbar() {
             <img
               src={
                 scrolled || menuOpen
-                  ? "/logo/logo-black.png"
-                  : "/logo/logo-white.png"
+                  ? "/logo/logo-black.webp"
+                  : "/logo/logo-white.webp"
               }
               alt="Apiyo Design Studio"
               draggable={false}
@@ -456,7 +456,7 @@ export default function Navbar() {
             aria-label="Apiyo Design Studio Home"
           >
             <img
-              src="/logo/logo-white.png"
+              src="/logo/logo-white.webp"
               alt="Apiyo Design Studio"
               draggable={false}
               className="
