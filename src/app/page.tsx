@@ -26,6 +26,17 @@ import {
 export default function Home() {
 
 const [currentHero, setCurrentHero] = useState(0);
+const [loadedHeroCount, setLoadedHeroCount] = useState(1);
+
+useEffect(() => {
+  const nextImage = (currentHero + 1) % 5;
+
+  const timer = window.setTimeout(() => {
+    setLoadedHeroCount((count) => Math.max(count, nextImage + 1));
+  }, 1500);
+
+  return () => window.clearTimeout(timer);
+}, [currentHero]);
 const [currentVisualization, setCurrentVisualization] = useState(0);
 const [currentProject, setCurrentProject] = useState(0);
 const [currentInterior, setCurrentInterior] = useState(0);
@@ -310,7 +321,9 @@ return (
     overflow-hidden
   "
 >
-  {heroImages.map((image, index) => (
+  {heroImages
+  .filter((_, index) => index < loadedHeroCount)
+  .map((image, index) => (
     <div
       key={image}
       className={`
@@ -327,9 +340,12 @@ return (
       `}
     >
       <img
-        src={image}
-        alt=""
-        draggable={false}
+  src={image}
+  alt=""
+  draggable={false}
+  loading={index === 0 ? "eager" : "lazy"}
+  fetchPriority={index === 0 ? "high" : "low"}
+  decoding="async"
         className="
           w-full
           h-full
@@ -804,6 +820,8 @@ md:text-xl
         <img
           src="/architecture/commercial.webp"
           alt="Architectural design by Apiyo Design Studio"
+          loading="lazy"
+decoding="async"
           className="
             absolute
             inset-0
@@ -1282,6 +1300,8 @@ hover:shadow-[0_20px_50px_rgba(212,168,90,0.28)]
     <img
       src={project.image}
       alt={project.title}
+      loading="lazy"
+decoding="async"
       className="
       w-full
       h-[300px]
@@ -1631,6 +1651,8 @@ mb-5">
           <img
             src="/blueprint/blueprint.webp"
             alt="Architectural floor plan"
+            loading="lazy"
+decoding="async"
             className="
               w-full
               h-auto
@@ -1874,6 +1896,8 @@ mb-5">
     <img
       src={interiorServices[currentInterior].image}
       alt={interiorServices[currentInterior].title}
+      loading="lazy"
+decoding="async"
       className="
         w-full
         h-full
@@ -2282,7 +2306,7 @@ mb-5">
         muted
         loop
         playsInline
-        preload="auto"
+        preload="none"
         poster="/3d/3d1.webp"
         className="
           w-full
@@ -2302,6 +2326,8 @@ mb-5">
       <img
         src={visualizations[currentVisualization].media}
         alt={visualizations[currentVisualization].title}
+        loading="lazy"
+decoding="async"
         className="
           w-full
           h-full
@@ -2721,6 +2747,8 @@ mb-5">
     <img
       src={featuredProjects[currentProject].image}
       alt={featuredProjects[currentProject].title}
+      loading="lazy"
+decoding="async"
       className="
         w-full
         h-full
@@ -4487,6 +4515,8 @@ mb-5">
     <img
       src="/vision/vision.webp"
       alt=""
+      loading="lazy"
+decoding="async"
       className="
         w-full
         h-full
