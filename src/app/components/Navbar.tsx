@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -141,27 +141,31 @@ export default function Navbar() {
               flex-shrink-0
             "
           >
-            <img
-              src={
-                scrolled || menuOpen
-                  ? "/logo/logo-black.webp"
-                  : "/logo/logo-white.webp"
-              }
-              alt="Apiyo Design Studio"
-              draggable={false}
-              className={`
-  w-auto
-  select-none
-  transition-all
-  duration-300
-
-  ${
+            <Image
+  src={
     scrolled || menuOpen
-      ? "h-7 md:h-7 lg:h-8"
-      : "h-9 md:h-10 lg:h-11"
+      ? "/logo/logo-black.webp"
+      : "/logo/logo-white.webp"
   }
-`}
-            />
+  alt="Apiyo Design Studio"
+  width={192}
+  height={136}
+  sizes="(max-width: 767px) 89px, 110px"
+  priority
+  draggable={false}
+  className={`
+    w-auto
+    select-none
+    transition-all
+    duration-300
+
+    ${
+      scrolled || menuOpen
+        ? "h-7 md:h-7 lg:h-8"
+        : "h-9 md:h-10 lg:h-11"
+    }
+  `}
+/>
           </Link>
 
           {/* =====================================================
@@ -455,16 +459,19 @@ export default function Navbar() {
             onClick={closeMenu}
             aria-label="Apiyo Design Studio Home"
           >
-            <img
-              src="/logo/logo-white.webp"
-              alt="Apiyo Design Studio"
-              draggable={false}
-              className="
-                h-9
-                w-auto
-                select-none
-              "
-            />
+            <Image
+  src="/logo/logo-white.webp"
+  alt="Apiyo Design Studio"
+  width={192}
+  height={136}
+  sizes="89px"
+  draggable={false}
+  className="
+    h-9
+    w-auto
+    select-none
+  "
+/>
           </Link>
 
           <button

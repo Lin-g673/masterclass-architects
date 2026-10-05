@@ -817,22 +817,19 @@ md:text-xl
           border-white/10
         "
       >
-        <img
-          src="/architecture/commercial.webp"
-          alt="Architectural design by Apiyo Design Studio"
-          loading="lazy"
-decoding="async"
-          className="
-            absolute
-            inset-0
-            w-full
-            h-full
-            object-cover
-            transition-transform
-            duration-700
-            group-hover:scale-[1.03]
-          "
-        />
+        <Image
+  src="/architecture/commercial.webp"
+  alt="Architectural design by Apiyo Design Studio"
+  fill
+  sizes="(max-width: 767px) 100vw, 50vw"
+  quality={75}
+  className="
+    object-cover
+    transition-transform
+    duration-700
+    group-hover:scale-[1.03]
+  "
+/>
 
         {/* IMAGE OVERLAY */}
 
@@ -1297,23 +1294,25 @@ hover:shadow-[0_20px_50px_rgba(212,168,90,0.28)]
 
   {/* IMAGE */}
   <div className="overflow-hidden">
-    <img
-      src={project.image}
-      alt={project.title}
-      loading="lazy"
-decoding="async"
-      className="
-      w-full
-      h-[300px]
-sm:h-[340px]
-md:h-[360px]
-lg:h-[390px]
-      object-cover
-      transition-all
-      duration-700
-      group-hover:scale-105
-      "
-    />
+    <Image
+  src={project.image}
+  alt={project.title}
+  width={1000}
+  height={800}
+  sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+  quality={75}
+  className="
+    w-full
+    h-[300px]
+    sm:h-[340px]
+    md:h-[360px]
+    lg:h-[390px]
+    object-cover
+    transition-all
+    duration-700
+    group-hover:scale-105
+  "
+/>
   </div>
   {/* CONTENT BELOW IMAGE */}
 <div

@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import {
   FaInstagram,
   FaFacebookF,
@@ -41,15 +41,19 @@ export default function Footer() {
       {/* BRAND */}
       <div className="flex flex-col items-center">
 
-        <img
-          src="/logo/logo-white.webp"
-          alt="Apiyo Design Studio"
-          className="
-          w-80
-          object-contain
-          mb-8
-          "
-        />
+        <Image
+  src="/logo/logo-white.webp"
+  alt="Apiyo Design Studio"
+  width={320}
+  height={226}
+  sizes="320px"
+  className="
+    w-80
+    h-auto
+    object-contain
+    mb-8
+  "
+/>
 
         <p
           className="
