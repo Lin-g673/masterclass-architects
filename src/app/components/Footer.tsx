@@ -386,7 +386,7 @@ export default function Footer() {
     <div
       className="
       text-center
-      text-gray-500
+      text-gray-400
       text-sm
       "
     >
@@ -402,6 +402,7 @@ export default function Footer() {
   href="https://wa.me/254754525407"
   target="_blank"
   rel="noopener noreferrer"
+  aria-label="Chat with Apiyo Design Studio on WhatsApp"
   className="
     fixed
     bottom-5

@@ -1090,7 +1090,7 @@ md:text-xl
                 font-[var(--font-avenir)]
                 text-[11px]
                 md:text-xs
-                text-white/45
+                text-white/70
               "
             >
               From blank site to complete design.
@@ -1117,7 +1117,7 @@ md:text-xl
                 font-[var(--font-avenir)]
                 text-[11px]
                 md:text-xs
-                text-white/45
+                text-white/70
               "
             >
               Existing buildings, reimagined.
@@ -1329,46 +1329,50 @@ md:p-6
   "
 >
     {/* ICON ROW */}
-    <div className="grid
+<div className="grid
 grid-cols-2
 gap-3
 text-xs
 md:text-sm
-text-gray-700
-mb-5">
+text-white/80
+group-hover:text-gray-700
+mb-5
+transition-colors
+duration-500">
 
-      <div className="flex items-center gap-2">
-        <BedDouble size={18} />
-        <span>{project.bedrooms}</span>
-      </div>
+  <div className="flex items-center gap-2">
+    <BedDouble size={18} />
+    <span>{project.bedrooms}</span>
+  </div>
 
-      <div className="flex items-center gap-2">
-        <Bath size={18} />
-        <span>{project.bathrooms}</span>
-      </div>
+  <div className="flex items-center gap-2">
+    <Bath size={18} />
+    <span>{project.bathrooms}</span>
+  </div>
 
-      <div className="flex items-center gap-2">
-        <Ruler size={18} />
-        <span>{project.size}</span>
-      </div>
+  <div className="flex items-center gap-2">
+    <Ruler size={18} />
+    <span>{project.size}</span>
+  </div>
 
-      <div className="flex items-center gap-2">
-        <Building2 size={18} />
-        <span>{project.floors}</span>
-      </div>
+  <div className="flex items-center gap-2">
+    <Building2 size={18} />
+    <span>{project.floors}</span>
+  </div>
 
-    </div>
+</div>
 
-    <Link
- href={project.link}
+<Link
+  href={project.link}
   className="
     inline-flex
     font-[var(--font-avenir)]
     text-xs
     md:text-sm
     font-medium
-    text-[#1c3a60]
-    hover:text-[#D4A85A]
+    text-white/80
+    group-hover:text-[#1c3a60]
+    hover:!text-[#D4A85A]
     transition-all
   "
 >
@@ -1647,18 +1651,20 @@ mb-5">
             xl:max-w-[560px]
           "
         >
-          <img
-            src="/blueprint/blueprint.webp"
-            alt="Architectural floor plan"
-            loading="lazy"
-decoding="async"
-            className="
-              w-full
-              h-auto
-              object-contain
-              opacity-50
-            "
-          />
+          <Image
+  src="/blueprint/blueprint.webp"
+  alt="Architectural floor plan"
+  width={1920}
+  height={1357}
+  sizes="(max-width: 767px) 90vw, (max-width: 1279px) 50vw, 560px"
+  quality={75}
+  className="
+    w-full
+    h-auto
+    object-contain
+    opacity-50
+  "
+/>
         </div>
 
 
@@ -3693,9 +3699,9 @@ decoding="async"
         </p>
 
         <div>
-          <h4 className="text-[#D4A85A] font-semibold">
+          <h3 className="text-[#D4A85A] font-semibold">
             Homeowner
-          </h4>
+          </h3>
 
           <p className="text-sm text-gray-400 group-hover:text-gray-600">
             Nairobi
@@ -3746,9 +3752,9 @@ decoding="async"
         </p>
 
         <div>
-          <h4 className="text-[#D4A85A] font-semibold">
+          <h3 className="text-[#D4A85A] font-semibold">
             Property Developer
-          </h4>
+          </h3>
 
           <p className="text-sm text-gray-400 group-hover:text-gray-600">
             Kisumu
@@ -3799,9 +3805,9 @@ decoding="async"
         </p>
 
         <div>
-          <h4 className="text-[#D4A85A] font-semibold">
+          <h3 className="text-[#D4A85A] font-semibold">
             Business Owner
-          </h4>
+          </h3>
 
           <p className="text-sm text-gray-400 group-hover:text-gray-600">
             Kakamega
