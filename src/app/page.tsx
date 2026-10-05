@@ -339,21 +339,20 @@ return (
         }
       `}
     >
-      <img
+      <Image
   src={image}
   alt=""
+  fill
+  sizes="100vw"
+  priority={index === 0}
+  quality={75}
   draggable={false}
-  loading={index === 0 ? "eager" : "lazy"}
-  fetchPriority={index === 0 ? "high" : "low"}
-  decoding="async"
-        className="
-          w-full
-          h-full
-          object-cover
-          object-center
-          select-none
-        "
-      />
+  className="
+    object-cover
+    object-center
+    select-none
+  "
+/>
     </div>
   ))}
 
@@ -410,7 +409,7 @@ return (
       <h1
         className="
           font-heading
-           hero-lcp-heading
+          hero-lcp-heading
           text-[44px]
           sm:text-5xl
           md:text-6xl
