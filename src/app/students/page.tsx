@@ -267,8 +267,9 @@ export default function StudentsPage() {
               {/* HEADING */}
 
               <h1
-                className="
-                  font-heading
+  className="
+    font-heading
+    hero-lcp-heading
                   text-5xl
                   sm:text-6xl
                   md:text-7xl
@@ -345,7 +346,7 @@ rendering, thesis presentations and model-making support.
 
 
                 <a
-                  href="https://wa.me/254720468033"
+                  href="https://wa.me/254754525407"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="

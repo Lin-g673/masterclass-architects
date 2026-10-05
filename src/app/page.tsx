@@ -410,6 +410,7 @@ return (
       <h1
         className="
           font-heading
+           hero-lcp-heading
           text-[44px]
           sm:text-5xl
           md:text-6xl
