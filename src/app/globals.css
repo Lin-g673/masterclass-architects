@@ -150,3 +150,9 @@ body {
 .animate-quoteFade {
   animation: quoteFade 1.2s ease forwards;
 }
+/* Mobile performance optimization */
+@media (max-width: 767px) {
+  .animate-fadeUp {
+    animation: none !important;
+  }
+}

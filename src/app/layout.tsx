@@ -6,7 +6,7 @@ import ImageProtection from "./components/ImageProtection";
 const garamond = localFont({
   src: "./fonts/GaramondPremierPro-LightDisplay.otf",
   variable: "--font-garamond",
-  display: "swap",
+ display: "optional",
 });
 
 const avenir = localFont({
