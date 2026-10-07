@@ -207,9 +207,9 @@ export default function HousePlansPage() {
                 leading-relaxed
               "
             >
-              Professionally designed architectural plans shaped 
-              around real needs, practical functionality and 
-              thoughtful architectural planning.
+              Explore professionally designed house plans and house designs for Kenya,
+shaped around real needs, practical functionality and thoughtful
+architectural planning.
             </p>
 
 

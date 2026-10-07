@@ -1165,8 +1165,8 @@ md:text-lg
         mb-8
         "
       >
-        Thoughtfully designed residential and commercial interiors crafted for comfort, functionality and
-        timeless elegance.
+        Interior design services for residential and commercial spaces in Nairobi and across Kenya,
+crafted for comfort, functionality and timeless elegance.
       </p>
 
       <div className="flex flex-wrap gap-5">

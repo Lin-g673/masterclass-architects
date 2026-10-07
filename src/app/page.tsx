@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -206,7 +206,7 @@ const featuredProjects = [
 const interiorServices = [
 {
   title: "Residential",
-  category: "Luxury Homes • Villas • Apartments",
+  category: "Luxury Homes â€¢ Villas â€¢ Apartments",
   image: "/minimalist/minimalistbed1.webp",
   description:
     "Luxury residential interiors ranging from Modern Luxury, Japandi, Scandinavian, Minimalist, Classical and Coastal design styles.",
@@ -217,7 +217,7 @@ const interiorServices = [
 
 {
   title: "Commercial",
-  category: "Offices • Corporate Spaces • Law Firms",
+  category: "Offices â€¢ Corporate Spaces â€¢ Law Firms",
   image: "/interiors/commercial/corporate/board4.webp",
   description:
     "Professional workspaces designed to communicate prestige and productivity.",
@@ -228,7 +228,7 @@ const interiorServices = [
 
 {
   title: "Hospitality",
-  category: "Restaurants • Cafés • Hotels",
+  category: "Restaurants â€¢ CafÃ©s â€¢ Hotels",
   image: "/interiors/hospitality/restaurant/restaurant4.webp",
   description:
     "Experiential hospitality interiors crafted to create memorable guest experiences.",
@@ -909,7 +909,7 @@ md:text-xl
               group-hover:border-[#D4A85A]
             "
           >
-            →
+            â†’
           </div>
         </div>
 
@@ -975,9 +975,9 @@ md:text-xl
           "
         >
           Whether you have land, an existing building, a development
-          opportunity or simply an idea, we provide architectural
-          design from the first conversation through design,
-          visualization, documentation and project development.
+opportunity or simply an idea, we provide architectural design
+services in Nairobi and across Kenya, from the first conversation
+through design, visualization, documentation and project development.
         </p>
 
 
@@ -1159,7 +1159,7 @@ md:text-xl
             "
           >
             Explore Architecture
-            <span>→</span>
+            <span>â†’</span>
           </Link>
 
 
@@ -1376,7 +1376,7 @@ duration-500">
     transition-all
   "
 >
-  Explore Design →
+  Explore Design â†’
 </Link>
 
     </div>
@@ -1433,7 +1433,7 @@ duration-500">
     "
   >
     View All House Plans
-    <span aria-hidden="true">→</span>
+    <span aria-hidden="true">â†’</span>
   </Link>
 </div>
           </div>
@@ -1751,7 +1751,7 @@ duration-500">
               mb-4
             "
           >
-            Need guidance? Tell us about your project and we’ll help
+            Need guidance? Tell us about your project and weâ€™ll help
             you choose, customize and plan the right design solution.
           </p>
 
@@ -1778,7 +1778,7 @@ duration-500">
               hover:text-black
             "
           >
-            Send Us A Message →
+            Send Us A Message â†’
           </Link>
 
         </div>
@@ -2101,7 +2101,7 @@ decoding="async"
           mb-3
         "
       >
-        Swipe To Explore →
+        Swipe To Explore â†’
       </p>
 
 
@@ -2493,7 +2493,7 @@ decoding="async"
           hover:shadow-[0_0_25px_rgba(212,168,90,0.30)]
         "
       >
-        Explore Visualization →
+        Explore Visualization â†’
       </Link>
 
     </div>
@@ -2539,7 +2539,7 @@ decoding="async"
           mb-3
         "
       >
-        Swipe To Explore →
+        Swipe To Explore â†’
       </p>
 
 
@@ -2829,7 +2829,7 @@ decoding="async"
           "
         >
           {featuredProjects[currentProject].category}
-          {" • "}
+          {" â€¢ "}
           {featuredProjects[currentProject].location}
         </p>
 
@@ -2910,7 +2910,7 @@ decoding="async"
           hover:shadow-[0_0_25px_rgba(212,168,90,0.30)]
         "
       >
-        View Project →
+        View Project â†’
       </Link>
 
     </div>
@@ -2956,7 +2956,7 @@ decoding="async"
           mb-3
         "
       >
-        Swipe To Explore →
+        Swipe To Explore â†’
       </p>
 
 
@@ -3147,7 +3147,7 @@ decoding="async"
           "
         >
           Discover Our Studio
-          <span>→</span>
+          <span>â†’</span>
         </Link>
 
       </div>
@@ -4149,7 +4149,7 @@ decoding="async"
             hover:shadow-[0_0_25px_rgba(212,168,90,0.25)]
           "
         >
-          Explore Student Services →
+          Explore Student Services â†’
         </Link>
 
       </div>
@@ -4179,7 +4179,7 @@ decoding="async"
   >
 
     {/* =================================================
-        SHEET 01 — 3D VISUALIZATION
+        SHEET 01 â€” 3D VISUALIZATION
     ================================================= */}
     <div
       className="
@@ -4257,7 +4257,7 @@ decoding="async"
 
 
     {/* =================================================
-        SHEET 02 — DRAWINGS
+        SHEET 02 â€” DRAWINGS
     ================================================= */}
     <div
       className="
@@ -4335,7 +4335,7 @@ decoding="async"
 
 
     {/* =================================================
-        SHEET 03 — MODELS
+        SHEET 03 â€” MODELS
     ================================================= */}
     <div
       className="
@@ -4413,7 +4413,7 @@ decoding="async"
 
 
     {/* =================================================
-        SHEET 04 — SOFTWARE TRAINING
+        SHEET 04 â€” SOFTWARE TRAINING
     ================================================= */}
     <div
       className="
@@ -4484,7 +4484,7 @@ decoding="async"
         "
       >
         Practical ArchiCAD, AutoCAD, SketchUp, Revit, Lumion
-        and 3ds Max training — online or in person.
+        and 3ds Max training â€” online or in person.
       </p>
 
     </div>
