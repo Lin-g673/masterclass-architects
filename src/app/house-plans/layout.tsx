@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "House Plans & House Designs in Kenya",
   description:
     "Explore house plans and residential designs by Apiyo Design Studio, including bungalows, maisonettes and mansions. Find a design for your project in Kenya, whether you live locally or abroad.",
+  alternates: { canonical: "/house-plans" },
 };
 
 export default function HousePlansLayout({
