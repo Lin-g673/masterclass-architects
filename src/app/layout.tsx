@@ -42,11 +42,72 @@ const avenir = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Apiyo Design Studio | Architecture & Interior Design in Kenya",
+  metadataBase: new URL("https://www.apiyodesignstudio.co.ke"),
+
+  title: {
+    default: "Apiyo Design Studio | Architecture & Interior Design in Kenya",
+    template: "%s | Apiyo Design Studio",
+  },
+
   description:
     "Apiyo Design Studio provides architectural design, house plans, interior design, 3D visualization and renovation services in Nairobi and across Kenya.",
-};
 
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_KE",
+    url: "https://www.apiyodesignstudio.co.ke",
+    siteName: "Apiyo Design Studio",
+    title: "Apiyo Design Studio | Architecture & Interior Design in Kenya",
+    description:
+      "Architectural design, house plans, interior design, 3D visualization and renovation services in Nairobi and across Kenya.",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Apiyo Design Studio | Architecture & Interior Design in Kenya",
+    description:
+      "Architectural design, house plans, interior design, 3D visualization and renovation services in Nairobi and across Kenya.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://www.apiyodesignstudio.co.ke/#organization",
+  name: "Apiyo Design Studio",
+  alternateName: "ADS",
+  url: "https://www.apiyodesignstudio.co.ke",
+  telephone: "+254754525407",
+  email: "info@apiyodesignstudio.co.ke",
+  description:
+    "Apiyo Design Studio is an architectural design studio providing architectural design, house plans, interior design, 3D visualization and renovation services in Nairobi and across Kenya.",
+
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Nairobi",
+    addressCountry: "KE",
+  },
+
+  areaServed: {
+    "@type": "Country",
+    name: "Kenya",
+  },
+
+  sameAs: [
+    "https://www.instagram.com/apiyo_designstudio/",
+    "https://www.facebook.com/apiyodesignstudio/",
+    "https://www.tiktok.com/@apiyodesignstudio",
+    "https://www.linkedin.com/company/apiyo-design-studio/",
+  ],
+};
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -58,9 +119,15 @@ export default function RootLayout({
       className={`${garamond.variable} ${avenir.variable} h-full antialiased`}
     >
       <body className="min-h-full">
-        <ImageProtection />
-        {children}
-      </body>
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
+    }}
+  />
+  <ImageProtection />
+  {children}
+</body>
     </html>
   );
 }

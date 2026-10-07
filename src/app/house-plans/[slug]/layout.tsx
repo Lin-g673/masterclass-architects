@@ -23,7 +23,7 @@ export async function generateMetadata({
     };
   }
 
-  const title = `${plan.title} House Plan in Kenya | Apiyo Design Studio`;
+  const title = `${plan.title} House Plan in Kenya`;
 
   const description =
     `${plan.shortDescription} Explore this ${plan.bedrooms}-bedroom ` +
