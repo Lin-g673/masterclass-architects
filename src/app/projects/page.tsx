@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Architecture & Interior Design Projects | Apiyo Design Studio",
+  title: "Architecture & Interior Design Projects",
   description:
     "Explore Apiyo Design Studio's portfolio of residential, commercial and religious architecture, including maisonettes, bungalows and residential developments in Kenya and beyond.",
 };
@@ -59,18 +59,7 @@ const projects = [
       "A practical and beautiful bungalow designed around comfort, functionality and seamless indoor-outdoor living.",
   },
 
-  {
-    slug: "djibouti-gated-community",
-    title: "Djibouti Gated Community",
-    year: "2025",
-    status: "Ongoing",
-    location: "Djibouti",
-    type: "17 Maisonette Units",
-    image:
-      "/projects/djibouti/djibouti.webp",
-    description:
-      "A contemporary gated residential community comprising seventeen maisonette units designed around privacy, cohesive architectural character and comfortable family living.",
-  },
+  
 ];
 
 

@@ -115,38 +115,7 @@ const projectData = {
       "Simple contemporary architectural language",
       "Practical planning designed for long-term family use",
     ],
-  },
-
-
-  "djibouti-gated-community": {
-    title: "Djibouti Gated Community",
-    year: "2025",
-    status: "Ongoing",
-    location: "Djibouti",
-    type: "17 Maisonette Units",
-    client: "Private Developer",
-
-    hero:
-      "/projects/djibouti/djibouti.webp",
-
-    gallery: [
-      "/projects/djibouti/djibouti.webp",
-    ],
-
-    description:
-      "A contemporary gated residential community comprising seventeen maisonette units designed around privacy, cohesive architectural character and comfortable family living.",
-
-    designIntent:
-      "The development creates a unified residential identity while giving each household a clear sense of privacy and ownership. The planning balances efficient land use with comfortable internal spaces, shared infrastructure and a coherent streetscape.",
-
-    highlights: [
-      "Seventeen contemporary maisonette units",
-      "Unified architectural language across the development",
-      "Privacy-focused residential planning",
-      "Efficient site planning and circulation",
-      "Integrated parking and access strategy",
-      "Climate-conscious openings, shading and outdoor spaces",
-    ],
+ 
   },
 };
 

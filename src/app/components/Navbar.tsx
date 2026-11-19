@@ -56,13 +56,17 @@ export default function Navbar() {
       href: "/interiors",
     },
     {
-      name: "3D Visualization",
-      href: "/3d",
-    },
-    {
-      name: "Projects",
-      href: "/projects",
-    },
+  name: "3D Visualization",
+  href: "/3d",
+},
+{
+  name: "PropertyVision",
+  href: "/propertyvision",
+},
+{
+  name: "Projects",
+  href: "/projects",
+},
     {
       name: "Students",
       href: "/students",

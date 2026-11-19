@@ -269,7 +269,6 @@ export default function StudentsPage() {
               <h1
   className="
     font-heading
-    hero-lcp-heading
                   text-5xl
                   sm:text-6xl
                   md:text-7xl
