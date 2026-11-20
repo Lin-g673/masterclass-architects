@@ -60,10 +60,6 @@ export default function Navbar() {
   href: "/3d",
 },
 {
-  name: "PropertyVision",
-  href: "/propertyvision",
-},
-{
   name: "Projects",
   href: "/projects",
 },
