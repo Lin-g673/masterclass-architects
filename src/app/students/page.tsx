@@ -1183,7 +1183,7 @@ rendering, thesis presentations and model-making support.
 
 
         {/* =================================================
-            PRICING HEADER
+            TRAINING OPTIONS HEADER
         ================================================= */}
 
         <div
@@ -1196,7 +1196,6 @@ rendering, thesis presentations and model-making support.
             border-white/10
           "
         >
-
           <div
             className="
               flex
@@ -1209,9 +1208,7 @@ rendering, thesis presentations and model-making support.
               md:mb-8
             "
           >
-
             <div>
-
               <p
                 className="
                   font-[var(--font-avenir)]
@@ -1223,7 +1220,7 @@ rendering, thesis presentations and model-making support.
                   mb-3
                 "
               >
-                Student Training Fees
+                Tailored Training Programmes
               </p>
 
               <h3
@@ -1235,11 +1232,9 @@ rendering, thesis presentations and model-making support.
                   leading-[1.08]
                 "
               >
-                Choose Your Training Path.
+                A Learning Path Built Around You.
               </h3>
-
             </div>
-
 
             <p
               className="
@@ -1251,16 +1246,13 @@ rendering, thesis presentations and model-making support.
                 leading-relaxed
               "
             >
-              Start with one software or combine complementary
-              programs to build a broader architectural workflow.
+              Choose the training direction that best matches your goals.
+              We tailor the sessions, project work and level of guidance
+              to your experience and learning needs.
             </p>
-
           </div>
 
-
-          {/* =================================================
-              PRICING CARDS
-          ================================================= */}
+          {/* TRAINING OPTIONS */}
 
           <div
             className="
@@ -1270,7 +1262,6 @@ rendering, thesis presentations and model-making support.
               gap-4
             "
           >
-
             {/* SINGLE SOFTWARE */}
 
             <div
@@ -1286,105 +1277,42 @@ rendering, thesis presentations and model-making support.
                 min-h-[300px]
               "
             >
-
-              <p
-                className="
-                  font-[var(--font-avenir)]
-                  uppercase
-                  tracking-[3px]
-                  text-[#D4A85A]
-                  text-[9px]
-                  mb-5
-                "
-              >
+              <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[#D4A85A] text-[9px] mb-5">
                 Single Software
               </p>
 
-              <h4
-                className="
-                  font-heading
-                  text-4xl
-                  lg:text-5xl
-                  font-light
-                  mb-1
-                "
-              >
-                KSh 4,000
+              <h4 className="font-heading text-3xl lg:text-4xl font-light mb-4">
+                Focused Learning
               </h4>
 
-              <p
-                className="
-                  font-[var(--font-avenir)]
-                  text-xs
-                  text-gray-500
-                  mb-6
-                "
-              >
-                per software
-              </p>
-
-
               <div className="space-y-3 mb-7">
-
                 {[
-                  "2 weeks of training",
-                  "12 total training hours",
-                  "6 sessions × 2 hours",
+                  "Training in one selected software",
+                  "Structured practical sessions",
+                  "Beginner to advanced learning",
                   "Online or in-person",
                 ].map((item) => (
-
-                  <div
-                    key={item}
-                    className="flex items-start gap-3"
-                  >
-
+                  <div key={item} className="flex items-start gap-3">
                     <CheckCircle2
                       size={15}
                       strokeWidth={1.5}
-                      className="
-                        text-[#D4A85A]
-                        flex-shrink-0
-                        mt-[2px]
-                      "
+                      className="text-[#D4A85A] flex-shrink-0 mt-[2px]"
                     />
-
-                    <span
-                      className="
-                        font-[var(--font-avenir)]
-                        text-xs
-                        text-gray-300
-                      "
-                    >
+                    <span className="font-[var(--font-avenir)] text-xs text-gray-300">
                       {item}
                     </span>
-
                   </div>
-
                 ))}
-
               </div>
-
 
               <Link
                 href="/consultation"
-                className="
-                  mt-auto
-                  inline-flex
-                  items-center
-                  gap-2
-                  font-[var(--font-avenir)]
-                  text-xs
-                  text-[#D4A85A]
-                  hover:text-white
-                  transition-colors
-                "
+                className="mt-auto inline-flex items-center gap-2 font-[var(--font-avenir)] text-xs text-[#D4A85A] hover:text-white transition-colors"
               >
-                Book One Software
+                Request a Quote
                 <ArrowRight size={14} />
               </Link>
-
             </div>
-
 
             {/* ANY TWO SOFTWARE */}
 
@@ -1402,128 +1330,46 @@ rendering, thesis presentations and model-making support.
                 min-h-[300px]
               "
             >
-
-              <span
-                className="
-                  absolute
-                  top-5
-                  right-5
-                  rounded-full
-                  border
-                  border-[#D4A85A]/30
-                  bg-[#D4A85A]/10
-                  px-3
-                  py-1
-                  font-[var(--font-avenir)]
-                  uppercase
-                  tracking-[2px]
-                  text-[#D4A85A]
-                  text-[8px]
-                "
-              >
+              <span className="absolute top-5 right-5 rounded-full border border-[#D4A85A]/30 bg-[#D4A85A]/10 px-3 py-1 font-[var(--font-avenir)] uppercase tracking-[2px] text-[#D4A85A] text-[8px]">
                 Popular
               </span>
 
-
-              <p
-                className="
-                  font-[var(--font-avenir)]
-                  uppercase
-                  tracking-[3px]
-                  text-[#D4A85A]
-                  text-[9px]
-                  mb-5
-                "
-              >
+              <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[#D4A85A] text-[9px] mb-5">
                 Any 2 Software
               </p>
 
-              <h4
-                className="
-                  font-heading
-                  text-4xl
-                  lg:text-5xl
-                  font-light
-                  mb-1
-                "
-              >
-                KSh 7,000
+              <h4 className="font-heading text-3xl lg:text-4xl font-light mb-4">
+                Integrated Workflow
               </h4>
 
-              <p
-                className="
-                  font-[var(--font-avenir)]
-                  text-xs
-                  text-gray-500
-                  mb-6
-                "
-              >
-                save KSh 1,000
-              </p>
-
-
               <div className="space-y-3 mb-7">
-
                 {[
-                  "Choose any 2 software",
-                  "12 hours per software",
-                  "24 total training hours",
-                  "Simultaneous or consecutive",
+                  "Choose two complementary software",
+                  "Integrated practical workflows",
+                  "Project-based learning",
                   "Online or in-person",
                 ].map((item) => (
-
-                  <div
-                    key={item}
-                    className="flex items-start gap-3"
-                  >
-
+                  <div key={item} className="flex items-start gap-3">
                     <CheckCircle2
                       size={15}
                       strokeWidth={1.5}
-                      className="
-                        text-[#D4A85A]
-                        flex-shrink-0
-                        mt-[2px]
-                      "
+                      className="text-[#D4A85A] flex-shrink-0 mt-[2px]"
                     />
-
-                    <span
-                      className="
-                        font-[var(--font-avenir)]
-                        text-xs
-                        text-gray-300
-                      "
-                    >
+                    <span className="font-[var(--font-avenir)] text-xs text-gray-300">
                       {item}
                     </span>
-
                   </div>
-
                 ))}
-
               </div>
-
 
               <Link
                 href="/consultation"
-                className="
-                  mt-auto
-                  inline-flex
-                  items-center
-                  gap-2
-                  font-[var(--font-avenir)]
-                  text-xs
-                  text-[#D4A85A]
-                  hover:text-white
-                  transition-colors
-                "
+                className="mt-auto inline-flex items-center gap-2 font-[var(--font-avenir)] text-xs text-[#D4A85A] hover:text-white transition-colors"
               >
-                Choose Two Software
+                Request a Quote
                 <ArrowRight size={14} />
               </Link>
-
             </div>
-
 
             {/* DESIGN TO RENDER */}
 
@@ -1540,108 +1386,73 @@ rendering, thesis presentations and model-making support.
                 min-h-[300px]
               "
             >
-
-              <p
-                className="
-                  font-[var(--font-avenir)]
-                  uppercase
-                  tracking-[3px]
-                  text-[#D4A85A]
-                  text-[9px]
-                  mb-5
-                "
-              >
-                Design-To-Render Path
+              <p className="font-[var(--font-avenir)] uppercase tracking-[3px] text-[#D4A85A] text-[9px] mb-5">
+                Design-to-Render Path
               </p>
 
-              <h4
-                className="
-                  font-heading
-                  text-4xl
-                  lg:text-5xl
-                  font-light
-                  mb-1
-                "
-              >
-                KSh 10,000
+              <h4 className="font-heading text-3xl lg:text-4xl font-light mb-4">
+                Complete Design Workflow
               </h4>
 
-              <p
-                className="
-                  font-[var(--font-avenir)]
-                  text-xs
-                  text-gray-500
-                  mb-6
-                "
-              >
-                3 complementary software
-              </p>
-
-
               <div className="space-y-3 mb-7">
-
                 {[
-                  "Choose 3 complementary software",
-                  "12 hours per software",
-                  "36 total training hours",
-                  "Complete design workflow",
+                  "Three complementary software",
+                  "End-to-end design and visualisation",
+                  "Advanced practical projects",
                   "Online or in-person",
                 ].map((item) => (
-
-                  <div
-                    key={item}
-                    className="flex items-start gap-3"
-                  >
-
+                  <div key={item} className="flex items-start gap-3">
                     <CheckCircle2
                       size={15}
                       strokeWidth={1.5}
-                      className="
-                        text-[#D4A85A]
-                        flex-shrink-0
-                        mt-[2px]
-                      "
+                      className="text-[#D4A85A] flex-shrink-0 mt-[2px]"
                     />
-
-                    <span
-                      className="
-                        font-[var(--font-avenir)]
-                        text-xs
-                        text-gray-300
-                      "
-                    >
+                    <span className="font-[var(--font-avenir)] text-xs text-gray-300">
                       {item}
                     </span>
-
                   </div>
-
                 ))}
-
               </div>
-
 
               <Link
                 href="/consultation"
-                className="
-                  mt-auto
-                  inline-flex
-                  items-center
-                  gap-2
-                  font-[var(--font-avenir)]
-                  text-xs
-                  text-[#D4A85A]
-                  hover:text-white
-                  transition-colors
-                "
+                className="mt-auto inline-flex items-center gap-2 font-[var(--font-avenir)] text-xs text-[#D4A85A] hover:text-white transition-colors"
               >
-                Build Your Learning Path
+                Request a Quote
                 <ArrowRight size={14} />
               </Link>
-
             </div>
-
           </div>
 
+          {/* PERSONALISED TRAINING FEES */}
+
+          <div
+            className="
+              mt-5
+              rounded-xl
+              border
+              border-[#D4A85A]/20
+              bg-[#D4A85A]/[0.035]
+              px-5
+              py-5
+              md:px-6
+              md:py-6
+            "
+          >
+            <p className="font-[var(--font-avenir)] text-xs md:text-sm text-gray-300 leading-relaxed mb-2">
+              <span className="text-[#D4A85A]">Personalised training fees.</span>{" "}
+              Our quotations are tailored to your experience level, learning
+              objectives, selected software, project complexity, training
+              format and required sessions. Student, graduate and professional
+              training rates are available.
+            </p>
+
+            <p className="font-[var(--font-avenir)] text-[10px] md:text-xs text-gray-500 leading-relaxed">
+              Share your goals and current skill level with us to receive a
+              training plan and quotation suited to your needs.
+            </p>
+          
+        </div>
 
           {/* =================================================
               TRAINING NOTE
@@ -1702,7 +1513,7 @@ rendering, thesis presentations and model-making support.
                   md:text-xs
                 "
               >
-                6 Sessions × 2 Hours / Software
+                Session plan tailored to your goals
               </span>
 
             </div>
